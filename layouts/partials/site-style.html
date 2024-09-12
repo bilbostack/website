@@ -1,0 +1,6 @@
+{{ with resources.Get "css/bootstrap.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+{{ with resources.Get "css/style.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}

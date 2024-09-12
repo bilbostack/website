@@ -1,0 +1,10 @@
+{{ $links := $.Site.Params.SocialLinks }}
+<footer>
+  <div class="container">
+    <p class="social">{{T "footer_contact_text" (dict "mail" (printf "mailto:%s" $.Site.Params.contactEmail) ) | safeHTML }} <br>
+      {{ range $links }}
+      <a href="{{.url}}" target="_blank" title="{{.title}}">{{.title}}</a>&nbsp;
+      {{ end }}
+    </p>
+  </div>
+</footer>

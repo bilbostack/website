@@ -1,0 +1,29 @@
+baseURL = "https://bilbostack.com"
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = false
+[params]
+    hashtag = "#Bilbostack25"
+    sponsorsLink = "https://docs.google.com/presentation/d/10Brg_D1M-7E-SyBWArMMgeSF6AuzdXIgJyDGk7sklsk/edit?usp=sharing"
+    youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
+    contactEmail = "info@bilbostack.com"
+    socialLinks = [
+        { title = "Twitter X", url = "https://twitter.com/bilbostack" },
+        { title = "Telegram", url = "https://t.me/bilbostack20" },
+        { title = "Github", url = "https://github.com/bilbostack" },
+    ]
+[languages]
+    [languages.es]
+      disabled = false
+      languageCode = 'es'
+      languageName = 'ES'
+      weight = 2
+    [languages.en]
+      disabled = false
+      languageCode = 'en'
+      languageName = 'EN'
+      weight = 1
+    [languages.eu]
+      disabled = false
+      languageCode = 'eu'
+      languageName = 'EU'
+      weight = 0

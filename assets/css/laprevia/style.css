@@ -1,0 +1,27 @@
+body, header{
+    background-color: #F2F2F2;
+    color: #08262E;
+}
+body, a, header .info, #top-nav .links a{
+    color: #08262E;
+}
+#top-nav{
+    background-color: #E6E6E6;
+    color: #08262E;
+}
+header h1 {
+    color: #E1277C;
+    padding: 1rem;
+    font-weight: bolder;
+    text-align: center;
+}
+#top-nav .links a.event{
+    background-color: #FBBA22;
+    color: #08262E;
+    border-bottom: none;
+    padding: .4rem;
+}
+article{
+    padding: 2rem 0 2rem 0;
+    background-color: #E6E6E6;
+}

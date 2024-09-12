@@ -1,0 +1,9 @@
+{{ $editions := $.Site.Params.Editions }}
+<p class="editions">
+    {{T "last_editions_text" }} <br>
+    {{ range $index, $edition := $editions }}
+    {{ if $index }}|{{ end }}
+    {{ if eq .year 2022 }} <span>2😷21</span> | {{ end }}
+    <a href="{{.url}}" target="_blank">{{.year}}</a>
+    {{ end }}
+</p>

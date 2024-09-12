@@ -1,0 +1,18 @@
+<header>
+  <div class="container-fluid">
+    {{ partial "site-top-nav.html" .}}
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        {{ with resources.Get "img/logo-header-light.png" }}
+          {{ with .Resize "2000x webp q85 lanczos" }}
+            <img src="{{ .RelPermalink }}"
+                 width="{{ .Width }}"
+                 height="auto"
+                 alt="{{T "logo_alt" }}">
+          {{ end }}
+        {{ end }}
+        <h2 class="info">{{T "laprevia_header_where" | safeHTML }}</h2>
+      </div>
+    </div>
+  </div>
+</header>
