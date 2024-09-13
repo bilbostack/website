@@ -121,6 +121,10 @@ article a.sponsors{
     min-height: 400px;
 }
 
+#agenda .large-only {
+    display: none;
+}
+
 iframe{
     margin: 2rem 0;
     border: 8px solid #E1277C;
@@ -191,5 +195,11 @@ footer .social a{
     }
     article h1 {
         font-size: 3.2vw;
+    }
+    #agenda .large-only {
+        display: block;
+    }
+    #agenda .small-only {
+        display: none;
     }
 }
