@@ -1,11 +1,17 @@
-{{ $isLaPrevia := (eq .Permalink (ref . "laprevia"))}}
+{{ $isLaPrevia := false }}
+{{ $isHome := eq (.Ancestors|len) 0 }}
+{{ with .Site.GetPage "/laprevia" }}
+    {{if not $isHome}}
+    {{ $isLaPrevia = ($.Page.InSection .Page) }}
+    {{end}}
+{{ end }}
 <div class="row" id="top-nav">
     <div class="row">
             <p class="links text-right">
                 {{if not $isLaPrevia}}
-                <a class="event" href="{{ ref . "laprevia" }}">Ir a La Previa</a>
+                <a class="event" href="{{ ref . "laprevia" }}">Ver #La_Previa a</a>
                 {{else}}
-                <a class="event" href="{{ ref . "/" }}">Ir a la conferencia</a>
+                <a class="event" href="{{ ref . "/" }}">Ver la conferencia #Bilbostack25</a>
                 {{end}}
                 {{ with .AllTranslations }}
                 {{ range . }}

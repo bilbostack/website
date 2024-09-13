@@ -2,7 +2,7 @@ body{
     background-color: #FBBA22;
     color: #08262E;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    text-align: center;
+    text-align: left;
     font-size: 4vw;
 }
 .btn-outline-light{
@@ -20,6 +20,7 @@ header{
     text-align: center;
     background-color: #08262E;
     color: #F2F2F2;
+    text-align: center;
 }
 #top-nav{
     background-color: #08262E;
@@ -51,6 +52,10 @@ header img{
     margin: 2rem 0 2rem 0;
     max-width: 100%;
 }
+header img#logoSmall{
+    margin: 0;
+    max-width: 100%;
+}
 header h1{
     font-weight: lighter;
     font-size: 2rem;
@@ -59,16 +64,31 @@ header h2, header h3{
     font-weight: lighter;
 }
 header .info strong{
-    background-color: #E1277C;
-    color: #F2F2F2;
+    color: #E1277C;
+    font-weight: 600;
 }
 header .info{
     color: #F2F2F2;
 }
 article{
     padding: 2rem 0 2rem 0;
+    background-color: #F2F2F2;
+    color: #08262E;
+}
+article#presentation{
+    padding: 2rem 0 2rem 0;
     background-color: #009CD1;
     color: #F2F2F2;
+    text-align: center;
+}
+article#presentation h2{
+    font-weight: lighter;
+}
+article#presentation .stats{
+    margin-top: 2rem;
+}
+article#presentation .stats span{
+    color: #FBBA22;
 }
 article h1{
     font-weight: 300;
@@ -81,6 +101,26 @@ article a.sponsors{
     margin: 1rem 0 1rem 0;
     font-size: 4vw;
 }
+#speakers .speaker{
+    border: none;
+    color: #280426;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+#speakers .speaker .card-body{
+    text-align: left;
+}
+#speakers .speaker .card-body p{
+    text-align: left;
+    font-weight: lighter;
+    font-size: small;
+}
+#speakers .speaker .image{
+    background: #eee;
+    background-size: cover;
+    min-height: 400px;
+}
+
 iframe{
     margin: 2rem 0;
     border: 8px solid #E1277C;

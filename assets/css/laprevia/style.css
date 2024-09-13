@@ -9,12 +9,6 @@ body, a, header .info, #top-nav .links a{
     background-color: #E6E6E6;
     color: #08262E;
 }
-header h1 {
-    color: #E1277C;
-    padding: 1rem;
-    font-weight: bolder;
-    text-align: center;
-}
 #top-nav .links a.event{
     background-color: #FBBA22;
     color: #08262E;
