@@ -6,11 +6,27 @@ defaultContentLanguageInSubdir = false
     sponsorsLink = "https://docs.google.com/presentation/d/10Brg_D1M-7E-SyBWArMMgeSF6AuzdXIgJyDGk7sklsk/edit?usp=sharing"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
-    socialLinks = [
+    org = [
+        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
+        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
+        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
+        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
+    ]
+    links = [
         { title = "Twitter X", url = "https://twitter.com/bilbostack" },
         { title = "Telegram", url = "https://t.me/bilbostack20" },
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
+    [[params.sponsorBlocks]]
+        title = "sponsors_main"
+        sponsors = [
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "12em" }
+        ]
+    [[params.sponsorBlocks]]
+        title = "sponsors_oro"
+        sponsors = [
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "12em" }
+        ]
 [languages]
     [languages.es]
       disabled = false

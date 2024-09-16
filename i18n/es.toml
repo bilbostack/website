@@ -7,4 +7,5 @@ claim_desktop = "Vendrás por <strong>la&nbsp;conferencia</strong>, volverás po
 claim_mobile = "Volverás por <strong>la&nbsp;experiencia.</strong>"
 cta_sponsors = "Dossier de patrocinio"
 last_editions_text = "Echa un ojo a las ediciones anteriores"
+sponsors_main = "Patrocinadores principales"
 footer_contact_text = "Escríbenos <a href=\"{{.mail}}\" target=\"_blank\">un correo</a> o encuentrános en:"
