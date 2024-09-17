@@ -1,5 +1,8 @@
 <section id="speakers" class="row">
     <div class="col-lg-4 col-sm-6 col-xs-12">
+        {{ range where .Site.Pages "Type" "speaker" }}
+        {{ .Type }}: {{.Permalink}}<br>
+        {{end}}
         <a class="card speaker" href="alena-nikolaeva">
             <div class="image" style="background-image:url('https://2024.bilbostack.com/speakers/alena-nikolaeva.jpg')"></div>
             <div class="card-body"><h5 class="card-title">Alena Nikolaeva</h5>

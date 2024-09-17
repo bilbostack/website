@@ -1,6 +1,8 @@
 {{ define "main" }}
 <article>
-
+    {{ range where .Site.Pages "Type" "laprevia_speaker" }}
+    {{ .Type }}: {{.Permalink}}<br>
+    {{end}}
 </article>
 {{end}}
     
