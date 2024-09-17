@@ -1,0 +1,13 @@
+<div class="col-lg-4 col-sm-6 col-xs-12">
+    <a class="card speaker" href="{{.Permalink}}">
+        {{$imagePermalink := ""}}
+        {{ with resources.Get .Params.image }}
+        {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
+        {{$imagePermalink = .Permalink}}
+        {{end}}
+        {{end}}
+        <div class="image" style="background-image:url('{{$imagePermalink}}')"></div>
+        <div class="card-body"><h5 class="card-title">{{.Params.name}}</h5>
+            <p class="card-text">{{.Params.tagline}}</p></div>
+    </a>
+</div>
