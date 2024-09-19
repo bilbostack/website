@@ -25,7 +25,7 @@ defaultContentLanguageInSubdir = false
     [[params.sponsorBlocks]]
         title = "sponsors_oro"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "12em" }
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
         ]
 [languages]
     [languages.es]
@@ -43,3 +43,11 @@ defaultContentLanguageInSubdir = false
       languageCode = 'eu'
       languageName = 'EU'
       weight = 0
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.parser]
+            [markup.goldmark.parser.attribute]
+                block = true
+                title = true

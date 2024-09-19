@@ -121,7 +121,7 @@ article a.sponsors{
     min-height: 400px;
 }
 
-#agenda .large-only {
+table.desktop-only {
     display: none;
 }
 
@@ -206,10 +206,10 @@ footer .social a{
     article h1 {
         font-size: 3.2vw;
     }
-    #agenda .large-only {
+    table.desktop-only {
         display: block;
     }
-    #agenda .small-only {
+    table.mobile-only {
         display: none;
     }
 }

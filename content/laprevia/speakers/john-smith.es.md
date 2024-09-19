@@ -1,6 +1,5 @@
 +++
 layout = 'speaker-detail'
-title = 'John Smith | 25.01.2025 en Bilbao #LaPrevia'
 type = 'laprevia_speaker'
 name = 'John Smith'
 tagline = 'CEO in Tyrell'

@@ -1,6 +1,5 @@
 +++
 layout = 'speaker-detail'
-title = 'Juana Smith | 25.01.2025 en Bilbao #Bilbostack25'
 type = 'speaker'
 name = 'Juana Smith'
 tagline = 'CEO in Tyrell'
