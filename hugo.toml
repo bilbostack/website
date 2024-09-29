@@ -18,12 +18,26 @@ defaultContentLanguageInSubdir = false
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
     [[params.sponsorBlocks]]
+        display = "false"
         title = "sponsors_main"
         sponsors = [
             { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "12em" }
         ]
     [[params.sponsorBlocks]]
+        display = "false"
         title = "sponsors_oro"
+        sponsors = [
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
+        ]
+    [[params.sponsorBlocks]]
+        display = "false"
+        title = "sponsors_plata"
+        sponsors = [
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
+        ]
+    [[params.sponsorBlocks]]
+        display = "false"
+        title = "sponsors_bronce"
         sponsors = [
             { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
         ]
