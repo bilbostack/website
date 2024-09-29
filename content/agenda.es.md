@@ -1,7 +1,7 @@
 +++
 title = 'Agenda'
 type = 'page'
-display = 'false'
+display = false
 +++
 
 |               | Track 1                                             | Track 2                                           |

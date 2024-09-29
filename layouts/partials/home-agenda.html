@@ -1,5 +1,5 @@
 {{ $agenda := .Site.GetPage "/agenda.es.md" }}
-{{ $isDisplayed := eq .Params.Display "false" }}
+{{ $isDisplayed := eq .Params.display false }}
 {{ if $isDisplayed }}
     <article id="agenda">
         <h2 class="text-center">{{ $agenda.Title }}</h2>

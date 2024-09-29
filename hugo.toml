@@ -7,10 +7,10 @@ defaultContentLanguageInSubdir = false
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [
-        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
-        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
-        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
-        { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png" },
+        { name = "Vicenç García-Altés", url = "https://x.com/vgaltes", image = "img/org/vicenç.jpg" },
+        { name = "Ibon Landa", url = "https://x.com/ibonilm", image = "img/org/ibon.jpg" },
+        { name = "Asier Marqués", url = "https://x.com/asiermarques", image = "img/org/asier.jpg" },
+        { name = "Fran Mosteiro", url = "https://x.com/fran_mosteiro", image = "img/org/fran.jpg" },
     ]
     links = [
         { title = "Twitter X", url = "https://twitter.com/bilbostack" },
@@ -18,34 +18,34 @@ defaultContentLanguageInSubdir = false
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
     [[params.sponsorBlocks]]
-        display = "false"
+        display = false
         title = "sponsors_main"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "12em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "12em" }
         ]
     [[params.sponsorBlocks]]
-        display = "false"
+        display = false
         title = "sponsors_oro"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "7em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" }
         ]
     [[params.sponsorBlocks]]
-        display = "false"
+        display = false
         title = "sponsors_plata"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" }
         ]
     [[params.sponsorBlocks]]
-        display = "false"
+        display = false
         title = "sponsors_bronce"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "3em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "3em" }
         ]
     [[params.collaboratorsBlocks]]
-        display = "false"
+        display = false
         title = "collaborators"
         collaborators = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "2em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "2em" }
         ]
 [languages]
     [languages.es]
