@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-12">
       {{if $isHome}}
-        {{ with resources.Get "img/logo-header.png" }}
+        {{ with resources.Get "img/logo-header-dark.png" }}
           {{ with .Resize "2000x webp q85 lanczos" }}
             <img src="{{ .RelPermalink }}"
                  width="{{ .Width }}"
@@ -25,7 +25,7 @@
     {{else}}
     <div class="row">
       <div class="col-4" style="text-align: left">
-        {{ with resources.Get "img/logo-header.png" }}
+        {{ with resources.Get "img/logo-header-dark.png" }}
         {{ with .Resize "200x webp q85 lanczos" }}
         <a href="/">
           <img src="{{ .RelPermalink }}"
