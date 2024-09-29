@@ -1,0 +1,30 @@
+{{ $blocks := $.Site.Params.collaboratorsBlocks }}
+<section id="collaborators">
+    <div class="container">      
+        {{ range $blocks }}
+            {{ if eq .display "true" }}
+                <h2>Collaborators</h2>
+                <div class="list">
+                    <h3>{{T .title}}</h3>
+                    {{ range .collaborators }}
+                    {{$height := .height}}
+                    {{$name := .name}}
+                    <a href="{{.url}}"
+                    title="{{$name}}"
+                    class="item"
+                    target="_blank">
+                        {{ with resources.Get .image }}
+                        {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
+                        <img
+                            src="{{.RelPermalink}}"
+                            alt="{{$name}}"
+                            style="height:{{$height}};width:auto">
+                        {{ end }}
+                        {{ end }}
+                    </a>
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+</section>

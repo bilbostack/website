@@ -27,7 +27,7 @@ defaultContentLanguageInSubdir = false
         display = "false"
         title = "sponsors_oro"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "7em" }
         ]
     [[params.sponsorBlocks]]
         display = "false"
@@ -39,7 +39,13 @@ defaultContentLanguageInSubdir = false
         display = "false"
         title = "sponsors_bronce"
         sponsors = [
-            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "5em" }
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "3em" }
+        ]
+    [[params.collaboratorsBlocks]]
+        display = "false"
+        title = "collaborators"
+        collaborators = [
+            { name = "Vicenç García-Altés", url = "https://twitter.com/vgaltes", image = "img/org/vicenc.png", height = "2em" }
         ]
 [languages]
     [languages.es]
