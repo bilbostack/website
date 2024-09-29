@@ -16,9 +16,15 @@
         <h2 class="info">{{T "header_where" | safeHTML }}</h2>
 
         <div id="mainCtaButtons">
+          {{ if eq $.Site.Params.sellingTickets true}}
+            <a href="{{$.Site.Params.ticketsLink}}"
+              target="_blank"
+              title="{{T "cta_tickets" }}"class="btn btn-lg btn-outline-light sponsors">{{T "cta_tickets" }}</a>
+          {{end}}
           <a href="{{$.Site.Params.sponsorsLink}}"
-             target="_blank"
-             title="{{T "cta_sponsors" }}"class="btn btn-lg btn-outline-light sponsors">Consigue tu entrada </a>
+              target="_blank"
+              title="{{T "cta_sponsors" }}"
+              class="btn btn-lg btn-outline-light sponsors">{{T "cta_sponsors" }}</a>
         </div>
       </div>
     </div>

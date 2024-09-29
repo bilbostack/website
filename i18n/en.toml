@@ -6,5 +6,6 @@ laprevia_header_where = "Friday <strong>24.01.2025</strong>, Palacio Euskalduna 
 claim_desktop = "Come for <strong>the&nbsp;conference</strong>, return for <strong>the&nbsp;experience.</strong>"
 claim_mobile = "<strong>The&nbsp;experience</strong> you will remember."
 cta_sponsors = "Sponsors information"
+cta_tickets = "Buy your ticket!"
 last_editions_text = "Take a look at the previous editions"
 footer_contact_text = "Write us <a href=\"{{.mail}}\" target=\"_blank\">an email</a> or follow us on:"

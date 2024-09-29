@@ -6,5 +6,6 @@ laprevia_header_where = "<strong>24.01.2025</strong>, ostirala, Euskalduna Jaure
 claim_desktop = "<strong>Konferentziagatik</strong> etorriko zara, <strong>esperientziagatik</strong>&nbsp;itzuliko&nbsp;zara."
 claim_mobile = "<strong>Esperientziagatik</strong> itzuliko zara."
 cta_sponsors = "Babesletza txostena"
+cta_tickets = "Erosi zure sarrera!"
 last_editions_text = "Eman begirada bat aurreko edizioei"
 footer_contact_text = "Kontaktatzeko, idatzi mezu bat <a href=\"{{.mail}}\" target=\"_blank\">helbide honetara</a> edo topa gaitzazu:"
