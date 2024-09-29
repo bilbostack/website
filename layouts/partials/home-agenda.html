@@ -1,8 +1,11 @@
 {{ $agenda := .Site.GetPage "/agenda.es.md" }}
-<article id="agenda">
-    <h2 class="text-center">{{ $agenda.Title }}</h2>
-    <div class="info">
-        <p>Recuerda que el viernes antes, el 24.01.2025, tenemos un microevento por la tarde <a class="event" href="{{ ref . "laprevia" }}">#La_Previa</a></p>
-    </div>
-    {{$agenda.Content |safeHTML}}
-</article>
+{{ $isDisplayed := eq .Params.Display "false" }}
+{{ if $isDisplayed }}
+    <article id="agenda">
+        <h2 class="text-center">{{ $agenda.Title }}</h2>
+        <div class="info">
+            <p>Recuerda que el viernes antes, el 24.01.2025, tenemos un microevento por la tarde <a class="event" href="{{ ref . "laprevia" }}">#La_Previa</a></p>
+        </div>
+        {{$agenda.Content |safeHTML}}
+    </article>
+{{ end }}
