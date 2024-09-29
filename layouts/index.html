@@ -1,23 +1,19 @@
 {{ define "main" }}
 <article id="presentation">
-
   <div class="container-fluid">
     <div class="col-lg-8 offset-lg-2">
-      <h1>13ª Edición de la cita tecnológica anual más esperada en&nbsp;Bilbao</h1>
-      <h2>Vendrás por <strong>la&nbsp;conferencia</strong>, volverás por <strong>la&nbsp;experiencia.</strong></h2>
+      <h1>{{T "main_claim" }}</h1>
+      <h2 class="hidden-small">{{T "claim_desktop" | safeHTML }}</h2>
+      <h2 class="hidden-big">{{T "claim_mobile" | safeHTML }}</h2>
       <div class="row stats">
-        <div class="col col-md-3  col-sm-6 col-12"><span>8&nbsp;ponencias</span></div>
-        <div class="col col-md-3 col-sm-6 col-12"><span>2&nbsp;tracks</span></div>
-        <div class="col col-md-3  col-sm-6 col-12"><span>~1000&nbsp;asistentes</span></div>
-        <div class="col col-md-3  col-sm-6 col-12"><span>10x&nbsp;networking</span></div>
+        <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_talks" }}</span></div>
+        <div class="col col-md-3 col-sm-6 col-12"><span>{{T "subclaim_tracks" }}</span></div>
+        <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_attendees" }}</span></div>
+        <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_networking" }}</span></div>
       </div>
-
     </div>
   </div>
-
-
 </article>
-
 <article>
   <div class="container">
     {{ partial "home-speakers.html" .}}
