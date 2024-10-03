@@ -1,12 +1,12 @@
 body{
-    background-color: #FBBA22;
+    background-color: HSL(42, 95%, 86%);
     color: #08262E;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
     font-size: 4vw;
 }
 .btn-outline-light{
-     color: #F2F2F2;
+    color: #F2F2F2;
     border-color: #F2F2F2;
  }
 .hidden-big{
@@ -170,7 +170,6 @@ article a{
     color: #FBBA22;
 }
 footer{
-    border-top: 2px dotted #08262E;
     padding: 2rem 0 4rem 0
 }
 footer .social a{
@@ -184,6 +183,10 @@ footer .social a{
 }
 #where .content_wrap .content {
     display: none;
+}
+
+#sponsors {
+    text-align: center;
 }
 #sponsors h2{
     margin-bottom: 2rem;
@@ -199,6 +202,10 @@ footer .social a{
     display: block;
     padding: 1rem;
     margin: 1rem 2rem .5rem 2rem;
+}
+footer #about #org img{
+    width: 100%;
+    margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
     body, article a.sponsors{
@@ -245,11 +252,19 @@ footer .social a{
         right: 0;
         top: 5rem;
     }
-    #sponsors {
-        text-align: center;
-    }
     #sponsors .list .item{
         display: inline-block;
+    }
+    footer #about h4{
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    footer #about .links a{
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+        display: block;
+        text-decoration: underline;
     }
 }
 @media (min-width: 1200px) {
