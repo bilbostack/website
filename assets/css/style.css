@@ -120,6 +120,28 @@ article a.sponsors{
     background-size: cover;
     min-height: 400px;
 }
+#agenda td {
+    font-size: 1.2rem;
+}
+#agenda td a{
+    text-decoration: none;
+    font-weight: normal;
+    color: #280426;
+    font-size: 1rem;
+    display: block;
+}
+#agenda td a strong{
+    display: block;
+    font-size: 1.2rem;
+}
+
+#agenda table.mobile-only th{
+    background-color: #dfdfdf;
+    text-align: center!important;
+}
+#agenda table.mobile-only tr:nth-child(2n+1) td strong{
+    color: #666;
+}
 
 table.desktop-only {
     display: none;
@@ -149,6 +171,21 @@ footer .social a{
 }
 #where .content_wrap .content {
     display: none;
+}
+#sponsors h2{
+    margin-bottom: 2rem;
+}
+#sponsors .list{
+    margin-bottom: 3rem;
+}
+#sponsors .list h3{
+    font-weight: normal;
+    color: #991B80;
+}
+#sponsors .list .item{
+    display: block;
+    padding: 1rem;
+    margin: 1rem 2rem .5rem 2rem;
 }
 @media (min-width: 768px) {
     body, article a.sponsors{
@@ -192,6 +229,12 @@ footer .social a{
         right: 0;
         top: 5rem;
     }
+    #sponsors {
+        text-align: center;
+    }
+    #sponsors .list .item{
+        display: inline-block;
+    }
 }
 @media (min-width: 1200px) {
     body, article a.sponsors{
@@ -207,7 +250,7 @@ footer .social a{
         font-size: 3.2vw;
     }
     table.desktop-only {
-        display: block;
+        display: table;
     }
     table.mobile-only {
         display: none;

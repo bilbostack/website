@@ -16,3 +16,10 @@ cta_sponsors = "Babesletza txostena"
 cta_tickets = "Erosi zure sarrera!"
 last_editions_text = "Eman begirada bat aurreko edizioei"
 footer_contact_text = "Kontaktatzeko, idatzi mezu bat <a href=\"{{.mail}}\" target=\"_blank\">helbide honetara</a> edo topa gaitzazu:"
+
+
+sponsors_title = "Patrocinadores"
+sponsors_main = "Patrocinadores principales"
+sponsors_oro = "Patrocinadores oro"
+sponsors_plata = "Patrocinadores plata"
+agenda_remember_previa_text = "Recuerda que <strong>el viernes antes, el 24.01.2025</strong>, tenemos un microevento por la tarde <a class=\"event\" href=\"{{.previaLink}}\">#laPrevia</a>"

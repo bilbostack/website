@@ -1,10 +1,10 @@
 {{ $agenda := .Site.GetPage "/agenda.es.md" }}
-{{ $isDisplayed := eq .Params.display false }}
-{{ if $isDisplayed }}
+{{ $previaLink := (ref . "laprevia")}}
+{{ if $agenda.Params.Display }}
     <article id="agenda">
         <h2 class="text-center">{{ $agenda.Title }}</h2>
-        <div class="info">
-            <p>Recuerda que el viernes antes, el 24.01.2025, tenemos un microevento por la tarde <a class="event" href="{{ ref . "laprevia" }}">#laPrevia</a></p>
+        <div class="alert alert-light text-center" role="alert">
+            {{T "agenda_remember_previa_text" (dict "previaLink" $previaLink ) | safeHTML  }}
         </div>
         {{$agenda.Content |safeHTML}}
     </article>

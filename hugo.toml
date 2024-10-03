@@ -20,21 +20,24 @@ defaultContentLanguageInSubdir = false
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
     [[params.sponsorBlocks]]
-        display = false
+        display = true
         title = "sponsors_main"
         sponsors = [
             { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "12em" }
         ]
     [[params.sponsorBlocks]]
-        display = false
+        display = true
         title = "sponsors_oro"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" },
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" },
         ]
     [[params.sponsorBlocks]]
-        display = false
+        display = true
         title = "sponsors_plata"
         sponsors = [
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" },
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" },
             { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" }
         ]
     [[params.sponsorBlocks]]
