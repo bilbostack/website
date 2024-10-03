@@ -17,7 +17,7 @@ cta_tickets = "Erosi zure sarrera!"
 last_editions_text = "Eman begirada bat aurreko edizioei"
 footer_contact_text = "Kontaktatzeko, idatzi mezu bat <a href=\"{{.mail}}\" target=\"_blank\">helbide honetara</a> edo topa gaitzazu:"
 
-
+speakers_back = "volver al listado de ponentes"
 sponsors_title = "Patrocinadores"
 sponsors_main = "Patrocinadores principales"
 sponsors_oro = "Patrocinadores oro"

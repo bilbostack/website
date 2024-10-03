@@ -115,10 +115,23 @@ article a.sponsors{
     font-weight: lighter;
     font-size: small;
 }
-#speakers .speaker .image{
+#speakers .speaker .image, #speaker_detail .image{
     background: #eee;
     background-size: cover;
     min-height: 400px;
+}
+article#speaker_detail {
+    padding-top: 1rem;
+}
+article#speaker_detail a.back{
+    margin-bottom: 1rem;
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    color: #E1277C;
+}
+article#speaker_detail h1{
+    margin-top: 2rem;
 }
 #agenda td {
     font-size: 1.2rem;
@@ -208,6 +221,9 @@ footer .social a{
     }
     article h1{
         margin-bottom: 2rem;
+    }
+    article#speaker_detail h1{
+        margin-top: 0rem;
     }
     article .editions span{
         display: inline-block;

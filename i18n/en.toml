@@ -17,6 +17,7 @@ cta_tickets = "Buy your ticket!"
 last_editions_text = "Take a look at the previous editions"
 footer_contact_text = "Write us <a href=\"{{.mail}}\" target=\"_blank\">an email</a> or follow us on:"
 
+speakers_back = "volver al listado de ponentes"
 sponsors_title = "Patrocinadores"
 sponsors_main = "Patrocinadores principales"
 sponsors_oro = "Patrocinadores oro"
