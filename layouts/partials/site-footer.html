@@ -29,12 +29,18 @@
                 <div class="col-md-5 text-center">
                     <h4>Bilbostack 2025</h4>
                     <div class="links">
-                      {{ range $links }}
+                        {{ range where .Site.Pages "Type" "info-page" }}
+                        <a href="{{.Permalink}}"
+                           class="nav-link"
+                           target="_blank"
+                           title="{{.Title}}">{{.Title}}</a>
+                        {{ end }}
+                        {{ range $links }}
                         <a href="{{.url}}"
                            class="nav-link"
                            target="_blank"
                            title="{{.title}}">{{.title}}</a>
-                      {{ end }}
+                        {{ end }}
                     </div>
                 </div>
             </div>
