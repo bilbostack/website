@@ -133,6 +133,20 @@ article#speaker_detail a.back{
 article#speaker_detail h1{
     margin-top: 2rem;
 }
+article#speaker_detail h2.social,
+article#speaker_detail h3.social,
+article#speaker_detail h4.social{
+    margin-top: 2rem;
+}
+article#speaker_detail ul.social,
+article#speaker_detail ul.social li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+article#speaker_detail ul.social li{
+    margin: .5rem 0 .5rem 0;
+}
 #agenda td {
     font-size: 1.2rem;
 }
