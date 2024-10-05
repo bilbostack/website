@@ -1,8 +1,10 @@
 {{ $url := urls.Parse .Site.BaseURL }}
+{{ $title := printf "%s | %s" .Title (T "meta_title") }}
+{{ $description := .Description | default (T "meta_description")}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{T "meta_title"}}</title>
-<meta name="description" content="{{T "meta_description"}}">
+<title>{{ $title }}</title>
+<meta name="description" content="{{$description}}">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
 <meta property="twitter:url" content="{{ .Site.BaseURL }}">
 <meta property="twitter:domain" content="{{$url.Host}}">
