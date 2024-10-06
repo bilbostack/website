@@ -242,8 +242,11 @@ footer{
 footer .social a{
     display: inline-block;
     padding: .2rem;
-    color: #991B80;
+    color: #E1277C;
     font-weight: bold;
+}
+footer .dashed hr{
+    border-top: 3px dashed #bbb;
 }
 #where{
     padding-bottom: 0;
