@@ -8,6 +8,14 @@ body{
 .btn-outline-light{
     color: #F2F2F2;
     border-color: #F2F2F2;
+    --bs-btn-border-radius: 0;
+ }
+ .btn-outline-pink{
+    color: #F2F2F2;
+    border-color: #E1277C;
+    --bs-btn-border-radius: 0;
+    --bs-btn-hover-bg: #E1277C;
+    margin: 1em;
  }
 .btn-primary{
     background-color: #E1277C;

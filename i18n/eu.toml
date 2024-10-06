@@ -13,7 +13,7 @@ logo_alt = "Bilbostack Tech Conference"
 header_where = "<strong>25.01.2025</strong>, Euskalduna Jauregia, Bilbo"
 laprevia_header_where = "<strong>24.01.2025</strong>, ostirala<br>Zabalgune Eraikina (Edificio Ensanche), Bilbo"
 cta_sponsors = "Babesletza txostena"
-cta_tickets = "Erosi zure sarrera!"
+cta_tickets = "Sarrerak erosi!"
 last_editions_text = "Eman begirada bat aurreko edizioei"
 footer_contact_text = "Kontaktatzeko, idatzi mezu bat <a href=\"{{.mail}}\" target=\"_blank\">helbide honetara</a> edo topa gaitzazu:"
 
