@@ -118,6 +118,7 @@ article a.sponsors{
 #speakers .speaker .image, #speaker_detail .image{
     background: #eee;
     background-size: cover;
+    background-position: 50% 50%;
     min-height: 400px;
 }
 article#speaker_detail {
