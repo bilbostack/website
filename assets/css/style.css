@@ -315,6 +315,9 @@ footer a{
 footer .editions, footer .editions a{
     font-size: 1rem;
 }
+footer #about h4{
+    color: #E1277C;
+}
 @media (min-width: 768px) {
     body, article a.sponsors{
         font-size: 2.4vw;
