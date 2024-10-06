@@ -279,6 +279,12 @@ footer .social a{
     padding: 1rem;
     margin: 1rem 2rem .5rem 2rem;
 }
+#sponsors img{
+    filter: grayscale(100%)
+}
+#sponsors a:hover img{
+    filter: grayscale(0%)
+}
 footer #about #org img{
     width: 100%;
     margin-bottom: 2rem;
