@@ -1,5 +1,5 @@
 {{ $agenda := .Site.GetPage "/agenda.es.md" }}
-{{ $previaLink := (ref . "/")}}
+{{ $previaLink := (ref . "/laprevia")}}
 {{ if $agenda.Params.Display }}
     <section id="agenda">
         <h2 class="text-center">{{ $agenda.Title }}</h2>

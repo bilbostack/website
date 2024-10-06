@@ -3,14 +3,17 @@
   <div class="container-fluid">
     <div class="col-lg-8 offset-lg-2">
       <h1>{{T "main_claim" }}</h1>
-      <h2 class="hidden-small">{{T "claim_desktop" | safeHTML }}</h2>
-      <h2 class="hidden-big">{{T "claim_mobile" | safeHTML }}</h2>
       <div class="row stats">
         <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_talks" }}</span></div>
         <div class="col col-md-3 col-sm-6 col-12"><span>{{T "subclaim_tracks" }}</span></div>
         <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_attendees" }}</span></div>
         <div class="col col-md-3  col-sm-6 col-12"><span>{{T "subclaim_networking" }}</span></div>
       </div>
+
+      <a href="{{$.Site.Params.sponsorsLink}}"
+         target="_blank"
+         title="{{T "cta_sponsors" }}"
+      class="btn btn-lg btn-outline-light sponsors">{{T "cta_sponsors" }}</a>
     </div>
   </div>
 </article>

@@ -119,6 +119,9 @@ article#presentation .stats{
 article#presentation .stats span{
     color: #FBBA22;
 }
+article#presentation a.btn{
+    margin-top: 2rem;
+}
 article h1{
     font-weight: 300;
     font-size: 2.8rem;
