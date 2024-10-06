@@ -19,6 +19,20 @@ defaultContentLanguageInSubdir = false
         { title = "Telegram", url = "https://t.me/bilbostack20" },
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
+    editions = [
+        { year = 2012, url = "https://web.archive.org/web/20120502190422/http://bilbostack.com/" },
+        { year = 2013, url = "https://web.archive.org/web/20130110075437/http://bilbostack.com/" },
+        { year = 2014, url = "https://web.archive.org/web/20140205142714/http://bilbostack.com/" },
+        { year = 2015, url = "https://web.archive.org/web/20150109210526/http://bilbostack.com/" },
+        { year = 2016, url = "https://web.archive.org/web/20160109081707/http://bilbostack.com/" },
+        { year = 2017, url = "https://web.archive.org/web/20170601095000/http://bilbostack.com/" },
+        { year = 2018, url = "https://web.archive.org/web/20180129112902/http://bilbostack.com/" },
+        { year = 2019, url = "https://2019.bilbostack.com/" },
+        { year = 2020, url = "https://2020.bilbostack.com/" },
+        { year = 2022, url = "https://2022.bilbostack.com/" },
+        { year = 2023, url = "https://2023.bilbostack.com/" },
+        { year = 2024, url = "https://2024.bilbostack.com/" },
+    ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_main"
