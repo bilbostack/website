@@ -118,6 +118,7 @@ article#presentation .stats{
 }
 article#presentation .stats span{
     color: #FBBA22;
+    font-weight: normal;
 }
 article#presentation a.btn{
     margin-top: 2rem;
