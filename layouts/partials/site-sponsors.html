@@ -1,6 +1,6 @@
 {{ $blocks := $.Site.Params.sponsorBlocks }}
-<section id="sponsors">
-    <div class="container">
+<section id="sponsors" class="blue">
+    <div class="container-fluid">
         <h2>{{T "sponsors_title"}}</h2>
         {{ range $blocks }}
             {{ if eq .display true }}

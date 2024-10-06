@@ -20,7 +20,6 @@ header{
     text-align: center;
     background-color: #08262E;
     color: #F2F2F2;
-    text-align: center;
 }
 #top-nav{
     background-color: #08262E;
@@ -75,6 +74,36 @@ article{
     background-color: #F2F2F2;
     color: #08262E;
 }
+section{
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+section h2{
+    font-weight: lighter;
+}
+section.blue{
+    background-color: #08262E;
+}
+section.blue a {
+    color: #E1277C;
+}
+section.blue h5, section.blue h4,section.blue h3 {
+    color: #FBBA22;
+}
+section.white{
+    background-color: #ffffff;
+}
+section.white a {
+    color: #08262E;
+    text-decoration: underline;
+}
+section.white h5, section.blue h4,section.blue h3 {
+    color: #08262E;
+}
+section h2{
+    margin: 2rem 0 1.5rem 0;
+    display: block;
+}
 article#presentation{
     padding: 2rem 0 2rem 0;
     background-color: #009CD1;
@@ -103,7 +132,7 @@ article a.sponsors{
 }
 #speakers .speaker{
     border: none;
-    color: #280426;
+    color: #08262E;
     margin-bottom: 2rem;
     text-decoration: none;
 }
@@ -148,13 +177,17 @@ article#speaker_detail ul.social li{
 article#speaker_detail ul.social li{
     margin: .5rem 0 .5rem 0;
 }
+#agenda .alert{
+    background-color: #08262E;
+    color: #F2F2F2;
+}
 #agenda td {
     font-size: 1.2rem;
 }
 #agenda td a{
     text-decoration: none;
     font-weight: normal;
-    color: #280426;
+    color: #08262E;
     font-size: 1rem;
     display: block;
 }
@@ -174,10 +207,6 @@ article#speaker_detail ul.social li{
 table.desktop-only {
     display: none;
 }
-
-iframe{
-    margin: 2rem 0;
-}
 article a, article span{
     font-weight: bold;
 }
@@ -193,25 +222,53 @@ footer .social a{
     color: #991B80;
     font-weight: bold;
 }
+#where{
+    margin-bottom: -8px;
+    padding-bottom: 0;
+}
+#where iframe{
+    margin: 0;
+    height: 650px;
+}
 #where .content_wrap {
     position: relative;
+    height: 620px;
 }
 #where .content_wrap .content {
     display: none;
+    font-size: 1.2rem;
+}
+#where {
 }
 
+#where .venue{
+    margin-bottom: 1rem;
+}
+#where .venue a{
+    margin-bottom: 1rem;
+}
+#where video, #where  img{
+    height: auto;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+}
+#where  img{
+    margin-bottom: 1rem;
+}
 #sponsors {
     text-align: center;
 }
 #sponsors h2{
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    color: #fff;
 }
 #sponsors .list{
     margin-bottom: 3rem;
 }
 #sponsors .list h3{
     font-weight: normal;
-    color: #991B80;
+    color: #fff;
 }
 #sponsors .list .item{
     display: block;

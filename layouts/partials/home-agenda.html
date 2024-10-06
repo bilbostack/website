@@ -1,11 +1,11 @@
 {{ $agenda := .Site.GetPage "/agenda.es.md" }}
-{{ $previaLink := (ref . "laprevia")}}
+{{ $previaLink := (ref . "/")}}
 {{ if $agenda.Params.Display }}
-    <article id="agenda">
+    <section id="agenda">
         <h2 class="text-center">{{ $agenda.Title }}</h2>
         <div class="alert alert-light text-center" role="alert">
             {{T "agenda_remember_previa_text" (dict "previaLink" $previaLink ) | safeHTML  }}
         </div>
         {{$agenda.Content |safeHTML}}
-    </article>
+    </section>
 {{ end }}

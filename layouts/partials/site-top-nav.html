@@ -5,11 +5,16 @@
     {{ $isLaPrevia = ($.Page.InSection .Page) }}
     {{end}}
 {{ end }}
+{{ with .Site.GetPage "laprevia" "/laprevia" }}
+{{ .Permalink }}
+{{ else }}
+<p>Laprevia page not found</p>
+{{ end }}
 <div class="row" id="top-nav">
     <div class="row">
             <p class="links text-right">
                 {{if not $isLaPrevia}}
-                <a class="event" href="{{ ref . "laprevia" }}">Ver #laPrevia</a>
+                <a class="event" href="{{ relref . "/" }}">Ver #laPrevia</a>
                 {{else}}
                 <a class="event" href="{{ ref . "/" }}">Ver la conferencia #Bilbostack25</a>
                 {{end}}
