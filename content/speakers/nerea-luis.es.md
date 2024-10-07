@@ -15,6 +15,6 @@ Nerea Luis es consultora y asesora independiente en Inteligencia Artificial. De 
 {class="social"}
 
 - [Linkedin](https://www.linkedin.com/in/nerealuis/)
-- [X](https://x.com/sailormerqury)
+- [Twitter](https://x.com/sailormerqury)
 - [Web](https://nerealuis.es/)
   {class="social"}
