@@ -1,52 +1,52 @@
-{{ $links := $.Site.Params.Links }}
-{{ $org := $.Site.Params.Org }}
+{{ $links := $.Site.Params.Links }} {{ $org := $.Site.Params.Org }}
 <footer>
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div id="org" class="col-md-7">
-                    <h4>Organizadores</h4>
-                    <div class="row justify-content-start">
-                        {{ range $org }}
-                        <div class="col-6 col-md-3">
-                            <a href="{{.url}}"
-                               title="{{.name}}"
-                               target="_blank"
-                            >
-                                {{ with resources.Get .image }}
-                                {{ with .Resize "162x162 webp q70 lanczos" }}
-                                <img src="{{ .RelPermalink }}"
-                                     width="{{ .Width }}"
-                                     height="auto"
-                                     class="img-thumbnail">
-                                {{ end }}
-                                {{ end }}
-                            </a>
-                        </div>
-                        {{ end }}
-                    </div>
-
-                    {{ partial "home-editions.html" .}}
-                </div>
-                <div class="col-md-5 text-center">
-                    <h4>Bilbostack 2025</h4>
-                    <div class="links">
-                        {{ range where .Site.Pages "Type" "info-page" }}
-                        <a href="{{.Permalink}}"
-                           class="nav-link"
-                           target="_blank"
-                           title="{{.Title}}">{{.Title}}</a>
-                        {{ end }}
-                        {{ range $links }}
-                        <a href="{{.url}}"
-                           class="nav-link"
-                           target="_blank"
-                           title="{{.title}}">{{.title}}</a>
-                        {{ end }}
-                    </div>
-                </div>
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div id="org" class="col-md-7">
+          <h4>{{ T "organization" }}</h4>
+          <div class="row justify-content-start">
+            {{ range $org }}
+            <div class="col-6 col-md-3">
+              <a href="{{.url}}" title="{{.name}}" target="_blank">
+                {{ with resources.Get .image }} {{ with .Resize "162x162 webp q70 lanczos" }}
+                <img
+                  src="{{ .RelPermalink }}"
+                  width="{{ .Width }}"
+                  height="auto"
+                  class="img-thumbnail"
+                />
+                {{ end }} {{ end }}
+              </a>
             </div>
+            {{ end }}
+          </div>
 
+          {{ partial "home-editions.html" .}}
         </div>
-    </section>
+        <div class="col-md-5 text-center">
+          <h4>Bilbostack 2025</h4>
+          <div class="links">
+            {{ range where .Site.Pages "Type" "info-page" }}
+            <a
+              href="{{.Permalink}}"
+              class="nav-link"
+              target="_blank"
+              title="{{.Title}}"
+              >{{.Title}}</a
+            >
+            {{ end }} {{ range $links }}
+            <a
+              href="{{.url}}"
+              class="nav-link"
+              target="_blank"
+              title="{{.title}}"
+              >{{.title}}</a
+            >
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </footer>

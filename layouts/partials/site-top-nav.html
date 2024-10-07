@@ -9,9 +9,9 @@
     <div class="row">
             <p class="links text-right">
                 {{if not $isLaPrevia}}
-                <a class="event" href="{{ relref . "/laprevia" }}">Ver #laPrevia</a>
+                <a class="event" href="{{ relref . "/laprevia" }}">{{T "link_la_previa" }}</a>
                 {{else}}
-                <a class="event" href="{{ ref . "/" }}">Ver la conferencia #Bilbostack25</a>
+                <a class="event" href="{{ ref . "/" }}">{{T "link_la_conferencia" }}</a>
                 {{end}}
                 {{ with .AllTranslations }}
                 {{ range . }}
