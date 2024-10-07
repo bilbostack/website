@@ -3,7 +3,7 @@ layout = 'speaker-detail'
 type = 'laprevia_speaker'
 name = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead en Clarity AI'
-image = 'img/speakers/mikel.jpg'
+image = 'img/speakers/mikel.jpeg'
 +++
 
 # Mikel Ors Valle
