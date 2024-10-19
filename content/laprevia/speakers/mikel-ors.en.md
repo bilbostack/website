@@ -1,6 +1,6 @@
 +++
 layout = 'speaker-detail'
-type = 'laprevia_speaker'
+type = 'laprevia'
 name = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead at Clarity AI'
 image = 'img/speakers/mikel.jpeg'

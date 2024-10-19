@@ -1,6 +1,6 @@
 +++
 layout = 'speaker-detail'
-type = 'laprevia_speaker'
+type = 'laprevia'
 name = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead en Clarity AI'
 image = 'img/speakers/mikel.jpeg'
@@ -15,7 +15,6 @@ Más allá de eso, soy un entusiasta de la calidad de software y de la agilidad 
 En otro orden de cosas, me encanta andar en bici, correr despacio y toco varios instrumentos, aunque lo hago todo con mucho más entusiasmo que destreza. Y me chifla la comida india.
 
 #### Encuentra a Mikel en:
-
 {class="social"}
 
 - [Linkedin](https://www.linkedin.com/in/mikel-ors-valle/)

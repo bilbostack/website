@@ -1,6 +1,6 @@
 +++
 layout = 'speaker-detail'
-type = 'laprevia_speaker'
+type = 'laprevia'
 name = 'John Smith'
 tagline = 'CEO in Tyrell'
 image = 'img/org/vicenç.jpg'
