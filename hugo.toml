@@ -1,4 +1,4 @@
-baseURL = "https://bilbostack.com"
+baseURL = "https://preview-bilbostack.netlify.app/"
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
