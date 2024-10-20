@@ -1,3 +1,4 @@
+{{ if $.Site.Params.sponsorsVisible}}
 {{ $blocks := $.Site.Params.sponsorBlocks }}
 <section id="sponsors" class="blue">
     <div class="container-fluid">
@@ -28,3 +29,4 @@
         {{ end }}
     </div>
 </section>
+{{end}}

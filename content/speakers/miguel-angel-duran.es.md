@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Miguel Ángel Durán García'
+title = 'Miguel Ángel Durán García'
 tagline = 'Ingeniero de Software & Divulgador de Programación'
 image = 'img/speakers/midudev.jpg'
 +++

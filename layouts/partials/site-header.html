@@ -15,31 +15,14 @@
         {{ end }}
         <h2 class="info">{{T "header_where" | safeHTML }}</h2>
 
-        <div id="mainCtaButtons">
-          {{ if eq $.Site.Params.sellingTickets true}}
+        <div id="mainCtaButton">
+          {{ if $.Site.Params.ticketsOpen}}
             <a href="{{$.Site.Params.ticketsLink}}"
               target="_blank"
-              title="{{T "cta_tickets" }}"class="btn btn-lg btn-outline-light sponsors">{{T "cta_tickets" }}</a>
+              title="{{T "cta_tickets" }}"class="btn btn-lg btn-primary tickets">{{T "cta_tickets" }}</a>
           {{end}}
         </div>
       </div>
-    </div>
-    {{else}}
-    <div class="row">
-      <div class="col-4" style="text-align: left">
-        {{ with resources.Get "img/logo-header-dark.png" }}
-        {{ with .Resize "200x webp q85 lanczos" }}
-        <a href="/">
-          <img src="{{ .RelPermalink }}"
-               id="logoSmall"
-               width="{{ .Width }}"
-               height="auto"
-               alt="{{T "logo_alt" }}">
-        </a>
-        {{ end }}
-        {{ end }}
-      </div>
-      <div class="col-8"></div>
     </div>
     {{end}}
   </div>

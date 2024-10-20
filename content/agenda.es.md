@@ -1,7 +1,7 @@
 +++
 title = 'Agenda'
 type = 'page'
-display = true
+draft = true
 +++
 
 |               | Track 1                                                  | Track 2                                                  |

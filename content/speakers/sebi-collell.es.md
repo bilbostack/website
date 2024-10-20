@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Sebi Collell'
+title = 'Sebi Collell'
 tagline = 'CEO | Product Manager de Tech93 '
 image = 'img/speakers/sebi.jpg'
 +++

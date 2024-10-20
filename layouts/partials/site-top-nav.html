@@ -1,24 +1,30 @@
-{{ $isLaPrevia := false }}
 {{ $isHome := eq (.Ancestors|len) 0 }}
-{{ with .Site.GetPage "/laprevia" }}
-    {{if not $isHome}}
-    {{ $isLaPrevia = ($.Page.InSection .Page) }}
-    {{end}}
-{{ end }}
 <div class="row" id="top-nav">
     <div class="row">
-            <p class="links text-right">
-                {{if not $isLaPrevia}}
-                <a class="event" href="{{ relref . "/laprevia" }}">{{T "link_la_previa" }}</a>
-                {{else}}
-                <a class="event" href="{{ ref . "/" }}">{{T "link_la_conferencia" }}</a>
-                {{end}}
-                {{ with .AllTranslations }}
+        <div id="logo-inner-container"
+             class="col-sm-4 hidden-small col-nav">
+            {{if not $isHome}}
+            <a href="{{ ref . "/" }}"
+                id="logo-small">
+                {{ with resources.Get "img/logo-header-dark.png" }}
+                {{ with .Resize "2000x webp q85 lanczos" }}
+                <img src="{{ .RelPermalink }}"
+                     width="{{ .Width }}"
+                     height="auto"
+                     alt="{{T "logo_alt" }}">
+                {{ end }}
+                {{ end }}
+            </a>
+            {{ end }}
+        </div>
+        <div class="col-sm-8  col-nav links align-middle text-right">
+            <a class="event" href="{{ relref . "/laprevia" }}">{{T "link_la_previa" }}</a>
+            {{ with .AllTranslations }}
                 {{ range . }}
                 <a href="{{ .RelPermalink }}"
                    {{ if eq .Lang $.Lang }}class="current"{{ end }}>{{ .Language.LanguageName }}</a>
                 {{ end }}
-                {{ end }}
-            </p>
+            {{ end }}
+        </div>
     </div>
 </div>

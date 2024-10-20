@@ -2,10 +2,10 @@
 layout = 'speaker-detail'
 type = 'laprevia'
 name = 'Mikel Ors Valle'
+title = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead at Clarity AI'
 image = 'img/speakers/mikel.jpeg'
 +++
-
 # Mikel Ors Valle
 
 I am a Software Engineer from Bizkaia with over 20 years in the industry, occupying different roles. In recent years, I have been focused on the worlds of Data Engineering and Technical Leadership, and I am passionate about teaching, which has led me to be a professor of different subjects in various places throughout all these years.

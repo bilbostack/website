@@ -1,5 +1,5 @@
 {{ $editions := $.Site.Params.Editions }}
-<p class="editions">
+<p class="editions hidden-small">
     {{T "last_editions_text" }} <br>
     {{ range $index, $edition := $editions }}
     {{ if $index }}|{{ end }}

@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Cansu Karayel'
+title = 'Cansu Karayel'
 tagline = 'Product Manager at Tech93'
 image = 'img/speakers/cansu.jpeg'
 +++

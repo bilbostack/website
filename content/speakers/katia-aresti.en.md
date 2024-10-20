@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Katia Aresti'
+title = 'Katia Aresti'
 tagline = 'Principal Software Engineer - Red Hat '
 image = 'img/speakers/katia.jpg'
 +++

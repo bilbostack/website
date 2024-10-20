@@ -3,8 +3,9 @@ defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
     hashtag = "#Bilbostack25"
-    sponsorsLink = "/docs/Bilbostack25-sponsors.es.pdf"
-    sellingTickets = false
+    sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
+    sponsorsVisible = false
+    ticketsOpen = false
     ticketsLink = "https://www.eventbrite.com"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"

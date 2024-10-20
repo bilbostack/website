@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Nerea Luis Mingueza'
+title = 'Nerea Luis Mingueza'
 tagline = 'Freelance Consultant in Artificial Intelligence'
 image = 'img/speakers/nerea.jpg'
 +++

@@ -9,6 +9,16 @@ body{
     color: #F2F2F2;
     border-color: #F2F2F2;
  }
+.btn-primary{
+    background-color: #E1277C;
+    border: none;
+    border-radius: 0;
+    font-size: 2rem;
+}
+.btn-primary:hover{
+    background-color: #F2F2F2;
+    color: #E1277C;
+}
 .hidden-big{
     display: inline-block;
 }
@@ -16,7 +26,7 @@ body{
     display: none;
 }
 header{
-    padding: 0 0 2rem 0;
+    padding: 0;
     text-align: center;
     background-color: #08262E;
     color: #F2F2F2;
@@ -39,8 +49,7 @@ header{
     margin-left: 0.8rem;
 }
 #top-nav .links a.event{
-    background-color: #E1277C;
-    color: #F2F2F2;
+    color: #FBBA22;
     border-bottom: none;
     padding: .4rem;
 }
@@ -51,13 +60,12 @@ header img{
     margin: 2rem 0 2rem 0;
     max-width: 100%;
 }
-header img#logoSmall{
-    margin: 0;
-    max-width: 100%;
-}
 header h1{
     font-weight: lighter;
     font-size: 2rem;
+}
+header h2{
+    margin-bottom: 2rem;
 }
 header h2, header h3{
     font-weight: lighter;
@@ -68,6 +76,9 @@ header .info strong{
 }
 header .info{
     color: #F2F2F2;
+}
+header #mainCtaButton{
+    margin-bottom: 4rem;
 }
 article{
     padding: 2rem 0 2rem 0;
@@ -215,7 +226,7 @@ article a, article span{
     font-weight: bold;
 }
 article a{
-    color: #FBBA22;
+    color: #E1277C;
 }
 footer{
     padding: 2rem 0 4rem 0
@@ -227,12 +238,11 @@ footer .social a{
     font-weight: bold;
 }
 #where{
-    margin-bottom: -8px;
     padding-bottom: 0;
 }
 #where iframe{
     margin: 0;
-    height: 650px;
+    height: 500px;
 }
 #where .content_wrap {
     position: relative;
@@ -242,11 +252,13 @@ footer .social a{
     display: none;
     font-size: 1.2rem;
 }
-#where {
+#where .venue h5{
+    margin-top: 1rem;
+    font-size: 2rem;
 }
 
 #where .venue{
-    margin-bottom: 1rem;
+    padding: 2rem 0;
 }
 #where .venue a{
     margin-bottom: 1rem;
@@ -289,6 +301,12 @@ footer #about #org img{
     width: 100%;
     margin-bottom: 2rem;
 }
+footer a{
+    color: #333
+}
+footer .editions, footer .editions a{
+    font-size: 1rem;
+}
 @media (min-width: 768px) {
     body, article a.sponsors{
         font-size: 2.4vw;
@@ -327,12 +345,26 @@ footer #about #org img{
         max-width: 80%;
         margin-bottom: 4rem;
     }
+    header #logo-inner-container{
+        text-align: left;
+    }
+    header a#logo-small{
+        text-align: left;
+    }
+    header a#logo-small img{
+        margin: 2rem 0;
+        width: 350px;
+        max-width: 100%;
+    }
     #where .content_wrap .content {
         display: block;
         left: 0;
         position: absolute;
         right: 0;
         top: 5rem;
+    }
+    #where .venue h5{
+        margin-top: 0;
     }
     #sponsors .list .item{
         display: inline-block;
@@ -367,5 +399,8 @@ footer #about #org img{
     }
     table.mobile-only {
         display: none;
+    }
+    #where .venue h5{
+        font-size: 3rem;
     }
 }

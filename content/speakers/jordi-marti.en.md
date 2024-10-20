@@ -2,6 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 name = 'Jordi Martí Carrera'
+title = 'Jordi Martí Carrera'
 tagline = 'Engineering Manager at LIFULL Connect'
 image = 'img/speakers/jordi.jpg'
 +++

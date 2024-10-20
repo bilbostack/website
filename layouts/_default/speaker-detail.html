@@ -1,10 +1,9 @@
 {{ define "main" }}
-{{.Type}}
 <article id="speaker_detail">
     <div class="container">
         <a href="{{ref . "/#speakers"}}" class="back">← {{T "speakers_back"}}</a>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">a
+            <div class="col-12 col-md-6 col-lg-4">
                 {{$imagePermalink := ""}}
                 {{ with resources.Get .Params.image }}
                 {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}

@@ -1,18 +1,29 @@
+{{ $isLaPreviaHome := false }}
+{{ with .Site.GetPage "/laprevia" }}
+{{ $isLaPreviaHome = eq $.Page.Permalink .Permalink }}
+{{ end }}
 <header>
-  <div class="container-fluid">
-    {{ partial "site-top-nav.html" .}}
+  {{ partial "laprevia-top-nav.html" .}}
+  <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        {{ with resources.Get "img/logo-header-light.png" }}
+        <div class="hidden-big">
+          {{ with resources.Get "img/logo-header-light.png" }}
           {{ with .Resize "2000x webp q85 lanczos" }}
-            <img src="{{ .RelPermalink }}"
-                 width="{{ .Width }}"
-                 height="auto"
-                 alt="{{T "logo_alt" }}">
+          <img src="{{ .RelPermalink }}"
+               width="{{ .Width }}"
+               height="auto"
+               alt="{{T "logo_alt" }}">
           {{ end }}
-        {{ end }}
-        <h2 class="info">{{T "laprevia_header_where" | safeHTML }}</h2>
-        <h3><strong>#laPrevia</strong> del <strong>#bilbostack25</strong></h3>
+          {{ end }}
+        </div>
+        {{if $isLaPreviaHome}}
+        <div id="laprevia-header">
+          <h1>#LaPrevia</h1>
+          <h2 class="info">{{T "laprevia_header_where" | safeHTML }}</h2>
+          <h3><strong>#laPrevia</strong> del <strong>#bilbostack25</strong></h3>
+        </div>
+        {{end}}
       </div>
     </div>
   </div>
