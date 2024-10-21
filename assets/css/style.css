@@ -308,6 +308,31 @@ footer .dashed hr{
 #sponsors a:hover img{
     filter: grayscale(0%)
 }
+#tickets {
+    text-align: center;
+}
+#tickets h2{
+    margin-bottom: 4rem;
+    color: #fff;
+}
+#tickets .list{
+    margin-bottom: 3rem;
+}
+#tickets .list h3{
+    font-weight: normal;
+    color: #fff;
+}
+#tickets .list .item{
+    display: block;
+    padding: 1rem;
+    margin: 1rem 2rem .5rem 2rem;
+}
+#tickets img{
+    filter: grayscale(100%)
+}
+#tickets a:hover img{
+    filter: grayscale(0%)
+}
 footer #about #org img{
     width: 100%;
     margin-bottom: 2rem;
