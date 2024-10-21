@@ -1,17 +1,15 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-title = 'Irene M Morgado'
 name = 'Irene M Morgado'
 tagline = 'People & Brand Manager'
 image = 'img/speakers/irene.jpg'
-name = 'Irene Morgado'
 +++
 
 # Irene M Morgado
-Enamorada de las comunidades tecnológicas y muy comprometida con las iniciativas de conocimiento compartido en entornos diversos. Gestión de equipos de Talento y Marca en empresas tecnológicas. Especializada en psicología social y comunicación.
+In love with tech communities and very committed to shared knowledge initiatives in diverse environments. Management of Talent and Brand teams in tech companies. Specialized in social psychology and communication.
 
-#### Encuentra a Irene en:
+#### Find Irene at:
 
 {class="social"}
 
