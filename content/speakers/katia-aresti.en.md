@@ -9,7 +9,8 @@ image = 'img/speakers/katia.jpg'
 
 # Katia Aresti
 
-Katia Aresti is a software developer known for her contributions to Infinispan and Quarkus. Since 2017, she has been working at Red Hat and has worked for various technology companies. She is also active in international conferences such as Devoxx, Codemotion, and Commit Conf, where she shares her experience.
+Katia Aresti is a software developer known for her contributions to Infinispan and Quarkus. Since 2017, she has been working at Red Hat and has worked for various technology companies. She is also active in international conferences such as Devoxx, Codemotion, and Commit Conf, where she shares her experience.  
+
 She is an advocate for open source, the role of women in technology, and of course, theater and theatrical improvisation.
 
 #### Find Katia at:
