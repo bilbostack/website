@@ -1,8 +1,9 @@
 {{ $isHome := eq (.Ancestors|len) 0 }}
-<div class="row" id="top-nav">
+<div id="top-nav">
+    <div class="container">
     <div class="row">
         <div id="logo-inner-container"
-             class="col-sm-4 hidden-small col-nav">
+             class="col-md-4 hidden-small col-nav">
             {{if not $isHome}}
             <a href="{{ ref . "/" }}"
                 id="logo-small">
@@ -17,7 +18,7 @@
             </a>
             {{ end }}
         </div>
-        <div class="col-sm-8  col-nav links align-middle text-right">
+        <div class="col-md-8 links ">
             <a class="event" href="{{ relref . "/laprevia" }}">{{T "link_la_previa" }}</a>
             {{ with .AllTranslations }}
                 {{ range . }}
@@ -26,5 +27,6 @@
                 {{ end }}
             {{ end }}
         </div>
+    </div>
     </div>
 </div>

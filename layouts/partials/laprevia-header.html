@@ -3,23 +3,22 @@
 {{ $isLaPreviaHome = eq $.Page.Permalink .Permalink }}
 {{ end }}
 <header>
+
   {{ partial "laprevia-top-nav.html" .}}
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-
         {{if $isLaPreviaHome}}
         <div class="hidden-big">
-          <a href="{{ ref . "/" }}"
-          id="logo-small">
-          {{ with resources.Get "img/logo-header-light.png" }}
-          {{ with .Resize "2000x webp q85 lanczos" }}
-          <img src="{{ .RelPermalink }}"
-               width="{{ .Width }}"
-               height="auto"
-               alt="{{T "logo_alt" }}">
-          {{ end }}
-          {{ end }}
+          <a href="{{ ref . "/" }}" id="logo-small">
+            {{ with resources.Get "img/logo-header-light.png" }}
+            {{ with .Resize "2000x webp q85 lanczos" }}
+              <img src="{{ .RelPermalink }}"
+                   width="{{ .Width }}"
+                   height="auto"
+                   alt="{{T "logo_alt" }}">
+            {{ end }}
+            {{ end }}
           </a>
         </div>
         <div id="laprevia-header">

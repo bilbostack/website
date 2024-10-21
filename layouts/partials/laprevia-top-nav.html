@@ -6,12 +6,32 @@
 {{ end }}
 <div id="top-nav">
     <div class="container">
-        <div class="row" >
-            <div class="row">
-                <div id="logo-inner-container"
-                     class="col-sm-4 hidden-small col-nav">
+        <div class="row">
+            <div id="logo-inner-container" class="col-md-4 hidden-small">
+                <a href="{{ ref . "/" }}" id="logo-small">
+                {{ with resources.Get "img/logo-header-light.png" }}
+                {{ with .Resize "2000x webp q85 lanczos" }}
+                <img src="{{ .RelPermalink }}"
+                     width="{{ .Width }}"
+                     height="auto"
+                     alt="{{T "logo_alt" }}">
+                {{ end }}
+                {{ end }}
+                </a>
+            </div>
+            <div class="col-md-8 text-right links-container">
+                <div class="links">
+                    {{ with .AllTranslations }}
+                    {{ range . }}
+                    <a href="{{ .RelPermalink }}"
+                       {{ if eq .Lang $.Lang }}class="current"{{ end }}>{{ .Language.LanguageName }}</a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                {{if not $isLaPreviaHome}}
+                <div class="hidden-big">
                     <a href="{{ ref . "/" }}"
-                    id="logo-small">
+                    id="logo-small-inner-mobile">
                     {{ with resources.Get "img/logo-header-light.png" }}
                     {{ with .Resize "2000x webp q85 lanczos" }}
                     <img src="{{ .RelPermalink }}"
@@ -22,23 +42,12 @@
                     {{ end }}
                     </a>
                 </div>
-                <div class="col-sm-8  col-nav links align-middle text-right">
-                    <div>
-                        {{ with .AllTranslations }}
-                        {{ range . }}
-                        <a href="{{ .RelPermalink }}"
-                           {{ if eq .Lang $.Lang }}class="current"{{ end }}>{{ .Language.LanguageName }}</a>
-                        {{ end }}
-                        {{ end }}
-                    </div>
-                    {{if not $isLaPreviaHome}}
-                    <div>
-                        <a href="{{$laPrevia.Permalink}}">
-                            <h2>#LaPrevia</h2>
-                        </a>
-                    </div>
-                    {{end}}
+                <div>
+                    <a href="{{$laPrevia.Permalink}}">
+                        <h2>#LaPrevia</h2>
+                    </a>
                 </div>
+                {{end}}
             </div>
         </div>
     </div>

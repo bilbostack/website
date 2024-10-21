@@ -3,7 +3,11 @@ body{
     color: #08262E;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
-    font-size: 4vw;
+    font-size: 1.2rem;
+}
+
+.text-right{
+    text-align: right;
 }
 .btn-outline-light{
     color: #F2F2F2;
@@ -45,13 +49,12 @@ header{
 }
 #top-nav .links {
     text-align: right;
-    padding: 0.8rem 0 1.6rem 0;
 }
 #top-nav .links a{
     text-align: right;
     color: #F6F6F6;
     text-decoration: none;
-    font-size: 2.8vw;
+    font-size: 1rem;
     display: inline-block;
     opacity: .8;
     margin-left: 0.8rem;
@@ -87,6 +90,10 @@ header .info{
 }
 header #mainCtaButton{
     margin-bottom: 4rem;
+}
+header #logo-small-inner-mobile img{
+    margin-top: 0;
+    max-width: 100%;
 }
 article{
     padding: 2rem 0 2rem 0;
@@ -138,6 +145,7 @@ article#presentation .stats{
 article#presentation .stats span{
     color: #FBBA22;
     font-weight: normal;
+    font-size: 1.6rem;
 }
 article#presentation a.btn{
     margin-top: 2rem;
@@ -151,7 +159,7 @@ article strong{
 }
 article a.sponsors{
     margin: 1rem 0 1rem 0;
-    font-size: 4vw;
+    font-size: 2rem;
 }
 #speakers .speaker{
     border: none;
@@ -348,7 +356,7 @@ footer #about h4{
 }
 @media (min-width: 768px) {
     body, article a.sponsors{
-        font-size: 2.4vw;
+        font-size: 2rem;
     }
     .hidden-big{
         display: none;
@@ -356,11 +364,11 @@ footer #about h4{
     .hidden-small{
         display: inline-block;
     }
-    #top-nav .links {
+    #top-nav .links-container {
         padding: 1rem 0 1rem 0;
     }
     #top-nav .links a{
-        font-size: 1.4vw;
+        font-size: 1rem;
     }
     article{
         padding: 4rem 0 4rem 0;
@@ -422,16 +430,16 @@ footer #about h4{
 }
 @media (min-width: 1200px) {
     body, article a.sponsors{
-        font-size: 1.5vw;
+        font-size: 1.5rem;
     }
     header h2 {
-        font-size: 2vw;
+        font-size: 2rem;
     }
     #top-nav .links a{
-        font-size: 1.2vw;
+        font-size: 1.2rem;
     }
     article h1 {
-        font-size: 3.2vw;
+        font-size: 3.2rem;
     }
     table.desktop-only {
         display: table;

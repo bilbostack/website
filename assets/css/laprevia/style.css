@@ -9,12 +9,6 @@ body, a, header .info, #top-nav .links a{
     background-color: #E6E6E6;
     color: #08262E;
 }
-#top-nav .links a.event{
-    background-color: #FBBA22;
-    color: #08262E;
-    border-bottom: none;
-    padding: .4rem;
-}
 article{
     padding: 2rem 0 2rem 0;
     background-color: #F2F2F2;
@@ -28,10 +22,13 @@ header img{
     margin-top: 4rem;
 }
 header h1 {
-    font-size: 15vw;
+    font-size: 5rem;
     font-weight: bold;
     margin-top: 0;
     color: #ccc;
+}
+header #top-nav a {
+    text-decoration: none;
 }
 header #top-nav h2 {
     font-size: 3rem;
@@ -39,6 +36,7 @@ header #top-nav h2 {
     margin-top: 0;
     margin-bottom: 0;
     color: #ccc;
+    text-decoration: none;
 }
 #laprevia-header.inner h1{
     font-size: 5vw;
@@ -47,5 +45,12 @@ article#speaker_detail a.back {
     color: #333;
 }
 @media (min-width: 768px) {
-
+    header h1 {
+        font-size: 8rem;
+    }
+}
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 12rem;
+    }
 }
