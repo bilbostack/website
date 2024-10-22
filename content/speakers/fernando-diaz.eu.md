@@ -8,7 +8,10 @@ image = 'img/speakers/fernando.jpg'
 +++
 
 # Fernando Díaz Garrido
-20 urte daramatzat munduan zehar balantzaka, nire aletxoa produktu enpresetan jarri nahian, orain Valentzian finkatua eta Alhonan behaketa plataforma bat sortzen, manufaktura enpresei euren fabriketan gertatzen ari dena hobeto ulertzen laguntzeko.  
+
+20 urte daramatzat munduan zehar balantzaka, nire aletxoa produktu enpresetan jarri nahian.  
+
+Orain Valentzian finkatua eta Alhonan behaketa plataforma bat sortzen, manufaktura enpresei euren fabriketan gertatzen ari dena hobeto ulertzen laguntzeko.  
 
 Feedback azkarreko zikloekin obsesionatuta nago, frekuentzia maximizatzea eta zikloaren tamaina minimizatzea, azkar ikasteko eta arriskua murrizteko.  
 

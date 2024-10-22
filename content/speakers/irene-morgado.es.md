@@ -9,7 +9,12 @@ name = 'Irene Morgado'
 +++
 
 # Irene M Morgado
-Enamorada de las comunidades tecnológicas y muy comprometida con las iniciativas de conocimiento compartido en entornos diversos. Gestión de equipos de Talento y Marca en empresas tecnológicas. Especializada en psicología social y comunicación.
+
+Enamorada de las comunidades tecnológicas y muy comprometida con las iniciativas de conocimiento compartido en entornos diversos.  
+
+Gestión de equipos de Talento y Marca en empresas tecnológicas.  
+
+Especializada en psicología social y comunicación.
 
 #### Encuentra a Irene en:
 

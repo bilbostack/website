@@ -8,6 +8,7 @@ image = 'img/speakers/jordi.jpg'
 +++
 
 # Jordi Martí Carrera
+
 With more than 20 years of experience in the development world, I have worked in very diverse teams, helping people and different businesses grow through the use of technology.  
 
 I am passionate about creating new solutions in collaboration with other people. Maybe that's why I love escape rooms or collaborative board games 😅

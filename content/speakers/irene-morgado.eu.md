@@ -9,6 +9,7 @@ name = 'Irene Morgado'
 +++
 
 # Irene M Morgado
+
 Komunitate teknologikoekin maitemindua eta ingurune desberdinetan partekatutako ezagutzaren ekimenekin oso konprometitua.  
 
 Enpresa teknologikoetako talentu- eta marka-taldeen kudeaketa.  

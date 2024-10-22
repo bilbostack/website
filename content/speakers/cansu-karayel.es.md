@@ -8,6 +8,7 @@ image = 'img/speakers/cansu.jpeg'
 +++
 
 # Cansu Karayel
+
 Vine desde Turquía a Barcelona hace 14 años con eDreams como Analista de Producto, y desde entonces he construido mi carrera como Product Manager en el sector Digital.  
 
 Durante +2 años he colaborado con AllWomen para apoyar y guiar a profesionales que quieren desarrollarse como Product Managers.  

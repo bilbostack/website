@@ -7,7 +7,12 @@ image = 'img/speakers/irene.jpg'
 +++
 
 # Irene M Morgado
-In love with tech communities and very committed to shared knowledge initiatives in diverse environments. Management of Talent and Brand teams in tech companies. Specialized in social psychology and communication.
+
+In love with tech communities and very committed to shared knowledge initiatives in diverse environments.  
+
+Management of Talent and Brand teams in tech companies.  
+
+Specialized in social psychology and communication.
 
 #### Find Irene at:
 
