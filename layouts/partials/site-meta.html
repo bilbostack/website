@@ -1,6 +1,17 @@
 {{ $url := urls.Parse .Site.BaseURL }}
 {{ $title := printf "%s | %s" .Title (T "meta_title") }}
 {{ $description := .Description | default (T "meta_description")}}
+{{ $imagePermalink := false }}
+{{ with resources.Get .Params.image }}
+    {{ with .Resize (printf "%dx jpeg q70 lanczos" .Width) }}
+        {{ $imagePermalink = .Permalink }}
+    {{end}}
+{{end}}
+{{if not $imagePermalink}}
+    {{ with resources.Get "img/bilbostack-logo-permalink.png" }}
+      {{ $imagePermalink = .Permalink}}
+    {{ end }}
+{{ end }}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
@@ -13,8 +24,8 @@
 <meta name="twitter:title" content="{{$.Site.Params.hashtag}}">
 <meta property="og:description" content="{{T "meta_description" }}">
 <meta name="twitter:description" content="{{T "meta_description"}}">
-{{ with resources.Get "img/bilbostack-logo-permalink.png" }}
-    <meta property="og:image" content="{{ .Permalink }}">
-    <meta name="twitter:image" content="{{ .Permalink }}">
-{{ end }}
+{{if $imagePermalink}}
+<meta property="og:image" content="{{ $imagePermalink }}">
+<meta name="twitter:image" content="{{ $imagePermalink }}">
+{{end}}
 <meta name="twitter:card" content="summary_large_image">

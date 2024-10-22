@@ -1,7 +1,7 @@
 +++
 layout = 'speaker-detail'
 type = 'laprevia'
-name = 'Mikel Ors Valle'
+description = 'Mikel Ors Valle en laPrevia del Bilbostack'
 title = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead en Clarity AI'
 image = 'img/speakers/mikel.jpeg'

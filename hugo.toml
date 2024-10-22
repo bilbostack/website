@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = false
     org = [
         { name = "Vicenç García-Altés", url = "https://x.com/vgaltes", image = "img/org/vicenç.jpg" },
         { name = "Ibon Landa", url = "https://x.com/ibonilm", image = "img/org/ibon.jpg" },
-        { name = "Asier Marqués", url = "https://x.com/asiermarques", image = "img/org/asier.jpg" },
+        { name = "Asier Marqués", url = "https://bsky.app/profile/asiermarques.com", image = "img/org/asier.jpg" },
         { name = "Fran Mosteiro", url = "https://x.com/fran_mosteiro", image = "img/org/fran.jpg" },
     ]
     links = [

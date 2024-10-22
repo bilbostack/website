@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Miguel Ángel Durán García'
+description = 'Miguel Ángel Durán García hablará en el #Bilbostack25'
 title = 'Miguel Ángel Durán García'
 tagline = 'Software Ingeniaria & Programazio Dibulgatzailea'
 image = 'img/speakers/midudev.jpg'
 +++
-
 # Miguel Ángel Durán García
 
 Miguel Ángel Durán, *midudev* izenarekin ezaguna, Bartzelonako software ingeniaria eta eduki sortzailea da. 15 urte baino gehiagoko esperientzia du web garapenean. Fotocasa eta Infojobs bezalako enpresetan web garapena zuzentzera iritsi zen, eta gero sare sozialetan edukiak sortzeari ekin zion.  

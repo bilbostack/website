@@ -2,7 +2,7 @@
 layout = 'speaker-detail'
 type = 'laprevia'
 title = 'Pedro Santos'
-name = 'Pedro Santos'
+description = 'Pedro Santos en laPrevia del Bilbostack'
 tagline = ''
 image = 'img/org/vicenç.jpg'
 +++

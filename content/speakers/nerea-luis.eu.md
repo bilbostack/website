@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Nerea Luis Mingueza'
+description = 'Nerea Luis Mingueza hablará en el #Bilbostack25'
 title = 'Nerea Luis Mingueza'
 tagline = 'Inteligentzia Artifizialean freelance aholkularia'
 image = 'img/speakers/nerea.jpg'
 +++
-
 # Nerea Luis Mingueza
 
 Nerea Luis Inteligentzia Artifizialean aholkulari eta kontsultore independentea da. Konputazio Zientzietan doktorea da, 10 urteko esperientzia du arlo horretan, eta Lengoaia Naturalaren Prozesamenduarekin eta Ikusmen Artifizialarekin lotutako proiektuen zuzendaritza zuzendu du. Aurreko etapan, SNGULAR Adimen Artifizialeko taldea sortu zuen. Urteotan, besteak beste, Google, Errege Etxea edo Forbesen aitortzak jaso ditu.  

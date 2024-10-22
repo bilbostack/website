@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Nerea Luis Mingueza'
+description = 'Nerea Luis Mingueza hablará en el #Bilbostack25'
 title = 'Nerea Luis Mingueza'
 tagline = 'Consultora freelance en Inteligencia Artificial'
 image = 'img/speakers/nerea.jpg'
 +++
-
 # Nerea Luis Mingueza
 
 Nerea Luis es consultora y asesora independiente en Inteligencia Artificial. De formación Doctora en Ciencias de la Computación, con 10 años de experiencia en el campo, ha liderado la dirección de proyectos relacionados con Procesamiento del Lenguaje Natural y Visión Artificial. En su anterior etapa llegó a digirir el equipo de Inteligencia Artificial de SNGULAR.  

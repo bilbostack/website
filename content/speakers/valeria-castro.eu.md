@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Valeria Castro'
+description = 'Valeria Castro hablará en el #Bilbostack25'
 title = 'Valeria Castro'
 tagline = 'Co-Fundadora Platonic Games'
 image = 'img/speakers/valeria.png'
 +++
-
 # Valeria Castro
 Valeria Castro Platonic Games-en CEO eta sortzaileetako bat da 2014tik.  
 

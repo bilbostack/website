@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Jordi Martí Carrera'
+description = 'Jordi Martí Carrera hablará en el #Bilbostack25'
 title = 'Jordi Martí Carrera'
 tagline = 'Engineering Manager at LIFULL Connect'
 image = 'img/speakers/jordi.jpg'
 +++
-
 # Jordi Martí Carrera
 
 With more than 20 years of experience in the development world, I have worked in very diverse teams, helping people and different businesses grow through the use of technology.  

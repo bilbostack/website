@@ -2,12 +2,11 @@
 layout = 'speaker-detail'
 type = 'speaker'
 title = 'Irene M Morgado'
-name = 'Irene M Morgado'
+description = 'Irene M Morgado hablará en el #Bilbostack25'
 tagline = 'People & Brand Manager'
 image = 'img/speakers/irene.jpg'
 name = 'Irene Morgado'
 +++
-
 # Irene M Morgado
 
 Enamorada de las comunidades tecnológicas y muy comprometida con las iniciativas de conocimiento compartido en entornos diversos.  

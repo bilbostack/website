@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Cansu Karayel'
+description = 'Cansu Karayel hablará en el #Bilbostack25'
 title = 'Cansu Karayel'
 tagline = 'Product Manager at Tech93'
 image = 'img/speakers/cansu.jpeg'
 +++
-
 # Cansu Karayel
 
 I came from Turkey to Barcelona 14 years ago with eDreams as a Product Analyst, and since then I have built my career as a Product Manager in the Digital sector.  

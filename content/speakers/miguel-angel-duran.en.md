@@ -1,12 +1,11 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Miguel Ángel Durán García'
+description = 'Miguel Ángel Durán García hablará en el #Bilbostack25'
 title = 'Miguel Ángel Durán García'
 tagline = 'Software Engineer & Programming Communicator'
 image = 'img/speakers/midudev.jpg'
 +++
-
 # Miguel Ángel Durán García
 
 Miguel Ángel Durán, known as *midudev*, is a software engineer and content creator from Barcelona, Spain. He has over 15 years of experience in web development. He led web development for companies like Fotocasa and Infojobs before dedicating himself to content creation on social media.
