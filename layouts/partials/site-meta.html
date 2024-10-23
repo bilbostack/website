@@ -1,5 +1,6 @@
 {{ $url := urls.Parse .Site.BaseURL }}
 {{ $title := printf "%s | %s" .Title (T "meta_title") }}
+{{ $permalink := .Permalink | default .Site.BaseURL }}
 {{ $description := printf "%s. %s" .Description (T "meta_description") | default (T "meta_description")}}
 {{ $imagePermalink := false }}
 {{ with resources.Get .Params.image }}
@@ -15,15 +16,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
-<meta name="description" content="{{$description}}">
-<meta property="og:url" content="{{ .Site.BaseURL }}">
-<meta property="twitter:url" content="{{ .Site.BaseURL }}">
-<meta property="twitter:domain" content="{{$url.Host}}">
+<meta name="description" content="{{ $description }}">
+<meta property="og:url" content="{{ $permalink }}">
+<meta property="twitter:url" content="{{ $permalink }}">
+<meta property="twitter:domain" content="{{ $url.Host }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{$title}}">
-<meta name="twitter:title" content="{{$title}}">
-<meta property="og:description" content="{{$description}}">
-<meta name="twitter:description" content="{{$description}}">
+<meta property="og:title" content="{{ $title }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta name="twitter:description" content="{{ $description }}">
 {{if $imagePermalink}}
 <meta property="og:image" content="{{ $imagePermalink }}">
 <meta name="twitter:image" content="{{ $imagePermalink }}">
