@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-description = 'Fernando Díaz Garrido hablará en el #Bilbostack25'
 title = 'Fernando Diaz Garrido'
-tagline = 'CTO en Alhona'
+tagline = 'CTO @ Alhona'
+description = 'Fernando Díaz Garrido hablará en el #Bilbostack25'
 image = 'img/speakers/fernando.webp'
 +++
 

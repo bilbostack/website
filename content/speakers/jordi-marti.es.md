@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-description = 'Jordi Martí Carrera hablará en el #Bilbostack25'
 title = 'Jordi Martí Carrera'
-tagline = 'Engineering Manager en LIFULL Connect'
+tagline = 'Engineering Manager @ LIFULL Connect'
+description = 'Jordi Martí Carrera hablará en el #Bilbostack25'
 image = 'img/speakers/jordi.webp'
 +++
 

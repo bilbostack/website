@@ -2,8 +2,8 @@
 layout = 'speaker-detail'
 type = 'laprevia'
 title = 'Pedro Santos'
-description = 'Pedro Santos Bilbostack-eko laPrevia-n'
 tagline = 'Agile Technical Coach'
+description = 'Pedro Santos Bilbostack-eko laPrevia-n'
 image = 'img/speakers/pedro.webp'
 +++
 

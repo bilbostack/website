@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-description = 'Nerea Luis Mingueza hablará en el #Bilbostack25'
 title = 'Nerea Luis Mingueza'
 tagline = 'Inteligentzia Artifizialean freelance aholkularia'
+description = 'Nerea Luis Mingueza #Bilbostack25-en'
 image = 'img/speakers/nerea.webp'
 +++
 

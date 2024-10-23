@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Irene M Morgado'
 title = 'Irene M Morgado'
 tagline = 'People & Brand Manager'
+description = 'Irene M Morgado will be at #Bilbostack25'
 image = 'img/speakers/irene.webp'
 +++
 

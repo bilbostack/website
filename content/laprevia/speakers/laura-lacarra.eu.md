@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'laprevia'
-description = 'Laura Lacarra Bilbostack-eko laPrevia-n'
 title = 'Laura Lacarra Arcos'
 tagline = 'Head of Developer Relations Telefónica Open Gateway '
+description = 'Laura Lacarra Bilbostack-eko laPrevia-n'
 image = 'img/speakers/laura.webp'
 +++
 

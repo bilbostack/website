@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-description = 'Valeria Castro hablará en el #Bilbostack25'
 title = 'Valeria Castro'
 tagline = 'Co-Fundadora Platonic Games'
+description = 'Valeria Castro hablará en el #Bilbostack25'
 image = 'img/speakers/valeria.webp'
 +++
 

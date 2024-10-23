@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-name = 'Fernando Díaz Garrido'
-title = 'Fernando Diaz Garrido'
-tagline = 'CTO en Alhona'
+title = 'Fernando Díaz Garrido'
+tagline = 'CTO @ Alhona'
+description = 'Fernando Díaz #Bilbostack25-en'
 image = 'img/speakers/fernando.webp'
 +++
 

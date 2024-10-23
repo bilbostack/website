@@ -1,9 +1,9 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-description = 'Katia Aresti hablará en el #Bilbostack25'
 title = 'Katia Aresti'
 tagline = 'Principal Software Engineer @ Red Hat'
+description = 'Katia Aresti #Bilbostack25-en'
 image = 'img/speakers/katia.webp'
 +++
 
