@@ -4,7 +4,7 @@ type = 'laprevia'
 description = 'Laura Lacarra en laPrevia del Bilbostack'
 title = 'Laura Lacarra Arcos'
 tagline = 'Head of Developer Relations Telefónica Open Gateway '
-image = 'img/speakers/laura.jpeg'
+image = 'img/speakers/laura.webp'
 +++
 
 # Laura Lacarra Arcos
