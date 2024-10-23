@@ -4,7 +4,7 @@ type = 'speaker'
 title = 'Irene M Morgado'
 description = 'Irene M Morgado hablará en el #Bilbostack25'
 tagline = 'People & Brand Manager'
-image = 'img/speakers/irene.jpg'
+image = 'img/speakers/irene.webp'
 +++
 
 # Irene M Morgado

@@ -4,7 +4,7 @@ type = 'speaker'
 name = 'Irene M Morgado'
 title = 'Irene M Morgado'
 tagline = 'People & Brand Manager'
-image = 'img/speakers/irene.jpg'
+image = 'img/speakers/irene.webp'
 +++
 
 # Irene M Morgado

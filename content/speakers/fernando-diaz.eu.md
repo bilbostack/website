@@ -4,7 +4,7 @@ type = 'speaker'
 name = 'Fernando Díaz Garrido'
 title = 'Fernando Diaz Garrido'
 tagline = 'CTO en Alhona'
-image = 'img/speakers/fernando.jpg'
+image = 'img/speakers/fernando.webp'
 +++
 
 # Fernando Díaz Garrido
