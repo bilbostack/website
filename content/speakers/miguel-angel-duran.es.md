@@ -4,7 +4,7 @@ type = 'speaker'
 description = 'Miguel Ángel Durán García hablará en el #Bilbostack25'
 title = 'Miguel Ángel Durán García'
 tagline = 'Ingeniero de Software & Divulgador de Programación'
-image = 'img/speakers/midudev.jpg'
+image = 'img/speakers/midudev.webp'
 +++
 
 # Miguel Ángel Durán García
