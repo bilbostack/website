@@ -6,6 +6,8 @@ subclaim_talks ="8 hitzaldi"
 subclaim_tracks = "2 espazio"
 subclaim_attendees = "~1000 partehartzaile"
 subclaim_networking = "10x networking-a"
+link_la_previa = "👉 Ostiraleko #laPrevia 👈"
+link_la_conferencia = "👉 #Bilbostack25 konferentzia 👈"
 
 meta_description = "Bilbostak23, la 13ª Edición de la cita tecnológica anual más esperada en Bilbao."
 meta_title = "#Bilbostack25, 2025eko urtarrilaren 25ean Bilbon."
