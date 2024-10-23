@@ -2,11 +2,13 @@
 layout = 'speaker-detail'
 type = 'laprevia'
 description = 'Laura Lacarra en laPrevia del Bilbostack'
-title = 'Laura Lacarra'
+title = 'Laura Lacarra Arcos'
 tagline = 'Head of Developer Relations Telefónica Open Gateway '
 image = 'img/speakers/laura.jpeg'
 +++
+
 # Laura Lacarra Arcos
+
 Laura Lacarra es responsable de la relación con desarrolladores en Telefonica
 Open Gateway, la iniciativa para transformar la red en programable. Laura es
 Ingeniera en Informática especializada en IA, Big Data y arquitectura de APIs. Recientemente, ha sido reconocida como una ciudadana ejemplar de
@@ -20,5 +22,6 @@ tecnología 2024 por la revista Forbes.
 #### Encuentra a Laura en:
 
 {class="social"}
+
 - [Linkedin](https://www.linkedin.com/in/lauralacarra/)
   {class="social"}

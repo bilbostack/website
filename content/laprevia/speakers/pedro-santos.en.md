@@ -2,16 +2,16 @@
 layout = 'speaker-detail'
 type = 'laprevia'
 title = 'Pedro Santos'
-description = 'Pedro Santos en laPrevia del Bilbostack'
+name = 'Pedro Santos'
 tagline = 'Agile Technical Coach'
 image = 'img/speakers/pedro.jpeg'
 +++
 
 # Pedro Santos
 
-Empoderando a los equipos de ingeniería de software para entregar software de alta calidad de manera más rápida e inteligente.
+Empowering software engineering teams to deliver high-quality software faster and smarter.
 
-#### Encuentra a Pedro en:
+#### Find Pedro at:
 
 {class="social"}
 
