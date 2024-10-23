@@ -38,6 +38,15 @@ header #top-nav h2 {
     color: #ccc;
     text-decoration: none;
 }
+header #top-nav a.event {
+    color: #08262E!important;
+    text-align: right;
+    display: block;
+    padding-right: 0!important;
+}
+header #top-nav a.current {
+    font-weight: 600;
+}
 #laprevia-header.inner h1{
     font-size: 5vw;
 }
@@ -47,6 +56,10 @@ article#speaker_detail a.back {
 @media (min-width: 768px) {
     header h1 {
         font-size: 8rem;
+    }
+    header #top-nav a.event {
+        display: inline;
+        padding-right: .4rem;
     }
 }
 @media (min-width: 1200px) {
