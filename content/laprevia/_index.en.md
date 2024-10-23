@@ -2,5 +2,5 @@
 layout = 'index'
 title = 'La Previa'
 type = 'laprevia'
-description = "Volvemos el 25 de Enero de 2025 en Bilbao"
+description = "Back on the 25th of January 2025 in Bilbao"
 +++
