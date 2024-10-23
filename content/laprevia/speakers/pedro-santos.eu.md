@@ -4,7 +4,7 @@ type = 'laprevia'
 title = 'Pedro Santos'
 description = 'Pedro Santos Bilbostack-eko laPrevia-n'
 tagline = 'Agile Technical Coach'
-image = 'img/speakers/pedro.jpeg'
+image = 'img/speakers/pedro.webp'
 +++
 
 # Pedro Santos
