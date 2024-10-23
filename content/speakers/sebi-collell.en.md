@@ -4,7 +4,7 @@ type = 'speaker'
 description = 'Sebi Collell hablará en el #Bilbostack25'
 title = 'Sebi Collell'
 tagline = 'CEO | Product Manager at Tech93 '
-image = 'img/speakers/sebi.jpg'
+image = 'img/speakers/sebi.webp'
 +++
 
 # Sebi Collell
