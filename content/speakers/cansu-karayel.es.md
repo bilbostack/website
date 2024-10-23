@@ -4,7 +4,7 @@ type = 'speaker'
 description = 'Cansu Karayel hablará en el #Bilbostack25'
 title = 'Cansu Karayel'
 tagline = 'Product Manager en Tech93'
-image = 'img/speakers/cansu.jpeg'
+image = 'img/speakers/cansu.webp'
 +++
 
 # Cansu Karayel
