@@ -6,6 +6,7 @@ title = 'Katia Aresti'
 tagline = 'Principal Software Engineer - Red Hat '
 image = 'img/speakers/katia.jpg'
 +++
+
 # Katia Aresti
 
 Katia Aresti is a software developer known for her contributions to Infinispan and Quarkus. Since 2017, she has been working at Red Hat and has worked for various technology companies. She is also active in international conferences such as Devoxx, Codemotion, and Commit Conf, where she shares her experience.  

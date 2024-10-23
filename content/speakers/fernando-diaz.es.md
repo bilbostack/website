@@ -6,6 +6,7 @@ title = 'Fernando Diaz Garrido'
 tagline = 'CTO en Alhona'
 image = 'img/speakers/fernando.jpg'
 +++
+
 # Fernando Díaz Garrido
 
 Llevo 20 años dando tumbos por el mundo intentando poner mi granito de arena en empresas de producto.  

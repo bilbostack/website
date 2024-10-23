@@ -6,6 +6,7 @@ title = 'Nerea Luis Mingueza'
 tagline = 'Freelance Consultant in Artificial Intelligence'
 image = 'img/speakers/nerea.jpg'
 +++
+
 # Nerea Luis Mingueza
 
 Nerea Luis is an independent consultant and advisor in Artificial Intelligence. With a PhD in Computer Science and 10 years of experience in the field, she has led the direction of projects related to Natural Language Processing and Computer Vision. In her previous role, she directed the Artificial Intelligence team at SNGULAR.  
