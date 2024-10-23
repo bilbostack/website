@@ -4,7 +4,7 @@ type = 'laprevia'
 description = 'Mikel Ors Valle en laPrevia del Bilbostack'
 title = 'Mikel Ors Valle'
 tagline = 'Data Engineering Team Lead at Clarity AI'
-image = 'img/speakers/mikel.jpeg'
+image = 'img/speakers/mikel.webp'
 +++
 
 # Mikel Ors Valle
