@@ -5,8 +5,8 @@ defaultContentLanguageInSubdir = false
     hashtag = "#Bilbostack25"
     sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
     sponsorsVisible = false
-    ticketsOpen = false
-    ticketsLink = "https://www.eventbrite.com"
+    ticketsOpen = true
+    ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2025-1023698398467"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [
