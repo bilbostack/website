@@ -21,7 +21,7 @@ body{
     --bs-btn-border-radius: 0;
     --bs-btn-hover-bg: #E1277C;
     padding: 1rem 2rem;
-    margin: 1em;
+    margin: .5em 1em 1em 1em;
 }
 .btn-primary{
     background-color: #E1277C;
