@@ -1,13 +1,13 @@
 +++
 layout = 'speaker-detail'
 type = 'laprevia'
-title = 'Pedro Santos'
+title = 'Pedro Moreira dos Santos'
 tagline = 'Agile Technical Coach'
 description = 'Pedro Santos Bilbostack-eko laPrevia-n'
 image = 'img/speakers/pedro.webp'
 +++
 
-# Pedro Santos
+# Pedro Moreira dos Santos
 
 Software-ingeniaritzako taldeak ahaldunduz, kalitate handiko softwarea azkarrago eta modu adimentsuagoan emateko.
 
@@ -16,4 +16,5 @@ Software-ingeniaritzako taldeak ahaldunduz, kalitate handiko softwarea azkarrago
 {class="social"}
 
 - [Linkedin](https://www.linkedin.com/in/pedros/)
+- [Github](https://github.com/pedromsantos)
   {class="social"}
