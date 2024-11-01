@@ -210,6 +210,12 @@ article#speaker_detail ul.social li{
 article#speaker_detail ul.social li{
     margin: .5rem 0 .5rem 0;
 }
+#page h1, #page h2, #page  h3{
+    margin-top: 2rem;
+}
+#page  h4, #page  h5{
+    margin-top: 1.4rem;
+}
 #agenda .alert{
     background-color: #08262E;
     color: #F2F2F2;
