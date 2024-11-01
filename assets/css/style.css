@@ -403,7 +403,7 @@ footer #about h4{
     header #logo-inner-container{
         text-align: left;
     }
-    header a#logo-small{
+    header a#logo-small, header a#logo-small-180{
         text-align: left;
     }
     header a#logo-small img{

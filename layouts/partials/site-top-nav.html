@@ -28,5 +28,22 @@
             {{ end }}
         </div>
     </div>
+        {{if not $isHome}}
+        <div class="row">
+            <div class="col-12 align-left">
+                <a href="{{ ref . "/" }}"
+                id="logo-small-180" class="hidden-big">
+                {{ with resources.Get "img/logo-180x180.png" }}
+                {{ with .Resize "120x webp q85 lanczos" }}
+                <img src="{{ .RelPermalink }}"
+                     width="{{ .Width }}"
+                     height="auto"
+                     alt="{{T "logo_alt" }}">
+                {{ end }}
+                {{ end }}
+                </a>
+            </div>
+        </div>
+        {{ end }}
     </div>
 </div>
