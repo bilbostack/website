@@ -26,8 +26,8 @@ draft = true
 
 ## Cerca de Bilbao
 - Pobeña y Muskiz
-    - Desde la localidad de Pobeña se puede acceder a [un paseo espectacular al lado del mar](https://www.google.com/maps/place/Burdin+Mendietako+Bide+Orlegia+(hasiera)/@43.3464442,-3.1236636,17z/data=!3m1!4b1!4m6!3m5!1s0xd4ef7ca4dd5170f:0xf20ceb5a40a5071!8m2!3d43.3464442!4d-3.1236636!16s%2Fg%2F11fp3gp_3f?entry=ttu&g_ep=EgoyMDI0MDkwMi4xIKXMDSoASAFQAw%3D%3D) y puedes ir andado desde allí a La Playa de La Arena (se peta más para aparcar) en 10minutos de un paseo por un camino de madera
-    - [La Maloka](https://maps.app.goo.gl/zrkb5qP54zRH7Tnv6), por La Arena es un sitio para tomar pintxos y buena tortilla de patatas con vistas al mar.
+    - Desde la localidad de Pobeña se puede acceder a [un paseo espectacular al lado del mar](https://www.google.com/maps/place/Burdin+Mendietako+Bide+Orlegia+(hasiera)/@43.3464442,-3.1236636,17z/data=!3m1!4b1!4m6!3m5!1s0xd4ef7ca4dd5170f:0xf20ceb5a40a5071!8m2!3d43.3464442!4d-3.1236636!16s%2Fg%2F11fp3gp_3f?entry=ttu&g_ep=EgoyMDI0MDkwMi4xIKXMDSoASAFQAw%3D%3D) y se puede ir andado desde allí a La Playa de La Arena.
+    - [La Maloka](https://maps.app.goo.gl/zrkb5qP54zRH7Tnv6), en la playa de La Arena es un sitio para tomar pintxos y buena tortilla de patatas con vistas al mar.
 - Sopelana (zona surfer)
     - Bar El Peñon y El Solito
     - La Triangu
@@ -35,7 +35,7 @@ draft = true
 
 ## Fuera de Bilbao, Vizcaya y Alrededores
 
-- [San Juan De Gaztelugatxe](https://maps.app.goo.gl/ZjjeJQDYAFtkj1ok8) (Roca Dragón en Game of Thrones) Ahora hay que reservar al parecer
+- [San Juan De Gaztelugatxe](https://maps.app.goo.gl/ZjjeJQDYAFtkj1ok8) (Roca Dragón en Game of Thrones) 
 - [Bermeo](https://maps.app.goo.gl/YFJpFTvYkiwAEaoQ7)
 - [Faro de Matxitxako](https://maps.app.goo.gl/ECgze9esuM4JEp268)
 - [Elantxobe](https://maps.app.goo.gl/QcDFoDusGEGCcJfB9)
