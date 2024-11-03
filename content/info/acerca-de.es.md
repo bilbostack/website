@@ -7,7 +7,7 @@ draft = true
 
 # Qué es la Bilbostack
 
-La Bilbostack es un evento que venimos organizando cuatro profesionales del sector tecnológico desde 2012, cuando trabajábamos en Bilbao en diferentes empresas de ese mismo sector.
+La Bilbostack es una conferencia tecnológica generalista que tiene lugar el último fin de semana de Enero en Bilbao y que venimos organizando cuatro profesionales del sector tecnológico desde 2012, cuando trabajábamos en Bilbao en diferentes empresas de ese mismo sector.
 
 ## Historia
 En 2012, de camino de vuelta a Bilbao tras atender una famosa conferencia en Madrid, los cuatro organizadores decidimos compartir una cerveza mientras esperábamos a nuestro avión, que venía con retraso.  
