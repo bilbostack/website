@@ -28,7 +28,7 @@ En 2022 volvimos tras ese parón del Covid, reducimos el aforo por precaución y
 El primer cambio fue **LaPrevia**, un pequeño evento que celebramos el Viernes antes de la conferencia principal. Este evento inicialmente se pensó más dirigido a estudiantes y a servir como punto inicial de encuentro para la gente que viniera el Viernes. 
 El segundo cambio fue **LaEspuela**, una iteración sobre el networking posterior al evento, en el que recreamos una fiesta popular tradicional, con deportes tradicionales vascos, sidra, txoznas y música en directo.  
 
-## Actualidad
+### Actualidad
 Seguimos pensando en formas de iterar el evento. En la edición de 2025 año contamos con Nueva imagen gracias a Crisis.design, podéis leer sobre la imagen y el sistema que nos propusieron en este enlace.  
 
 
@@ -46,6 +46,9 @@ Pendiente de desarrollar
 ### Pragmatismo y mejora cada año
 Pendiente de desarrollar
 
+## Algunos datos interesantes
+Pendiente de desarrollar
 
-
+## Preguntas frecuentes
+Pendiente de desarrollar
 
