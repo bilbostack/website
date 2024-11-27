@@ -39,7 +39,8 @@ defaultContentLanguageInSubdir = false
         display = true
         title = "sponsors_main"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "12em", width = "auto" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "8em", width = "auto" },
+            { name = "Diputación de Bizkaia", url = "https://www.bizkaia.eus", image = "img/sponsors/bfa.png", height = "8em", width = "auto" }
         ]
     [[params.sponsorBlocks]]
         display = true
