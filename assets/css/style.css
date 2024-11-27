@@ -1,5 +1,5 @@
 body{
-    background-color: HSL(42, 95%, 86%);
+    background-color: #08262E;
     color: #08262E;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: left;
@@ -111,9 +111,19 @@ section h2{
 }
 section.blue{
     background-color: #08262E;
+    color: #f2f2f2
 }
+section.yellow{
+    background-color: HSL(42, 95%, 86%);
+    color: #08262E;
+}
+section.gray{
+    background-color: #F2F2F2;
+    color: #08262E;
+}
+
 section.blue a {
-    color: #E1277C;
+    color: #F2F2F2;
 }
 section.blue h5, section.blue h4,section.blue h3 {
     color: #FBBA22;
@@ -258,7 +268,7 @@ footer{
 footer .social a{
     display: inline-block;
     padding: .2rem;
-    color: #E1277C;
+    color: #F2F2F2;
     font-weight: bold;
 }
 footer .dashed hr{
@@ -304,25 +314,19 @@ footer .dashed hr{
 }
 #sponsors h2{
     margin-bottom: 4rem;
-    color: #fff;
+
 }
 #sponsors .list{
-    margin-bottom: 3rem;
+    margin-bottom: 4.5rem;
 }
 #sponsors .list h3{
     font-weight: normal;
-    color: #fff;
+    color: #888;
 }
 #sponsors .list .item{
     display: block;
     padding: 1rem;
-    margin: 1rem 2rem .5rem 2rem;
-}
-#sponsors img{
-    filter: grayscale(100%)
-}
-#sponsors a:hover img{
-    filter: grayscale(0%)
+    margin: .8rem 2rem .5rem 2rem;
 }
 #tickets {
     text-align: center;
@@ -349,12 +353,15 @@ footer .dashed hr{
 #tickets a:hover img{
     filter: grayscale(0%)
 }
+footer{
+    color: #ccc
+}
+footer a{
+    color: #F2F2F2;
+}
 footer #about #org img{
     width: 100%;
     margin-bottom: 2rem;
-}
-footer a{
-    color: #333
 }
 footer .editions, footer .editions a{
     font-size: 1rem;
