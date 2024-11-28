@@ -1,6 +1,6 @@
 {{ if $.Site.Params.sponsorsVisible}}
 {{ $blocks := $.Site.Params.sponsorBlocks }}
-<section id="sponsors" class="blue">
+<section id="sponsors" class="gray">
     <div class="container-fluid">
         <h2>{{T "sponsors_title"}}</h2>
         {{ range $blocks }}
@@ -9,18 +9,27 @@
                     <h3>{{T .title}}</h3>
                     {{ range .sponsors }}
                     {{$height := .height}}
+                    {{$width := .width}}
                     {{$name := .name}}
                     <a href="{{.url}}"
                     title="{{$name}}"
                     class="item"
                     target="_blank">
                         {{ with resources.Get .image }}
-                        {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
-                        <img
-                            src="{{.RelPermalink}}"
-                            alt="{{$name}}"
-                            style="height:{{$height}};width:auto">
+                        {{ if eq .MediaType.SubType "svg" }}
+                            <img
+                                    src="{{.RelPermalink}}"
+                                    alt="{{$name}}"
+                                    style="height:{{$height}};width:{{$width}}; max-width: 100%">
+                        {{else}}
+                            {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
+                            <img
+                                    src="{{.RelPermalink}}"
+                                    alt="{{$name}}"
+                                    style="height:{{$height}};width:{{$width}}; max-width: 100%">
+                            {{ end }}
                         {{ end }}
+
                         {{ end }}
                     </a>
                     {{ end }}

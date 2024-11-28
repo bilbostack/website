@@ -40,7 +40,7 @@ Pendiente de desarrollar
 ### Somos un punto de encuentro
 Pendiente de desarrollar
 
-### Bilbao es nuesto Venue
+### Bilbao es nuestro Venue
 Pendiente de desarrollar
 
 ### Las personas que vienen son las protagonistas

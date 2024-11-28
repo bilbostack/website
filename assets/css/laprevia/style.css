@@ -53,6 +53,12 @@ header #top-nav a.current {
 article#speaker_detail a.back {
     color: #333;
 }
+footer{
+    color: #08262E
+}
+footer a{
+    color: #08262E;
+}
 @media (min-width: 768px) {
     header h1 {
         font-size: 8rem;

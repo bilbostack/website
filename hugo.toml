@@ -4,7 +4,7 @@ defaultContentLanguageInSubdir = false
 [params]
     hashtag = "#Bilbostack25"
     sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
-    sponsorsVisible = false
+    sponsorsVisible = true
     ticketsOpen = true
     ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2025-1023698398467"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
@@ -39,34 +39,43 @@ defaultContentLanguageInSubdir = false
         display = true
         title = "sponsors_main"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "12em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "10em", width = "auto" },
+            { name = "Diputación de Bizkaia", url = "https://www.bizkaia.eus", image = "img/sponsors/bfa.png", height = "10em", width = "auto" }
+        ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_platino"
+        sponsors = [
+            { name = "Automattic", url = "https://automattic.com/", image = "img/sponsors/automattic-logo.svg", height = "auto", width = "800px"  },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_oro"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" },
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "7em" },
+            { name = "Open Bank", url = "https://opendigitalservices.com", image = "img/sponsors/Logo ODS Negro.png", height = "auto", width = "400px"  },
+            { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg", height = "auto", width = "400px"    },
+            { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png", height = "auto", width = "400px"   },
+            { name = "Open Bank", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_10CM.jpg", height = "auto", width = "400px"   },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_plata"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" },
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" },
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "5em" }
+            { name = "Voxel", url = "https://www.voxel.es", image = "img/sponsors/voxel.png", height = "5em", width = "auto"  },
+            { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png", height = "5em", width = "auto"  },
         ]
     [[params.sponsorBlocks]]
-        display = false
+        display = true
         title = "sponsors_bronce"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "3em" }
+            { name = "Technosylva", url = "https://www.technosylva.com", image = "img/sponsors/techno-logo-color-300.png", height = "2em", width = "auto"  },
+            { name = "Gnoss", url = "https://www.gnoss.com", image = "img/sponsors/gnoss_marca.png", height = "2em", width = "auto"  },
         ]
     [[params.collaboratorsBlocks]]
         display = false
         title = "collaborators"
         collaborators = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "2em" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "2em", width = "auto"  }
         ]
 [languages]
     [languages.es]
