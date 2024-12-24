@@ -61,7 +61,7 @@ defaultContentLanguageInSubdir = false
         display = true
         title = "sponsors_plata"
         sponsors = [
-            { name = "Quaderno", url = "https://www.quaderno.io", image = "img/sponsors/quaderno-logo.png", height = "5em", width = "auto"  },
+            { name = "Quaderno", url = "https://www.quaderno.io/es/api", image = "img/sponsors/quaderno-logo.png", height = "5em", width = "auto"  },
             { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png", height = "5em", width = "auto"  },
             { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png", height = "5em", width = "auto"  },
             { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png", height = "3em", width = "auto"  },
