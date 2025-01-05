@@ -1,6 +1,9 @@
 {{ define "main" }}
 <article>
-  <div class="container">{{ partial "laprevia-speakers.html" .}}</div>
+  <div class="container">
+    {{ partial "laprevia-speakers.html" .}}
+    {{ partial "laprevia-agenda.html" .}}
+  </div>
 </article>
 {{ partial "site-sponsors.html" .}}
 {{end}}

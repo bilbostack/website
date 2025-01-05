@@ -3,14 +3,10 @@
     {{ if .Lang }}
         {{ $language = .Lang }}
     {{ end }}
-    {{ $agenda := .Site.GetPage (printf "/agenda.%s.md" $language) }}
-    {{ $previaLink := (ref . "/laprevia")}}
+    {{ $agenda := .Site.GetPage (printf "/laprevia/agenda.%s.md" $language) }}
     {{ if eq $agenda.Params.Draft false }}
         <section id="agenda">
             <h2 class="text-center">{{ $agenda.Title }}</h2>
-            <div class="alert alert-light text-center" role="alert">
-                {{T "agenda_remember_previa_text" (dict "previaLink" $previaLink ) | safeHTML  }}
-            </div>
             {{$agenda.Content |safeHTML}}
         </section>
     {{ end }}
