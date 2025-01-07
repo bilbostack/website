@@ -19,3 +19,7 @@ Her outstanding work has led her to be recognized as one of the 100 most creativ
 
 - [Linkedin](https://www.linkedin.com/in/lauralacarra/)
   {class="social"}
+
+### Her talk
+
+After many years in the industry, I reflect on the work and the lessons learned that are not in the books, so that you can change the management of your professional career and take action.

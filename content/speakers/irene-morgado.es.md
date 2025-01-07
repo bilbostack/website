@@ -23,3 +23,7 @@ Especializada en psicología social y comunicación.
 - [Twitter](https://x.com/IrnMM)
 - [BlueSky](https://bsky.app/profile/irnmm.bsky.social)
   {class="social"}
+
+### Su charla
+
+¿Has oído hablar de la "habitación"? Es un fenómeno de psicología social que trata de explicar por qué nos acostumbramos a las cosas buenas en nuestro entorno profesional y dejamos de valorarlas... pero también cómo se relaciona con la indefensión aprendida y las microagresiones en el trabajo. Aprenderemos a identificar estas señales y a autoevaluar nuestra situación actual, para seguir disfrutando de nuestro entorno y evitar los ambientes tóxicos.
