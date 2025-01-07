@@ -9,12 +9,12 @@ draft = false
 |               | Track 1                                                                         | Track 2                                                                             |
 | ------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | 09:00 - 09:30 | Aurkezpena eta ongietorria                                                      | -                                                                                   |
-| 09:00 - 09:30 | [**Title of the talk**Nerea Luis](/eu/speakers/nerea-luis#talk)                 | [**Title of the talk**Jordi Martí](/eu/speakers/jordi-marti#talk)                   |
-| 09:00 - 09:30 | [**Title of the talk**Katia Aresti](/eu/speakers/katia-aresti#talk)             | [**Title of the talk**Irene Morgado](/eu/speakers/irene-morgado#talk)               |
+| 09:00 - 09:30 | [**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**Nerea Luis](/eu/speakers/nerea-luis#talk)                 | [**Eta 'zuzena dena egitea' zuzena izango ez balitz?**Jordi Martí](/eu/speakers/jordi-marti#talk)                   |
+| 09:00 - 09:30 | [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)             | [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk)               |
 | 09:00 - 09:30 | Kafea                                                                           | -                                                                                   |
-| 09:00 - 09:30 | [**Title of the talk**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk) | [**Title of the talk**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
-| 09:00 - 09:30 | [**Title of the talk**Valeria Castro](/eu/speakers/valeria-castro#talk)         | [**Title of the talk**Fernando Díaz](/eu/speakers/fernando-diaz#talk)               |
-| 09:00 - 09:30 | LaEspuela, Saretzea                                                             | -                                                                                   |
+| 09:00 - 09:30 | [**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk) | [**Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
+| 09:00 - 09:30 | [**10 urte Platonic Games bezalako bideo-joko estudio baten gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk)         | [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)               |
+| 09:00 - 09:30 | **#laEspuela, Networking-a**                                                             | -                                                                                   |
 
 </div>
 
@@ -27,16 +27,16 @@ draft = false
 | 09:00 - 09:30                                                     |
 | ----------------------------------------------------------------- |
 | **track1**                                                        |
-| [**Title of the talk**Nerea Luis](/eu/speakers/nerea-luis#talk)   |
+| [**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**Nerea Luis](/eu/speakers/nerea-luis#talk)   |
 | **track2**                                                        |
-| [**Title of the talk**Jordi Martí](/eu/speakers/jordi-marti#talk) |
+| [**Eta 'zuzena dena egitea' zuzena izango ez balitz?**Jordi Martí](/eu/speakers/jordi-marti#talk) |
 
 | 09:00 - 09:30                                                         |
 | --------------------------------------------------------------------- |
 | **track1**                                                            |
-| [**Title of the talk**Katia Aresti](/eu/speakers/katia-aresti#talk)   |
+| [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)   |
 | **track2**                                                            |
-| [**Title of the talk**Irene Morgado](/eu/speakers/irene-morgado#talk) |
+| [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk) |
 
 | 09:00 - 09:30 |
 | ------------- |
@@ -45,19 +45,19 @@ draft = false
 | 09:00 - 09:30                                                                       |
 | ----------------------------------------------------------------------------------- |
 | **track1**                                                                          |
-| [**Title of the talk**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk)     |
+| [**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk)     |
 | **track2**                                                                          |
-| [**Title of the talk**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
+| [**Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
 
 | 09:00 - 09:30                                                           |
 | ----------------------------------------------------------------------- |
 | **track1**                                                              |
-| [**Title of the talk**Valeria Castro](/eu/speakers/valeria-castro#talk) |
+| [**10 urte Platonic Games bezalako bideo-joko estudio baten gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk) |
 | **track2**                                                              |
-| [**Title of the talk**Fernando Díaz](/eu/speakers/fernando-diaz#talk)   |
+| [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)   |
 
 | 09:00 - 09:30           |
 | ----------------------- |
-| **LaEspuela, Saretzea** |
+| **#laEspuela, Networking-a** |
 
 </div>
