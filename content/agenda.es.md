@@ -8,7 +8,7 @@ draft = false
 
 |               | [Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)                                                                                                                                         | [Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)                                                                                                                                        |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| 09:00 - 09:30 | **Presentación**                                                                                                                                | -                                                                                                                                              |
+| 09:00 - 09:30 | **Bienvenida y presentación**                                                                                                                                | -                                                                                                                                              |
 | 09:30 - 10:20 | [**El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas**Nerea Luis](/speakers/nerea-luis#talk) | [**Y si "hacer lo correcto" no fuera lo correcto**Jordi Martí](/speakers/jordi-marti#talk)                                                     |
 | 10:30 - 11:20 | [**Bases de Datos en Memoria: casos de uso y soluciones para aplicaciones modernas**Katia Aresti](/speakers/katia-aresti#talk)                  | [**Fatal, gracias**Irene Morgado](/speakers/irene-morgado#talk)                                                                                |
 | 11:20 - 12:00 | Café                                                                                                                                            | -                                                                                                                                              |
@@ -22,7 +22,7 @@ draft = false
 
 | 09:00 - 09:30    |
 | ---------------- |
-| **Presentación** |
+| **Bienvenida y presentación** |
 
 | 09:30 - 10:20                                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- |

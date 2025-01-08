@@ -8,7 +8,7 @@ draft = false
 
 |               | [Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)                                                                         | [Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)                                                                             |
 | ------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| 09:00 - 09:30 | Aurkezpena eta ongietorria                                                      | -                                                                                   |
+| 09:00 - 09:30 | Ongietorria eta aurkezpena                                                      | -                                                                                   |
 | 09:30 - 10:20 | [**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**Nerea Luis](/eu/speakers/nerea-luis#talk)                 | [**Eta 'zuzena dena egitea' zuzena izango ez balitz?**Jordi Martí](/eu/speakers/jordi-marti#talk)                   |
 | 10:30 - 11:20 | [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)             | [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk)               |
 | 11:20 - 12:00 | Kafea                                                                           | -                                                                                   |
@@ -22,7 +22,7 @@ draft = false
 
 | 09:00 - 09:30                  |
 | ------------------------------ |
-| **Aurkezpena eta ongietorria** |
+| **Ongietorria eta aurkezpena** |
 
 | 09:30 - 10:20                                                     |
 | ----------------------------------------------------------------- |
