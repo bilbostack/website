@@ -23,6 +23,7 @@ Estoy obsesionado con los ciclos de feedback rápido, maximizar la frecuencia y 
   {class="social"}
 
 ### Su charla
+**Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams**
 
 Hace casi dos años comencé una aventura en Alhona con el objetivo de hacer más competitiva a la industria manufacturera, la idea era construir un producto de datos que dotase a las fábricas de una visión 360º en tiempo real de su planta . Lo curioso es que, cuando empecé, no sabía mucho ni de datos ni de fábricas.
 

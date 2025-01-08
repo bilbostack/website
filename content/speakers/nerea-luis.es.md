@@ -23,5 +23,6 @@ Durante estos años ha recibido reconocimientos de Google, Casa Real o Forbes, e
   {class="social"}
 
 ### Su charla
+**El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas**
 
 Los "Data Scientists" vivíamos muy tranquilos hasta que llegó ChatGPT. Lo que pasa que por entonces no lo sabíamos. En un mundo donde la inteligencia artificial generativa domina los titulares, ¿qué es realmente aplicable y transformador de todo esto? Esta charla pretende desmitificar el hype y profundizar en cómo las empresas están adoptando (o planteándose adoptar) estas tecnologías. Exploraremos herramientas clave, casos de uso, situaciones cómodas e incómodas y el impacto tangible que los developers, managers y demás personas del sector tech pueden esperar en su día a día. Me gustaría que esta charla sirviese de reflexión para tomar consciencia de la transformación que está llegando, pero también quitarnos un poco esa ansiedad tecnológica que a veces nos invade.

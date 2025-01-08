@@ -25,6 +25,7 @@ I love building products for the physical world: logistics, warehouses, factorie
   {class="social"}
 
 ### His talk
+**When robots learn to talk: Stories of smart factories and data streams**
 
 Almost two years ago, I embarked on an adventure at Alhona with the goal of making the manufacturing industry more competitive. The idea was to build a data product that would provide factories with a real-time 360º view of their plant. The funny thing is, when I started, I didn't know much about data or factories.
 

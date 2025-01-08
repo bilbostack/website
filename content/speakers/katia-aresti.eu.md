@@ -20,3 +20,8 @@ Open source-aren aldekoa da, baita emakumeen teknologian duten paperaren aldekoa
 - [Github](https://github.com/karesti)
 - [Twitter](https://x.com/karesti)
   {class="social"}
+
+### Bere hitzaldia  
+**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**  
+
+Memorian oinarritutako datu-baseak ez dira berriak, baina azken urteetan oso ezagunak bihurtu dira, errendimendu eta abiadura izugarriei esker. Hitzaldi honetan, 2025eko aplikazioetan ohiko arazo batzuk nola konpon ditzaketen aztertuko dugu. Kasuak landuko ditugu, hala nola, datu aldi baterakoak gordetzea, eskalagarritasuna hobetzea, kontsultak azkartzea eta saioak kudeatzea, besteak beste. Adibide praktikoekin, soluzio horiek nola inplementatu eta memorian oinarritutako datu-baseak zure backend aplikazioetan erraz integratzeko moduak erakutsiko dizkizut, askoz azkarragoak eta eraginkorragoak izan daitezen.

@@ -16,6 +16,19 @@ Nabarmena da Twitch-en Software & Game Development kategorian hizkuntza hispanoe
 #### Aurkitu Miguel Ángel sare sozialetan:
 
 {class="social"}
+
 * [Twitter](https://x.com/midudev)
 * [Twitch](https://twitch.tv/midudev)
   {class="social"}
+
+### Bere hitzaldia  
+**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**  
+
+Ezagutu web garapena eraldatzen ari diren azken berrikuntzak! JavaScript, HTML eta CSS-en ezaugarri eta hobekuntza berriak ezagutzeko aukera izango duzu, web-aplikazioak birdefinitzen ari direnak. Ez geratu atzean eta eraman zure proiektuak hurrengo mailara.  
+
+Hitzaldi honetan honako puntu garrantzitsuak aztertuko dira:  
+- **JavaScript**: Lengoaia ezaugarri berriak, errendimenduan hobekuntzak eta ECMAScript zehaztapenetan azken eguneratzeak.  
+- **HTML**: Etiketa eta API berri batzuk aurkeztea, web-eduki interaktibo eta eskuragarriagoa sortzea errazteko.  
+- **CSS**: Diseinu erantzunkorrean aurrerapenak, propietate eta teknika berriak estilo dinamikoago eta modernoagoak sortzeko.  
+- **Nabigatzailearen API berriak**: View Transitions, window.ai eta gehiago.  
+

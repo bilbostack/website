@@ -13,7 +13,7 @@ draft = false
 | 10:30 - 11:20 | [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)             | [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk)               |
 | 11:20 - 12:00 | Kafea                                                                           | -                                                                                   |
 | 12:00 - 12:50 | [**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk) | [**Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
-| 13:00 - 13:50 | [**10 urte Platonic Games bezalako bideo-joko estudio baten gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk)         | [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)               |
+| 13:00 - 13:50 | [**10 urte Platonic Games bideo-joko estudioaren gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk)         | [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)               |
 | 14:00 - ~19:00 | **#laEspuela, Networking-a**                                                             | -                                                                                   |
 
 </div>
@@ -52,7 +52,7 @@ draft = false
 | 13:00 - 13:50                                                           |
 | ----------------------------------------------------------------------- |
 | **[Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)**                                                              |
-| [**10 urte Platonic Games bezalako bideo-joko estudio baten gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk) |
+| [**10 urte Platonic Games bideo-joko estudioaren gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk) |
 | **[Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)**                                                              |
 | [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)   |
 

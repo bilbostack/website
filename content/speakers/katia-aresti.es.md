@@ -22,6 +22,7 @@ Es una defensora del open source, del papel de las mujeres en la tecnología y p
   {class="social"}
 
 ### Su charla
+**Bases de Datos en Memoria: casos de uso y soluciones para aplicaciones modernas**
 
 Las bases de datos en memoria no son nuevas pero se han vuelto muy populares en los
 últimos años gracias a su increíble rendimiento y velocidad. En esta charla, veremos cómo

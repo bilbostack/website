@@ -24,5 +24,6 @@ Her "kawaii" style games, which stand out for their diversity and accessibility,
   {class="social"}
 
 ### Her talk
+**10 years leading a video game studio like Platonic Games**
 
 We will review the history of Platonic Games, from its beginnings finding its kawaii niche, to the present with more than 50 million players worldwide.

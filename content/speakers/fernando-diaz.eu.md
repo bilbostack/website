@@ -20,5 +20,13 @@ Mundu fisikorako produktuak egitea izugarri gustatzen zait: logistika, biltegiak
 #### Aurkitu Fernando sare sozialetan:
 
 {class="social"}
+
 - [Linkedin](https://www.linkedin.com/in/fernando-diaz-garrido/)
   {class="social"}
+
+### Bere hitzaldia  
+**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**  
+
+Duela ia bi urte Alhona-n abentura bati ekin nion industria manufakturagilea lehiakorragoa egiteko helburuarekin. Ideia zen datu-produktu bat eraikitzea, fabrikek beren planta 360º-ko ikuspegi errealeko ikuspegia izan zezaten. Bitxia da, baina hasieran ez nekien asko ez datuei buruz, ez fabrikakiei buruz.  
+
+Hitzaldi honetan, hasiberri baten ikuspuntutik, denbora honetan ikasitako lezioak partekatuko ditut: roboten edo industria-protokoloen munduan sartzetik hasi, eta datu-fluxuek makina ondoan erabakiak hartzeko giltza nola bihur daitezkeen ulertzera arte.

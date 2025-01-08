@@ -18,7 +18,8 @@ In the past, I was a developer, but I realized there are many people better at p
 - [Linkedin](https://www.linkedin.com/in/sebicollell)
   {class="social"}
 
-### His talk
+### Her talk
+**Culture Driven Development, the engine of a fast, effective, and sustainable team**
 
 Your team has a clear and defined objective, now what?
 

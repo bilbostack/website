@@ -22,6 +22,7 @@ Me apasiona crear soluciones nuevas en colaboración con otras personas. Será p
   {class="social"}
 
 ### Su charla
+**Y si "hacer lo correcto" no fuera lo correcto**
 
 "Doing the right thing right" se ha convertido en nuestro mantra, nuestra brújula, nuestro nuevo dogma. Diseñamos productos siendo lo más lean posible, avanzamos con small safe steps y cuidamos cada línea de código con prácticas alineadas a XP.
 

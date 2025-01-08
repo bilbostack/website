@@ -18,3 +18,12 @@ Beste pertsonekin lankidetzan konponbide berriak sortzea gustatzen zait. Badirud
 * [Linkedin](https://www.linkedin.com/in/jmarti-heedrox/)
 * [Twitter](https://twitter.com/itortv)
   {class="social"}
+
+### Bere hitzaldia  
+**Eta "zuzena dena egitea" zuzena izango ez balitz?**  
+
+"Doing the right thing right" gure mantra, gure ipar-orratza eta gure dogma berria bihurtu da. Produktuak ahalik eta lean moduan diseinatzen ditugu, small safe steps-ekin aurreratzen gara, eta kode-lerro bakoitza zaintzen dugu XP praktikei jarraituz.  
+
+NAHIKOA DA! "Zuzena egitearen" betebehar zorrotz hau taldekide eta pertsona moduan gero eta gehiago pisatzen hasi zaigu. Hitzaldi honetan, presio honek gure dinamikei nola kalte egin diezaiokeen eta gure taldea nola hondatzen duen aztertuko dut.  
+
+Zure taldean hori ez dela gertatzen uste duzu? Nik ere hori uste nuen.

@@ -21,3 +21,10 @@ Urteotan, besteak beste, Google, Errege Etxea edo Forbesen aitortzak jaso ditu. 
 - [Twitter](https://x.com/sailormerqury)
 - [Web](https://nerealuis.es/)
   {class="social"}
+
+### Bere hitzaldia  
+**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**  
+
+"Data Scientists"-ak lasai bizi ginen ChatGPT iritsi zen arte. Orduan ez genekien, baina hori aldatu egin da. Inteligentzia artifizial generatiboak titularrak betetzen dituen mundu honetan, zer da benetan aplikagarria eta eraldatzailea horretatik guztitik? Hitzaldi honen helburua hype-a desmitifikatzea eta enpresek teknologia hauek nola hartzen ari diren (edo hartzeko asmotan dauden) sakontzea da. Tresna giltzarriak, erabilera-kasuak, egoera eroso eta deserosoak, eta developer, manager eta sektore teknologikoko beste pertsonentzat egunerokoan espero daitekeen eragin ukigarria aztertuko ditugu.  
+
+Hitzaldi honek hausnarketarako balio izatea nahiko nuke, iristen ari den eraldaketaz kontziente izateko, baina aldi berean batzuetan erasotzen gaituen teknologia-antsietate hori arintzeko.

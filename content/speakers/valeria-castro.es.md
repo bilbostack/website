@@ -24,5 +24,6 @@ Sus juegos de estética “kawaii” que destacan por su diversidad y accesibili
   {class="social"}
 
 ### Su charla
+**10 años al mando de un estudio de videojuegos como Platonic Games**
 
 Repasamos la historia de Platonic Games, desde sus inicios encontrando su nicho kawaii, hasta la actualidad con màs de 50 millones de jugadores en todo el mundo.
