@@ -6,31 +6,35 @@ draft = false
 
 <div class="hidden-small table">
 
-|               | -                                                                                                                           |
+|               | Zabalbide Eraikina                                                                                                                                            |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| 09:00 - 09:30 | Aurkezpena eta ongietorria                                                                                                        |
-| 09:00 - 09:30 | [**'Lan gogorra'ren tranpa software garapenean**Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk)             |
-| 09:00 - 09:30 | [**'The Tech-way': liburuetan azaltzen ez dena**Laura Lacarra](/laprevia/speakers/laura-lacarra#talk)                            |
-| 09:00 - 09:30 | [**Software ingeniaritzan lan egiteko une hoberik ez da inoiz egon**Pedro Santos](/laprevia/speakers/pedro-santos#talk) |
-
+| 16:50 - 17:00 | Ongietorria eta aurkezpena                                                                                                        |
+| 17:00 - 17:40 | [**'Lan gogorra'ren tranpa software garapenean**Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk)                         |
+| 17:50 - 18:30 | [**'The Tech-way': liburuetan azaltzen ez dena**Laura Lacarra](/laprevia/speakers/laura-lacarra#talk)                             |
+| 18:40 - 19:20 | [**Software ingeniaritzan lan egiteko une hoberik ez da inoiz egon**Pedro Santos](/laprevia/speakers/pedro-santos#talk)           |
+| 19:20 - 19:45 | Itxiera eta networking-a babesleekin
 </div>
 
 <div class="hidden-big table">
 
-| 09:00 - 09:30                  |
+| 16:50 - 17:00                  |
 | ------------------------------ |
-| **Aurkezpena eta ongietorria** |
+| **Ongietorria eta aurkezpena** |
 
-| 09:00 - 09:30                                                                                                         |
+| 17:00 - 17:40                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------- |
-| [**'Lan gogorra'ren tranpa software garapenean**Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk) |
+| [**'Lan gogorra'ren tranpa software garapenean**Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk)             |
 
-| 09:00 - 09:30                                                                                          |
+| 17:50 - 18:30                                                                                          |
 | ------------------------------------------------------------------------------------------------------ |
-| [**'The Tech-way': liburuetan azaltzen ez dena**Laura Lacarra](/laprevia/speakers/laura-lacarra#talk) |
+| [**'The Tech-way': liburuetan azaltzen ez dena**Laura Lacarra](/laprevia/speakers/laura-lacarra#talk)  |
 
-| 09:00 - 09:30                                                                                                                    |
+| 18:40 - 19:20                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------------- |
-| [**Software ingeniaritzan lan egiteko une hoberik ez da inoiz egon**Pedro Santos](/laprevia/speakers/pedro-santos#talk) |
+| [**Software ingeniaritzan lan egiteko une hoberik ez da inoiz egon**Pedro Santos](/laprevia/speakers/pedro-santos#talk)          |
+
+| 19:20 - 19:45                  |
+| ------------------------------ |
+| **Itxiera eta networking-a babesleekin** |
 
 </div>

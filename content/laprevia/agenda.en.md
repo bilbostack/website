@@ -6,31 +6,35 @@ draft = false
 
 <div class="hidden-small table">
 
-|               | Track 1                                                                                                                     |
+|               | Ensanche building                                                                                                                                      |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 09:00 - 09:30 | Presentation and welcome                                                                                                    |
-| 09:00 - 09:30 | [**The trap of hard work in software development** Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk)                |
-| 09:00 - 09:30 | [**The tech path: what doesn't appear in the books** Laura Lacarra](/laprevia/speakers/laura-lacarra#talk)                  |
-| 09:00 - 09:30 | [**There has never been a better time to work in software engineering** Pedro Santos](/laprevia/speakers/pedro-santos#talk) |
-
+| 16:50 - 17:00 | Welcome and presentation                                                                                                    |
+| 17:00 - 17:40 | [**The trap of hard work in software development** Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk)                |
+| 17:50 - 18:30 | [**The tech path: what doesn't appear in the books** Laura Lacarra](/laprevia/speakers/laura-lacarra#talk)                  |
+| 18:40 - 19:20 | [**There has never been a better time to work in software engineering** Pedro Santos](/laprevia/speakers/pedro-santos#talk) |
+| 19:20 - 19:45 | Closing and networking with the sponsors
 </div>
 
 <div class="hidden-big table">
 
-| 09:00 - 09:30                |
+| 16:50 - 17:00                |
 | ---------------------------- |
-| **Presentation and welcome** |
+| **Welcome and presentation** |
 
-| 09:00 - 09:30                                                                                                |
+| 17:00 - 17:40                                                                                                |
 | ------------------------------------------------------------------------------------------------------------ |
 | [**The trap of hard work in software development** Mikel Ors Valle](/laprevia/speakers/mikel-ors-valle#talk) |
 
-| 09:00 - 09:30                                                                                              |
+| 17:50 - 18:30                                                                                              |
 | ---------------------------------------------------------------------------------------------------------- |
 | [**The tech path: what doesn't appear in the books** Laura Lacarra](/laprevia/speakers/laura-lacarra#talk) |
 
-| 09:00 - 09:30                                                                                                               |
+| 18:40 - 19:20                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------- |
 | [**There has never been a better time to work in software engineering** Pedro Santos](/laprevia/speakers/pedro-santos#talk) |
+
+| 19:20 - 19:45                |
+| ---------------------------- |
+| **Closing and networking with the sponsors** |
 
 </div>
