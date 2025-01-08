@@ -22,6 +22,8 @@ Estoy obsesionado con los ciclos de feedback rápido, maximizar la frecuencia y 
 - [Linkedin](https://www.linkedin.com/in/fernando-diaz-garrido/)
   {class="social"}
 
+---  
+
 ### Su charla
 **Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams**
 

@@ -18,7 +18,9 @@ Iraganean developer izan nintzen, baina konturatu nintzen ni baino pertsona hobe
 - [Linkedin](https://www.linkedin.com/in/sebicollell)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**  
 
 Zure taldeak helburu argi eta definitua du, eta orain zer?  

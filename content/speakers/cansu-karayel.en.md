@@ -22,7 +22,9 @@ Throughout my career, I have worked in companies of different sizes and sectors 
 - [Linkedin](https://www.linkedin.com/in/cansukarayel/)
   {class="social"}
 
-### Her talk
+---  
+
+## Her talk
 **Culture Driven Development, the engine of a fast, effective, and sustainable team**
 
 Your team has a clear and defined objective, now what?

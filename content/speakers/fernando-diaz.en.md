@@ -24,6 +24,8 @@ I love building products for the physical world: logistics, warehouses, factorie
 - [Linkedin](https://www.linkedin.com/in/fernando-diaz-garrido/)
   {class="social"}
 
+---  
+
 ### His talk
 **When robots learn to talk: Stories of smart factories and data streams**
 

@@ -21,7 +21,9 @@ I am passionate about creating new solutions in collaboration with other people.
 - [Twitter](https://twitter.com/itortv)
   {class="social"}
 
-### His talk
+---  
+
+## His talk
 **What if "doing the right thing" wasn't the right thing**
 
 "Doing the right thing right" has become our mantra, our compass, our new dogma. We design products as lean as possible, move forward with small safe steps, and take care of every line of code with practices aligned to XP.

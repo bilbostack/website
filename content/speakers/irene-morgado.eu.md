@@ -24,7 +24,9 @@ Psikologia sozialean eta komunikazioan espezializatua.
 - [BlueSky](https://bsky.app/profile/irnmm.bsky.social)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Fatal, eskerrik asko**  
 
 "Gela"ri buruz inoiz entzun al duzu? Psikologia sozialeko fenomeno bat da, eta gure ingurune profesionalean dauden gauza onetara nola ohitzen garen eta baloratzeari uzten diogun azaltzen saiatzen da... baina baita ikasitako babesgabetasunarekin eta lanean gertatzen diren mikroerasoekin duen harremana ere. Seinale hauek identifikatzen eta gure egungo egoera autoebaluatzen ikasiko dugu, gure inguruneaz gozatzen jarraitzeko eta ingurune toxikoak saihesteko.

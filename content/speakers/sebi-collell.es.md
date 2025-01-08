@@ -18,7 +18,9 @@ En el pasado fuí developer, pero me di cuenta que hay muchas personas mejor que
 - [Linkedin](https://www.linkedin.com/in/sebicollell)
   {class="social"}
 
-### Su charla
+---  
+
+## Su charla
 **Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible**
 
 Tu equipo tiene un objetivo claro y definido, ¿y ahora qué?

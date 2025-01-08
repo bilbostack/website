@@ -23,7 +23,9 @@ En otro orden de cosas, me encanta andar en bici, correr despacio y toco varios 
 - [Web](https://mikelors.com/)
   {class="social"}
 
-### Su charla
+---  
+
+## Su charla
 **La trampa del trabajo duro en el desarrollo de software**
 
 Trabajar muy duro siempre se ha considerado como algo positivo. Entendiéndolo como el hecho de esforzarse al máximo, asegurar que siempre estamos permanentemente ocupados haciendo cosas e incluso yendo más allá de lo necesario metiendo las horas que haga falta. ¿Quién no querría un equipo formado por personas que trabajan así? Pues si lo que queremos hacer es Software de calidad y que aporte valor, tal vez trabajar así no sea la mejor idea.

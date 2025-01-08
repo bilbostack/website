@@ -21,7 +21,9 @@ Destaca por tener el canal de habla hispana más visto en la categoría de Softw
 - [Twitch](https://twitch.tv/midudev)
   {class="social"}
 
-### Su charla
+---  
+
+## Su charla
 **¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS**
 
 ¡Descubre las últimas innovaciones que están transformando el desarrollo web! Conoce las nuevas características y mejoras en JavaScript, HTML y CSS que están redefiniendo las aplicaciones web. No te quedes atrás y lleva tus proyectos al siguiente nivel.

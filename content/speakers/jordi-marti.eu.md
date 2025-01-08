@@ -19,7 +19,9 @@ Beste pertsonekin lankidetzan konponbide berriak sortzea gustatzen zait. Badirud
 * [Twitter](https://twitter.com/itortv)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Eta "zuzena dena egitea" zuzena izango ez balitz?**  
 
 "Doing the right thing right" gure mantra, gure ipar-orratza eta gure dogma berria bihurtu da. Produktuak ahalik eta lean moduan diseinatzen ditugu, small safe steps-ekin aurreratzen gara, eta kode-lerro bakoitza zaintzen dugu XP praktikei jarraituz.  

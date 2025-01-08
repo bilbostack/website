@@ -23,7 +23,9 @@ On another note, I love cycling, running slowly, and I play several instruments,
 - [Web](https://mikelors.com/)
   {class="social"}
 
-### His talk
+---  
+
+## His talk
 **The trap of hard work in software development**
 
 Working very hard has always been considered a positive thing. Understanding it as the act of putting in maximum effort, ensuring that we are always permanently busy doing things, and even going beyond what is necessary by putting in extra hours. Who wouldn't want a team made up of people who work like that? Well, if what we want to do is quality software that adds value, maybe working like that is not the best idea.

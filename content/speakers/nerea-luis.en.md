@@ -22,7 +22,9 @@ Over the years, she has received recognition from Google, the Spanish Royal Fami
 - [Web](https://nerealuis.es/)
   {class="social"}
 
-### Her talk
+---  
+
+## Her talk
 **The Boom of Generative AI: realities, promises, transformative products, and awkward situations**
 
 Data Scientists were living very peacefully until ChatGPT arrived. The thing is, we didn't know it back then. In a world where generative artificial intelligence dominates the headlines, what is truly applicable and transformative about all this? This talk aims to demystify the hype and delve into how companies are adopting (or considering adopting) these technologies. We will explore key tools, use cases, comfortable and uncomfortable situations, and the tangible impact that developers, managers, and other tech sector professionals can expect in their daily lives. I would like this talk to serve as a reflection to raise awareness of the transformation that is coming, but also to alleviate some of the technological anxiety that sometimes overwhelms us.

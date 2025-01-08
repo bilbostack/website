@@ -21,7 +21,9 @@ Nire ibilbidean zehar hainbat tamainatako eta sektoretako enpresetan lan egin du
 * [Linkedin](https://www.linkedin.com/in/cansukarayel/)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**  
 
 Zure taldeak helburu argi eta definitua du, eta orain zer?  

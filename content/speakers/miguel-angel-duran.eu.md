@@ -21,7 +21,9 @@ Nabarmena da Twitch-en Software & Game Development kategorian hizkuntza hispanoe
 * [Twitch](https://twitch.tv/midudev)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**  
 
 Ezagutu web garapena eraldatzen ari diren azken berrikuntzak! JavaScript, HTML eta CSS-en ezaugarri eta hobekuntza berriak ezagutzeko aukera izango duzu, web-aplikazioak birdefinitzen ari direnak. Ez geratu atzean eta eraman zure proiektuak hurrengo mailara.  

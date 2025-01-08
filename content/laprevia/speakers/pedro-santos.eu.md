@@ -21,7 +21,9 @@ Agile Technical Coach | Software-ingeniaritzako taldeei kalitate handiko softwar
 - [Github](https://github.com/pedromsantos)
   {class="social"}
 
-### Bere hitzaldia  
+---  
+
+## Bere hitzaldia  
 **Software ingeniaritzan lan egiteko inoizko unerik onena**  
 
 Gaur egungo mundua kalitatez askoz hobea da nire karrera duela hogeita hamar urte baino gehiago hasi nuenean baino. Pertsonak eta enpresak hobetu dira. Erronkak oraindik badaude, baina gaur egun informazio kopuru izugabea eta duela hiru hamarkada imajina ezin zitezkeen komunitateetara sartzeko aukera dugu. Poz handiz ikusi dut pertsonen garapen-mailaren igoera espero nuena baino azkarrago. Software ingeniaritzan lan egiteko inoizko unerik onena da.
