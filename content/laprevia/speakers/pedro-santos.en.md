@@ -22,5 +22,6 @@ I am the lead author of "Agile Technical Practices Distilled: A Journey toward M
   {class="social"}
 
 ### His talk
+**There has never been a better time to work in software engineering**
 
 The world today is qualitatively much better than when I started my career over thirty years ago. People and companies have improved. There are still challenges, but today we have access to an amount of information and communities unimaginable three decades ago. With great satisfaction, I have witnessed an increase in the degree of people's fulfillment much faster than I could have ever imagined. There has never been a better time to work in software engineering.

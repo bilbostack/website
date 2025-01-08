@@ -22,5 +22,6 @@ Soy el autor principal de "Agile Technical Practices Distilled: A Journey toward
   {class="social"}
 
 ### Su charla
+**Nunca ha habido un mejor momento para trabajar en ingenieria de software**
 
 El mundo actual es cualitativamente mucho mejor que cuando comencé mi carrera hace más de treinta años. Las personas y las empresas han mejorado. Sigue habiendo desafíos, pero hoy tenemos acceso a una cantidad de información y comunidades inimaginables hace tres décadas. Con gran satisfacción he presenciado un incremento del grado de realización de las personas mucho más rápido de lo que jamás podría haber imaginado. Nunca ha habido un mejor momento para trabajar en ingenieria de software.
