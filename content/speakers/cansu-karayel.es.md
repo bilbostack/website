@@ -24,7 +24,7 @@ A lo largo de mi carrera he trabajado en empresas de distintos tamaños y sector
 
 ---  
 
-## Su charla
+## Su charla{#talk}{#talk}
 **Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible**
 
 Tu equipo tiene un objetivo claro y definido, ¿y ahora qué?

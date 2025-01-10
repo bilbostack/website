@@ -26,7 +26,7 @@ Specialized in social psychology and communication.
 
 ---  
 
-## Her talk
+## Her talk{#talk}
 **Bad, thanks**
 
 Have you heard of the "room"? It is a social psychology phenomenon that tries to explain why we get used to the good things in our professional environment and stop valuing them... but also how it relates to learned helplessness and microaggressions at work. We will learn to identify these signals and self-evaluate our current situation, to continue enjoying our environment and avoid toxic environments.

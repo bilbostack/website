@@ -24,7 +24,7 @@ Bere “kawaii” estetika-jokoak, beren aniztasun eta irisgarritasunagatik naba
 
 ---  
 
-## Bere hitzaldia  
+## Bere hitzaldia{#talk}  
 **10 urte Platonic Games bideo-joko estudioaren gidaritzan**  
 
 Platonic Games-en historia errepasatuko dugu, bere hastapenetatik niche kawaii-a aurkitu zuenetik gaur egunera arte, 50 milioi jokalari baino gehiago dituena mundu osoan.

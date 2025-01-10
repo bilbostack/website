@@ -23,7 +23,7 @@ Nire ibilbidean zehar hainbat tamainatako eta sektoretako enpresetan lan egin du
 
 ---  
 
-## Bere hitzaldia  
+## Bere hitzaldia{#talk}  
 **Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**  
 
 Zure taldeak helburu argi eta definitua du, eta orain zer?  

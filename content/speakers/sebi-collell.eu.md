@@ -20,7 +20,7 @@ Iraganean developer izan nintzen, baina konturatu nintzen ni baino pertsona hobe
 
 ---  
 
-## Bere hitzaldia  
+## Bere hitzaldia{#talk}  
 **Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**  
 
 Zure taldeak helburu argi eta definitua du, eta orain zer?  

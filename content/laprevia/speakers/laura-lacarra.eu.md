@@ -21,7 +21,7 @@ Bere lan nabarmenari esker, Forbes aldizkariak, enpresa arloko 100 pertsona sort
 
 ---  
 
-## Bere hitzaldia
+## Bere hitzaldia{#talk}
 **'The Tech-way': liburuetan azaltzen ez dena**
 
 Industrian urte askotan zehar izandako esperientziaren ondoren, liburuetan agertzen ez diren lanari eta ikaskuntzei buruzko hausnarketa egiten dut, zure karrera profesionalaren kudeaketa aldatzeko eta ekintzara pasatzeko aukera izan dezazun.

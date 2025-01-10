@@ -7,7 +7,7 @@ description = 'Valeria Castro will be at #Bilbostack25'
 image = 'img/speakers/valeria.webp'
 +++
 
-# Valeria Castro
+# Valeria Castro{#talk}
 
 Valeria Castro is the CEO and co-founder of Platonic Games since 2014.
 

@@ -27,7 +27,7 @@ Bestalde, oso gustuko dut bizikletan ibiltzea, lasterka astiro egitea eta hainba
 
 ---  
 
-## Bere hitzaldia
+## Bere hitzaldia{#talk}
 **Lan gogorraren tranpa software garapenean**
 
 Lan gogorra beti positibotzat jo izan da. Gehien ahalegintzea, beti zerbait egiten egotea ziurtatzea, eta beharrezko ordu guztiak sartzea balioetsi izan da. Nork ez luke horrela lan egiten duten pertsonez osatutako talde bat nahi? Baina kalitatezko softwarea sortu eta benetan balioa eman nahi badugu, agian horrela lan egitea ez da ideia onena.

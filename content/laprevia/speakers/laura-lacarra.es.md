@@ -22,7 +22,7 @@ Su destacado trabajo la ha llevado a ser reconocida como una de las 100 personas
 
 ---  
 
-## Su charla
+## Su charla{#talk}
 **El camino tech: lo que no sale en los libros**
 
 Tras muchos años en la industria hago una reflexión sobre el trabajo y los aprendizajes adquiridos que no están en los libros de forma que cambie la gestión de tu carrera profesional y tomes acción.
