@@ -47,7 +47,8 @@ defaultContentLanguageInSubdir = false
         display = true
         title = "sponsors_platino"
         sponsors = [
-            { name = "Automattic", url = "https://automattic.com/", image = "img/sponsors/automattic-logo.svg", height = "auto", width = "800px"  },
+            { name = "Automattic", url = "https://automattic.com/", image = "img/sponsors/automattic-logo.svg", height = "auto", width = "700px"  },
+            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png", height = "auto", width = "300px"  },
         ]
     [[params.sponsorBlocks]]
         display = true
@@ -57,6 +58,7 @@ defaultContentLanguageInSubdir = false
             { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg", height = "auto", width = "400px"    },
             { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png", height = "auto", width = "400px"   },
             { name = "Open Bank", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_10CM.jpg", height = "auto", width = "400px"   },
+            { name = "Catworks", url = "https://catworkx.one/es/", image = "img/sponsors/RVB_INETUM_10CM.jpg", height = "auto", width = "400px"   },
         ]
     [[params.sponsorBlocks]]
         display = true
@@ -66,6 +68,7 @@ defaultContentLanguageInSubdir = false
             { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png", height = "5em", width = "auto"  },
             { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png", height = "5em", width = "auto"  },
             { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png", height = "3em", width = "auto"  },
+            { name = "Kairos", url = "https://www.kairosds.com/", image = "img/sponsors/kairos.png", height = "2.5em", width = "auto"  },
         ]
     [[params.sponsorBlocks]]
         display = true
