@@ -13,8 +13,6 @@ Soy un Ingeniero de Software de Bizkaia con más de 20 años en el sector ocupan
 
 Más allá de eso, soy un entusiasta de la calidad de software y de la agilidad bien entendida. Entiendo la Ingeniería de Software como un trabajo de equipo, donde lo más importante y lo más complejo siempre son las personas, por eso vivo en la convicción de que es lo primero que hay que cuidar para conseguir hacer buen Software.
 
-En otro orden de cosas, me encanta andar en bici, correr despacio y toco varios instrumentos, aunque lo hago todo con mucho más entusiasmo que destreza. Y me chifla la comida india.
-
 #### Encuentra a Mikel en:
 
 {class="social"}
@@ -23,9 +21,10 @@ En otro orden de cosas, me encanta andar en bici, correr despacio y toco varios 
 - [Web](https://mikelors.com/)
   {class="social"}
 
----  
+---
 
 ## Su charla{#talk}
+
 **La trampa del trabajo duro en el desarrollo de software**
 
 Trabajar muy duro siempre se ha considerado como algo positivo. Entendiéndolo como el hecho de esforzarse al máximo, asegurar que siempre estamos permanentemente ocupados haciendo cosas e incluso yendo más allá de lo necesario metiendo las horas que haga falta. ¿Quién no querría un equipo formado por personas que trabajan así? Pues si lo que queremos hacer es Software de calidad y que aporte valor, tal vez trabajar así no sea la mejor idea.

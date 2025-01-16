@@ -9,13 +9,11 @@ image = 'img/speakers/mikel.webp'
 
 # Mikel Ors Valle
 
-Bizkaiko Software Ingeniari bat naiz, sektorean 20 urte baino gehiago daramadana rol desberdinak betetzen. Azken urteotan, Datuen Ingeniaritzaren eta gidaritza teknikoaren munduetan murgilduta egon naiz.  
+Bizkaiko Software Ingeniari bat naiz, sektorean 20 urte baino gehiago daramadana rol desberdinak betetzen. Azken urteotan, Datuen Ingeniaritzaren eta gidaritza teknikoaren munduetan murgilduta egon naiz.
 
 Irakasteko grina dut. Horrek hainbat arlotako irakasle izatera eraman nau urte hauetan zehar.
 
-Hortik harago, softwarearen kalitatearen eta ondo ulertutako arintasunaren zale amorratua naiz. Software Ingeniaritza talde lan bat bezala ulertzen dut, non garrantzitsuena eta konplexuena beti pertsonak dira.  
-
-Bestalde, oso gustuko dut bizikletan ibiltzea, lasterka astiro egitea eta hainbat musika-tresna jotzea, nahiz eta dena trebetasunez baino gogotsuago egiten dudan. Eta indiar janaria gustatzen zait.
+Hortik harago, softwarearen kalitatearen eta ondo ulertutako arintasunaren zale amorratua naiz. Software Ingeniaritza talde lan bat bezala ulertzen dut, non garrantzitsuena eta konplexuena beti pertsonak dira.
 
 #### Aurkitu Mikel sare sozialetan:
 
@@ -25,9 +23,10 @@ Bestalde, oso gustuko dut bizikletan ibiltzea, lasterka astiro egitea eta hainba
 - [Web](https://mikelors.com/)
   {class="social"}
 
----  
+---
 
 ## Bere hitzaldia{#talk}
+
 **Lan gogorraren tranpa software garapenean**
 
 Lan gogorra beti positibotzat jo izan da. Gehien ahalegintzea, beti zerbait egiten egotea ziurtatzea, eta beharrezko ordu guztiak sartzea balioetsi izan da. Nork ez luke horrela lan egiten duten pertsonez osatutako talde bat nahi? Baina kalitatezko softwarea sortu eta benetan balioa eman nahi badugu, agian horrela lan egitea ez da ideia onena.
