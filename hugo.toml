@@ -47,7 +47,7 @@ defaultContentLanguageInSubdir = false
         display = true
         title = "sponsors_platino"
         sponsors = [
-            { name = "Automattic", url = "https://automattic.com/", image = "img/sponsors/automattic-logo.svg", height = "auto", width = "700px"  },
+            { name = "WordPress", url = "https://developer.wordpress.com/es/", image = "img/sponsors/WP.png", height = "auto", width = "580px"  },
             { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png", height = "auto", width = "300px"  },
         ]
     [[params.sponsorBlocks]]
