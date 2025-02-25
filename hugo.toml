@@ -17,9 +17,9 @@ defaultContentLanguageInSubdir = false
         { name = "Fran Mosteiro", url = "https://x.com/fran_mosteiro", image = "img/org/fran.jpg" },
     ]
     links = [
+        { title = "Telegram", url = "https://t.me/bilbostack" },
         { title = "Bluesky", url = "https://bsky.app/profile/bilbostack.com" },
-        { title = "Twitter X", url = "https://twitter.com/bilbostack" },
-        { title = "Telegram", url = "https://t.me/bilbostack20" },
+        { title = "X", url = "https://x.com/bilbostack" },
         { title = "Github", url = "https://github.com/bilbostack" },
     ]
     editions = [
