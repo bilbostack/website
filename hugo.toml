@@ -1,0 +1,109 @@
+baseURL = "https://bilbostack.com/"
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = false
+[params]
+    hashtag = "#Bilbostack25"
+    sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
+    sponsorsVisible = true
+    agendaVisible = true
+    ticketsOpen = true
+    ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2025-1023698398467"
+    youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
+    contactEmail = "info@bilbostack.com"
+    org = [
+        { name = "Vicenç García-Altés", url = "https://x.com/vgaltes", image = "img/org/vicenç.jpg" },
+        { name = "Ibon Landa", url = "https://x.com/ibonilm", image = "img/org/ibon.jpg" },
+        { name = "Asier Marqués", url = "https://bsky.app/profile/asiermarques.com", image = "img/org/asier.jpg" },
+        { name = "Fran Mosteiro", url = "https://x.com/fran_mosteiro", image = "img/org/fran.jpg" },
+    ]
+    links = [
+        { title = "Telegram", url = "https://t.me/bilbostack" },
+        { title = "Bluesky", url = "https://bsky.app/profile/bilbostack.com" },
+        { title = "X", url = "https://x.com/bilbostack" },
+        { title = "Github", url = "https://github.com/bilbostack" },
+    ]
+    editions = [
+        { year = 2012, url = "https://web.archive.org/web/20120502190422/http://bilbostack.com/" },
+        { year = 2013, url = "https://web.archive.org/web/20130110075437/http://bilbostack.com/" },
+        { year = 2014, url = "https://web.archive.org/web/20140205142714/http://bilbostack.com/" },
+        { year = 2015, url = "https://web.archive.org/web/20150109210526/http://bilbostack.com/" },
+        { year = 2016, url = "https://web.archive.org/web/20160109081707/http://bilbostack.com/" },
+        { year = 2017, url = "https://web.archive.org/web/20170601095000/http://bilbostack.com/" },
+        { year = 2018, url = "https://web.archive.org/web/20180129112902/http://bilbostack.com/" },
+        { year = 2019, url = "https://2019.bilbostack.com/" },
+        { year = 2020, url = "https://2020.bilbostack.com/" },
+        { year = 2022, url = "https://2022.bilbostack.com/" },
+        { year = 2023, url = "https://2023.bilbostack.com/" },
+        { year = 2024, url = "https://2024.bilbostack.com/" },
+    ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_main"
+        sponsors = [
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "10em", width = "auto" },
+            { name = "Diputación de Bizkaia", url = "https://www.bizkaia.eus", image = "img/sponsors/bfa.png", height = "10em", width = "auto" }
+        ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_platino"
+        sponsors = [
+            { name = "WordPress", url = "https://developer.wordpress.com/es/", image = "img/sponsors/WP.png", height = "auto", width = "580px"  },
+            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png", height = "auto", width = "300px"  },
+        ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_oro"
+        sponsors = [
+            { name = "Open Bank", url = "https://opendigitalservices.com", image = "img/sponsors/Logo ODS Negro.png", height = "auto", width = "400px"  },
+            { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg", height = "auto", width = "400px"    },
+            { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png", height = "auto", width = "400px"   },
+            { name = "Inetum", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_20CM.png", height = "auto", width = "600px"   },
+            { name = "Catworks", url = "https://catworkx.one/es/", image = "img/sponsors/catworks.png", height = "auto", width = "500px"   },
+        ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_plata"
+        sponsors = [
+            { name = "Quaderno", url = "https://www.quaderno.io/es/api/unifica-tu-facturacion", image = "img/sponsors/quaderno-logo.png", height = "5em", width = "auto"  },
+            { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png", height = "5em", width = "auto"  },
+            { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png", height = "5em", width = "auto"  },
+            { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png", height = "3em", width = "auto"  },
+            { name = "Kairos", url = "https://www.kairosds.com/", image = "img/sponsors/kairos.png", height = "2.5em", width = "auto"  },
+        ]
+    [[params.sponsorBlocks]]
+        display = true
+        title = "sponsors_bronce"
+        sponsors = [
+            { name = "Technosylva", url = "https://www.technosylva.com", image = "img/sponsors/techno-logo-color-300.png", height = "2em", width = "auto"  },
+            { name = "Gnoss", url = "https://www.gnoss.com", image = "img/sponsors/gnoss_marca.png", height = "2em", width = "auto"  },
+        ]
+    [[params.collaboratorsBlocks]]
+        display = false
+        title = "collaborators"
+        collaborators = [
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "2em", width = "auto"  }
+        ]
+[languages]
+    [languages.es]
+      disabled = false
+      languageCode = 'es'
+      languageName = 'ES'
+      weight = 1
+    [languages.en]
+      disabled = false
+      languageCode = 'en'
+      languageName = 'EN'
+      weight = 2
+    [languages.eu]
+      disabled = false
+      languageCode = 'eu'
+      languageName = 'EU'
+      weight = 3
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.parser]
+            [markup.goldmark.parser.attribute]
+                block = true
+                title = true

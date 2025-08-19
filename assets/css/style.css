@@ -1,0 +1,493 @@
+body{
+    background-color: #08262E;
+    color: #08262E;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: left;
+    font-size: 1.2rem;
+}
+div.table table{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        background-color: #fff;
+}
+div.table table th,
+div.table table td {
+  padding: 2px;
+  vertical-align: top;
+  border-top: 2px solid #08262E;
+}
+div.table table tr:nth-child(2n+1) td {
+    background-color: #f2f2f2;
+}
+div.table table tr:nth-child(2n) td {
+    background-color: #fff;
+}
+div.table table thead th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #08262E;
+}
+
+div.table table tbody {
+  border-top: 1px solid #666;
+}
+
+.text-right{
+    text-align: right;
+}
+.btn-outline-light{
+    color: #F2F2F2;
+    border-color: #F2F2F2;
+    --bs-btn-border-radius: 0;
+ }
+.btn-outline-pink{
+    color: #F2F2F2;
+    border-color: #E1277C;
+    border-width: .3rem;
+    --bs-btn-border-radius: 0;
+    --bs-btn-hover-bg: #E1277C;
+    padding: 1rem 2rem;
+    margin: .5em 1em 1em 1em;
+}
+.btn-primary{
+    background-color: #E1277C;
+    border: none;
+    border-radius: 0;
+    font-size: 2rem;
+}
+.btn-primary:hover{
+    background-color: #F2F2F2;
+    color: #E1277C;
+}
+.hidden-big{
+    display: inline-block;
+}
+.hidden-small{
+    display: none;
+}
+header{
+    padding: 0;
+    text-align: center;
+    background-color: #08262E;
+    color: #F2F2F2;
+}
+#top-nav{
+    background-color: #08262E;
+    color: #F2F2F2;
+}
+#top-nav .links {
+    text-align: right;
+}
+#top-nav .links a{
+    text-align: right;
+    color: #F6F6F6;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    opacity: .8;
+    margin-left: 0.8rem;
+}
+#top-nav .links a.event{
+    color: #FBBA22;
+    border-bottom: none;
+    padding: .4rem;
+}
+#top-nav .links a.current{
+    opacity: 1;
+}
+header img{
+    margin: 2rem 0 2rem 0;
+    max-width: 100%;
+}
+header h1{
+    font-weight: lighter;
+    font-size: 2rem;
+}
+header h2{
+    margin-bottom: 2rem;
+}
+header h2, header h3{
+    font-weight: lighter;
+}
+header .info strong{
+    color: #E1277C;
+    font-weight: 600;
+}
+header .info{
+    color: #F2F2F2;
+}
+header #mainCtaButton{
+    margin-bottom: 4rem;
+}
+header #logo-small-inner-mobile img{
+    margin-top: 0;
+    max-width: 100%;
+}
+article{
+    padding: 2rem 0 2rem 0;
+    background-color: #F2F2F2;
+    color: #08262E;
+}
+section{
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+section h2{
+    font-weight: lighter;
+}
+section.blue{
+    background-color: #08262E;
+    color: #f2f2f2
+}
+section.yellow{
+    background-color: HSL(42, 95%, 86%);
+    color: #08262E;
+}
+section.gray{
+    background-color: #F2F2F2;
+    color: #08262E;
+}
+
+section.blue a {
+    color: #F2F2F2;
+}
+section.blue h5, section.blue h4,section.blue h3 {
+    color: #FBBA22;
+}
+section.white{
+    background-color: #ffffff;
+}
+section.white a {
+    color: #08262E;
+    text-decoration: underline;
+}
+section.white h5, section.blue h4,section.blue h3 {
+    color: #08262E;
+}
+section h2{
+    margin: 2rem 0 1.5rem 0;
+    display: block;
+}
+article#presentation{
+    padding: 2rem 0 2rem 0;
+    background-color: #009CD1;
+    color: #F2F2F2;
+    text-align: center;
+}
+article#presentation h2{
+    font-weight: lighter;
+}
+article#presentation .stats{
+    margin-top: 2rem;
+}
+article#presentation .stats span{
+    color: #FBBA22;
+    font-weight: normal;
+    font-size: 1.6rem;
+}
+article#presentation a.btn{
+    margin-top: 2rem;
+}
+article h1{
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+article strong{
+    font-weight: 600;
+}
+article a.sponsors{
+    margin: 1rem 0 1rem 0;
+    font-size: 2rem;
+}
+#speakers .speaker{
+    border: none;
+    color: #08262E;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+#speakers .speaker .card-body{
+    text-align: left;
+}
+#speakers .speaker .card-body p{
+    text-align: left;
+    font-weight: lighter;
+    font-size: small;
+}
+#speakers .speaker .image, #speaker_detail .image{
+    background: #eee;
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height: 400px;
+}
+article#speaker_detail {
+    padding-top: 1rem;
+}
+article#speaker_detail a.back{
+    margin-bottom: 1rem;
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    color: #E1277C;
+}
+article#speaker_detail h1{
+    margin-top: 2rem;
+}
+article#speaker_detail h2.social,
+article#speaker_detail h3.social,
+article#speaker_detail h4.social{
+    margin-top: 2rem;
+}
+article#speaker_detail ul.social,
+article#speaker_detail ul.social li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+article#speaker_detail ul.social li{
+    margin: .5rem 0 .5rem 0;
+}
+#page h1, #page h2, #page  h3{
+    margin-top: 2rem;
+}
+#page  h4, #page  h5{
+    margin-top: 1.4rem;
+}
+#agenda .alert{
+    background-color: #08262E;
+    color: #F2F2F2;
+}
+#agenda td {
+    font-size: 1rem;
+}
+#agenda td a{
+    text-decoration: none;
+    font-weight: normal;
+    color: #08262E;
+    font-size: 1rem;
+    display: block;
+}
+#agenda td a strong{
+    display: block;
+    font-size: 1.1rem;
+}
+
+#agenda table.mobile-only th{
+    background-color: #dfdfdf;
+    text-align: center!important;
+}
+#agenda table.mobile-only tr:nth-child(2n+1) td strong{
+    color: #666;
+}
+
+table.desktop-only {
+    display: none;
+}
+article a, article span{
+    font-weight: bold;
+}
+article a{
+    color: #E1277C;
+}
+footer{
+    padding: 2rem 0 4rem 0
+}
+footer .social a{
+    display: inline-block;
+    padding: .2rem;
+    color: #F2F2F2;
+    font-weight: bold;
+}
+footer .dashed hr{
+    border-top: 3px dashed #bbb;
+}
+#where{
+    padding-bottom: 0;
+}
+#where iframe{
+    margin: 0;
+    height: 500px;
+}
+#where .content_wrap {
+    position: relative;
+    height: 620px;
+}
+#where .content_wrap .content {
+    display: none;
+    font-size: 1.2rem;
+}
+#where .venue h5{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+#where .venue{
+    padding: 2rem 0;
+}
+#where .venue a{
+    margin-bottom: 1rem;
+}
+#where video, #where  img{
+    height: auto;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+}
+#where  img{
+    margin-bottom: 1rem;
+}
+#sponsors {
+    text-align: center;
+}
+#sponsors h2{
+    margin-bottom: 4rem;
+}
+#sponsors .list{
+    margin-bottom: 4.5rem;
+}
+#sponsors .list h3{
+    font-weight: normal;
+    color: #888;
+}
+#sponsors .list .item{
+    display: block;
+    padding: 1rem;
+    margin: .8rem 2rem .5rem 2rem;
+}
+#tickets {
+    text-align: center;
+}
+#tickets h2{
+    margin-bottom: 4rem;
+    color: #fff;
+}
+#tickets .list{
+    margin-bottom: 3rem;
+}
+#tickets .list h3{
+    font-weight: normal;
+    color: #fff;
+}
+#tickets .list .item{
+    display: block;
+    padding: 1rem;
+    margin: 1rem 2rem .5rem 2rem;
+}
+#tickets img{
+    filter: grayscale(100%)
+}
+#tickets a:hover img{
+    filter: grayscale(0%)
+}
+footer{
+    color: #ccc
+}
+footer a{
+    color: #F2F2F2;
+}
+footer #about #org img{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+footer .editions, footer .editions a{
+    font-size: 1rem;
+}
+footer #about h4{
+    color: #E1277C;
+}
+@media (min-width: 768px) {
+    body, article a.sponsors{
+        font-size: 1.2rem;
+    }
+    .hidden-big{
+        display: none;
+    }
+    .hidden-small{
+        display: inline-block;
+    }
+    #top-nav .links-container {
+        padding: 1rem 0 1rem 0;
+    }
+    #top-nav .links a{
+        font-size: 1rem;
+    }
+    article{
+        padding: 4rem 0 4rem 0;
+    }
+    article h1{
+        margin-bottom: 2rem;
+    }
+    article#speaker_detail h1{
+        margin-top: 0rem;
+    }
+    article .editions span{
+        display: inline-block;
+    }
+    article a.sponsors{
+        margin: .2rem 0 1rem 0;
+    }
+    iframe{
+        height: 560px;
+    }
+    header img{
+        max-width: 80%;
+        margin-bottom: 4rem;
+    }
+    header #logo-inner-container{
+        text-align: left;
+    }
+    header a#logo-small, header a#logo-small-220{
+        text-align: left;
+    }
+    header a#logo-small img{
+        margin: 2rem 0;
+        width: 350px;
+        max-width: 100%;
+    }
+    #where .content_wrap .content {
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 5rem;
+    }
+    #where .venue h5{
+        margin-top: 0;
+    }
+    #sponsors .list .item{
+        display: inline-block;
+    }
+    footer #about h4{
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    footer #about .links a{
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+        display: block;
+        text-decoration: underline;
+    }
+}
+@media (min-width: 1200px) {
+    body, article a.sponsors{
+        font-size: 1.5rem;
+    }
+    header h2 {
+        font-size: 2rem;
+    }
+    #top-nav .links a{
+        font-size: 1.2rem;
+    }
+    article h1 {
+        font-size: 3.2rem;
+    }
+    table.desktop-only {
+        display: table;
+    }
+    table.mobile-only {
+        display: none;
+    }
+    #where .venue h5{
+        font-size: 3rem;
+    }
+}
