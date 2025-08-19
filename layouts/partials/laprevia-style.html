@@ -1,6 +1,3 @@
-{{ with resources.Get "css/bootstrap.css" }}
-<link rel="stylesheet" href="{{ .RelPermalink }}">
-{{ end }}
 {{ $style := resources.Get "scss/style.scss" | toCSS }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ $lapreviaStyle := resources.Get "scss/laprevia/style.scss" | toCSS }}
