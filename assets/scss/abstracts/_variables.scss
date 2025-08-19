@@ -1,0 +1,26 @@
+:root {
+    // COLORS
+    // Orange
+    --orange-100: #f2e8dc;
+    --orange-200: #f2ddc6;
+    --orange-300: #f1be84;
+    --orange-400: #f08a17; //main
+    --orange-500: #7c5823;
+    --orange-600: #363a29;
+    --orange-700: #1f302c;
+
+    //Blue
+    --blue-100: #daeae9;
+    --blue-200: #c2e2e0;
+    --blue-300: #79c9c5;
+    --blue-400: #00a199; //main
+    --blue-500: #046464;
+    --blue-600: #063f43;
+    --blue-700: #073239;
+
+    //Current Color Edition
+    $current-color: "blue";
+    @for $i from 1 through 7 {
+        --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
+    }
+}
