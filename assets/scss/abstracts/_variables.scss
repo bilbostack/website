@@ -23,4 +23,9 @@
     @for $i from 1 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
     }
+
+    // FONT
+    --font-family: "Plus Jakarta Sans", sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.2;
 }
