@@ -1,15 +1,4 @@
-:root {
-    --header-bg: #fff;
-    --header-text: #333;
-    --primary-color: #007bff;
-    --sidenav-bg: #111;
-    --sidenav-link-color: #818181;
-    --sidenav-link-hover: #f1f1f1;
-}
-
 .site-header {
-    background-color: var(--header-bg);
-    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -18,7 +7,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
 
         .navbar-left,
         .navbar-right {
@@ -126,6 +115,10 @@
     align-items: center;
     text-decoration: none;
     color: var(--font-color);
+
+    &:hover {
+        color: var(--font-color);
+    }
 }
 
 .logo {
@@ -162,8 +155,8 @@
     transition: left 0.4s ease;
 
     .logo-link {
-        padding-top: 0.5rem;
-        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
     }
 
     ul {
@@ -174,15 +167,16 @@
 
     .sidenav-menu {
         flex: auto;
-        padding: 3rem;
+        padding: 2rem 4rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
+        justify-content: center;
 
         li a {
             text-decoration: none;
             color: var(--font-color);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
 
             .nav-link-title {
                 font-size: 3rem;
@@ -203,6 +197,14 @@
 
     .sidenav-bottom {
         padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        a {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
     }
 
     .close-btn {
@@ -211,7 +213,7 @@
         font-size: 1.25rem;
         color: var(--sidenav-link-color);
         display: block;
-        transition: 0.3s;
+        transition: 0.2s;
 
         &:hover {
             color: var(--sidenav-link-hover);
@@ -223,5 +225,45 @@
         top: 10px;
         right: 25px;
         font-size: 36px;
+    }
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+        text-decoration: none;
+
+        .fill-main {
+            transition: all 0.2s ease;
+        }
+
+        &:hover {
+            .fill-main {
+                fill: var(--color-primary-light);
+            }
+        }
+    }
+}
+
+.languages {
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+        text-decoration: none;
+        border: 1px solid;
+        padding: 0.3rem;
+        opacity: 0.6;
+
+        &.current {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
     }
 }

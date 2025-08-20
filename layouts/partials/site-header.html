@@ -57,12 +57,25 @@
     {{ end }}
   </ul>
   <div class="sidenav-bottom">
-    <!-- email -->
-    <!-- redes -->
-    {{ range .Site.Params.Links }}
-    <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">{{.title}}</a>
-    {{ end }}
-    <!-- idiomas -->
+    <a href="mailto:{{$.Site.Params.contactEmail}}">{{$.Site.Params.contactEmail}}</a>
+    <!-- social media -->
+    <div class="social-media">
+      {{ range .Site.Params.Links }}
+      <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">
+        {{ with resources.Get .image }}
+        {{ .Content | safeHTML }}
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+    <!-- languages -->
+    <div class="languages">
+      {{ with .AllTranslations }}
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="current" {{ end }}>{{ .Language.LanguageName }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
   </div>
 </div>
 

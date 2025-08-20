@@ -33,3 +33,12 @@ h6,
 .h6 {
     font-size: 1rem; // 16px
 }
+
+a {
+    color: var(--font-color);
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: var(--color-primary-light);
+    }
+}
