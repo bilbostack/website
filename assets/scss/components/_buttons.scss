@@ -1,0 +1,28 @@
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: var(--current-color-400);
+    color: var(--color-primary-light);
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--color-primary-dark);
+        border-radius: 50px;
+        z-index: -1;
+        transition: all 0.2s ease;
+    }
+
+    &:hover:before {
+        top: 0.4rem;
+    }
+}

@@ -1,0 +1,227 @@
+:root {
+    --header-bg: #fff;
+    --header-text: #333;
+    --primary-color: #007bff;
+    --sidenav-bg: #111;
+    --sidenav-link-color: #818181;
+    --sidenav-link-hover: #f1f1f1;
+}
+
+.site-header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+
+        .navbar-left,
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    /* Theme Toggle */
+    .theme-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+        margin: 0 1rem;
+
+        input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-primary-light);
+            border: 2px solid var(--color-primary-dark);
+            transition: 0.4s;
+            border-radius: 50px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 3px;
+                bottom: 2px;
+                background-color: var(--color-primary-dark);
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-light);
+
+            &::before {
+                transform: translateX(21px);
+                background-color: var(--color-primary-light);
+            }
+        }
+    }
+
+    /* Hamburger */
+    .hamburger {
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        transition: all 0.1s ease;
+
+        .hamburger-line {
+            display: inline-block;
+            width: 2rem;
+            height: 0.25rem;
+            background: var(--color-primary-dark);
+            border-radius: 10px;
+        }
+
+        &:hover {
+            gap: 0.3rem;
+        }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+
+    .show-on-mobile-only {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .show-on-mobile-only {
+            display: block;
+        }
+    }
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.logo {
+    height: 2rem;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    line-height: 1.2;
+    font-size: 2rem;
+    font-weight: bold;
+
+    .event-place {
+        opacity: 0.65;
+    }
+}
+
+/* Sidenav */
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-height: 100dvh;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: -50vw;
+    width: 50vw;
+    background-color: var(--current-color-400);
+    overflow-x: hidden;
+    transition: left 0.4s ease;
+
+    .logo-link {
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidenav-menu {
+        flex: auto;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        li a {
+            text-decoration: none;
+            color: var(--font-color);
+            transition: all 0.3s ease;
+
+            .nav-link-title {
+                font-size: 3rem;
+                font-weight: bold;
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+
+            .nav-link-desc {
+                font-size: 1.25rem;
+            }
+
+            &:hover {
+                color: var(--color-primary-light);
+            }
+        }
+    }
+
+    .sidenav-bottom {
+        padding: 2rem 3rem;
+    }
+
+    .close-btn {
+        padding: 10px 15px 10px 30px;
+        text-decoration: none;
+        font-size: 1.25rem;
+        color: var(--sidenav-link-color);
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--sidenav-link-hover);
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 36px;
+    }
+}

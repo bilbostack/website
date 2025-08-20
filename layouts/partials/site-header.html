@@ -1,30 +1,95 @@
-{{ $isHome := (eq .Permalink (ref . "/"))}}
-<header>
-  {{ partial "site-top-nav.html" .}}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-      {{if $isHome}}
-        {{ with resources.Get "img/logo-header-dark.png" }}
-          {{ with .Resize "2000x webp q85 lanczos" }}
-            <img src="{{ .RelPermalink }}"
-                 width="{{ .Width }}"
-                 height="auto"
-                 alt="{{T "logo_alt" }}">
-          {{ end }}
+<header class="site-header">
+  <div class="navbar">
+    <!-- Left Block: Logo and Text -->
+    <div class="navbar-left">
+      <a href="{{ .Site.BaseURL }}" class="logo-link">
+        {{ with resources.Get "img/bilbostack-logo-square.svg" }}
+        {{ .Content | safeHTML }}
         {{ end }}
-        <h2 class="info">{{T "header_where" | safeHTML }}</h2>
-
-        <div id="mainCtaButton">
-          {{ if $.Site.Params.ticketsOpen}}
-            <a href="{{$.Site.Params.ticketsLink}}"
-              target="_blank"
-              title="{{T "cta_tickets" }}"
-              class="btn btn-lg btn-outline-pink tickets">{{T "cta_tickets" }}</a>
-          {{end}}
+        <div class="logo-text">
+          <span class="event-date">{{T "header_when" | safeHTML }}</span>
+          <span class="event-place">{{T "header_where" | safeHTML }}</span>
         </div>
-      </div>
+      </a>
     </div>
-    {{end}}
+
+    <!-- Right Block: Actions -->
+    <div class="navbar-right">
+      {{ if $.Site.Params.ticketsOpen}}
+      <a href="{{$.Site.Params.ticketsLink}}" target="_blank" title="{{T " cta_tickets" }}" class="btn btn-primary hide-on-mobile">{{T "cta_tickets" | safeHTML }}</a>
+      {{end}}
+      <!-- Theme Toggle Switch -->
+      <label class="theme-switch" for="theme-toggle-checkbox">
+        <input type="checkbox" id="theme-toggle-checkbox">
+        <div class="slider"></div>
+      </label>
+
+      <!-- Hamburger Icon -->
+      <button id="hamburger-btn" class="hamburger" aria-label="Open menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- Sidenav (Mobile Menu) -->
+<div id="mobile-menu" class="sidenav">
+  <div class="sidenav-top">
+    <a id="close-btn" class="close-btn">&times;</a>
+    <a href="{{ .Site.BaseURL }}" class="logo-link">
+      {{ with resources.Get "img/bilbostack-logo-square.svg" }}
+      {{ .Content | safeHTML }}
+      {{ end }}
+      <div class="logo-text">
+        <span class="event-date">{{T "header_when" | safeHTML }}</span>
+        <span class="event-place">{{T "header_where" | safeHTML }}</span>
+      </div>
+    </a>
+  </div>
+  <ul class="sidenav-menu">
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL }}">
+        <span class="nav-link-title">{{ .Name }}</span>
+        <span class="nav-link-desc">{{ .Params.desc }}</span>
+      </a></li>
+    {{ end }}
+  </ul>
+  <div class="sidenav-bottom">
+    <!-- email -->
+    <!-- redes -->
+    {{ range .Site.Params.Links }}
+    <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">{{.title}}</a>
+    {{ end }}
+    <!-- idiomas -->
+  </div>
+</div>
+
+<script>
+  // Move this to your main JavaScript file
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener('click', function () {
+        mobileMenu.style.left = '0';
+      });
+    }
+
+    if (closeBtn && mobileMenu) {
+      closeBtn.addEventListener('click', function () {
+        mobileMenu.style.left = '-50vw';
+      });
+    }
+
+    // Optional: Close menu if user clicks outside of it
+    window.addEventListener('click', function (event) {
+      if (event.target == mobileMenu) {
+        mobileMenu.style.left = '-50vw';
+      }
+    });
+  });
+</script>

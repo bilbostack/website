@@ -1,5 +1,8 @@
 :root {
     // COLORS
+    --color-primary-dark: #08262e;
+    --color-primary-light: #ffffff;
+
     // Orange
     --orange-100: #f2e8dc;
     --orange-200: #f2ddc6;
@@ -28,4 +31,5 @@
     --font-family: "Plus Jakarta Sans", sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.2;
+    --font-color: var(--color-primary-dark);
 }
