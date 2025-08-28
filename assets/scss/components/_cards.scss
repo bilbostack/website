@@ -1,0 +1,120 @@
+.programa {
+    position: relative;
+    margin-bottom: 20vh;
+    // min-height: 200vh; // Asegurar suficiente altura para el scroll
+
+    .programa-header {
+        position: relative;
+        z-index: 100;
+        padding: 2rem;
+    }
+}
+.cards-programa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    position: relative;
+
+    * {
+        pointer-events: none;
+    }
+
+    .card-programa {
+        flex: 1;
+        position: relative;
+        z-index: 50;
+        padding-bottom: 10vh; // Espacio entre cards para el efecto
+
+        a {
+            pointer-events: all;
+        }
+
+        .card-programa-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-header {
+            display: inline-block;
+            background-color: var(--current-color-100);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 2rem;
+            max-width: 20rem;
+            position: relative;
+            z-index: 1;
+            pointer-events: all;
+            text-decoration: none;
+        }
+
+        .card-content {
+            background-color: var(--current-color-100);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            flex: auto;
+            display: flex;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            box-sizing: border-box;
+            flex: auto;
+
+            .card-content-left {
+                max-width: 35%;
+                min-width: 35%;
+                flex: 35%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: var(--border-radius-xs);
+                }
+            }
+
+            .card-content-right {
+                font-size: 1.25rem;
+                padding-bottom: 2rem;
+
+                h3 {
+                    font-size: 4rem;
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .card-actions {
+                margin-top: 3rem;
+                z-index: 0;
+                position: relative;
+                display: flex;
+                gap: 1rem;
+            }
+        }
+    }
+
+    .card-programa-2 {
+        .card-header {
+            background-color: var(--current-color-200);
+            margin-left: 27rem;
+        }
+
+        .card-content {
+            background-color: var(--current-color-200);
+        }
+    }
+
+    // Spacer para permitir scroll adicional
+    .programa-spacer {
+        min-height: 50vh;
+    }
+}
