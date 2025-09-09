@@ -1,59 +1,12 @@
 {{ define "main" }}
-<article class="main-content">
-  <section style="height: 100vh; background-color: greenyellow;" class="main-header">AQUÍ VA EL HEADER</section>
 
-  <section class="programa">
-    <div class="programa-header">
-      <p class="heading-square">¡Los cracks de la tecnología invaden Bilbao!</p>
-      <h2>Durante 2 días, referentes tech de aquí y del mundo se reúnen para compartir ideas, charlas y mucha innovación</h2>
-    </div>
+<!-- Header -->
+<section style="height: 100vh; background-color: greenyellow;" class="main-header">AQUÍ VA EL HEADER</section>
 
-    <div class="cards-programa">
-      <div id="viernes" class="card-programa" data-card="1">
-        <div class="card-programa-wrapper">
-          <a href="#viernes" class="card-header">Viernes 30 de enero</a>
-          <div class="card-content">
-            <div class="card-content-left">
-              <img src="https://placehold.co/600x400" alt="">
-            </div>
-            <div class="card-content-right">
-              <h3>La Previa</h3>
-              <p>Principalmente orientado a estudiantes y personas desempleadas que quieran acercarse al mundo de la tecnología de la mano de los mejores profesionales del sector. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio.</p>
-              <p>*La entrada '#LaPrevia a BilboStack - Viernes 26/01/2024' será sólo válida para el VIERNES previo a BilboStack 2024. Si quieres acudir también al evento principal el sábado, debes adquirir una 'Entrada General'</p>
-              <div class="card-actions">
-                <a href="" class="btn btn-outline">Agenda</a>
-                <a href="" class="btn btn-primary">Consigue tu entrada gratuita</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="sabado" class="card-programa card-programa-2" data-card="2">
-        <div class="card-programa-wrapper">
-          <a href="#sabado" class="card-header">Sábado 31 de enero</a>
-          <div class="card-content">
-            <div class="card-content-left">
-              <img src="https://placehold.co/600x400" alt="">
-            </div>
-            <div class="card-content-right">
-              <h3>BilboStack <span class="small">+ La Espuela</span></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio.</p>
-              <div class="card-actions">
-                <a href="" class="btn btn-outline">Agenda</a>
-                <a href="" class="btn btn-primary">Compra tus entradas</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Spacer para permitir scroll adicional después de las cards -->
-      <div class="programa-spacer" style="height: 50vh;"></div>
-    </div>
-  </section>
-</article>
+<!-- Agenda -->
+{{ partial "home-program.html" .}}
 
-
-
+<!-- CTA Patrocinios -->
 <article id="presentation">
   <div class="container-fluid">
     <div class="col-lg-8 offset-lg-2">
@@ -69,14 +22,20 @@
     </div>
   </div>
 </article>
-<article>
-  <div class="container">
-    {{ partial "home-speakers.html" .}}
-    {{ partial "home-agenda.html" .}}
-  </div>
-</article>
+
+<!-- Ponentes -->
+{{ partial "home-speakers.html" .}}
+
+<!-- Agenda -->
+{{ partial "home-agenda.html" .}}
+
+<!-- Ubicación -->
 {{ partial "home-location.html" .}}
+
+<!-- Patrocinadores -->
 {{ partial "site-sponsors.html" .}}
+
+<!-- Colaboradores -->
 {{ partial "site-collaborators.html" .}}
 </div>
 

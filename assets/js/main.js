@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function initAnimations() {
-    initStickyCards();
+    // initStickyCards();
 }
 
 function initStickyCards() {

@@ -6,18 +6,16 @@
     .programa-header {
         position: relative;
         z-index: 100;
-        padding: 2rem;
     }
 }
 .cards-programa {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 2rem;
     position: relative;
 
     * {
-        pointer-events: none;
+        // pointer-events: none;
     }
 
     .card-programa {
