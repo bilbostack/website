@@ -39,43 +39,48 @@ defaultContentLanguageInSubdir = false
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_main"
+        class = "sponsors-xxl"
         sponsors = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "10em", width = "auto" },
-            { name = "Diputación de Bizkaia", url = "https://www.bizkaia.eus", image = "img/sponsors/bfa.png", height = "10em", width = "auto" }
+            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png" },
+            { name = "Diputación de Bizkaia", url = "https://www.bizkaia.eus", image = "img/sponsors/bfa.png" }
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_platino"
+        class = "sponsors-xl"
         sponsors = [
-            { name = "WordPress", url = "https://developer.wordpress.com/es/", image = "img/sponsors/WP.png", height = "auto", width = "580px"  },
-            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png", height = "auto", width = "300px"  },
+            { name = "WordPress", url = "https://developer.wordpress.com/es/", image = "img/sponsors/WP.png"  },
+            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png"  },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_oro"
+        class = "sponsors-l"
         sponsors = [
-            { name = "Open Bank", url = "https://opendigitalservices.com", image = "img/sponsors/Logo ODS Negro.png", height = "auto", width = "400px"  },
-            { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg", height = "auto", width = "400px"    },
-            { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png", height = "auto", width = "400px"   },
-            { name = "Inetum", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_20CM.png", height = "auto", width = "600px"   },
-            { name = "Catworks", url = "https://catworkx.one/es/", image = "img/sponsors/catworks.png", height = "auto", width = "500px"   },
+            { name = "Open Bank", url = "https://opendigitalservices.com", image = "img/sponsors/Logo ODS Negro.png"  },
+            { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg"    },
+            { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png"   },
+            { name = "Inetum", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_20CM.png"   },
+            { name = "Catworks", url = "https://catworkx.one/es/", image = "img/sponsors/catworks.png"   },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_plata"
+        class = "sponsors-m"
         sponsors = [
-            { name = "Quaderno", url = "https://www.quaderno.io/es/api/unifica-tu-facturacion", image = "img/sponsors/quaderno-logo.png", height = "5em", width = "auto"  },
-            { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png", height = "5em", width = "auto"  },
-            { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png", height = "5em", width = "auto"  },
-            { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png", height = "3em", width = "auto"  },
-            { name = "Kairos", url = "https://www.kairosds.com/", image = "img/sponsors/kairos.png", height = "2.5em", width = "auto"  },
+            { name = "Quaderno", url = "https://www.quaderno.io/es/api/unifica-tu-facturacion", image = "img/sponsors/quaderno-logo.png"  },
+            { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png"  },
+            { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png"  },
+            { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png"  },
+            { name = "Kairos", url = "https://www.kairosds.com/", image = "img/sponsors/kairos.png"  },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_bronce"
+        class = "sponsors-s"
         sponsors = [
-            { name = "Technosylva", url = "https://www.technosylva.com", image = "img/sponsors/techno-logo-color-300.png", height = "2em", width = "auto"  },
-            { name = "Gnoss", url = "https://www.gnoss.com", image = "img/sponsors/gnoss_marca.png", height = "2em", width = "auto"  },
+            { name = "Technosylva", url = "https://www.technosylva.com", image = "img/sponsors/techno-logo-color-300.png"  },
+            { name = "Gnoss", url = "https://www.gnoss.com", image = "img/sponsors/gnoss_marca.png"  },
         ]
     [[params.collaboratorsBlocks]]
         display = false

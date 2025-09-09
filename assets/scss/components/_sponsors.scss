@@ -1,0 +1,44 @@
+#sponsors {
+    h3 {
+        font-size: 1.25rem;
+
+        &.sponsors-xxl {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .list {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 5rem;
+
+        .item {
+            img {
+                width: auto;
+                object-fit: contain;
+            }
+
+            &.sponsors-xxl img {
+                height: 12rem;
+                max-width: 20rem;
+            }
+            &.sponsors-xl img {
+                height: 10rem;
+                max-width: 15rem;
+            }
+            &.sponsors-l img {
+                height: 8rem;
+                max-width: 12rem;
+            }
+            &.sponsors-m img {
+                height: 6rem;
+                max-width: 9rem;
+            }
+            &.sponsors-s img {
+                height: 5rem;
+                max-width: 7.5rem;
+            }
+        }
+    }
+}
