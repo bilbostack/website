@@ -1,52 +1,74 @@
 {{ $links := $.Site.Params.Links }} {{ $org := $.Site.Params.Org }}
 <footer>
-  <section id="about">
+  <div class="content">
+    <div class="tech"><i>&lt;</i>Tech Conference<i>/&gt;</i></div>
+
+    <section id="footer-menu">
+      <ul class="horizontal-menu">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">
+            <span class="nav-link-title">{{ .Name }}</span>
+          </a></li>
+        {{ end }}
+      </ul>
+    </section>
+
+    <section id="editions">{{ partial "home-editions.html" .}}</section>
+
+    <section id="contact">
+      <a href="mailto:{{$.Site.Params.contactEmail}}">{{$.Site.Params.contactEmail}}</a>
+      <!-- social media -->
+      <div class="social-media">
+        {{ range .Site.Params.Links }}
+        <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">
+          {{ with resources.Get .image }}
+          {{ .Content | safeHTML }}
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </section>
+
+    <section id="organizadores">
+      <h4>{{ T "organization" }}</h4>
+      <div class="orgs">
+        {{ range $org }}
+        <a class="org" href="{{.url}}" title="{{.name}}" target="_blank">
+          {{ with resources.Get .image }} {{ with .Resize "162x162 webp q70 lanczos" }}
+          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="auto" class="img-thumbnail" />
+          {{ end }} {{ end }}
+          <div class="org-data">
+            <div class="org-name">{{.name}}</div>
+            <div class="org-position">{{.position}}</div>
+          </div>
+        </a>
+
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="links">Enlaces legales</section>
+
+  </div>
+  <!-- <section id="about">
     <div class="container">
       <div class="row">
         <div id="org" class="col-md-7">
-          <h4>{{ T "organization" }}</h4>
-          <div class="row justify-content-start">
-            {{ range $org }}
-            <div class="col-6 col-md-3">
-              <a href="{{.url}}" title="{{.name}}" target="_blank">
-                {{ with resources.Get .image }} {{ with .Resize "162x162 webp q70 lanczos" }}
-                <img
-                  src="{{ .RelPermalink }}"
-                  width="{{ .Width }}"
-                  height="auto"
-                  class="img-thumbnail"
-                />
-                {{ end }} {{ end }}
-              </a>
-            </div>
-            {{ end }}
-          </div>
 
-          {{ partial "home-editions.html" .}}
+
+
         </div>
         <div class="col-md-5 text-center">
           <h4>Bilbostack 2025</h4>
           <div class="links">
             {{ range where .Site.Pages "Type" "info-page" }}
-            <a
-              href="{{.Permalink}}"
-              class="nav-link"
-              target="_blank"
-              title="{{.Title}}"
-              >{{.Title}}</a
-            >
+            <a href="{{.Permalink}}" class="nav-link" target="_blank" title="{{.Title}}">{{.Title}}</a>
             {{ end }} {{ range $links }}
-            <a
-              href="{{.url}}"
-              class="nav-link"
-              target="_blank"
-              title="{{.title}}"
-              >{{.title}}</a
-            >
+            <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">{{.title}}</a>
             {{ end }}
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </footer>

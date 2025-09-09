@@ -1,13 +1,13 @@
 {{ define "main" }}
+<div class="main-content">
+  <!-- Header -->
+  <!-- <section style="height: 100vh; background-color: greenyellow;" class="main-header">AQUÍ VA EL HEADER</section> -->
 
-<!-- Header -->
-<!-- <section style="height: 100vh; background-color: greenyellow;" class="main-header">AQUÍ VA EL HEADER</section> -->
+  <!-- Agenda -->
+  {{ partial "home-program.html" .}}
 
-<!-- Agenda -->
-<!-- {{ partial "home-program.html" .}} -->
-
-<!-- CTA Patrocinios -->
-<!-- <section id="presentation">
+  <!-- CTA Patrocinios -->
+  <!-- <section id="presentation">
   <div class="container-fluid">
     <div class="col-lg-8 offset-lg-2">
       <h1>{{T "main_claim" }}</h1>
@@ -23,20 +23,19 @@
   </div>
 </section> -->
 
-<!-- Ponentes -->
-{{ partial "home-speakers.html" .}}
+  <!-- Ponentes -->
+  {{ partial "home-speakers.html" .}}
 
-<!-- Agenda -->
-<!-- {{ partial "home-agenda.html" .}} -->
+  <!-- Agenda -->
+  <!-- {{ partial "home-agenda.html" .}} -->
 
-<!-- Ubicación -->
-<!-- {{ partial "home-location.html" .}} -->
+  <!-- Ubicación -->
+  <!-- {{ partial "home-location.html" .}} -->
 
-<!-- Patrocinadores -->
-{{ partial "site-sponsors.html" .}}
+  <!-- Patrocinadores -->
+  {{ partial "site-sponsors.html" .}}
 
-<!-- Colaboradores -->
-{{ partial "site-collaborators.html" .}}
+  <!-- Colaboradores -->
+  {{ partial "site-collaborators.html" .}}
 </div>
-
 {{end}}

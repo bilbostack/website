@@ -1,0 +1,128 @@
+footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
+    padding-top: 1rem;
+}
+
+#organizadores {
+    .orgs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2rem;
+
+        .org {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            gap: 1vw;
+
+            background: var(--current-color-600);
+            padding: 1rem 1.5rem 1rem 1rem;
+            border-radius: var(--border-radius);
+
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+
+            img {
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+
+            &-name {
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+#footer-menu {
+    margin-bottom: 5rem;
+
+    .horizontal-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+        justify-content: flex-start;
+
+        li {
+            a {
+                color: var(--color-primary-light);
+                text-decoration: none;
+                font-size: 1.2rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+#editions {
+    margin-bottom: 5rem;
+
+    .editions {
+        color: var(--color-primary-light);
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        a,
+        span {
+            color: var(--color-primary-light);
+            font-weight: 600;
+            font-size: 1.5rem;
+
+            &:hover:not(span):not(.current) {
+                text-decoration: underline;
+            }
+
+            &.current {
+                background-color: var(--current-color-400);
+                text-decoration: none;
+                cursor: default;
+                padding: 0.2rem 0.5rem;
+                border-radius: var(--border-radius-xs);
+            }
+        }
+    }
+}
+
+#contact {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 4rem;
+
+    a {
+        color: var(--current-color-400);
+        font-size: 2.5rem;
+        .fill-main {
+            fill: var(--current-color-400);
+        }
+
+        &:hover {
+            color: var(--color-primary-light);
+
+            .fill-main {
+                fill: var(--color-primary-light);
+            }
+        }
+    }
+}
+
+.tech {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+    i {
+        color: var(--current-color-300);
+    }
+}
