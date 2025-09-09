@@ -1,0 +1,74 @@
+#speakers {
+    .speakers-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        row-gap: 4rem;
+    }
+
+    .speaker {
+        color: var(--font-color);
+        text-decoration: none;
+
+        h4 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .card-text {
+            margin: 0 0 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 0.8;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 var(--current-color-400);
+            border-radius: var(--border-radius-xs);
+        }
+
+        .image {
+            width: 100%;
+            display: block;
+            aspect-ratio: 0.8;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+            border-radius: var(--border-radius-xs);
+            transform-origin: 50% 95%;
+        }
+
+        &:hover {
+            color: var(--font-color);
+
+            .image-wrapper {
+                box-shadow: 0 0.5rem 0 var(--current-color-400);
+            }
+
+            .image {
+                scale: 1.1;
+            }
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+
+            .tag {
+                background-color: var(--current-color-500);
+                color: var(--color-primary-light);
+                padding: 0.3rem 1rem;
+                font-weight: 700;
+
+                &-day {
+                    background-color: var(--current-color-400);
+                }
+            }
+        }
+    }
+}

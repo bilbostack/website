@@ -25,6 +25,7 @@ organization = "Organizadores"
 
 home_back = "volver al evento"
 speakers_back = "volver al listado de ponentes"
+speakers_title = "Ponentes confirmados"
 sponsors_title = "Patrocinadores"
 sponsors_main = "Patrocinadores Principales"
 sponsors_platino = "Patrocinadores Platino"

@@ -1,13 +1,19 @@
-<div class="col-lg-4 col-sm-6 col-xs-12">
-    <a class="card speaker" href="{{.Permalink}}">
-        {{$imagePermalink := ""}}
-        {{ with resources.Get .Params.image }}
-        {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
-        {{$imagePermalink = .Permalink}}
-        {{end}}
-        {{end}}
+<a class="speaker" href="{{.Permalink}}">
+    {{$imagePermalink := ""}}
+    {{ with resources.Get .Params.image }}
+    {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
+    {{$imagePermalink = .Permalink}}
+    {{end}}
+    {{end}}
+    <div class="image-wrapper">
         <div class="image" style="background-image:url('{{$imagePermalink}}')"></div>
-        <div class="card-body"><h5 class="card-title">{{.Title}}</h5>
-            <p class="card-text">{{.Params.tagline}}</p></div>
-    </a>
-</div>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{.Title}}</h4>
+        <p class="card-text">{{.Params.tagline}}</p>
+        <div class="card-tags">
+            {{ with .Params.day }}<span class="tag tag-day">{{.}}</span>{{ end }}
+            {{ with .Params.time }}<span class="tag">{{.}}</span>{{ end }}
+        </div>
+    </div>
+</a>

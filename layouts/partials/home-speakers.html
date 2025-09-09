@@ -1,5 +1,10 @@
-<section id="speakers" class="row">
-    {{ range where .Site.Pages "Type" "speaker" }}
-        {{ partial "speaker-grid-card.html" .}}
-    {{end}}
+<section id="speakers">
+    <div class="content">
+        <h2>{{T "speakers_title"}}</h2>
+        <div class="speakers-list">
+            {{ range where .Site.Pages "Type" "speaker" }}
+            {{ partial "speaker-grid-card.html" .}}
+            {{end}}
+        </div>
+    </div>
 </section>
