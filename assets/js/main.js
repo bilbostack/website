@@ -58,7 +58,7 @@ function initStickyCards() {
 }
 
 function getStickyCardElements() {
-    const programaSection = document.querySelector('.programa');
+    const programaSection = document.querySelector('#programa');
     const programaHeader = document.querySelector('.programa-header');
     const cards = document.querySelectorAll('.card-programa');
     const cardsWrappers = document.querySelectorAll('.card-programa-wrapper');
