@@ -1,6 +1,6 @@
 +++
 title = 'Agenda'
-type = 'page'
+type = 'agenda'
 draft = false
 +++
 

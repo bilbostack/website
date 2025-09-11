@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article id="agenda">
+    <div class="breadcrumbs content">
+        <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
+        BREADCRUMBS
+    </div>
+    <div class="content">
+        <div>
+            <h1>{{ .Title }}</h1>
+            <div class="agenda-content">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    <!-- CTA La Espuela -->
+    {{ partial "site-cta-la-espuela.html" .}}
+</article>
+
+{{ partial "site-sponsors.html" .}}
+{{ end }}

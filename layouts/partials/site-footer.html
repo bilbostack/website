@@ -13,7 +13,7 @@
       </ul>
     </section>
 
-    <section id="editions">{{ partial "home-editions.html" .}}</section>
+    <section id="editions">{{ partial "site-editions.html" .}}</section>
 
     <section id="contact">
       <a href="mailto:{{$.Site.Params.contactEmail}}">{{$.Site.Params.contactEmail}}</a>
@@ -50,25 +50,4 @@
     <section class="links">Enlaces legales</section>
 
   </div>
-  <!-- <section id="about">
-    <div class="container">
-      <div class="row">
-        <div id="org" class="col-md-7">
-
-
-
-        </div>
-        <div class="col-md-5 text-center">
-          <h4>Bilbostack 2025</h4>
-          <div class="links">
-            {{ range where .Site.Pages "Type" "info-page" }}
-            <a href="{{.Permalink}}" class="nav-link" target="_blank" title="{{.Title}}">{{.Title}}</a>
-            {{ end }} {{ range $links }}
-            <a href="{{.url}}" class="nav-link" target="_blank" title="{{.title}}">{{.title}}</a>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 </footer>

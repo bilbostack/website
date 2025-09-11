@@ -1,6 +1,6 @@
 +++
 title = 'Egitaraua'
-type = 'page'
+type = 'agenda'
 draft = false
 +++
 

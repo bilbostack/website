@@ -36,8 +36,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ScrollTrigger.refresh();
     });
 
+    initMenu();
     initAnimations();
 });
+
+function initMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', function () {
+            mobileMenu.style.left = '0';
+        });
+    }
+
+    if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function () {
+            mobileMenu.style.left = '-50vw';
+        });
+    }
+
+    // Close menu if user clicks outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target == mobileMenu) {
+            mobileMenu.style.left = '-50vw';
+        }
+    });
+}
 
 function initAnimations() {
     // initStickyCards();
