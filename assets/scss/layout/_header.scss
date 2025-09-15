@@ -268,3 +268,38 @@
         }
     }
 }
+
+#home-header {
+    > .content {
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: calc(100dvh - calc(var(--header-height) + 2rem));
+    }
+}
+
+.logo-header {
+    width: 100%;
+    height: 100%;
+
+    svg {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+
+        .capa1 {
+            fill: var(--color-primary-dark);
+        }
+        .capa2 {
+            fill: var(--current-color-400);
+        }
+        .capa3 {
+            fill: var(--current-color-300);
+        }
+        .capa4 {
+            fill: var(--current-color-200);
+        }
+    }
+}

@@ -66,7 +66,59 @@ function initMenu() {
 }
 
 function initAnimations() {
+    initLogoAnimation();
     // initStickyCards();
+}
+
+function initLogoAnimation() {
+    const logo = document.querySelector('.logo-header svg');
+    if (!logo) return;
+
+    const capa1 = logo.querySelector('.capa1');
+    const capa2 = logo.querySelector('.capa2');
+    const capa3 = logo.querySelector('.capa3');
+    const capa4 = logo.querySelector('.capa4');
+
+    if (!capa1 || !capa2 || !capa3 || !capa4) return;
+
+    const container = document.querySelector('.logo-header');
+    if (!container) return;
+
+    // Obtener el viewBox del SVG para calcular la escala
+    const viewBox = logo.viewBox.baseVal;
+    const svgViewBoxHeight = viewBox.height;
+    const svgRealHeight = logo.getBoundingClientRect().height;
+
+    // Calcular la escala: unidades SVG por píxel
+    const scale = svgViewBoxHeight / svgRealHeight;
+
+    // Calcular la distancia de movimiento en píxeles
+    const moveDistancePx = (container.offsetHeight - logo.getBoundingClientRect().height) * scale;
+
+    const tl = gsap.timeline({
+        delay: 0.5,
+    });
+
+    tl.to(capa4, {
+        y: moveDistancePx,
+        ease: "power4.out",
+        duration: 1.5
+    }, 0)
+        .to(capa3, {
+            y: moveDistancePx,
+            ease: "power4.out",
+            duration: 1.5
+        }, 0.2)
+        .to(capa2, {
+            y: moveDistancePx,
+            ease: "power4.out",
+            duration: 1.5
+        }, 0.4)
+        .to(capa1, {
+            y: moveDistancePx,
+            ease: "power4.out",
+            duration: 1.5
+        }, 0.6);
 }
 
 function initStickyCards() {

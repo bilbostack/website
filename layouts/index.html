@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="main-content">
   <!-- Header -->
-  <!-- <section style="height: 100vh; background-color: greenyellow;" class="main-header">AQUÍ VA EL HEADER</section> -->
+  {{ partial "home-header.html" .}}
 
   <!-- Agenda -->
   {{ partial "home-program.html" .}}
@@ -25,9 +25,6 @@
 
   <!-- Ponentes -->
   {{ partial "home-speakers.html" .}}
-
-  <!-- Ubicación -->
-  <!-- {{ partial "home-location.html" .}} -->
 
   <!-- Patrocinadores -->
   {{ partial "site-sponsors.html" .}}
