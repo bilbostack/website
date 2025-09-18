@@ -4,6 +4,7 @@
     --color-primary-light: #ffffff;
 
     // Orange
+    --orange-0: #f1eae7;
     --orange-100: #f2e8dc;
     --orange-200: #f2ddc6;
     --orange-300: #f1be84;
@@ -13,6 +14,7 @@
     --orange-700: #1f302c;
 
     //Blue
+    --blue-0: #e6eef0;
     --blue-100: #daeae9;
     --blue-200: #c2e2e0;
     --blue-300: #79c9c5;
@@ -21,9 +23,19 @@
     --blue-600: #063f43;
     --blue-700: #073239;
 
+    // Morado
+    --purple-0: #ebe8ec;
+    --purple-100: #e4dde7;
+    --purple-200: #d5c8db;
+    --purple-300: #aa89b9;
+    --purple-400: #7e31a2; //main
+    --purple-500: #352457;
+    --purple-600: #1a253e;
+    --purple-700: #112636;
+
     //Current Color Edition
-    $current-color: "blue";
-    @for $i from 1 through 7 {
+    $current-color: "purple";
+    @for $i from 0 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
     }
 
