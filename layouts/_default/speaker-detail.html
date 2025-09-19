@@ -29,8 +29,10 @@
         </div>
         <div class="speaker-right">
 
-            <h1 class="name">{{ .Params.title }}</h1>
-            <div class="position">{{ .Params.taglineLarge }}</div>
+            <div class="speaker-title">
+                <h1 class="name">{{ .Params.title }}</h1>
+                <div class="position">{{ .Params.taglineLarge }}</div>
+            </div>
 
             <div class="social-media">
                 {{ range .Params.Links }}

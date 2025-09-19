@@ -68,6 +68,7 @@ function initMenu() {
 function initAnimations() {
     initLogoAnimation();
     // initStickyCards();
+    initSpeakerAnimation();
 }
 
 function initLogoAnimation() {
@@ -132,6 +133,55 @@ function initStickyCards() {
         normalizeCardHeights(cardsWrappers);
         createScrollTriggers(programaHeader, cards);
         refreshScrollTriggers();
+    });
+}
+
+function initSpeakerAnimation() {
+    // Solo ejecutar en páginas de speaker-detail
+    const speakerSection = document.querySelector('#speaker');
+    if (!speakerSection) return;
+
+    const speakerWrapper = document.querySelector('.speaker-wrapper');
+    const speakerName = document.querySelector('#speaker .speaker-title');
+    const imageWrapper = document.querySelector('#speaker .image-wrapper');
+    const speakerLeft = document.querySelector('#speaker .speaker-left');
+    const speakerRight = document.querySelector('#speaker .speaker-right');
+
+    if (!speakerWrapper || !speakerName || !imageWrapper || !speakerLeft || !speakerRight) return;
+
+    // Función para calcular el punto final del pin
+    const getEndPosition = () => {
+        const speakerLeftRect = imageWrapper.getBoundingClientRect();
+        const speakerRightRect = speakerRight.getBoundingClientRect();
+        const speakerLeftHeight = speakerLeftRect.height;
+        const speakerRightHeight = speakerRightRect.height;
+        const heightDifference = Math.abs(speakerRightHeight - speakerLeftHeight);
+
+        if (speakerRightHeight > speakerLeftHeight) {
+            return `+=${heightDifference}px`;
+        }
+
+        return "bottom center";
+    };
+
+    // Crear ScrollTrigger para anclar el nombre del speaker
+    ScrollTrigger.create({
+        trigger: speakerWrapper,
+        start: "top top",
+        end: getEndPosition,
+        pin: speakerName,
+        pinSpacing: false,
+        id: "speaker-name-pin",
+    });
+
+    // Crear ScrollTrigger para anclar la imagen del speaker
+    ScrollTrigger.create({
+        trigger: speakerWrapper,
+        start: "top top",
+        end: getEndPosition,
+        pin: imageWrapper,
+        pinSpacing: false,
+        id: "speaker-image-pin"
     });
 }
 
