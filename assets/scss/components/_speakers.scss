@@ -53,21 +53,146 @@
                 scale: 1.1;
             }
         }
+    }
+}
 
-        .card-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 
-            .tag {
-                background-color: var(--current-color-500);
-                color: var(--color-primary-light);
-                padding: 0.3rem 1rem;
-                font-weight: 700;
+    .tag {
+        background-color: var(--current-color-500);
+        color: var(--color-primary-light);
+        padding: 0.3rem 1rem;
+        font-weight: 700;
 
-                &-day {
-                    background-color: var(--current-color-400);
-                }
+        &-day {
+            background-color: var(--current-color-400);
+        }
+    }
+}
+
+#speaker {
+    .speaker-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        margin-bottom: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            line-height: 1;
+            color: var(--current-color-400);
+            font-size: 6rem;
+        }
+
+        .position {
+            color: var(--current-color-400);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-media {
+            margin-bottom: 2rem;
+        }
+
+        .bio {
+            font-size: 1.25rem;
+            margin-bottom: 4rem;
+        }
+
+        .talk {
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .tags {
+                margin-bottom: 2rem;
+            }
+
+            .talk-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: var(--current-color-400);
+                font-weight: 600;
+            }
+
+            .talk-description {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .image-wrapper {
+        position: relative;
+
+        .img-tag {
+            position: absolute;
+            left: -10%;
+            bottom: 10%;
+            max-width: 60%;
+            transition: all 0.4s ease;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .fill-main {
+            fill: var(--current-color-400);
+        }
+
+        .shadow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s ease;
+
+            &--1 {
+                background-color: var(--current-color-400);
+                bottom: -1rem;
+                z-index: -1;
+            }
+
+            &--2 {
+                background-color: var(--current-color-300);
+                bottom: -2rem;
+                z-index: -2;
+            }
+
+            &--3 {
+                background-color: var(--current-color-200);
+                bottom: -3rem;
+                z-index: -3;
+            }
+        }
+
+        &:hover {
+            .img-tag {
+                transform: rotate(25deg);
+            }
+
+            .shadow--1 {
+                bottom: -1.5rem;
+            }
+            .shadow--2 {
+                bottom: -3rem;
+            }
+            .shadow--3 {
+                bottom: -4.5rem;
             }
         }
     }

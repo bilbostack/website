@@ -1,22 +1,59 @@
 {{ define "main" }}
-<article id="speaker_detail">
-    <div class="container">
-        <a href="{{ref . "/agenda"}}" class="back">← {{T "speakers_back"}}</a>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
+<article id="speaker">
+    <div class="breadcrumbs">
+        <div class="content">
+            {{ $agendaURL := ref . "/agenda" }}
+            <a href="{{ $agendaURL }}" class="back">← {{T "speakers_back"}}</a>
+        </div>
+    </div>
+    <div class="content speaker-wrapper">
+        <div class="speaker-left">
+            <div class="image-wrapper">
                 {{$imagePermalink := ""}}
                 {{ with resources.Get .Params.image }}
                 {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
                 {{$imagePermalink = .Permalink}}
                 {{end}}
                 {{end}}
-                <div class="image" style="background-image:url('{{$imagePermalink}}')"></div>
+                <img class="image" src="{{$imagePermalink}}" alt="Speaker image" />
+
+                <span class="shadow shadow--1"></span>
+                <span class="shadow shadow--2"></span>
+                <span class="shadow shadow--3"></span>
+
+                {{ with resources.Get "img/tech_conference.svg" }}
+                <span class="img-tag">{{ .Content | safeHTML }}</span>
+                {{ end }}
             </div>
-            <div class="col-12 col-md-6 col-lg-6">
-                {{ .Content }}
+
+        </div>
+        <div class="speaker-right">
+
+            <h1 class="name">{{ .Params.title }}</h1>
+            <div class="position">{{ .Params.taglineLarge }}</div>
+
+            <div class="social-media">
+                {{ range .Params.Links }}
+                <a href="{{.url}}" class="social-icon social-icon--{{.title | lower}}" target="_blank" title="{{.title}}">
+                    {{ with resources.Get .image }}
+                    {{ .Content | safeHTML }}
+                    {{ end }}
+                </a>
+                {{ end }}
+            </div>
+
+            <div class="bio">{{ .Params.bio | markdownify }}</div>
+
+            <div class="talk">
+                <h2>{{T "talk"}}</h2>
+                <div class="tags">
+                    {{ with .Params.day }}<span class="tag tag-day">{{.}}</span>{{ end }}
+                    {{ with .Params.time }}<span class="tag">{{.}}</span>{{ end }}
+                </div>
+                <h2 class="talk-title">{{ .Params.talkTitle }}</h2>
+                <div class="talk-description">{{ .Params.talk | markdownify }}</div>
             </div>
         </div>
-    </div>
 </article>
 {{ partial "site-sponsors.html" .}}
 {{end}}

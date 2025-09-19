@@ -24,6 +24,7 @@ open_in_google_maps = "Abrir en Google Maps"
 organization = "Organizadores"
 
 home_back = "volver al evento"
+talk = "Charla"
 speakers_back = "volver al listado de ponentes"
 speakers_title = "Ponentes confirmados"
 sponsors_title = "Patrocinadores"
