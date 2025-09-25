@@ -13,28 +13,49 @@
     --orange-600: #363a29;
     --orange-700: #1f302c;
 
-    //Blue
-    --blue-0: #e6eef0;
-    --blue-100: #daeae9;
-    --blue-200: #c2e2e0;
-    --blue-300: #79c9c5;
-    --blue-400: #00a199; //main
-    --blue-500: #046464;
-    --blue-600: #063f43;
-    --blue-700: #073239;
+    //Aqua
+    --aqua-0: #e6eef0;
+    --aqua-100: #daeae9;
+    --aqua-200: #c2e2e0;
+    --aqua-300: #79c9c5;
+    --aqua-400: #00a199; //main
+    --aqua-500: #046464;
+    --aqua-600: #063f43;
+    --aqua-700: #073239;
 
-    // Morado
-    --purple-0: #ebe8ec;
-    --purple-100: #e4dde7;
-    --purple-200: #d5c8db;
-    --purple-300: #aa89b9;
-    --purple-400: #7e31a2; //main
-    --purple-500: #352457;
-    --purple-600: #1a253e;
-    --purple-700: #112636;
+    // Blue
+    --blue-400: #2e2e83; //main
+
+    // Cyan
+    --cyan-400: #019cd1; //main
+
+    // Purple
+    --purple-400: #991b80; //main
+
+    // Yellow
+    --yellow-400: #fcb817; //main
+
+    // Dark Yellow
+    --dark-yellow-400: #f08a17; //main
+
+    // Red
+    --red-400: #2e2e83; //e2241b
+
+    // Pink
+    --pink-400: #e1287c; //main
+
+    // Violet
+    --violet-0: #ebe8ec;
+    --violet-100: #e4dde7;
+    --violet-200: #d5c8db;
+    --violet-300: #aa89b9;
+    --violet-400: #7e31a2; //main
+    --violet-500: #352457;
+    --violet-600: #1a253e;
+    --violet-700: #112636;
 
     //Current Color Edition
-    $current-color: "purple";
+    $current-color: "violet";
     @for $i from 0 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
     }

@@ -4,8 +4,28 @@
         <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
         BREADCRUMBS
     </div>
-    <div class="content">
-        Ediciones pasadas
+    <div class=" past-editions">
+        {{ $editions := $.Site.Params.Editions }}
+        {{ range $index, $edition := $editions }}
+        <div class="edition" style="--color: var(--{{.color}}-400)">
+
+            <a href="{{.url}}" target="_blank" class="{{ if .current }}current{{ end }}">
+                <span class="edition-year">{{.year}}</span>
+                <span class="edition-data">{{ if .tracks }}{{.tracks}}{{ end }}</span>
+                <span class="edition-data">{{ if .speakers }}{{.speakers}}{{ end }}</span>
+                <span class="edition-data">{{ if .attendees }}{{.attendees}}{{ end }}</span>
+                <span class="edition-data">{{ if .network }}{{.network}}{{ end }}</span>
+
+                {{ $year := .year | string }}
+                {{ $yearImage := printf "img/year-%s.svg" $year }}
+                {{ with resources.Get $yearImage }}
+                <span class="img-tag"><img src="{{ .Permalink }}" alt="Año {{ $year }}"></span>
+                {{ end }}
+
+            </a>
+        </div>
+        {{ end }}
+    </div>
     </div>
 </article>
 
