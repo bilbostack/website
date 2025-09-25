@@ -3,6 +3,6 @@
 <div class="editions">
     {{ range $index, $edition := $editions }}
     {{ if eq .year 2022 }} <span>2😷21</span>{{ end }}
-    <a href="{{.url}}" target="_blank" class="{{ if .current }}current{{ end }}">{{.year}}</a>
+    <a href="{{.url}}" target="_blank" class="{{ if .current }}current{{ end }}" style="--color: var(--{{.color}}-400)">{{.year}}</a>
     {{ end }}
 </div>

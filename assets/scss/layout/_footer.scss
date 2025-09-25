@@ -82,6 +82,7 @@ footer {
 
             &:hover:not(span):not(.current) {
                 text-decoration: underline;
+                color: var(--color);
             }
 
             &.current {
