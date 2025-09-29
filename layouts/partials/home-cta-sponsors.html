@@ -1,0 +1,15 @@
+<section id="cta-sponsors">
+    <div class="content">
+        <div class="cta-video">
+            <video autoplay muted loop playsinline>
+                <source src="{{ "video/resumen_bilbostack_2025.webm" | relURL }}" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="cta-text">
+            <h2>{{ T "cta_sponsors_title" }}</h2>
+            <p>{{ T "cta_sponsors_text" | safeHTML}}</p>
+            <a href="{{ .Site.Params.SponsorsDossier }}" class="btn btn-outline" target="_blank">{{ T "cta_sponsors_btn" }}</a>
+        </div>
+    </div>
+</section>

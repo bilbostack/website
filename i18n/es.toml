@@ -9,7 +9,10 @@ meta_description = "Bilbostak23, la 13ª Edición de la cita tecnológica anual 
 meta_title = "#Bilbostack25, 25 de Enero de 2025 en Bilbao"
 header_where = "Bilbao, Bizkaia"
 header_when = "31 de enero de 2026"
-cta_sponsors = "Dossier de patrocinio"
+cta_sponsors_title = "Vendrás por la conferencia, volverás por la experiencia"
+cta_sponsors_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos."""
+cta_sponsors_btn = "Dossier de patrocinio (PDF)"
 cta_tickets = "¡Compra tus entradas!"
 last_editions_text = "Ediciones anteriores"
 organization = "Organizadores"
