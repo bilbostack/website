@@ -8,6 +8,10 @@
     border: 2px solid var(--current-color-400);
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     &:before {
         position: absolute;
