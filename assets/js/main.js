@@ -69,6 +69,30 @@ function initAnimations() {
     initLogoAnimation();
     // initStickyCards();
     initSpeakerAnimation();
+    initInfoAnimation();
+}
+
+function initInfoAnimation() {
+    const infoSection = document.querySelector('#info');
+    if (!infoSection) return;
+
+    const pinWrappers = infoSection.querySelectorAll('.pin-wrapper');
+    pinWrappers.forEach(wrapper => {
+        const pinElement = wrapper.querySelector('.pin-element');
+        if (!pinElement) return;
+
+        ScrollTrigger.create({
+            trigger: pinElement,
+            start: "top-=50 top",
+            end: () => {
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const pinRect = pinElement.getBoundingClientRect();
+                return `+=${wrapperRect.height - pinRect.height}px`;
+            },
+            pin: pinElement,
+            pinSpacing: false,
+        });
+    });
 }
 
 function initLogoAnimation() {

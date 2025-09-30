@@ -9,3 +9,16 @@
 .content {
     padding: 2rem;
 }
+
+.row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .col {
+        flex: 1;
+        box-sizing: border-box;
+    }
+}

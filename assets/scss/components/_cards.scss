@@ -168,3 +168,28 @@
         min-height: 50vh;
     }
 }
+
+.card {
+    background-color: var(--current-color-100);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+
+    // first child no margin top
+    *:first-child {
+        margin-top: 0;
+    }
+
+    h3 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 + p {
+        margin-top: 1rem;
+    }
+
+    img {
+        width: 100%;
+        border-radius: var(--border-radius-xs);
+    }
+}
