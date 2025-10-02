@@ -11,15 +11,15 @@
 
             <a href="{{.url}}" target="_blank" class="{{ if .current }}current{{ end }}">
                 <span class="edition-year">{{.year}}</span>
-                <span class="edition-data">{{ if .tracks }}{{.tracks}}{{ end }}</span>
-                <span class="edition-data">{{ if .speakers }}{{.speakers}}{{ end }}</span>
-                <span class="edition-data">{{ if .attendees }}{{.attendees}}{{ end }}</span>
-                <span class="edition-data">{{ if .network }}{{.network}}{{ end }}</span>
+                <span class="edition-data">{{ if .tracks }}{{T "past_editions_tracks" (dict "number" .tracks)}}{{ end }}</span>
+                <span class="edition-data">{{ if .speakers }}{{T "past_editions_speakers" (dict "number" .speakers)}}{{ end }}</span>
+                <span class="edition-data">{{ if .attendees }}{{T "past_editions_attendees" (dict "number" .attendees)}}{{ end }}</span>
+                <span class="edition-data">{{ if .network }}{{T "past_editions_networking" (dict "number" .network)}}{{ end }}</span>
 
                 {{ $year := .year | string }}
                 {{ $yearImage := printf "img/year-%s.svg" $year }}
                 {{ with resources.Get $yearImage }}
-                <span class="img-tag"><img src="{{ .Permalink }}" alt="Año {{ $year }}"></span>
+                <span class="img-tag"><img src="{{ .Permalink }}" alt="{{T "past_editions_year" (dict "number" $year)}}"></span>
                 {{ end }}
 
             </a>
