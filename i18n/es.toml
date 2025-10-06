@@ -129,3 +129,9 @@ info_conducta_content = """<h3>Ciudadanía de Código/Cultura/Tecnología abiert
 
                     <h3>Licencia y atribución</h3>
                     <p>El <a href="https://berlincodeofconduct.org/es" target="_blank">Berlin Code of Conduct</a> se encuentra distribuido bajo una <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">licencia Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a>. Está basado en el <a href="https://pdxruby.org/CONDUCT" target="_blank">pdx.rb Code of Conduct</a>, que también es distribuido bajo la misma licencia.</p>"""
+
+past_editions_tracks = "{{.number}} tracks"
+past_editions_speakers = "{{.number}} ponentes"
+past_editions_attendees = "{{.number}} asistentes"
+past_editions_networking = "{{.number}} networking"
+past_editions_year = "Año {{.year}}"

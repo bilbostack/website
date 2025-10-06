@@ -23,19 +23,19 @@ defaultContentLanguageInSubdir = false
         { title = "Github", url = "https://github.com/bilbostack", image = "img/icons/icon-github.svg" },
     ]  
     editions = [
-        { year = 2012, url = "https://web.archive.org/web/20120502190422/http://bilbostack.com/", tracks = '2 tracks', speakers = '8 ponencias', attendees = '+150 asistentes', network = "10x networking", color='orange' },
-        { year = 2013, url = "https://web.archive.org/web/20130110075437/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='blue' },
-        { year = 2014, url = "https://web.archive.org/web/20140205142714/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='purple' },
-        { year = 2015, url = "https://web.archive.org/web/20150109210526/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='orange' },
-        { year = 2016, url = "https://web.archive.org/web/20160109081707/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='blue' },
-        { year = 2017, url = "https://web.archive.org/web/20170601095000/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='violet' },
-        { year = 2018, url = "https://web.archive.org/web/20180129112902/http://bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='orange' },
-        { year = 2019, url = "https://2019.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='pink' },
-        { year = 2020, url = "https://2020.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='aqua' },
-        { year = 2022, url = "https://2022.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='red' },
-        { year = 2023, url = "https://2023.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='dark-yellow' },
-        { year = 2024, url = "https://2024.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='purple' },
-        { year = 2025, url = "https://2025.bilbostack.com/", tracks = '2 tracks', speakers = '1 ponencia', attendees = '150 asistentes', network = "10x networking", color='cyan' },
+        { year = 2012, url = "https://web.archive.org/web/20120502190422/http://bilbostack.com/", tracks = 2, speakers = 10, attendees = 150, network = "10x", color='orange' },
+        { year = 2013, url = "https://web.archive.org/web/20130110075437/http://bilbostack.com/", tracks = 2, speakers = 10, attendees = 150, network = "10x", color='blue' },
+        { year = 2014, url = "https://web.archive.org/web/20140205142714/http://bilbostack.com/", tracks = 2, speakers = 10, attendees = 150, network = "10x", color='purple' },
+        { year = 2015, url = "https://web.archive.org/web/20150109210526/http://bilbostack.com/", tracks = 2, speakers = 10, attendees = 150, network = "10x", color='orange' },
+        { year = 2016, url = "https://web.archive.org/web/20160109081707/http://bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='blue' },
+        { year = 2017, url = "https://web.archive.org/web/20170601095000/http://bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='violet' },
+        { year = 2018, url = "https://web.archive.org/web/20180129112902/http://bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='orange' },
+        { year = 2019, url = "https://2019.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='pink' },
+        { year = 2020, url = "https://2020.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='aqua' },
+        { year = 2022, url = "https://2022.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='red' },
+        { year = 2023, url = "https://2023.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='dark-yellow' },
+        { year = 2024, url = "https://2024.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='purple' },
+        { year = 2025, url = "https://2025.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='cyan' },
         { year = 2026, url = "https://bilbostack.com/", current = true, color='purple' }
     ]
     [[params.sponsorBlocks]]
