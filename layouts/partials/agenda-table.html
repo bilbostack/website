@@ -1,0 +1,28 @@
+<!-- Agenda Table Partial -->
+<!-- Parámetros esperados: .schedule_data y .venue_info -->
+<div class="agenda-table">
+    <!-- Header con tracks -->
+    {{ partial "agenda-header.html" (dict "venue_info" .venue_info) }}
+
+    <!-- Filas de la agenda -->
+    {{ range .schedule_data }}
+    <div class="agenda-row {{ .type }}">
+        <div class="time-slot">{{ .time }}</div>
+
+        {{ if eq .type "single" }}
+        <!-- Sesión que ocupa todo el ancho -->
+        {{ partial "session-full.html" (dict "session" (index .sessions 0)) }}
+        {{ else }}
+        <!-- Sesiones paralelas -->
+        {{ $track0e := "" }}
+        {{ $track0d := "" }}
+        {{ range .sessions }}
+        {{ if eq .track "0e" }}{{ $track0e = . }}{{ else if eq .track "0d" }}{{ $track0d = . }}{{ end }}
+        {{ end }}
+
+        {{ partial "session-track.html" (dict "session" $track0e "track_name" "Track 0E") }}
+        {{ partial "session-track.html" (dict "session" $track0d "track_name" "Track 0D") }}
+        {{ end }}
+    </div>
+    {{ end }}
+</div>

@@ -2,62 +2,138 @@
 title = 'Agenda'
 type = 'agenda'
 draft = false
+
+# Configuración de tracks/salas
+[venue_info.track_0e]
+name = "Track 0E"
+url = "https://www.euskaldunabilbao.com/espacios/sala-0e/"
+
+[venue_info.track_0d]
+name = "Track 0D"
+url = "https://www.euskaldunabilbao.com/espacios/sala-0d/"
+
+# === VIERNES 30 DE ENERO ===
+[[schedule_viernes]]
+time = "09:00-09:20"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Presentación"
+
+[[schedule_viernes]]
+time = "09:30-10:20"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+
+[[schedule_viernes]]
+time = "10:30-11:20"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+
+[[schedule_viernes]]
+time = "11:30-12:00"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Café"
+
+[[schedule_viernes]]
+time = "12:00-12:50"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS"
+  speaker = "Miguel Ángel Durán García"
+  speaker_title = "Ingeniero de Software en Adevinta, España"
+  speaker_url = "/speakers/miguel-angel-duran"
+
+# === SÁBADO 31 DE ENERO ===
+[[schedule_sabado]]
+time = "09:00-09:20"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "Presentación"
+
+[[schedule_sabado]]
+time = "09:30-10:20"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+  track = "0e"
+  [[schedule_sabado.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+  track = "0d"
+
+[[schedule_sabado]]
+time = "10:30-11:20"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+  track = "0e"
+  [[schedule_sabado.sessions]]
+  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
+  speaker = "Jose Ramón Díaz"
+  speaker_title = "Senior Programme Manager at Microsoft"
+  speaker_url = "/speakers/jose-ramon-diaz"
+  track = "0d"
+
+[[schedule_sabado]]
+time = "11:30-12:00"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "Café"
+
+[[schedule_sabado]]
+time = "12:00-12:50"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS"
+  speaker = "Miguel Ángel Durán García"
+  speaker_title = "Ingeniero de Software en Adevinta, España"
+  speaker_url = "/speakers/miguel-angel-duran"
+  track = "0e"
+  [[schedule_sabado.sessions]]
+  title = "Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible"
+  speaker = "Sebi Collell"
+  speaker_url = "/speakers/sebi-collell"
+  track = "0d"
+
+[[schedule_sabado]]
+time = "13:00-13:50"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "10 años al mando de un estudio de videojuegos como Platonic Games"
+  speaker = "Valeria Castro"
+  speaker_title = "Co-Fundadora Platonic Games"
+  speaker_url = "/speakers/valeria-castro"
+  track = "0e"
+  [[schedule_sabado.sessions]]
+  title = "Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams"
+  speaker = "Fernando Díaz"
+  speaker_title = ""
+  speaker_url = "/speakers/fernando-diaz"
+  track = "0d"
+
+[[schedule_sabado]]
+time = "14:00-19:00"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "#laEspuela - Networking"
+  location = "La Espuela"
+  address = "https://maps.app.goo.gl/RTkwbZrX4X11JLUA6"
+
 +++
-
-<div class="hidden-small table">
-
-|                | [Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)                                                                                  | [Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)                                                                                 |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| 09:00 - 09:20  | **Bienvenida y presentación**                                                                                                                   | -                                                                                                                                               |
-| 09:30 - 10:20  | [**El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas**Nerea Luis](/speakers/nerea-luis#talk) | [**Y si "hacer lo correcto" no fuera lo correcto**Jordi Martí](/speakers/jordi-marti#talk)                                                     |
-| 10:30 - 11:20  | [**Bases de Datos en Memoria: casos de uso y soluciones para aplicaciones modernas**Katia Aresti](/speakers/katia-aresti#talk)                  | [**Fatal, gracias**Irene Morgado](/speakers/irene-morgado#talk)                                                                                |
-| 11:30 - 12:00  | Café                                                                                                                                            | -                                                                                                                                              |
-| 12:00 - 12:50  | [**¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS**Miguel Ángel Durán](/speakers/miguel-angel-duran#talk)                             | [**Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible**Sebi Collell y Censu Karayel](/speakers/sebi-collell#talk) |
-| 13:00 - 13:50  | [**10 años al mando de un estudio de videojuegos como Platonic Games**Valeria Castro](/speakers/valeria-castro#talk)                            | [**Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams**Fernando Díaz](/speakers/fernando-diaz#talk)        |
-| 14:00 - ~19:00 | **_[#laEspuela](https://maps.app.goo.gl/RTkwbZrX4X11JLUA6)_,Networking**                                                                        | -                                                                                                                                              |
-
-</div>
-
-<div class="hidden-big table">
-
-| 09:00 - 09:20    |
-| ---------------- |
-| **Bienvenida y presentación** |
-
-| 09:30 - 10:20                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)**                                                                                                                                      |
-| [**El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas**Nerea Luis](/speakers/nerea-luis#talk) |
-| **[Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)**                                                                                                                                      |
-| [**Y si "hacer lo correcto" no fuera lo correcto**Jordi Martí](/speakers/jordi-marti#talk)                                                      |
-
-| 10:30 - 11:20                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------ |
-| **[Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)**                                                                                                                     |
-| [**Bases de Datos en Memoria: casos de uso y soluciones para aplicaciones modernas**Katia Aresti](/speakers/katia-aresti#talk) |
-| **[Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)**                                                                                                                     |
-| [**Fatal, gracias**Irene Morgado](/speakers/irene-morgado#talk)                                                                |
-
-| 11:30 - 12:00 |
-| ------------- |
-| **Café**      |
-
-| 12:00 - 12:50                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)**                                                                                                                                     |
-| [**¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS**Miguel Ángel Durán](/speakers/miguel-angel-duran#talk)                            |
-| **[Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)**                                                                                                                                     |
-| [**Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible**Sebi Collell y Censu Karayel](/speakers/sebi-collell#talk) |
-
-| 13:00 - 13:50                                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/espacios/sala-0e/)**                                                                                                                              |
-| [**10 años al mando de un estudio de videojuegos como Platonic Games**Valeria Castro](/speakers/valeria-castro#talk)                    |
-| **[Track 0D](https://www.euskaldunabilbao.com/espacios/sala-0d/)**                                                                                                                              |
-| [**Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams**Fernando Díaz](/speakers/fernando-diaz#talk) |
-
-| 14:00 - ~19:00             |
-| ------------------------- |
-| **_[#laEspuela](https://maps.app.goo.gl/RTkwbZrX4X11JLUA6)_, Networking** |
-
-</div>

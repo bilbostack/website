@@ -1,0 +1,11 @@
+<!-- Session Full Width Partial -->
+<!-- Para sesiones que ocupan ambas columnas -->
+<!-- Parámetros esperados: .session -->
+<div class="session-full">
+    <h3>{{ .session.title }}</h3>
+
+    <!-- Información adicional si existe -->
+    <p class="speaker">
+        <a href="{{ .session.speaker_url }}">{{ .session.speaker }}</a>
+    </p>
+</div>

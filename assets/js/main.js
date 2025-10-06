@@ -70,6 +70,7 @@ function initAnimations() {
     // initStickyCards();
     initSpeakerAnimation();
     initInfoAnimation();
+    initAgendaTabs();
 }
 
 function initInfoAnimation() {
@@ -277,5 +278,57 @@ function createCardScrollTriggers(cards, getHeaderHeight, getEndPosition) {
 function refreshScrollTriggers() {
     gsap.delayedCall(0.1, () => {
         ScrollTrigger.refresh();
+    });
+}
+
+function initAgendaTabs() {
+    // Solo ejecutar en páginas de agenda
+    const agendaSection = document.querySelector('#agenda');
+    if (!agendaSection) return;
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Si no hay tabs, no hacer nada
+    if (tabButtons.length === 0 || tabContents.length === 0) return;
+
+    // Función para cambiar de tab
+    function switchTab(targetDay) {
+        // Remover active de todos los botones y contenidos
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Añadir active al botón y contenido correspondiente
+        const targetButton = document.querySelector(`[data-day="${targetDay}"]`);
+        const targetContent = document.querySelector(`#tab-${targetDay}`);
+
+        if (targetButton && targetContent) {
+            targetButton.classList.add('active');
+            targetContent.classList.add('active');
+        }
+
+        // Refresh ScrollTrigger después del cambio de tab
+        gsap.delayedCall(0.1, () => {
+            ScrollTrigger.refresh();
+        });
+    }
+
+    // Añadir event listeners a los botones
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetDay = button.getAttribute('data-day');
+            switchTab(targetDay);
+        });
+    });
+
+    // Soporte para navegación por teclado
+    tabButtons.forEach(button => {
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const targetDay = button.getAttribute('data-day');
+                switchTab(targetDay);
+            }
+        });
     });
 }

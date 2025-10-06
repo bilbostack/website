@@ -7,8 +7,21 @@
     <div class="content">
         <div>
             <h1>{{ .Title }}</h1>
-            <div class="agenda-content">
-                {{ .Content }}
+
+            <!-- Tabs Navigation -->
+            <div class="agenda-tabs">
+                <button class="tab-button active" data-day="viernes">Viernes 30 de enero</button>
+                <button class="tab-button" data-day="sabado">Sábado 31 de enero</button>
+            </div>
+
+            <!-- Tab Content: Viernes -->
+            <div class="tab-content active" id="tab-viernes">
+                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_viernes "venue_info" .Params.venue_info) }}
+            </div>
+
+            <!-- Tab Content: Sábado -->
+            <div class="tab-content" id="tab-sabado">
+                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_sabado "venue_info" .Params.venue_info) }}
             </div>
         </div>
     </div>
