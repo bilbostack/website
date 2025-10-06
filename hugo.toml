@@ -143,3 +143,5 @@ defaultContentLanguageInSubdir = false
     weight = 40
     [menu.main.params]
         desc = "La historia de Bilbostack"
+[security]
+  enableInlineShortcodes = true

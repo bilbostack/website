@@ -1,0 +1,13 @@
+{{- $title := or (.Get "title") T "talk_title_pending" }}
+{{- $day := or (.Get "day") $.Page.Params.day }}
+{{- $time := or (.Get "time") $.Page.Params.time }}
+
+<div class="talk">
+    <h2>{{T "talk"}}</h2>
+    <div class="tags">
+        {{ if $day }}<span class="tag tag-day">{{$day}}</span>{{ end }}
+        {{ if $time }}<span class="tag">{{$time}}</span>{{ end }}
+    </div>
+    <h2 class="talk-title">{{ $title }}</h2>
+    <div class="talk-description">{{ .Inner| markdownify }}</div>
+</div>
