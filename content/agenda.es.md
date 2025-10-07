@@ -3,14 +3,16 @@ title = 'Agenda'
 type = 'agenda'
 draft = false
 
-# Configuración de tracks/salas
-[venue_info.track_0e]
-name = "Track 0E"
-url = "https://www.euskaldunabilbao.com/espacios/sala-0e/"
+# Configuración de días
+[schedule_config_viernes]
+title = "#LaPrevia a Bilbostack - Entrada Libre"
+where = "Zabalgune Eraikina"
+show_header = false
 
-[venue_info.track_0d]
-name = "Track 0D"
-url = "https://www.euskaldunabilbao.com/espacios/sala-0d/"
+[schedule_config_sabado]
+title = "BilboStack"
+where = "Palacio Euskalduna, Bilbao"
+show_header = true
 
 # === VIERNES 30 DE ENERO ===
 [[schedule_viernes]]
@@ -24,9 +26,9 @@ time = "09:30-10:20"
 type = "single"
   [[schedule_viernes.sessions]]
   title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
+  speaker = "Valeria Castro"
   speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  speaker_url = "/speakers/valeria-castro"
 
 [[schedule_viernes]]
 time = "10:30-11:20"
@@ -67,13 +69,11 @@ type = "parallel"
   speaker = "Jose Ramón Díaz"
   speaker_title = "Senior Programme Manager at Microsoft"
   speaker_url = "/speakers/jose-ramon-diaz"
-  track = "0e"
   [[schedule_sabado.sessions]]
   title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
   speaker = "Jose Ramón Díaz"
   speaker_title = "Senior Programme Manager at Microsoft"
   speaker_url = "/speakers/jose-ramon-diaz"
-  track = "0d"
 
 [[schedule_sabado]]
 time = "10:30-11:20"
@@ -83,13 +83,11 @@ type = "parallel"
   speaker = "Jose Ramón Díaz"
   speaker_title = "Senior Programme Manager at Microsoft"
   speaker_url = "/speakers/jose-ramon-diaz"
-  track = "0e"
   [[schedule_sabado.sessions]]
   title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
   speaker = "Jose Ramón Díaz"
   speaker_title = "Senior Programme Manager at Microsoft"
   speaker_url = "/speakers/jose-ramon-diaz"
-  track = "0d"
 
 [[schedule_sabado]]
 time = "11:30-12:00"
@@ -105,12 +103,10 @@ type = "parallel"
   speaker = "Miguel Ángel Durán García"
   speaker_title = "Ingeniero de Software en Adevinta, España"
   speaker_url = "/speakers/miguel-angel-duran"
-  track = "0e"
   [[schedule_sabado.sessions]]
   title = "Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible"
   speaker = "Sebi Collell"
   speaker_url = "/speakers/sebi-collell"
-  track = "0d"
 
 [[schedule_sabado]]
 time = "13:00-13:50"
@@ -120,13 +116,11 @@ type = "parallel"
   speaker = "Valeria Castro"
   speaker_title = "Co-Fundadora Platonic Games"
   speaker_url = "/speakers/valeria-castro"
-  track = "0e"
   [[schedule_sabado.sessions]]
   title = "Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams"
   speaker = "Fernando Díaz"
   speaker_title = ""
   speaker_url = "/speakers/fernando-diaz"
-  track = "0d"
 
 [[schedule_sabado]]
 time = "14:00-19:00"

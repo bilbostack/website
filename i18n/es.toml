@@ -49,6 +49,15 @@ bilbostack_donde = "Palacio Euskalduna"
 bilbostack_compra = "Compra tus entradas"
 bilbostack_compra_link = "https://tienda.bilbostack.com/"
 
+# Agenda
+schedule = "Horario"
+track = "Track"
+previa_full = "Viernes"
+bilbostack_full = "Sábado"
+time_column = "Horario"
+track_1 = "Track 0E"
+track_2 = "Track 0D"
+
 info_how_to_get = "Cómo llegar"
 info_bilbostack_title = "Conferencias BilboStack"
 info_bilbostack_where = "Palacio Euskalduna Jauregia"

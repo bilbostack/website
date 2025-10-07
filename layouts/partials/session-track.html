@@ -1,13 +1,12 @@
 <!-- Session Track Partial -->
 <!-- Para una sesión individual de un track -->
-<!-- Parámetros esperados: .session (datos de la sesión o null) y .track_name -->
+<!-- Parámetros esperados: .session y .track_name -->
 <div class="session" data-track="{{ .track_name }}">
-    {{ if .session }}
     <h3>{{ .session.title }}</h3>
+
+    {{ if .session.speaker }}
     <p class="speaker">
         <a href="{{ .session.speaker_url }}">{{ .session.speaker }}</a>
     </p>
-    {{ else }}
-    <div class="empty-session">-</div>
     {{ end }}
 </div>

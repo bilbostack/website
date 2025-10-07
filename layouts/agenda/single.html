@@ -4,25 +4,26 @@
         <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
         BREADCRUMBS
     </div>
-    <div class="content">
+    <div class="content pin-wrapper">
         <div>
             <h1>{{ .Title }}</h1>
 
             <!-- Tabs Navigation -->
-            <div class="agenda-tabs">
-                <button class="tab-button active" data-day="viernes">Viernes 30 de enero</button>
-                <button class="tab-button" data-day="sabado">Sábado 31 de enero</button>
+            <div class="agenda-tabs pin-element">
+                <button class="tab-button active" data-day="viernes">{{ i18n "previa_date" }}</button>
+                <button class="tab-button" data-day="sabado">{{ i18n "bilbostack_date" }}</button>
             </div>
 
             <!-- Tab Content: Viernes -->
             <div class="tab-content active" id="tab-viernes">
-                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_viernes "venue_info" .Params.venue_info) }}
+                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_viernes "venue_info" .Params.venue_info "header_info" .Params.schedule_config_viernes) }}
             </div>
 
             <!-- Tab Content: Sábado -->
             <div class="tab-content" id="tab-sabado">
-                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_sabado "venue_info" .Params.venue_info) }}
+                {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_sabado "venue_info" .Params.venue_info "header_info" .Params.schedule_config_sabado) }}
             </div>
+
         </div>
     </div>
     <!-- CTA La Espuela -->

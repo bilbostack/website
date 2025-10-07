@@ -1,15 +1,6 @@
 <!-- Agenda Header Partial -->
-<!-- Parámetros esperados: .venue_info -->
 <div class="agenda-header">
     <div class="time-column"></div>
-    <div class="track-column">
-        <a href="{{ .venue_info.track_0e.url }}" target="_blank">
-            {{ .venue_info.track_0e.name }}
-        </a>
-    </div>
-    <div class="track-column">
-        <a href="{{ .venue_info.track_0d.url }}" target="_blank">
-            {{ .venue_info.track_0d.name }}
-        </a>
-    </div>
+    <div class="track-column">{{ i18n "track_1" }}</div>
+    <div class="track-column">{{ i18n "track_2" }}</div>
 </div>

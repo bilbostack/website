@@ -1,8 +1,24 @@
 <!-- Agenda Table Partial -->
-<!-- Parámetros esperados: .schedule_data y .venue_info -->
+<!-- Parámetros esperados: .schedule_data y .header_info -->
 <div class="agenda-table">
+    <!-- Header con info del día -->
+    <div class="agenda-row header pin-element">
+        <div class="day-title">
+            {{ if and .header_info .header_info.title }}
+            {{ .header_info.title }}
+            {{ end }}
+        </div>
+        <div class="day-where">
+            {{ if and .header_info .header_info.where }}
+            {{ .header_info.where }}
+            {{ end }}
+        </div>
+    </div>
+
     <!-- Header con tracks -->
-    {{ partial "agenda-header.html" (dict "venue_info" .venue_info) }}
+    {{ if and .header_info .header_info.show_header }}
+    {{ partial "agenda-header.html" }}
+    {{ end }}
 
     <!-- Filas de la agenda -->
     {{ range .schedule_data }}
@@ -14,14 +30,9 @@
         {{ partial "session-full.html" (dict "session" (index .sessions 0)) }}
         {{ else }}
         <!-- Sesiones paralelas -->
-        {{ $track0e := "" }}
-        {{ $track0d := "" }}
-        {{ range .sessions }}
-        {{ if eq .track "0e" }}{{ $track0e = . }}{{ else if eq .track "0d" }}{{ $track0d = . }}{{ end }}
+        {{ range $index, $session := .sessions }}
+        {{ partial "session-track.html" (dict "session" $session "track_name" (i18n (printf "track_%d" (add $index 1)))) }}
         {{ end }}
-
-        {{ partial "session-track.html" (dict "session" $track0e "track_name" "Track 0E") }}
-        {{ partial "session-track.html" (dict "session" $track0d "track_name" "Track 0D") }}
         {{ end }}
     </div>
     {{ end }}

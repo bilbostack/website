@@ -1,11 +1,14 @@
 <!-- Session Full Width Partial -->
 <!-- Para sesiones que ocupan ambas columnas -->
 <!-- Parámetros esperados: .session -->
-<div class="session-full">
+<div class="session--full">
     <h3>{{ .session.title }}</h3>
 
     <!-- Información adicional si existe -->
+    {{ if .session.speaker }}
     <p class="speaker">
-        <a href="{{ .session.speaker_url }}">{{ .session.speaker }}</a>
+        <a href="{{ .session.speaker_url }}" title="{{ .session.speaker }}">{{ .session.speaker }}</a>
+        <span class="speaker-title">{{ .session.speaker_title }}</span>
     </p>
+    {{ end }}
 </div>

@@ -2,35 +2,37 @@
 // AGENDA STYLES - Updated
 // ===================================
 
+#agenda h1 {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
 // Tabs Navigation
 .agenda-tabs {
     display: flex;
-    margin: 2rem 0 1rem 0;
-    border-bottom: 2px solid #e0e0e0;
-    gap: 0;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    background-color: var(--color-primary-light);
 
     .tab-button {
-        background: #f8f9fa;
-        border: 1px solid #e0e0e0;
-        border-bottom: 2px solid #e0e0e0;
         padding: 1rem 2rem;
         cursor: pointer;
-        font-weight: 600;
-        color: #495057;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary-light);
         transition: all 0.3s ease;
-        border-radius: 8px 8px 0 0;
-        margin-bottom: -2px;
+        border: none;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
 
         &:hover {
-            background: #e9ecef;
-            color: #16a085;
+            text-decoration: underline;
         }
 
         &.active {
-            background: white;
-            border-bottom: 2px solid white;
-            color: #16a085;
-            position: relative;
             z-index: 1;
         }
 
@@ -39,6 +41,14 @@
             font-size: 0.9rem;
             flex: 1;
             text-align: center;
+        }
+
+        &:first-child {
+            background-color: var(--current-color-300);
+        }
+
+        &:last-child {
+            background-color: var(--current-color-400);
         }
     }
 }
@@ -54,46 +64,25 @@
 
 .agenda-table {
     width: 100%;
-    margin: 2rem 0;
-    border-radius: 8px;
+    margin: 0;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background: white;
 }
 
 // Header con los nombres de los tracks
 .agenda-header {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr;
-    background: #16a085; // Color teal similar a la imagen
-    color: white;
-    font-weight: 600;
-
-    .time-column {
-        padding: 1rem;
-        text-align: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 0.9rem;
-    }
+    grid-template-columns: 20rem 1fr 1fr;
+    gap: 0.5rem;
+    color: var(--color-primary-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 
     .track-column {
         padding: 1rem;
         text-align: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-
-        &:last-child {
-            border-right: none;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+        border-radius: var(--border-radius);
+        background-color: var(--current-color-400);
     }
 
     @media (max-width: 768px) {
@@ -107,51 +96,44 @@
     }
 }
 
+#agenda .content .tab-content#tab-viernes {
+    .agenda-row.header {
+        background-color: var(--current-color-300);
+    }
+}
+
 // Filas de la agenda
 .agenda-row {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr;
-    border-bottom: 1px solid #e0e0e0;
-    min-height: 80px;
+    grid-template-columns: 20rem 1fr 1fr;
+    margin-bottom: 0.5rem;
+    align-items: start;
+    gap: 0.5rem;
 
     &:last-child {
         border-bottom: none;
     }
 
-    // Sesiones que ocupan todo el ancho
-    &.single {
-        .session-full {
-            grid-column: 2 / -1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            border-left: 1px solid #e0e0e0;
-            background: #f8f9fa;
+    &.header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: var(--current-color-400);
+        color: var(--color-primary-light);
+        border-radius: 10px;
 
-            h3 {
-                margin: 0 0 0.5rem 0;
-                color: #2c3e50;
-                font-weight: 600;
-                text-align: center;
-            }
+        .day-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
 
-            .location {
-                font-weight: 500;
-                color: #16a085;
-                margin: 0.25rem 0;
-                text-align: center;
-            }
-
-            .address {
-                font-size: 0.9rem;
-                color: #6c757d;
-                margin: 0;
-                text-align: center;
-            }
+        .day-where {
+            font-size: 1.25rem;
+            font-weight: 400;
         }
     }
+
     @media (max-width: 768px) {
         grid-template-columns: 100px 1fr 1fr;
         min-height: 60px;
@@ -160,16 +142,15 @@
 
 // Columna de tiempo
 .time-slot {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-right: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    background: var(--current-color-0);
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    color: #495057;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 500;
 
     @media (max-width: 768px) {
         padding: 0.75rem 0.5rem;
@@ -179,11 +160,12 @@
 
 // Sesiones individuales (charlas)
 .session {
-    padding: 1.5rem;
-    border-right: 1px solid #e0e0e0;
-    background: white;
+    padding: 2rem;
+    background: var(--current-color-0);
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     transition: background-color 0.2s ease;
 
@@ -191,36 +173,41 @@
         border-right: none;
     }
 
-    &:hover {
-        background: #f8f9fa;
-    }
-
     h3 {
-        margin: 0 0 0.5rem 0;
-        font-size: 1rem;
-        line-height: 1.4;
-        color: #2c3e50;
+        color: var(--font-color);
+        font-size: 2.25rem;
+        font-style: normal;
         font-weight: 600;
+        line-height: 1.2;
+        margin: 0;
     }
 
     .speaker {
         margin: 0;
-        font-size: 0.9rem;
-        color: #16a085;
-        font-weight: 500;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        color: var(--current-color-400);
+        margin-top: 1rem;
 
         a {
-            color: #16a085;
+            color: var(--current-color-400);
             text-decoration: none;
 
             &:hover {
                 text-decoration: underline;
             }
         }
+
+        span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--current-color-400);
+        }
     }
 
     .empty-session {
-        color: #6c757d;
         text-align: center;
         font-style: italic;
         font-size: 1.2rem;
@@ -238,6 +225,12 @@
             font-size: 0.8rem;
         }
     }
+}
+
+.session--full {
+    @extend .session;
+
+    grid-column: 2 / -1;
 }
 
 // Responsive: En móvil, cambiar a layout vertical
@@ -265,7 +258,7 @@
     }
 
     .time-slot {
-        background: #16a085;
+        background: var(--current-color-300);
         color: white;
         border-right: none;
         border-radius: 0;
@@ -284,7 +277,7 @@
         &::before {
             content: attr(data-track);
             font-weight: 600;
-            color: #16a085;
+            color: var(--current-color-400);
             font-size: 0.8rem;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
@@ -293,16 +286,6 @@
     }
 }
 
-// Animaciones suaves
-.agenda-row {
-    transition: transform 0.2s ease;
-
-    &:hover {
-        transform: translateY(-1px);
-    }
-}
-
-// Estilos para el contenido adicional
 .agenda-content {
     margin-top: 3rem;
 

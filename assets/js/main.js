@@ -71,6 +71,7 @@ function initAnimations() {
     initSpeakerAnimation();
     initInfoAnimation();
     initAgendaTabs();
+    initAgendaAnimation();
 }
 
 function initInfoAnimation() {
@@ -329,6 +330,49 @@ function initAgendaTabs() {
                 const targetDay = button.getAttribute('data-day');
                 switchTab(targetDay);
             }
+        });
+    });
+}
+
+function initAgendaAnimation() {
+    const agenda = document.querySelector('#agenda');
+    if (!agenda) return;
+
+    const pinWrappers = agenda.querySelectorAll('.pin-wrapper');
+    pinWrappers.forEach(wrapper => {
+        const pinElement = wrapper.querySelector('.pin-element.agenda-tabs');
+        if (!pinElement) return;
+
+        ScrollTrigger.create({
+            trigger: pinElement,
+            start: "top top",
+            end: () => {
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const pinRect = pinElement.getBoundingClientRect();
+                return `+=${wrapperRect.height - pinRect.height}px`;
+            },
+            pin: pinElement,
+            pinSpacing: false,
+        });
+
+        const pinElementHeaders = wrapper.querySelectorAll('.pin-element.agenda-row');
+        if (!pinElementHeaders) return;
+
+        pinElementHeaders.forEach(pinElementHeader => {
+            ScrollTrigger.create({
+                trigger: pinElementHeader,
+                start: () => {
+                    const tabsHeight = pinElement.getBoundingClientRect().height;
+                    return `top-=${tabsHeight} top`;
+                },
+                end: () => {
+                    const wrapperRect = wrapper.getBoundingClientRect();
+                    const pinRect = pinElementHeader.getBoundingClientRect();
+                    return `+=${wrapperRect.height - pinRect.height}px`;
+                },
+                pin: pinElementHeader,
+                pinSpacing: false,
+            });
         });
     });
 }
