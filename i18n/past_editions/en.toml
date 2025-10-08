@@ -1,0 +1,6 @@
+
+past_editions_tracks = "{{.number}} tracks"
+past_editions_speakers = "{{.number}} speakers"
+past_editions_attendees = "{{.number}} attendees"
+past_editions_networking = "{{.number}} networking"
+past_editions_year = "Year {{.year}}"  

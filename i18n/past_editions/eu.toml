@@ -1,0 +1,5 @@
+past_editions_tracks = "{{.number}} pistak"
+past_editions_speakers = "{{.number}} hizlari"
+past_editions_attendees = "{{.number}} partaide"
+past_editions_networking = "{{.number}} networking"
+past_editions_year = "{{.year}} urtea"

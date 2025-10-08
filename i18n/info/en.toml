@@ -1,0 +1,80 @@
+info_how_to_get = "How to get there"
+info_bilbostack_title = "BilboStack Talks"
+info_bilbostack_where = "Euskalduna Palace"
+info_bilbostack_address = "Abandoibarra Ave., 4, 48011 Bilbao, Bizkaia"
+info_bilbostack_text = """<h3>By car</h3>
+                    <p>Euskalduna Palace has its own parking; you can check rates and even book via <a href="#" target="_blank">Parkimeter</a>.</p>
+
+                    <h3>Metro</h3>
+                    <p>The metro is the most convenient way to get around Bilbao. The closest stop to Euskalduna is San Mamés/Intermodal, exit via Sabino Arana. <br>
+                        From there it’s about a 10-minute walk, or you can take the tram right next to the metro exit.</p>
+
+                    <h3>Tram</h3>
+                    <p>The tram stops along Bilbao’s main streets. The stop for the venue is <strong>Euskalduna</strong>, which drops you right in front of the building.</p>
+
+                    <h3>On foot</h3>
+                    <p>From the Intermodal station, it’s about a ten-minute walk to Euskalduna Palace along <strong>Sabino Arana Avenue</strong>.</p>
+
+                    <h3>Bilbao Intermodal</h3>
+                    <p><a href="#" target="_blank">Directions on Google Maps</a>.</p>
+
+                    <h3>Airport</h3>
+                    <p>From the airport you can take a bus that connects directly to the city with several stops along the route. The journey ends at Bilbao Intermodal station.</p>"""
+info_previa_title = "#La Previa a BilboStack"
+info_previa_where = "Zabalgune Eraikina (Ensanche Building)"
+info_previa_address = "Plaza del Ensanche, 7, 48009 Bilbao, Bizkaia"
+info_previa_text = """<h3>By car</h3>
+                    <p>Euskalduna Palace has its own parking; you can check rates and even book via <a href="#" target="_blank">Parkimeter</a>.</p>
+
+                    <h3>Metro</h3>
+                    <p>The metro is the most convenient way to get around Bilbao. The closest stop to Euskalduna is San Mamés/Intermodal, exit via Sabino Arana. <br>
+                        From there it’s about a 10-minute walk, or you can take the tram right next to the metro exit.</p>
+
+                    <h3>Tram</h3>
+                    <p>The tram stops along Bilbao’s main streets. The stop for the venue is <strong>Euskalduna</strong>, which drops you right in front of the building.</p>
+
+                    <h3>On foot</h3>
+                    <p>From the Intermodal station, it’s about a ten-minute walk to Euskalduna Palace along <strong>Sabino Arana Avenue</strong>.</p>
+
+                    <h3>Bilbao Intermodal</h3>
+                    <p><a href="#" target="_blank">Directions on Google Maps</a>.</p>
+
+                    <h3>Airport</h3>
+                    <p>From the airport you can take a bus that connects directly to the city with several stops along the route. The journey ends at Bilbao Intermodal station.</p>"""
+info_conducta = "Code of Conduct"
+info_conducta_title = "Purpose"
+info_conducta_text = """<p>A primary goal of all conferences and user groups adhering to this Code of Conduct is to be inclusive for as many people as possible, with the broadest range of backgrounds and expertise. We therefore commit to providing a friendly, safe, and welcoming environment for everyone, regardless of gender, sexual orientation, disability, ethnicity, socio-economic status, religion, or belief.</p>
+                    <p>This Code of Conduct expresses our expectations for participants in our community as well as the consequences of unacceptable behavior.</p>
+                    <p>We invite everyone who participates in our events to help us create safe and positive experiences for all.</p>"""
+info_conducta_content = """<h3>Open code/culture/technology citizenship</h3>
+                    <p>Euskalduna Palace has its own parking; you can check rates and even book via <a href="#" target="_blank">Parkimeter</a>.</p>
+
+                    <h3>Expected behavior</h3>
+                    <ul>
+                        <li>Participate in an authentic and active way. Doing so contributes to the health and longevity of this community.</li>
+                        <li>Exercise consideration and respect in your speech and actions.</li>
+                        <li>Try to collaborate to avoid conflict.</li>
+                        <li>Refrain from demeaning, discriminatory, or harassing speech and behavior.</li>
+                        <li>Be mindful of your surroundings and of other participants. Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this Code of Conduct, even if they seem minor.</li>
+                    </ul>
+
+                    <h3>Unacceptable behavior</h3>
+                    <p>Unacceptable behaviors include intimidating, harassing, abusive, discriminatory, demeaning, or degrading speech or actions. This applies to all participants in our online community, at events, and in personal communications made in the context of community activities. Community event venues may be shared with the public; please respect the rules of those venues.</p>
+                    <p>Harassment includes: harmful or prejudicial verbal or written comments related to gender, sexual orientation, race, religion, or disability; inappropriate use of nudity images (including digital presentations); deliberate intimidation, stalking, or following; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; and unwelcome sexual attention.</p>
+
+                    <h3>Consequences of unacceptable behavior</h3>
+                    <p>Unacceptable behavior will not be tolerated from any community member, including sponsors and those with decision-making authority. Community members asked to stop any unacceptable behavior are expected to comply immediately.</p>
+                    <p>If a participant engages in unacceptable behavior, community organizers may take any action they deem appropriate, including temporary or permanent expulsion from the community without notice (and without refund in the case of paid events).</p>
+
+                    <h3>If you witness or are subject to unacceptable behavior</h3>
+                    <p>If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. You can find a list of organizers to contact for each community supporting this Code of Conduct at the bottom of this page.</p>
+                    <p>Organizers are available to help participants contact local law enforcement or otherwise help those experiencing unacceptable behavior feel safe. For in-person events, organizers will also provide escorts as needed.</p>
+
+                    <h3>Grievances</h3>
+                    <p>If you feel you have been falsely or unfairly accused of violating this Code of Conduct, please notify an event organizer with a concise description of your grievance. It will be reviewed and resolved in accordance with existing policies.</p>
+
+                    <h3>Scope</h3>
+                    <p>We expect all community participants (contributors —paid or unpaid—, sponsors, and other guests) to abide by this Code of Conduct in all community venues —online and in person— as well as in one-to-one communications related to community activities.</p>
+
+                    <h3>License and attribution</h3>
+                    <p>The <a href="https://berlincodeofconduct.org/es" target="_blank">Berlin Code of Conduct</a> is distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license. It is based on the <a href="https://pdxruby.org/CONDUCT" target="_blank">pdx.rb Code of Conduct</a>, which is distributed under the same license.</p>"""

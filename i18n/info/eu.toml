@@ -1,0 +1,80 @@
+info_how_to_get = "Nola iritsi"
+info_bilbostack_title = "BilboStack hitzaldiak"
+info_bilbostack_where = "Euskalduna Jauregia"
+info_bilbostack_address = "Abandoibarra Etorb., 4, 48011 Bilbo, Bizkaia"
+info_bilbostack_text = """<h3>Autoz</h3>
+                    <p>Euskalduna Jauregiak bere aparkalekua du; tarifak ikusi eta erreserbatu dezakezu <a href="#" target="_blank">Parkimeter</a> bidez.</p>
+
+                    <h3>Metroa</h3>
+                    <p>Metroa da Bilbon mugitzeko modu erosoena. Euskaldunara dagoen geltokirik hurbilena San Mamés/Intermodal da, irteera Sabino Aranatik. <br>
+                        Handik, 10 minutuko ibilbidea dago oinez; bestela, tranbia har daiteke metro irteeraren ondoan.</p>
+
+                    <h3>Tranbia</h3>
+                    <p>Tranbiak Bilboko kale nagusietan geltokiak ditu. Jauregira eramango zaituzten geltokia <strong>Euskalduna</strong> da, eta eraikinaren aurrean bertan uzten du.</p>
+
+                    <h3>Oinez</h3>
+                    <p>Intermodal geltokitik, <strong>Sabino Arana etorbidea</strong> jarraituz, 10 bat minutuan irits daiteke Euskalduna Jauregira.</p>
+
+                    <h3>Bilbao Intermodal</h3>
+                    <p><a href="#" target="_blank">Argibideak Google Mapsetan</a>.</p>
+
+                    <h3>Aireportua</h3>
+                    <p>Aireportutik zuzenean hiriarekin lotzen duen autobusa dago, geldialdi desberdinak eginez. Ibilbidea Bilbao Intermodal geltokian amaitzen da.</p>"""
+info_previa_title = "#La Previa a BilboStack"
+info_previa_where = "Zabalgune Eraikina (Ensanche eraikina)"
+info_previa_address = "Zabalguneko Plaza, 7, 48009 Bilbo, Bizkaia"
+info_previa_text = """<h3>Autoz</h3>
+                    <p>Euskalduna Jauregiak bere aparkalekua du; tarifak ikusi eta erreserbatu dezakezu <a href="#" target="_blank">Parkimeter</a> bidez.</p>
+
+                    <h3>Metroa</h3>
+                    <p>Metroa da Bilbon mugitzeko modu erosoena. Euskaldunara dagoen geltokirik hurbilena San Mamés/Intermodal da, irteera Sabino Aranatik. <br>
+                        Handik, 10 minutuko ibilbidea dago oinez; bestela, tranbia har daiteke metro irteeraren ondoan.</p>
+
+                    <h3>Tranbia</h3>
+                    <p>Tranbiak Bilboko kale nagusietan geltokiak ditu. Jauregira eramango zaituzten geltokia <strong>Euskalduna</strong> da, eta eraikinaren aurrean bertan uzten du.</p>
+
+                    <h3>Oinez</h3>
+                    <p>Intermodal geltokitik, <strong>Sabino Arana etorbidea</strong> jarraituz, 10 bat minutuan irits daiteke Euskalduna Jauregira.</p>
+
+                    <h3>Bilbao Intermodal</h3>
+                    <p><a href="#" target="_blank">Argibideak Google Mapsetan</a>.</p>
+
+                    <h3>Aireportua</h3>
+                    <p>Aireportutik zuzenean hiriarekin lotzen duen autobusa dago, geldialdi desberdinak eginez. Ibilbidea Bilbao Intermodal geltokian amaitzen da.</p>"""
+info_conducta = "Jokabide-kodea"
+info_conducta_title = "Helburua"
+info_conducta_text = """<p>Jokabide Kode honi lotutako konferentzia eta erabiltzaile-talde guztien helburu nagusietako bat ahalik eta pertsona gehienentzat barnerakoiak izatea da, jatorri eta ezagutza aniztasun handienarekin. Horregatik, giro adeitsu, segurua eta abegikorra eskaintzeko konpromisoa hartzen dugu denontzat, genero, orientazio sexual, desgaitasun, etnia, egoera sozioekonomiko, erlijio edo sinesmenak edozein direla ere.</p>
+                    <p>Jokabide Kode honek gure komunitatean parte hartzen dutenen aurreikuspenak eta jokabide onartezinen ondorioak azaltzen ditu.</p>
+                    <p>Gure ekitaldietan parte hartzen duten guztiak gonbidatzen ditugu guztiontzako esperientzia seguru eta positiboak sortzen laguntzera.</p>"""
+info_conducta_content = """<h3>Kode/Kultura/Teknologia irekiko herritartasuna</h3>
+                    <p>Euskalduna Jauregiak bere aparkalekua du; tarifak ikusi eta erreserbatu dezakezu <a href="#" target="_blank">Parkimeter</a> bidez.</p>
+
+                    <h3>Espero den jokabidea</h3>
+                    <ul>
+                        <li>Parte hartu modu zintzo eta aktiboan. Horrela komunitate honen osasunari eta iraupenari laguntzen diozu.</li>
+                        <li>Erakutsi kontuan hartzea eta errespetua zure diskurtsoan eta ekintzetan.</li>
+                        <li>Saiatu elkarlanean gatazkak saihesteko.</li>
+                        <li>Ez erabili esaldi edo jokabide mespretxuzko, diskriminatzaile edo abusiborik.</li>
+                        <li>Izena ezazu inguruaz eta gainerako parte-hartzaileez. Ohartarazi komunitateko arduradunei arrisku-egoeraren bat, norbait egoera deserosoan edo Jokabide Kode honen urraketaren bat sumatzen baduzu, txikia iruditzen bazaizu ere.</li>
+                    </ul>
+
+                    <h3>Jokabide onartezina</h3>
+                    <p>Onartezinak dira beldurgarriak, jazartzaileak, abusiboak, diskriminatzaileak, mespretxuzkoak edo iraingarriak diren adierazpenak edo ekintzak. Eremua gure lineako komunitateko jarduera guztietara eta ekitaldietara hedatzen da, baita komunitatearen jardueren testuinguruan egiten diren komunikazio pertsonaletara ere. Komunitate-ekitaldien aretoak kanpoko jendearekin partekatu daitezke; mesedez, errespetatu leku horietako arauak.</p>
+                    <p>Jazarpena honakoa barne: genero, orientazio sexual, arraza, erlijio edo desgaitasunari buruzko kalte edo iraintzeak; biluztasun-irudien erabilera desegokia (aurkezpen digitalak barne); beldurtze deliberatua, jarraipen edo jazarpena; argazki edo grabazio iraingarriak; aurkezpenen edo beste ekitaldi batzuen eten jarraitua; ukitu desegokiak eta nahi ez den sexu-arreta.</p>
+
+                    <h3>Jokabide onartezinaren ondorioak</h3>
+                    <p>Ez dira onartuko jokabide onartezinak komunitateko inoren aldetik, babesleak eta erabaki-ahalmena dutenak barne. Kide guztiek berehala utzi beharko dituzte jokabide horiek hala eskatzen zaienean.</p>
+                    <p>Kide batek jokabide onartezina izanez gero, antolatzaileek egokitzat jotzen duten zigorra ezarri ahal izango diote, komunitatean aldi baterako edo behin betiko parte-hartzea etetea barne, aurretiazko abisurik gabe (eta ordainketa-ekitaldien kasuan, dirua itzuli gabe).</p>
+
+                    <h3>Jokabide onartezinaren lekuko edo biktima bazara</h3>
+                    <p>Jokabide onartezin baten biktima edo lekuko bazara, edo bestelako kezkarik baduzu, eman ezazu abisua antolatzaile bati ahal bezain laster. Orrialde honen amaieran kode hau babesten duten komunitateetako antolatzaileen zerrenda aurkituko duzu.</p>
+                    <p>Antolatzaileek laguntza eman dezakete tokiko poliziarekin harremanetan jartzeko edo seguru senti zaitezen. Aurrez aurreko ekitaldietan, behar izanez gero, laguntza-lagun eta segurtasun laguntza ere emango da.</p>
+
+                    <h3>Erreklamazioak</h3>
+                    <p>Jokabide Kode hau urratu izana faltsuki edo bidegabe egotzi zaizula uste baduzu, jakinarazi antolatzaile bati gertatutakoaren deskribapen labur batekin. Indarrean dauden politikek arabera aztertu eta ebatzi egingo da.</p>
+
+                    <h3>Esparrua</h3>
+                    <p>Espero da komunitateko parte-hartzaile guztiak (kolaboratzaileak —ordainduak edo ez—, babesleak eta gonbidatuak) Jokabide Kode honi atxikitzea komunitatearen topagune guztietan —online eta aurrez aurre—, baita jarduerei lotutako norbanako arteko komunikazioetan ere.</p>
+
+                    <h3>Lizentzia eta aitortza</h3>
+                    <p><a href="https://berlincodeofconduct.org/es" target="_blank">Berlin Code of Conduct</a> lanak <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> lizentzia du. <a href="https://pdxruby.org/CONDUCT" target="_blank">pdx.rb Code of Conduct</a> lanean oinarrituta dago, eta horrek ere lizentzia bera du.</p>"""

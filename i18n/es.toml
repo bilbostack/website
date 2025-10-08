@@ -1,146 +1,14 @@
-# index
 main_claim = "13ª Edición de la cita tecnológica anual más esperada en Bilbao"
 subclaim_talks = "8 ponencias"
 subclaim_tracks = "2 tracks"
 subclaim_attendees = "~1000 asistentes"
 subclaim_networking = "10x networking"
-
 meta_description = "Bilbostak23, la 13ª Edición de la cita tecnológica anual más esperada en Bilbao."
 meta_title = "#Bilbostack25, 25 de Enero de 2025 en Bilbao"
 header_where = "Bilbao, Bizkaia"
 header_when = "31 de enero de 2026"
-cta_sponsors_title = "Vendrás por la conferencia, volverás por la experiencia"
-cta_sponsors_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos."""
-cta_sponsors_btn = "Dossier de patrocinio (PDF)"
 cta_tickets = "¡Compra tus entradas!"
 last_editions_text = "Ediciones anteriores"
 organization = "Organizadores"
 agenda = "Agenda"
-
 home_back = "volver al evento"
-talk = "Charla"
-speakers_back = "volver al listado de ponentes"
-speakers_title = "Ponentes confirmados"
-sponsors_title = "Patrocinadores"
-sponsors_main = "Patrocinadores Principales"
-sponsors_platino = "Patrocinadores Platino"
-sponsors_oro = "Patrocinadores Oro"
-sponsors_plata = "Patrocinadores Plata"
-sponsors_bronce = "Patrocinadores Bronce"
-
-previa_date = "Viernes 30 de enero"
-previa_title = "La Previa"
-previa_text = """Principalmente orientado a estudiantes y personas desempleadas que quieran acercarse al mundo de la tecnología de la mano de los mejores profesionales del sector. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio.
-<br><br>
-<i>*La entrada '#LaPrevia a BilboStack - Viernes 26/01/2024' será sólo válida para el VIERNES previo a BilboStack 2024. Si quieres acudir también al evento principal el sábado, debes adquirir una 'Entrada General'</i>"""
-previa_como_llegar_link = "https://maps.app.goo.gl/Puo6KJba6cz939tW7"
-previa_como_llegar_text = "CÓMO LLEGAR - Google Maps"
-previa_donde = "Zabalgune Eraikina (Edificio Ensanche)"
-previa_compra = "Consigue tu entrada gratuita"
-previa_compra_link = "#"
-
-bilbostack_date = "Sábado 31 de enero"
-bilbostack_title = """BilboStack <span class="small">+ La Espuela</span>"""
-bilbostack_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio."""
-bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
-bilbostack_como_llegar_text = "CÓMO LLEGAR - Google Maps"
-bilbostack_donde = "Palacio Euskalduna"
-bilbostack_compra = "Compra tus entradas"
-bilbostack_compra_link = "https://tienda.bilbostack.com/"
-
-# Agenda
-schedule = "Horario"
-track = "Track"
-previa_full = "Viernes"
-bilbostack_full = "Sábado"
-time_column = "Horario"
-track_1 = "Track 0E"
-track_2 = "Track 0D"
-
-info_how_to_get = "Cómo llegar"
-info_bilbostack_title = "Conferencias BilboStack"
-info_bilbostack_where = "Palacio Euskalduna Jauregia"
-info_bilbostack_address = "Abandoibarra Etorb., 4, 48011 Bilbo, Bizkaia"
-info_bilbostack_text = """<h3>Coche</h3>
-                    <p>El Palacio Euskalduna cuenta con parking propio, puedes ver las tarifas e incluso reservar desde <a href="#" target="_blank">Parkimeter</a>.</p>
-
-                    <h3>Metro</h3>
-                    <p>El metro es el sistema más cómodo para moverse en Bilbao. La paradas más cercana al Euskalduna es la de San Mamés/Intermodal, salida por Sabino Arana. <br>
-                        Desde allí, hay un camino a pie de unos 10 minutos, aunque se puede coger también el tranvía al lado de la salida del metro.</p>
-
-                    <h3>Tranvía</h3>
-                    <p>El travía tiene parada cerca o en las principales calles de Bilbao. La parada que os llevará al palacio es la de <strong>Euskalduna</strong> y os dejará justo en frente del mismo..</p>
-
-                    <h3>A pie</h3>
-                    <p>Desde la parada de la Intermodal, se puede llegar al Palacio Euskalduna caminando unos diez minutos por la <strong>Avenida Sabino Arana</strong>.</p>
-
-                    <h3>Bilbao Intermodal</h3>
-                    <p><a href="#" target="_blank">Indicaciones en Google Maps</a>.</p>
-
-                    <h3>Aeropuerto</h3>
-                    <p>Desde el aeropuerto podrás tomar un autobús que conecta directamente con la ciudad, realizando varias paradas a lo largo del recorrido. El trayecto finaliza en la estación Bilbao Intermodal.</p>"""
-info_previa_title = "#La Previa a BilboStack"
-info_previa_where = "Zabalgune Eraikina (Edificio Ensanche)"
-info_previa_address = "Zabalguneko Plaza, 7, 48009 Bilbo, Bizkaia"
-info_previa_text = """<h3>Coche</h3>
-                    <p>El Palacio Euskalduna cuenta con parking propio, puedes ver las tarifas e incluso reservar desde <a href="#" target="_blank">Parkimeter</a>.</p>
-
-                    <h3>Metro</h3>
-                    <p>El metro es el sistema más cómodo para moverse en Bilbao. La paradas más cercana al Euskalduna es la de San Mamés/Intermodal, salida por Sabino Arana. <br>
-                        Desde allí, hay un camino a pie de unos 10 minutos, aunque se puede coger también el tranvía al lado de la salida del metro.</p>
-
-                    <h3>Tranvía</h3>
-                    <p>El travía tiene parada cerca o en las principales calles de Bilbao. La parada que os llevará al palacio es la de <strong>Euskalduna</strong> y os dejará justo en frente del mismo..</p>
-
-                    <h3>A pie</h3>
-                    <p>Desde la parada de la Intermodal, se puede llegar al Palacio Euskalduna caminando unos diez minutos por la <strong>Avenida Sabino Arana</strong>.</p>
-
-                    <h3>Bilbao Intermodal</h3>
-                    <p><a href="#" target="_blank">Indicaciones en Google Maps</a>.</p>
-
-                    <h3>Aeropuerto</h3>
-                    <p>Desde el aeropuerto podrás tomar un autobús que conecta directamente con la ciudad, realizando varias paradas a lo largo del recorrido. El trayecto finaliza en la estación Bilbao Intermodal.</p>"""
-info_conducta = "Código de conducta"
-info_conducta_title = "Propósito"
-info_conducta_text = """<p>Un objetivo principal de todas las conferencias y grupos de usuarios que se refieran a este Código de Conducta es ser inclusivos para la mayor cantidad de personas, con la mayor variedad de orígenes y conocimientos posibles. Como tal, nos comprometemos a ofrecer un ambiente amigable, seguro y acogedor para todos, sin importar género, orientación sexual, discapacidad, etnia, estado socio-económico, religión o creencia.</p>
-                    <p>Este Código de Conducta expresa nuestras expectativas con respecto a quienes participan de nuestra comunidad, así como también las consecuencias de comportamientos inaceptables.</p>
-                    <p>Invitamos a todos los que participan de nuestros eventos a ayudarnos a crear experiencias seguras y positivas para todos.</p>"""
-info_conducta_content = """<h3>Ciudadanía de Código/Cultura/Tecnología abierta</h3>
-                    <p>El Palacio Euskalduna cuenta con parking propio, puedes ver las tarifas e incluso reservar desde <a href="#" target="_blank">Parkimeter</a>.</p>
-
-                    <h3>Comportamiento esperado</h3>
-                    <ul>
-                        <li>Participe de un modo auténtico y activo. Al hacerlo contribuye a la salud y longevidad de esta comunidad.</li>
-                        <li>Ejercite la consideración y el respeto en su discurso y en sus acciones.</li>
-                        <li>Intente colaborar para evitar conflictos.</li>
-                        <li>Absténgase de discursos o comportamientos despectivos, discriminatorios o abusivos.</li>
-                        <li>Sea consciente de su entorno y de los/as otros/as participantes. Alerte a los líderes de la comunidad si nota alguna situación peligrosa, alguien sufriendo una situación comprometedora o violaciones de este Código de Conducta, incluso si parecieran poco importantes.</li>
-                    </ul>
-
-                    <h3>Comportamiento inaceptable</h3>
-                    <p>Comportamientos inaceptables incluyen: discursos o acciones intimidantes, acosadores, abusivos, discriminatorios, despectivos o degradantes. El alcance incluye a todos/as los/as participantes de nuestra comunidad online en todos los eventos y comunicaciones personales llevadas a cabo en el contexto de las actividades de nuestra comunidad. Los lugares en donde se lleven a cabo eventos de la comunidad pueden ser compartidos con gente ajena a la misma, por favor sea respetuoso hacia las autoridades de dichos lugares.</p>
-                    <p>Acoso incluye: daño o perjurio verbal o escrito relacionado con género, orientación sexual, raza, religión, incapacidad; uso inapropiado de imágenes de desnudez (incluyendo presentaciones digitales); intimidación deliberada, acecho o persecución; fotografías o grabaciones abusivas; interrupción sostenida de presentaciones u de otros eventos; contacto físico inapropiado y atención sexual no deseada.</p>
-
-                    <h3>Consecuencias del comportamiento inaceptable</h3>
-                    <p>No serán tolerados los comportamientos inaceptables de parte de cualquier miembro de la comunidad, incluidos patrocinadores y aquellos/as con autoridad para tomar decisiones. Se espera de todos/as los/as miembros el inmediato cumplimiento al solicitársele suspender comportamientos inaceptables.</p>
-                    <p>Si un miembro incurre en comportamientos inaceptables los organizadores de la comunidad pueden sancionarlo de cualquier forma que se considere apropiada, incluyendo la suspensión temporal o permanente de su participación en la comunidad, sin previo aviso (y sin reintegro del dinero, en caso de ser un evento pago).</p>
-
-                    <h3>Si es testigo o víctima de comportamiento inaceptable</h3>
-                    <p>Si Ud. es víctima o testigo de comportamiento inaceptable, o tiene cualquier otra preocupación o problema, por favor notifíquelo a un organizador de la comunidad tan pronto como sea posible. Puede encontrar una lista de los organizadores a contactar para cada una de las comunidades que apoyen este código de conducta al final de esta página.</p>
-                    <p>Además, los organizadores de la comunidad se encuentran disponibles para ayudar a los miembros a contactar a las fuerzas policiales locales o, de lo contrario, para ayudar a sentirse seguros a aquellos que hayan sido víctimas de comportamiento inaceptable. En el contexto de eventos presenciales, los organizadores también proveerán escolta a las personas que hayan sufrido dichas experiencias.</p>
-
-                    <h3>Desagravios</h3>
-                    <p>Si Ud. siente que ha sido falsa o injustamente acusado/a de violar este Código de Conducta, se le sugiere notificar a uno de los organizadores del evento con una descripción concisa del agravio. El mismo será contemplado y resuelto de acuerdo a las políticas existentes.</p>
-
-                    <h3>Alcance</h3>
-                    <p>Se espera que todos los participantes de la comunidad (colaboradores/as —pagos o no—, patrocinadores y otros/as invitados/as) se atengan a este Código de Conducta en todos los lugares de encuentro de la comunidad –online o en persona– así como en todas las comunicaciones uno-a-uno relacionadas con actividades de la comunidad.</p>
-
-                    <h3>Licencia y atribución</h3>
-                    <p>El <a href="https://berlincodeofconduct.org/es" target="_blank">Berlin Code of Conduct</a> se encuentra distribuido bajo una <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">licencia Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a>. Está basado en el <a href="https://pdxruby.org/CONDUCT" target="_blank">pdx.rb Code of Conduct</a>, que también es distribuido bajo la misma licencia.</p>"""
-
-past_editions_tracks = "{{.number}} tracks"
-past_editions_speakers = "{{.number}} ponentes"
-past_editions_attendees = "{{.number}} asistentes"
-past_editions_networking = "{{.number}} networking"
-past_editions_year = "Año {{.year}}"
