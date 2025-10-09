@@ -15,7 +15,9 @@ image = 'img/speakers/bart.jpeg'
 +++
 {{<speaker_bio>}}
 
-Eduki-sortzailea (bideoa/podcasta/PR/ekitaldiak), komunikatzailea eta Kube.FM-eko ahots bizi-bizia.
+Bart Farrell AEBetako ekintzailea da, Espainiako iparraldean bizi dena. Azken hamarkadan, enpresa teknologikoei lagundu die audientzia zabaltzen, gainerakoen artean nabarmentzen diren edukien bidez.
+
+Bart-ek 10 herrialdetan 250 baino gehiago cloud native ekitaldi antolatu eta aurkeztu ditu. Mundu oso tekniko batean profil ez-teknikotik dator; harreman iraunkorrak eraikitzeko duen gaitasunari esker, 25k laguneko sare bat osatu du bere sare sozialetan.
 
 {{</speaker_bio>}}
 

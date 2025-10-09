@@ -15,7 +15,11 @@ image = 'img/speakers/bart.jpeg'
 +++
 {{<speaker_bio>}}
 
-Content creator (video/podcast/PR/events), communicator, and the vivacious voice of Kube.FM.
+Bart Farrell is an American entrepreneur who lives in the North of Spain. He has spent the last decade helping tech companies expand their audience through content that stand out from the rest.  
+
+Bart has organized and hosted over 250 cloud native events in 10 different countries. Coming from a non-technical background in a very technical world, Bart’s
+ability to build lasting relationships has expanded to a network of 25k
+on his social media.
 
 {{</speaker_bio>}}
 
