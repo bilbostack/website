@@ -7,7 +7,7 @@ taglineLarge = 'Head of Engineering at BestSecret'
 day = 'Saturday 31'
 time = '10:00h'
 description = 'Leopoldo Romacho will speak at #Bilbostack25'
-image = 'img/speakers/leo.jpeg'
+image = 'img/speakers/leo.jpg'
 [params]
   links = [
       { title = "LinkedIn", url = "https://www.linkedin.com/in/leopoldo-romacho-gomez/"},

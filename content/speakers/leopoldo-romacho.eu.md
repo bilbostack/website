@@ -7,7 +7,7 @@ taglineLarge = 'Ingeniaritzako burua BestSecret-en'
 day = 'Larunbata 31'
 time = '10:00h'
 description = 'Leopoldo Romachok #Bilbostack25ean hitz egingo du'
-image = 'img/speakers/leo.jpeg'
+image = 'img/speakers/leo.jpg'
 [params]
   links = [
       { title = "LinkedIn", url = "https://www.linkedin.com/in/leopoldo-romacho-gomez/"},
