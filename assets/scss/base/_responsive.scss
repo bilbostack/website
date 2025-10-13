@@ -1,0 +1,12 @@
+/* Responsive */
+@media screen and (max-width: #{ $breakpoint-md - 1px }) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .show-on-mobile-only {
+        display: none;
+    }
+}

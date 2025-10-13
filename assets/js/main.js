@@ -85,7 +85,7 @@ function initHeader() {
 }
 
 function initMenu() {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const hamburgerBtns = document.querySelectorAll('button.hamburger');
     const closeBtn = document.getElementById('close-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const body = document.body;
@@ -120,10 +120,12 @@ function initMenu() {
         }
     }
 
-    if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', function (event) {
-            event.preventDefault();
-            openMenu();
+    if (hamburgerBtns && mobileMenu) {
+        hamburgerBtns.forEach(hamburgerBtn => {
+            hamburgerBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                openMenu();
+            });
         });
     }
 
@@ -136,7 +138,13 @@ function initMenu() {
 
     document.addEventListener('click', function (event) {
         if (body.classList.contains('menu-open')) {
-            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+            let closeMenuVar = true;
+            hamburgerBtns.forEach(hamburgerBtn => {
+                if (hamburgerBtn.contains(event.target) || mobileMenu.contains(event.target)) {
+                    closeMenuVar = false;
+                }
+            });
+            if (closeMenuVar) {
                 closeMenu();
             }
         }

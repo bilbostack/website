@@ -25,14 +25,28 @@
       </label>
 
       <!-- Hamburger Icon -->
-      <button id="hamburger-btn" class="hamburger" type="button" aria-label="Open menu">
-        <span class="hamburger-line"></span>
+      <button id="hamburger-btn" class="hamburger hide-on-mobile" type="button" aria-label="Open menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
 </header>
+
+<div class="navbar-mobile show-on-mobile-only">
+  {{ if $.Site.Params.ticketsOpen}}
+  <a href="{{$.Site.Params.ticketsLink}}" target="_blank" title="{{T " cta_tickets" }}" class="btn btn-primary">{{T "cta_tickets" | safeHTML }}</a>
+  {{end}}
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger-wrapper">
+    <button id="hamburger-btn" class="hamburger" type="button" aria-label="Open menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</div>
+</div>
 
 <!-- Sidenav (Mobile Menu) -->
 <div id="mobile-menu" class="sidenav">
@@ -52,7 +66,7 @@
     {{ range .Site.Menus.main }}
     <li><a href="{{ .URL }}">
         <span class="nav-link-title">{{ .Name }}</span>
-        <span class="nav-link-desc">{{ .Params.desc }}</span>
+        <span class="nav-link-desc hide-on-mobile">{{ .Params.desc }}</span>
       </a></li>
     {{ end }}
   </ul>

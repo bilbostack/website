@@ -1,7 +1,7 @@
 #speakers {
     .speakers-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         row-gap: 4rem;
     }
@@ -52,6 +52,30 @@
             .image {
                 scale: 1.1;
             }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        .speakers-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+        .speakers-list {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        .speakers-list {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-xxl) {
+        .speakers-list {
+            grid-template-columns: repeat(6, 1fr);
         }
     }
 }

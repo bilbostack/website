@@ -1,3 +1,8 @@
+body,
+html {
+    margin: 0;
+}
+
 .main-content {
     padding: var(--header-height) 0 2rem;
 
@@ -7,7 +12,7 @@
 }
 
 .content {
-    padding: 2rem;
+    padding: var(--main-gap);
 }
 
 .row {

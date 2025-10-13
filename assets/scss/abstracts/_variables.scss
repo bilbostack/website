@@ -72,4 +72,26 @@
 
     // HEADER
     --header-height: 110px;
+
+    --main-gap: 1rem;
+    --sidenav-width: 100vw;
+}
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+@media screen and (min-width: $breakpoint-lg) {
+    :root {
+        --sidenav-width: 50vw;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    :root {
+        --main-gap: 2rem;
+    }
 }

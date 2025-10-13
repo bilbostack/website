@@ -1,7 +1,13 @@
 <section id="home-header">
     <div class="content">
-        <div class="logo-header">
+        <div class="logo-header hide-on-mobile">
             {{ with resources.Get "img/bilbostack-logo.svg" }}
+            {{ .Content | safeHTML }}
+            {{ end }}
+        </div>
+
+        <div class="logo-header show-on-mobile-only">
+            {{ with resources.Get "img/bilbostack-logo-2lines.svg" }}
             {{ .Content | safeHTML }}
             {{ end }}
         </div>
