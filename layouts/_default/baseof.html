@@ -11,9 +11,10 @@
 </head>
 
 <body>
+  {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
       {{ block "main" . }}{{ end }}
       {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
     </div>

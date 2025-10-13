@@ -1,8 +1,10 @@
+let smoother;
+
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin)
 
     /// ScrollSmoother
-    const smoother = ScrollSmoother.create({
+    smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
         smooth: 1.5,
@@ -36,9 +38,51 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ScrollTrigger.refresh();
     });
 
+    initHeader();
     initMenu();
     initAnimations();
 });
+
+function initHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    // update CSS variable for header height
+    const updateHeaderHeight = () => {
+        const headerHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    };
+
+    updateHeaderHeight();
+
+    window.addEventListener('resize', () => {
+        updateHeaderHeight();
+    });
+
+    // Change header class on scroll
+    ScrollTrigger.create({
+        start: "top -300",
+        end: 99999,
+        toggleClass: { className: "scrolled", targets: header }
+    });
+
+    // Change header class on scroll up
+    let lastScrollY = window.pageYOffset;
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.pageYOffset;
+        if (currentScrollY < lastScrollY) {
+            header.classList.add('scrolling-up');
+        } else {
+            header.classList.remove('scrolling-up');
+        }
+        lastScrollY = currentScrollY;
+    });
+
+    // Refresh ScrollTrigger después de un pequeño retraso para asegurar que todo está cargado
+    gsap.delayedCall(0.5, () => {
+        ScrollTrigger.refresh();
+    });
+}
 
 function initMenu() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -47,21 +91,45 @@ function initMenu() {
     const body = document.body;
 
     function openMenu() {
+        const scrollY = smoother ? smoother.scrollTop() : window.pageYOffset;
         body.classList.add('menu-open');
+        body.style.top = `-${scrollY}px`;
+
+        if (smoother) {
+            smoother.paused(true);
+        }
     }
 
     function closeMenu() {
+        const scrollY = body.style.top;
+
         body.classList.remove('menu-open');
+        body.style.top = '';
+
+        if (smoother) {
+            smoother.paused(false);
+
+            if (scrollY) {
+                const scrollPosition = parseInt(scrollY || '0') * -1;
+                smoother.scrollTo(scrollPosition);
+            }
+        } else {
+            if (scrollY) {
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+        }
     }
 
     if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', function () {
+        hamburgerBtn.addEventListener('click', function (event) {
+            event.preventDefault();
             openMenu();
         });
     }
 
     if (closeBtn && mobileMenu) {
-        closeBtn.addEventListener('click', function () {
+        closeBtn.addEventListener('click', function (event) {
+            event.preventDefault();
             closeMenu();
         });
     }
@@ -74,7 +142,7 @@ function initMenu() {
         }
     });
 
-    // Cerrar menú con tecla Escape
+    // Cerrar menú con Esc
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && body.classList.contains('menu-open')) {
             closeMenu();

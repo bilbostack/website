@@ -1,10 +1,10 @@
-/* Prevenir scroll del body cuando el menú está abierto */
 body.menu-open {
     overflow: hidden;
-    max-height: 100vh;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
 }
 
-/* Asegurar que el menú móvil tenga scroll interno si es necesario */
 #mobile-menu {
     overflow-y: auto;
     max-height: 100vh;
@@ -25,9 +25,20 @@ body.menu-open #mobile-menu {
 }
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 999;
+    background-color: var(--color-primary-light);
+    transition: all 0.3s ease;
+
+    &.scrolled {
+        transform: translateY(calc(-1 * var(--header-height)));
+    }
+
+    &.scrolling-up {
+        transform: translateY(0);
+    }
 
     .navbar {
         display: flex;
