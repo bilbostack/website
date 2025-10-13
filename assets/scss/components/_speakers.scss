@@ -2,8 +2,8 @@
     .speakers-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        row-gap: 4rem;
+        gap: 1rem;
+        row-gap: 3rem;
     }
 
     .speaker {
@@ -12,8 +12,8 @@
 
         h4 {
             margin-top: 1rem;
-            margin-bottom: 1rem;
-            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
 
         .card-text {
@@ -59,11 +59,20 @@
         .speakers-list {
             grid-template-columns: repeat(3, 1fr);
         }
+
+        .speaker {
+            h4 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+        }
     }
 
     @media screen and (min-width: $breakpoint-lg) {
         .speakers-list {
             grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            row-gap: 4rem;
         }
     }
 
@@ -93,6 +102,10 @@
 
         &-day {
             background-color: var(--current-color-400);
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: 0.3rem 0.5rem;
         }
     }
 }

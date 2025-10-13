@@ -183,6 +183,10 @@
     .programa-spacer {
         min-height: 50vh;
     }
+
+    @media screen and (max-width: $breakpoint-xl) {
+        flex-direction: column;
+    }
 }
 
 .card {

@@ -80,4 +80,16 @@
             }
         }
     }
+
+    @media screen and (max-width: $breakpoint-xl) {
+        .content {
+            flex-direction: column;
+            gap: 0;
+
+            .cta-video {
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
 }
