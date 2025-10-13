@@ -44,23 +44,40 @@ function initMenu() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const closeBtn = document.getElementById('close-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    function openMenu() {
+        body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+        body.classList.remove('menu-open');
+    }
 
     if (hamburgerBtn && mobileMenu) {
         hamburgerBtn.addEventListener('click', function () {
-            mobileMenu.style.left = '0';
+            openMenu();
         });
     }
 
     if (closeBtn && mobileMenu) {
         closeBtn.addEventListener('click', function () {
-            mobileMenu.style.left = '-50vw';
+            closeMenu();
         });
     }
 
-    // Close menu if user clicks outside of it
-    window.addEventListener('click', function (event) {
-        if (event.target == mobileMenu) {
-            mobileMenu.style.left = '-50vw';
+    document.addEventListener('click', function (event) {
+        if (body.classList.contains('menu-open')) {
+            if (!hamburgerBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                closeMenu();
+            }
+        }
+    });
+
+    // Cerrar menú con tecla Escape
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && body.classList.contains('menu-open')) {
+            closeMenu();
         }
     });
 }

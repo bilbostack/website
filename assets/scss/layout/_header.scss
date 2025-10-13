@@ -1,3 +1,29 @@
+/* Prevenir scroll del body cuando el menú está abierto */
+body.menu-open {
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+/* Asegurar que el menú móvil tenga scroll interno si es necesario */
+#mobile-menu {
+    overflow-y: auto;
+    max-height: 100vh;
+    box-sizing: border-box;
+    opacity: 0;
+    left: -50vw;
+    transition:
+        opacity 0s 0.4s,
+        left 0.4s ease;
+}
+
+body.menu-open #mobile-menu {
+    opacity: 1;
+    left: 0;
+    transition:
+        opacity 0s,
+        left 0.4s ease;
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -168,10 +194,10 @@
 
     .sidenav-menu {
         flex: auto;
-        padding: 2rem 4rem;
+        padding: 1rem 4rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
         justify-content: center;
 
         li a {
@@ -183,7 +209,7 @@
                 font-size: 3rem;
                 font-weight: bold;
                 display: block;
-                margin-bottom: 0.3rem;
+                margin-bottom: 0;
             }
 
             .nav-link-desc {
@@ -213,23 +239,17 @@
     }
 
     .close-btn {
-        padding: 10px 15px 10px 30px;
+        position: absolute;
+        top: 0.7rem;
+        right: 3rem;
+        font-size: 3rem;
         text-decoration: none;
-        font-size: 1.25rem;
-        color: var(--sidenav-link-color);
-        display: block;
-        transition: 0.2s;
+        cursor: pointer;
+        color: var(--font-color);
 
         &:hover {
-            color: var(--sidenav-link-hover);
+            color: var(--color-primary-light);
         }
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        font-size: 36px;
     }
 }
 
