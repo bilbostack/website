@@ -76,10 +76,11 @@ footer {
         }
     }
     @media screen and (max-width: $breakpoint-sm) {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
 
         .horizontal-menu {
             flex-direction: column;
+            gap: 1.5rem;
         }
     }
 }
@@ -126,6 +127,7 @@ footer {
     a {
         color: var(--current-color-fixed-400);
         font-size: 2.5rem;
+
         .fill-main {
             fill: var(--current-color-fixed-400);
         }
@@ -136,6 +138,12 @@ footer {
             .fill-main {
                 fill: var(--color-light);
             }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        a {
+            font-size: 2rem;
         }
     }
 }

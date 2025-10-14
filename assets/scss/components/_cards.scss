@@ -99,6 +99,10 @@
                     margin-top: 0;
                     margin-bottom: 1rem;
                 }
+
+                @media screen and (max-width: $breakpoint-md) {
+                    display: none;
+                }
             }
 
             .card-actions {
@@ -186,6 +190,15 @@
 
     @media screen and (max-width: $breakpoint-xl) {
         flex-direction: column;
+
+        .card-programa {
+            padding: 1rem;
+
+            .card-content .card-content-left,
+            .card-content .card-content-right {
+                padding-left: 0;
+            }
+        }
     }
 }
 
