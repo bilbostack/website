@@ -113,13 +113,22 @@
 #speaker {
     .speaker-wrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 5rem;
         margin-bottom: 5rem;
         padding: 0 5rem;
 
-        @media (min-width: 768px) {
-            flex-direction: row;
+        .speaker-left {
+            max-width: 40%;
+            width: 40%;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .speaker-right {
+            flex: 1;
         }
 
         .speaker-title {
@@ -173,6 +182,17 @@
 
             .talk-description {
                 font-size: 1.25rem;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            flex-direction: column;
+            padding: 0 var(--main-gap);
+
+            .speaker-left {
+                max-width: 100%;
+                width: calc(100% - 10rem);
+                padding: 0 5rem;
             }
         }
     }

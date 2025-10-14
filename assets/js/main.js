@@ -257,6 +257,9 @@ function initStickyCards() {
 }
 
 function initSpeakerAnimation() {
+    // Solo ejecutar si es menos de 768px
+    if (window.innerWidth <= 768) return;
+
     // Solo ejecutar en páginas de speaker-detail
     const speakerSection = document.querySelector('#speaker');
     if (!speakerSection) return;
