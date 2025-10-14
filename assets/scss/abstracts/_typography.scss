@@ -78,6 +78,14 @@ a {
         height: 1rem;
         background-color: var(--current-color-400);
     }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 0;
+
+        &:before {
+            display: none;
+        }
+    }
 }
 
 .small {

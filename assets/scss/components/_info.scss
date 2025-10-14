@@ -13,7 +13,7 @@
 
         @media screen and (max-width: $breakpoint-md) {
             flex-direction: column;
-            padding: 0 var(--main-gap);
+            // padding: 0 var(--main-gap);
 
             .card {
                 max-width: 100%;

@@ -7,21 +7,6 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
-    .programa-header {
-        .heading-square {
-            padding: 0;
-
-            &:before {
-                display: none;
-            }
-        }
-
-        h2 {
-        }
-    }
-}
-
 .cards-programa {
     display: flex;
     flex-direction: row;
@@ -226,5 +211,11 @@
     img {
         width: 100%;
         border-radius: var(--border-radius-xs);
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        .card-wrapper {
+            padding: 1rem;
+        }
     }
 }
