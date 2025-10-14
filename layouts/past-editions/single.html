@@ -1,10 +1,12 @@
 {{ define "main" }}
-<article id="past-editions">
+<article id="past-editions" class="main-content">
+    <h1>{{ .Title }}</h1>
+
     <div class="breadcrumbs content">
         <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
         BREADCRUMBS
     </div>
-    <div class=" past-editions">
+    <div class="past-editions">
         {{ $editions := $.Site.Params.Editions }}
         {{ range $index, $edition := $editions }}
         <div class="edition" style="--color: var(--{{.color}}-400)">
@@ -19,7 +21,7 @@
                 {{ $year := .year | string }}
                 {{ $yearImage := printf "img/year-%s.svg" $year }}
                 {{ with resources.Get $yearImage }}
-                <span class="img-tag"><img src="{{ .Permalink }}" alt="{{T "past_editions_year" (dict "number" $year)}}"></span>
+                <span class="img-tag"><img src="{{ .Permalink }}" alt="{{T " past_editions_year" (dict "number" $year)}}"></span>
                 {{ end }}
 
             </a>
