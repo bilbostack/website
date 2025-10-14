@@ -2,11 +2,15 @@
 <!-- Para una sesión individual de un track -->
 <!-- Parámetros esperados: .session y .track_name -->
 <div class="session" data-track="{{ .track_name }}">
-    <h3>{{ .session.title }}</h3>
+    <div class="track-name show-on-mobile-only ">{{ .track_name}}</div>
+    <div class="session-wrapper">
+        <h3>{{ .session.title }}</h3>
 
-    {{ if .session.speaker }}
-    <p class="speaker">
-        <a href="{{ .session.speaker_url }}">{{ .session.speaker }}</a>
-    </p>
-    {{ end }}
+        {{ if .session.speaker }}
+        <p class="speaker">
+            <a href="{{ .session.speaker_url }}">{{ .session.speaker }}</a>
+        </p>
+        {{ end }}
+    </div>
+
 </div>

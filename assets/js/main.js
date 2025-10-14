@@ -429,6 +429,9 @@ function initAgendaTabs() {
 }
 
 function initAgendaAnimation() {
+    // Solo ejecutar si es menos de 768px
+    if (window.innerWidth <= 768) return;
+
     const agenda = document.querySelector('#agenda');
     if (!agenda) return;
 

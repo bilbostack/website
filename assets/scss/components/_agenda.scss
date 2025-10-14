@@ -2,11 +2,13 @@
 // AGENDA STYLES - Updated
 // ===================================
 
-#agenda h1 {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
+#agenda {
+    h1 {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 // Tabs Navigation
@@ -14,8 +16,7 @@
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
-    padding-right: 4rem;
-    padding-top: 2rem;
+    padding: 2rem 4rem 0 1rem;
     background-color: var(--color-primary-light);
 
     .tab-button {
@@ -32,13 +33,19 @@
             text-decoration: underline;
         }
 
+        &:focus,
+        &:focus-visible,
+        &:active {
+            text-decoration: none;
+        }
+
         &.active {
             z-index: 1;
         }
 
-        @media (max-width: 600px) {
-            padding: 0.75rem 1rem;
-            font-size: 0.9rem;
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: 1rem 0.5rem;
+            font-size: 1.2rem;
             flex: 1;
             text-align: center;
         }
@@ -85,13 +92,13 @@
         background-color: var(--current-color-400);
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: $breakpoint-md) {
         grid-template-columns: 100px 1fr 1fr;
 
         .time-column,
         .track-column {
             padding: 0.75rem 0.5rem;
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
     }
 }
@@ -109,10 +116,6 @@
     margin-bottom: 0.5rem;
     align-items: start;
     gap: 0.5rem;
-
-    &:last-child {
-        border-bottom: none;
-    }
 
     &.header {
         display: flex;
@@ -134,16 +137,33 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: $breakpoint-md) {
         grid-template-columns: 100px 1fr 1fr;
         min-height: 60px;
+
+        &.header {
+            padding: 1rem;
+            align-items: flex-start;
+            gap: 0.2rem;
+
+            .day-title {
+                font-size: 1.5rem;
+                line-height: 1.1;
+                font-weight: 700;
+            }
+
+            .day-where {
+                font-size: 1rem;
+                font-weight: 400;
+            }
+        }
     }
 }
 
 // Columna de tiempo
 .time-slot {
     padding: 1.5rem;
-    background: var(--current-color-0);
+    background: var(--current-color-100);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
@@ -152,26 +172,32 @@
     font-size: 1.5rem;
     font-weight: 500;
 
-    @media (max-width: 768px) {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.8rem;
+    @media screen and (max-width: $breakpoint-md) {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+
+        width: auto;
+        display: inline-block;
+        border-radius: 10px;
+
+        background: var(--current-color-400);
+        color: white;
+        font-weight: 700;
     }
 }
 
 // Sesiones individuales (charlas)
 .session {
     padding: 2rem;
-    background: var(--current-color-0);
+    background: var(--current-color-100);
     border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     transition: background-color 0.2s ease;
-
-    &:last-child {
-        border-right: none;
-    }
+    box-sizing: border-box;
+    width: 100%;
 
     h3 {
         color: var(--font-color);
@@ -213,16 +239,21 @@
         font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: $breakpoint-md) {
         padding: 1rem 0.75rem;
 
         h3 {
-            font-size: 0.9rem;
-            line-height: 1.3;
+            font-size: 1.1rem;
+            line-height: 1.2;
         }
 
         .speaker {
-            font-size: 0.8rem;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+
+            span {
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -234,7 +265,7 @@
 }
 
 // Responsive: En móvil, cambiar a layout vertical
-@media (max-width: 600px) {
+@media screen and (max-width: $breakpoint-md) {
     .agenda-table {
         display: block;
     }
@@ -244,44 +275,37 @@
     }
 
     .agenda-row {
-        display: block;
-        border-bottom: 2px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         margin-bottom: 1rem;
-        border-radius: 8px;
-        overflow: hidden;
 
         &.single {
             .session-full {
                 grid-column: unset;
             }
         }
-    }
 
-    .time-slot {
-        background: var(--current-color-300);
-        color: white;
-        border-right: none;
-        border-radius: 0;
-        font-weight: 600;
-        text-align: center;
-    }
+        &.parallel {
+            .session {
+                padding: 0;
+                border-radius: var(--border-radius);
+                overflow: hidden;
 
-    .session {
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
+                .track-name {
+                    text-align: center;
+                    width: 100%;
+                    background: var(--current-color-300);
+                    color: var(--color-primary-light);
+                    padding: 0.3rem;
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
 
-        &:last-child {
-            border-bottom: none;
-        }
-
-        &::before {
-            content: attr(data-track);
-            font-weight: 600;
-            color: var(--current-color-400);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            display: block;
+                .session-wrapper {
+                    padding: 1rem 0.75rem;
+                }
+            }
         }
     }
 }
@@ -290,13 +314,13 @@
     margin-top: 3rem;
 
     .hidden-small {
-        @media (max-width: 768px) {
+        @media screen and (max-width: $breakpoint-md) {
             display: none;
         }
     }
 
     .hidden-big {
-        @media (min-width: 769px) {
+        @media screen and (min-width: #{ $breakpoint-md + 1px }) {
             display: none;
         }
     }
