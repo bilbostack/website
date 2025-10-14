@@ -13,7 +13,8 @@
 
     .list {
         display: flex;
-        gap: 3rem;
+        gap: 2rem 3rem;
+        flex-wrap: wrap;
         margin-bottom: 5rem;
 
         .item {
@@ -41,6 +42,23 @@
             &.sponsors-s img {
                 height: 5rem;
                 max-width: 7.5rem;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            justify-content: center;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            .item {
+                &.sponsors-xxl img,
+                &.sponsors-xl img,
+                &.sponsors-l img,
+                &.sponsors-m img,
+                &.sponsors-s img {
+                    height: auto;
+                    max-width: 100%;
+                }
             }
         }
     }
