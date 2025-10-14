@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ScrollTrigger.refresh();
     });
 
+    initThemeToggle();
     initHeader();
     initMenu();
     initAnimations();
@@ -468,4 +469,55 @@ function initAgendaAnimation() {
             });
         });
     });
+}
+
+// ===== THEME DARK / LIGHT MODES =====
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle-checkbox');
+    if (!themeToggle) return;
+
+    const currentTheme = getThemeFromCookie();
+
+    themeToggle.checked = currentTheme === 'dark';
+
+    applyTheme(currentTheme);
+
+    themeToggle.addEventListener('change', function () {
+        const selectedTheme = this.checked ? 'dark' : 'light';
+        setThemeCookie(selectedTheme);
+        applyTheme(selectedTheme);
+    });
+}
+
+function getThemeFromCookie() {
+    const cookies = document.cookie.split(';');
+    const themeCookie = cookies.find(cookie =>
+        cookie.trim().startsWith('bilbostack-theme=')
+    );
+
+    if (themeCookie) {
+        return themeCookie.split('=')[1].trim();
+    }
+
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const defaultTheme = systemPrefersDark ? 'dark' : 'light';
+    setThemeCookie(defaultTheme);
+    return defaultTheme;
+}
+
+function setThemeCookie(theme) {
+    const expirationDate = new Date();
+    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+
+    document.cookie = `bilbostack-theme=${theme}; expires=${expirationDate.toUTCString()}; path=/; SameSite=Lax`;
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+        document.documentElement.classList.remove('light-theme');
+    } else {
+        document.documentElement.classList.add('light-theme');
+        document.documentElement.classList.remove('dark-theme');
+    }
 }

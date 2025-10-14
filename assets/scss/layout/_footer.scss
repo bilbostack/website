@@ -1,6 +1,6 @@
 footer {
-    background-color: var(--color-primary-dark);
-    color: var(--color-primary-light);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     padding-top: 1rem;
 }
 
@@ -17,11 +17,11 @@ footer {
             justify-content: flex-start;
             gap: 1vw;
 
-            background: var(--current-color-600);
+            background: var(--current-color-fixed-600);
             padding: 1rem 1.5rem 1rem 1rem;
             border-radius: var(--border-radius);
 
-            color: var(--color-primary-light);
+            color: var(--color-light);
             text-decoration: none;
             font-size: 1rem;
             font-weight: 700;
@@ -53,7 +53,7 @@ footer {
 
         li {
             a {
-                color: var(--color-primary-light);
+                color: var(--color-light);
                 text-decoration: none;
                 font-size: 1.2rem;
 
@@ -69,14 +69,14 @@ footer {
     margin-bottom: 5rem;
 
     .editions {
-        color: var(--color-primary-light);
+        color: var(--color-light);
         display: flex;
         gap: 1rem;
         align-items: center;
 
         a,
         span {
-            color: var(--color-primary-light);
+            color: var(--color-light);
             font-weight: 600;
             font-size: 1.5rem;
 
@@ -86,7 +86,7 @@ footer {
             }
 
             &.current {
-                background-color: var(--current-color-400);
+                background-color: var(--current-color-fixed-400);
                 text-decoration: none;
                 cursor: default;
                 padding: 0.2rem 0.5rem;
@@ -102,17 +102,17 @@ footer {
     margin-bottom: 4rem;
 
     a {
-        color: var(--current-color-400);
+        color: var(--current-color-fixed-400);
         font-size: 2.5rem;
         .fill-main {
-            fill: var(--current-color-400);
+            fill: var(--current-color-fixed-400);
         }
 
         &:hover {
-            color: var(--color-primary-light);
+            color: var(--color-light);
 
             .fill-main {
-                fill: var(--color-primary-light);
+                fill: var(--color-light);
             }
         }
     }
@@ -124,6 +124,6 @@ footer {
     margin-bottom: 2rem;
 
     i {
-        color: var(--current-color-300);
+        color: var(--current-color-fixed-300);
     }
 }

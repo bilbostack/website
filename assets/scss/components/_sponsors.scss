@@ -1,4 +1,7 @@
 #sponsors {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+
     h3 {
         font-size: 1.25rem;
 
@@ -69,13 +72,13 @@
             gap: 2rem;
 
             h2 {
-                color: var(--color-primary-light);
+                color: var(--color-light);
                 margin: 0;
             }
 
             p {
                 font-size: 1.25rem;
-                color: var(--color-primary-light);
+                color: var(--color-light);
                 margin: 0;
             }
         }

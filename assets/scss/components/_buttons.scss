@@ -3,7 +3,7 @@
     border-radius: 50px;
     text-decoration: none;
     background-color: var(--current-color-400);
-    color: var(--color-primary-light);
+    color: var(--color-light);
     font-size: 1.25rem;
     border: 2px solid var(--current-color-400);
     cursor: pointer;
@@ -27,7 +27,7 @@
     }
 
     &:hover {
-        color: var(--color-primary-light);
+        color: var(--color-light);
     }
 
     &:hover:before {
