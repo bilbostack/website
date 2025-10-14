@@ -190,9 +190,11 @@
 }
 
 .card {
-    background-color: var(--current-color-100);
-    padding: 2rem;
-    border-radius: var(--border-radius);
+    .card-wrapper {
+        background-color: var(--current-color-100);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+    }
 
     // first child no margin top
     *:first-child {
