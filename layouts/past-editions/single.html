@@ -2,9 +2,8 @@
 <article id="past-editions" class="main-content">
     <h1>{{ .Title }}</h1>
 
-    <div class="breadcrumbs content">
-        <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
-        BREADCRUMBS
+    <div class="breadcrumbs">
+        <a href="{{ref . "/"}}" class="back">{{T "home_back"}}</a> > <span>{{ .Title }}</span>
     </div>
     <div class="past-editions">
         {{ $editions := $.Site.Params.Editions }}
@@ -27,7 +26,6 @@
             </a>
         </div>
         {{ end }}
-    </div>
     </div>
 </article>
 

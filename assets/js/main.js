@@ -33,6 +33,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
+    // Manejar anchor links al cargar la página
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        const trigger = ScrollTrigger.getById(hash);
+
+        // Esperar a que todo esté cargado antes de hacer scroll
+        gsap.delayedCall(0.5, () => {
+            gsap.to(window, {
+                duration: .6,
+                scrollTo: trigger ? trigger.start : hash
+            });
+        });
+    }
+
     // On resize window, update ScrollTrigger
     window.addEventListener('resize', () => {
         ScrollTrigger.refresh();

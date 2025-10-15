@@ -1,8 +1,7 @@
 {{ define "main" }}
 <article id="agenda" class="main-content">
-    <div class="breadcrumbs content">
-        <!-- <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a> -->
-        BREADCRUMBS
+    <div class="breadcrumbs">
+        <a href="{{ref . "/"}}" class="back">{{T "home_back"}}</a> > <span>{{ .Title }}</span>
     </div>
     <div class="content pin-wrapper">
         <div>

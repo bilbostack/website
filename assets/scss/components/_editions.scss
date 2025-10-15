@@ -8,6 +8,8 @@
 }
 
 .past-editions {
+    margin: var(--main-gap) 0;
+
     .edition {
         &:first-child a {
             border-top: 2px solid var(--current-color-400);

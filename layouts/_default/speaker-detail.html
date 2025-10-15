@@ -1,10 +1,7 @@
 {{ define "main" }}
 <article id="speaker" class="main-content">
     <div class="breadcrumbs">
-        <div class="content">
-            {{ $agendaURL := ref . "/agenda" }}
-            <a href="{{ $agendaURL }}" class="back">← {{T "speakers_back"}}</a>
-        </div>
+        <a href="{{ref . "/#speakers"}}" class="back">← {{T "speakers_back"}}</a>
     </div>
     <div class="content speaker-wrapper">
         <div class="speaker-left">

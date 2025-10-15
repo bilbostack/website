@@ -1,0 +1,13 @@
+.breadcrumbs {
+    font-size: 1.25rem;
+    color: var(--font-color);
+    padding: calc(var(--main-gap) * 2) var(--main-gap) var(--main-gap);
+
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        color: var(--current-color-400);
+    }
+}
