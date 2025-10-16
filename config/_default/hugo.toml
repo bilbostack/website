@@ -114,34 +114,5 @@ defaultContentLanguageInSubdir = false
             [markup.goldmark.parser.attribute]
                 block = true
                 title = true
-[menu]
-  [[menu.main]]
-    name = "Home"
-    identifier = "home"
-    url = "/"
-    weight = 10
-    [menu.main.params]
-        desc = "Sobre el evento, patrocinadores y organizadores"
-  [[menu.main]]
-    name = "Agenda"
-    identifier = "agenda"
-    url = "/agenda/"
-    weight = 20
-    [menu.main.params]
-        desc = "Agenda, ponentes y La Espuela"
-  [[menu.main]]
-    name = "Información asistentes"
-    identifier = "info"
-    url = "/info/"
-    weight = 30
-    [menu.main.params]
-        desc = "Cómo llegar, código de conducta y descuentos"
-  [[menu.main]]
-    name = "Ediciones pasadas"
-    identifier = "editions"
-    url = "/past-editions/"
-    weight = 40
-    [menu.main.params]
-        desc = "La historia de Bilbostack"
 [security]
   enableInlineShortcodes = true

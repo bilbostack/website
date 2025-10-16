@@ -1,0 +1,31 @@
+[[main]]
+name = "Home"
+identifier = "home"
+url = "/"
+weight = 10
+[main.params]
+desc = "About the event, sponsors and organizers"
+
+[[main]]
+name = "Schedule"
+identifier = "agenda"
+url = "/agenda/"
+weight = 20
+[main.params]
+desc = "Schedule, speakers and La Espuela"
+
+[[main]]
+name = "Attendee information"
+identifier = "info"
+url = "/info/"
+weight = 30
+[main.params]
+desc = "How to get there, code of conduct and discounts"
+
+[[main]]
+name = "Past editions"
+identifier = "editions"
+url = "/past-editions/"
+weight = 40
+[main.params]
+desc = "The history of Bilbostack"

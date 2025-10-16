@@ -1,0 +1,31 @@
+[[main]]
+name = "Hasiera"
+identifier = "home"
+url = "/"
+weight = 10
+[main.params]
+desc = "Ekitaldiari buruz, babesleak eta antolatzaileak"
+
+[[main]]
+name = "Egitaraua"
+identifier = "agenda"
+url = "/agenda/"
+weight = 20
+[main.params]
+desc = "Egitaraua, hizlariak eta La Espuela"
+
+[[main]]
+name = "Parte-hartzaileentzako informazioa"
+identifier = "info"
+url = "/info/"
+weight = 30
+[main.params]
+desc = "Nola iritsi, jokabide-kodea eta deskontuak"
+
+[[main]]
+name = "Aurreko edizioak"
+identifier = "editions"
+url = "/past-editions/"
+weight = 40
+[main.params]
+desc = "Bilbostack-en historia"
