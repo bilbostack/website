@@ -4,8 +4,8 @@ defaultContentLanguageInSubdir = false
 [params]
     hashtag = "#Bilbostack25"
     sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
-    sponsorsVisible = true
-    agendaVisible = true
+    sponsorsVisible = false
+    agendaVisible = false
     ticketsOpen = true
     ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2025-1023698398467"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"

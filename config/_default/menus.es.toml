@@ -5,13 +5,13 @@ url = "/"
 weight = 10
 [main.params]
 desc = "Sobre el evento, patrocinadores y organizadores"
-[[main]]
-name = "Agenda"
-identifier = "agenda"
-url = "/agenda/"
-weight = 20
-[main.params]
-desc = "Agenda, ponentes y La Espuela"
+#[[main]]
+#name = "Agenda"
+#identifier = "agenda"
+#url = "/agenda/"
+#weight = 20
+#[main.params]
+#desc = "Agenda, ponentes y La Espuela"
 [[main]]
 name = "Información asistentes"
 identifier = "info"

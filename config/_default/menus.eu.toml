@@ -6,13 +6,13 @@ weight = 10
 [main.params]
 desc = "Ekitaldiari buruz, babesleak eta antolatzaileak"
 
-[[main]]
-name = "Egitaraua"
-identifier = "agenda"
-url = "/agenda/"
-weight = 20
-[main.params]
-desc = "Egitaraua, hizlariak eta La Espuela"
+#[[main]]
+#name = "Egitaraua"
+#identifier = "agenda"
+#url = "/agenda/"
+#weight = 20
+#[main.params]
+#desc = "Egitaraua, hizlariak eta La Espuela"
 
 [[main]]
 name = "Parte-hartzaileentzako informazioa"
