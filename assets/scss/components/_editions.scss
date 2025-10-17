@@ -95,7 +95,7 @@
                     flex: 100%;
                 }
 
-                .edition-data {
+                .edition-data:not(.edition-data--empty) {
                     flex: unset;
                     border: 1px solid;
                     padding: 0.1rem 0.4rem;

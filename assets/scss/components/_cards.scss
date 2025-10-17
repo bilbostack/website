@@ -38,6 +38,16 @@
             font-weight: 600;
         }
 
+        @media screen and (max-width: $breakpoint-sm) {
+            h3 {
+                font-size: 3.5rem;
+            }
+
+            h4 {
+                font-size: 1.25rem;
+            }
+        }
+
         p {
             font-size: 1.25rem;
             line-height: 1.4;

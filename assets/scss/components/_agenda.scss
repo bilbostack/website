@@ -67,6 +67,7 @@
 // Tab Content
 .tab-content {
     display: none;
+    margin-top: -1px;
 
     &.active {
         display: block;

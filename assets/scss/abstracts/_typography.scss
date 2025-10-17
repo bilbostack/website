@@ -91,3 +91,14 @@ a {
 .small {
     font-size: 0.5em;
 }
+
+@media screen and (max-width: $breakpoint-sm) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        word-break: break-word;
+    }
+}

@@ -187,7 +187,7 @@ function initHomeAnimation() {
     // Solo ejecutar si es menos de 768px
     if (window.innerWidth <= 768) return;
 
-    const pinWrappers = document.querySelectorAll('.pin-wrapper');
+    const pinWrappers = document.querySelectorAll('#home .pin-wrapper');
     pinWrappers.forEach(wrapper => {
         const pinElement = wrapper.querySelector('.pin-element');
         if (!pinElement) return;
@@ -505,7 +505,7 @@ function initAgendaAnimation() {
                 trigger: pinElementHeader,
                 start: () => {
                     const tabsHeight = pinElement.getBoundingClientRect().height;
-                    return `top-=${tabsHeight} top`;
+                    return `top-=${tabsHeight - 1}px top`;
                 },
                 end: () => {
                     const wrapperRect = wrapper.getBoundingClientRect();
