@@ -39,7 +39,9 @@
                         </div>
                     </div>
                     <div class="card-content-right">
-                        <img src="https://placehold.co/450x600" alt="">
+                        {{ with resources.Get "img/bilbostack_publico.webp" }}
+                        <img src="{{ .RelPermalink }}" alt="Público de Bilbostack">
+                        {{ end }}
                     </div>
                 </div>
                 <div class="card-footer">
