@@ -1,37 +1,37 @@
 # home-header.html
-home_slogan_short = "Bilboko itxaroten den tech konferentziaren 14. edizioa"
-home_slogan = "Bi egunetan, bertako eta nazioarteko erreferente teknologikoak elkartuko dira ideiak, hitzaldiak eta berrikuntza partekatzeko"
+home_slogan_short = "Bilboko urteroko teknologia ekitaldi ospetsuenaren 14. edizioa"
+home_slogan = "Bi egunetan zehar, bertako eta nazioarteko erreferente teknologikoak elkartuko dira ideiak, hitzaldiak eta berrikuntza partekatzeko"
 
 # home-program.html
 agenda_title = "Bi egun komunitatearekin konektatzeko"
 agenda_subtitle = "Bi ekitaldi, bi kokaleku eta hitzaldi ugari"
 previa_date = "Ostirala, urtarrilak 30"
-previa_title = "Aurreko eguna"
-previa_text = """Bilbora eguna lehenago iristen diren eta komunitatearekin konektatzen hasteko gogoa dutenentzako doako ekitaldia.
+previa_title = "laPrevia"
+previa_text = """Bilbora lehenago iristen diren eta komunitatearekin konektatzen hasteko gogoa dutenentzako doako ekitaldia.
 Sektorean hasten diren pertsonei zuzendutako hiru hitzaldi, giro lasai batean, meetup baten espirituarekin eta Bilbostack-en ukitu bereziarekin.
 <br><br>
-<i>*'#LaPrevia a BilboStack - Ostirala 26/01/2024' sarrera bakarrik izango da balioduna ostiral horretarako, BilboStack 2024 aurreko egunean. Larunbateko ekitaldi nagusira joan nahi baduzu, 'Sarrera orokorra' erosi behar duzu.</i>"""
+<i>*'#laPrevia BilboStack - Ostirala 30/01/2026' sarrera ostiral horretarako bakarrik izango da balioduna. Larunbateko ekitaldi nagusira joan nahi baduzu, 'Sarrera orokorra' erosi behar duzu.</i>"""
 previa_como_llegar_link = "https://maps.app.goo.gl/Puo6KJba6cz939tW7"
-previa_como_llegar_text = "NOLA IRITSI - Google Maps"
+previa_como_llegar_text = "Jarraibideak - Google Maps"
 previa_donde = "Zabalgune Eraikina"
 previa_compra = "Doako sarrera"
 previa_compra_link = "https://bilbostack2026.eventbrite.es"
 bilbostack_date = "Larunbata, urtarrilak 31"
-bilbostack_title = """BilboStack <span class="small">+ La Espuela</span>"""
-bilbostack_text = """Egun handia. <br>Bi pista, zortzi hizlari maila goreneko hitzaldiekin, kafe etenaldia eta arratsaldean... La Espuela!<br><br>La Espuela gure networking gune enblematikoa da, Espainiako eszena teknologikoko onenetakoa bezala aitortua. Ideiak, esperientziak eta harreman berriak nahasten diren topagunea, ekitaldia igaro ondoren ere iraunkorrak direnak."""
+bilbostack_title = """BilboStack <span class="small">+ #laEspuela</span>"""
+bilbostack_text = """Egun handia. <br>Bi pista, zortzi hizlari maila goreneko hitzaldiekin, kafe etenaldia eta arratsaldean... laEspuela!<br><br>laEspuela gure networking gune enblematikoa da, Espainiako eszena teknologikoko onenetakoa bezala aitortua. Ideiak, esperientziak eta harreman berriak nahasten diren topagunea, ekitaldia igaro ondoren ere iraunkorrak direnak."""
 bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
-bilbostack_como_llegar_text = "NOLA IRITSI - Google Maps"
+bilbostack_como_llegar_text = "Jarraibideak - Google Maps"
 bilbostack_donde = "Euskalduna jauregia"
-bilbostack_compra = "Erosi zure sarrerak"
+bilbostack_compra = "Erosi sarrerak"
 bilbostack_compra_link = "https://bilbostack2026.eventbrite.es"
 
 # home-cta-sponsors.html
-cta_sponsors_title = "Etorriko zara konferentziagatik, itzuliko esperientziagatik"
-cta_sponsors_text = """BilboStack konferentzia orokorra da, Espainiako teknologia sektoreko 800 profesional baino gehiago biltzen dituena.<br>
-Urteen poderioz, Espainiako eszena teknologikoko networking gune baloratuenetako bat bihurtu da.<br><br>
+cta_sponsors_title = "Konferentziagatik etorriko zara, esperientziagatik itzuliko zara"
+cta_sponsors_text = """BilboStack Espainiako teknologia sektoreko 800 profesional baino gehiago biltzen dituen konferentzia 'orokorra' da.<br/>
+Urteetan zehar, Espainiako teknologia-eszenako sare-plataformarik baloratuenetariko bat bihurtu da.<br/><br/>
 Parte-hartzaileei esperientzia paregabea eskaintzen die, eta enpresei aukera ematen die beren marka komunitate aktibo, anitz eta Espainiako ekosistema teknologikoan eragin handikoa aurrean kokatzeko."""
-cta_sponsors_btn = "Babesle-dosia (PDF)"
+cta_sponsors_btn = "Babesle-dosierra (PDF)"
 
 # home-speakers.html
-speakers_title = "Baieztatutako hizlariak"
-speakers_subtitle = "Edizio berri honetan gurekin izango diren hizlariak ezagutu."
+speakers_title = "Berretsitako hizlariak"
+speakers_subtitle = "Edizio berri honetan gurekin izango diren hizlariak ezagutu itzazu"
