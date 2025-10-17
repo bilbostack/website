@@ -28,3 +28,20 @@ html {
         box-sizing: border-box;
     }
 }
+
+.block-heading {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: var(--color-primary-light);
+    position: relative;
+    z-index: 9;
+    margin-bottom: 0;
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+    h3 {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+}

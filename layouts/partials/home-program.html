@@ -1,5 +1,11 @@
-<section id="programa">
+<section id="programa" class="pin-wrapper">
+    <div class="content block-heading pin-element">
+        <h2>{{T "agenda_title"}}</h2>
+        <h3 class="heading-square">{{T "agenda_subtitle"}}</h3>
+    </div>
+
     <div class="cards-programa content">
+
         <div class="card-programa">
             <div class="card-programa-wrapper">
                 <div class="card-content">
@@ -8,8 +14,10 @@
                         <h3>{{ T "previa_title" | markdownify }}</h3>
                         <p>{{ T "previa_text" | markdownify }}</p>
                         <div class="card-actions">
-                            <a href="{{ T "previa_compra_link" }}" class="btn btn-primary">{{ T "previa_compra" }}</a>
+                            <a href="{{ T " previa_compra_link" }}" class="btn btn-primary">{{ T "previa_compra" }}</a>
+                            {{ if .Site.Params.agendaVisible }}
                             <a href="/agenda" class="btn btn-outline">{{ T "agenda" }}</a>
+                            {{ end }}
                         </div>
                     </div>
                 </div>
@@ -34,8 +42,10 @@
                         <h3>{{ T "bilbostack_title" | markdownify }}</h3>
                         <p>{{ T "bilbostack_text" | markdownify }}</p>
                         <div class="card-actions">
-                            <a href="{{ T "bilbostack_compra_link" }}" class="btn btn-primary">{{ T "bilbostack_compra" }}</a>
+                            <a href="{{ T " bilbostack_compra_link" }}" class="btn btn-primary">{{ T "bilbostack_compra" }}</a>
+                            {{ if .Site.Params.agendaVisible }}
                             <a href="/agenda" class="btn btn-outline">{{ T "agenda" }}</a>
+                            {{ end }}
                         </div>
                     </div>
                     <div class="card-content-right">

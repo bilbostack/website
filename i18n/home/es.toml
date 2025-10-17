@@ -3,6 +3,8 @@ home_slogan_short = "Edición nº14 de la conferencia tech más esperada en Bilb
 home_slogan = "Durante 2 días, referentes tech de aquí y del mundo se reúnen para compartir ideas, charlas y mucha innovación"
 
 # home-program.html
+agenda_title = "Dos días para conectar con la comunidad"
+agenda_subtitle = "Dos eventos, dos ubicaciones y muchas charlas"
 previa_date = "Viernes 30 de enero"
 previa_title = "La Previa"
 previa_text = """Un evento gratuito para quienes llegan a Bilbao el día antes y quieren empezar a conectar con la comunidad.
@@ -33,3 +35,4 @@ cta_sponsors_btn = "Dossier de patrocinio (PDF)"
 
 # home-speakers.html
 speakers_title = "Ponentes confirmados"
+speakers_subtitle = "¡Los cracks de la tecnología invaden Bilbao!"
