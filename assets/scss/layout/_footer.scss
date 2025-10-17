@@ -9,15 +9,15 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 2rem;
+        gap: 1rem;
 
         .org {
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
-            gap: 1.5rem;
+            gap: 1rem;
 
-            background: var(--current-color-fixed-600);
+            background: var(--current-color-fixed-500);
             padding: 1rem 1.5rem 1rem 1rem;
             border-radius: var(--border-radius);
 
@@ -32,7 +32,7 @@ footer {
             }
 
             &-name {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 font-weight: 500;
                 margin-bottom: 0;
             }
@@ -154,6 +154,6 @@ footer {
     margin-bottom: 2rem;
 
     i {
-        color: var(--current-color-fixed-300);
+        color: var(--current-color-fixed-400);
     }
 }

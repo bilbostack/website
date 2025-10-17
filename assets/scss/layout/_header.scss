@@ -231,7 +231,7 @@ body.menu-open #mobile-menu {
     top: 0;
     left: calc(-1 * var(--sidenav-width));
     width: var(--sidenav-width);
-    background-color: var(--current-color-400);
+    background-color: var(--current-color-fixed-500);
     overflow-x: hidden;
     transition: left 0.4s ease;
 
@@ -256,7 +256,7 @@ body.menu-open #mobile-menu {
 
         li a {
             text-decoration: none;
-            color: var(--font-color);
+            color: var(--color-light);
             transition: all 0.2s ease;
 
             .nav-link-title {
@@ -271,7 +271,7 @@ body.menu-open #mobile-menu {
             }
 
             &:hover {
-                color: var(--color-primary-light);
+                color: var(--current-color-400);
             }
         }
 
@@ -293,9 +293,10 @@ body.menu-open #mobile-menu {
         a {
             font-size: 1.5rem;
             font-weight: 600;
+            color: var(--color-light);
 
             &:hover {
-                color: var(--color-primary-light);
+                color: var(--current-color-400);
             }
         }
 
@@ -311,15 +312,23 @@ body.menu-open #mobile-menu {
         font-size: 3rem;
         text-decoration: none;
         cursor: pointer;
-        color: var(--font-color);
+        color: var(--color-light);
 
         &:hover {
-            color: var(--color-primary-light);
+            color: var(--current-color-400);
         }
     }
 
     @media screen and (max-width: $breakpoint-sm) {
         padding-bottom: 8rem;
+    }
+
+    svg .fill-main {
+        fill: var(--color-light);
+    }
+
+    .logo-text {
+        color: var(--color-light);
     }
 }
 
@@ -336,7 +345,7 @@ body.menu-open #mobile-menu {
 
         &:hover {
             .fill-main {
-                fill: var(--color-primary-light);
+                fill: var(--current-color-400);
             }
         }
     }

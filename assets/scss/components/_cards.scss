@@ -110,6 +110,10 @@
             color: var(--color-primary-light);
         }
 
+        h4 {
+            color: var(--current-color-300);
+        }
+
         .card-footer {
             background: var(--current-color-600);
 
@@ -126,6 +130,10 @@
 
                 a {
                     color: var(--color-primary-light);
+
+                    &:hover {
+                        color: var(--current-color-300);
+                    }
                 }
             }
         }
@@ -164,6 +172,10 @@
             a {
                 font-size: 1rem;
                 color: var(--current-color-600);
+
+                &:hover {
+                    color: var(--current-color-400);
+                }
             }
         }
     }
