@@ -2,7 +2,7 @@
 layout = 'speaker-detail'
 type = 'speaker'
 title = 'Estela Franco'
-tagline = 'Senior teknologia-arkitektoa Shopify-n'
+tagline = 'Senior teknologia-arkitektoa @Shopify'
 taglineLarge = 'Senior teknologia-arkitektoa Shopify-n'
 day = 'Larunbata 31'
 time = '10:00h'
