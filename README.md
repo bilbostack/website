@@ -11,6 +11,3 @@ hugo server
 ### Publish
 We include the ```netlify.toml``` configuration file for automatic deploy to the [Netlify](https://www.netlify.com/) hosting platform.  
 See [the official Netlify documentation](https://docs.netlify.com/frameworks/hugo/) for more details.
-
-## ToDo
-- [ ] Fill the agenda tables
