@@ -5,6 +5,9 @@
     </div>
     <div class="content pin-wrapper">
         <div>
+            {{ if not .Site.Params.agendaVisible }}
+            <h4>{{ T "agenda_not_visible" }}</h4>
+            {{ else }}
             <h1>{{ .Title }}</h1>
 
             <!-- Tabs Navigation -->
@@ -22,12 +25,11 @@
             <div class="tab-content" id="tab-sabado">
                 {{ partial "agenda-table.html" (dict "schedule_data" .Params.schedule_sabado "venue_info" .Params.venue_info "header_info" .Params.schedule_config_sabado) }}
             </div>
-
+            {{ end }}
         </div>
     </div>
     <!-- CTA La Espuela -->
     {{ partial "site-cta-la-espuela.html" .}}
 </article>
-
 {{ partial "site-sponsors.html" .}}
 {{ end }}

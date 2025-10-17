@@ -11,9 +11,11 @@
     <div class="card-body">
         <h4 class="card-title">{{.Title}}</h4>
         <p class="card-text">{{.Params.tagline}}</p>
+        {{ if .Site.Params.agendaVisible }}
         <div class="tags">
             {{ with .Params.day }}<span class="tag tag-day">{{.}}</span>{{ end }}
             {{ with .Params.time }}<span class="tag">{{.}}</span>{{ end }}
         </div>
+        {{ end }}
     </div>
 </a>
