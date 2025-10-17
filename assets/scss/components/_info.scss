@@ -1,6 +1,13 @@
 #info {
     font-size: 1.25rem;
 
+    h1 {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
     .row {
         .card {
             max-width: 40%;
