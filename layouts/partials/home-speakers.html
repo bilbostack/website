@@ -1,6 +1,6 @@
-<section id="speakers">
+<section id="speakers" class="pin-wrapper">
     <div class="content">
-        <h2>{{T "speakers_title"}}</h2>
+        <h2 class="pin-element">{{T "speakers_title"}}</h2>
         <div class="speakers-list">
             {{ range where .Site.Pages "Type" "speaker" }}
             {{ partial "speaker-grid-card.html" .}}

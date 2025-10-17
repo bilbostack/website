@@ -176,10 +176,35 @@ function initMenu() {
 function initAnimations() {
     initLogoAnimation();
     // initStickyCards();
+    initHomeAnimation();
     initSpeakerAnimation();
     initInfoAnimation();
     initAgendaTabs();
     initAgendaAnimation();
+}
+
+function initHomeAnimation() {
+    // Solo ejecutar si es menos de 768px
+    if (window.innerWidth <= 768) return;
+
+    const pinWrappers = document.querySelectorAll('.pin-wrapper');
+    pinWrappers.forEach(wrapper => {
+        const pinElement = wrapper.querySelector('.pin-element');
+        if (!pinElement) return;
+
+        ScrollTrigger.create({
+            trigger: pinElement,
+            start: "top top",
+            end: () => {
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const pinRect = pinElement.getBoundingClientRect();
+                return `+=${wrapperRect.height - pinRect.height}px`;
+            },
+            pin: pinElement,
+            pinSpacing: false,
+        });
+    });
+
 }
 
 function initInfoAnimation() {

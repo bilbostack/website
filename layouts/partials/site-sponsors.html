@@ -1,8 +1,8 @@
 {{ if $.Site.Params.sponsorsVisible}}
 {{ $blocks := $.Site.Params.sponsorBlocks }}
-<section id="sponsors">
+<section id="sponsors" class="pin-wrapper">
     <div class="content">
-        <h2>{{T "sponsors_title"}}</h2>
+        <h2 class="pin-element">{{T "sponsors_title"}}</h2>
         {{ range $blocks }}
         {{ if eq .display true }}
         {{ $class := .class }}
