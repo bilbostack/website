@@ -3,7 +3,7 @@ defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
     hashtag = "#Bilbostack26"
-    sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
+    sponsorsDossierLink = "/docs/Bilbostack26-sponsors.es.pdf"
     sponsorsVisible = false
     agendaVisible = false
     ticketsOpen = true
