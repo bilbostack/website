@@ -3,6 +3,8 @@ home_slogan_short = "14th edition of the most anticipated tech conference in Bil
 home_slogan = "For 2 days, local and international tech leaders gather to share ideas, talks, and plenty of innovation"
 
 # home-program.html
+agenda_title = "Two days to connect with the community"
+agenda_subtitle = "Two events, two venues and lots of talks"
 previa_date = "Friday, January 30"
 previa_title = "The Previa"
 previa_text = """A free event for those arriving in Bilbao the day before who want to start connecting with the community.
@@ -32,3 +34,4 @@ cta_sponsors_btn = "Sponsorship brochure (PDF)"
 
 # home-speakers.html
 speakers_title = "Confirmed speakers"
+speakers_subtitle = "Meet the speakers who will be with us in this new edition."

@@ -3,6 +3,8 @@ home_slogan_short = "Bilboko itxaroten den tech konferentziaren 14. edizioa"
 home_slogan = "Bi egunetan, bertako eta nazioarteko erreferente teknologikoak elkartuko dira ideiak, hitzaldiak eta berrikuntza partekatzeko"
 
 # home-program.html
+agenda_title = "Bi egun komunitatearekin konektatzeko"
+agenda_subtitle = "Bi ekitaldi, bi kokaleku eta hitzaldi ugari"
 previa_date = "Ostirala, urtarrilak 30"
 previa_title = "Aurreko eguna"
 previa_text = """Bilbora eguna lehenago iristen diren eta komunitatearekin konektatzen hasteko gogoa dutenentzako doako ekitaldia.
@@ -32,3 +34,4 @@ cta_sponsors_btn = "Babesle-dosia (PDF)"
 
 # home-speakers.html
 speakers_title = "Baieztatutako hizlariak"
+speakers_subtitle = "Edizio berri honetan gurekin izango diren hizlariak ezagutu."
