@@ -7,7 +7,7 @@ defaultContentLanguageInSubdir = false
     sponsorsVisible = false
     agendaVisible = false
     ticketsOpen = true
-    ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2026-1834167938679"
+    ticketsLink = "https://bilbostack2026.eventbrite.es"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [

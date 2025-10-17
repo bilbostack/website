@@ -16,7 +16,7 @@ previa_como_llegar_text = "CÓMO LLEGAR - Google Maps"
 # Zabalgune Eraikina
 previa_donde = "Edificio Ensanche"
 previa_compra = "Entrada gratuita"
-previa_compra_link = "https://www.eventbrite.es/e/entradas-bilbostack-2026-1834167938679"
+previa_compra_link = "https://bilbostack2026.eventbrite.es"
 bilbostack_date = "Sábado 31 de enero"
 bilbostack_title = """BilboStack <span class="small">+ La Espuela</span>"""
 bilbostack_text = """El día grande. <br>Dos tracks con ocho charlas de ponentes de alto nivel, una pausa para el café y por la tarde... ¡La Espuela!.<br><br>La Espuela es nuestro emblemático espacio de networking, considerado uno de los mejores del panorama tech español. Un punto de encuentro donde se mezclan ideas, experiencias y nuevas conexiones que perduran mucho después del evento."""
@@ -24,7 +24,7 @@ bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
 bilbostack_como_llegar_text = "CÓMO LLEGAR - Google Maps"
 bilbostack_donde = "Palacio Euskalduna"
 bilbostack_compra = "Compra tus entradas"
-bilbostack_compra_link = "https://www.eventbrite.es/e/entradas-bilbostack-2026-1834167938679"
+bilbostack_compra_link = "https://bilbostack2026.eventbrite.es"
 
 # home-cta-sponsors.html
 cta_sponsors_title = "Vendrás por la conferencia, volverás por la experiencia"
