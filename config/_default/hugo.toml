@@ -2,7 +2,7 @@ baseURL = "https://bilbostack.com/"
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
-    hashtag = "#Bilbostack25"
+    hashtag = "#Bilbostack26"
     sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
     sponsorsVisible = false
     agendaVisible = false
