@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article id="info" class="main-content">
+    <div class="breadcrumbs">
+        <a href="{{ref . "/"}}" class="back">← {{T "home_back"}}</a>
+    </div>
+    <div class="content">
+        {{.Content}}
+    </div>
+</article>
+
+{{ partial "site-sponsors.html" .}}
+{{ end }}
