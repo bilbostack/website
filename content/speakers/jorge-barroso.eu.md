@@ -6,13 +6,15 @@ tagline = 'Software ingeniari seniorra @Topi'
 taglineLarge = 'Software ingeniari seniorra @Topi'
 day = 'Larunbata 31'
 time = '10:00h'
-description = 'Jorge Barrosok #Bilbostack25ean hitz egingo du'
+description = 'Jorge Barrosok #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/jorge.jpeg'
 [params]
   links = [
-    { title = "LinkedIn", url = "https://www.linkedin.com/in/jorge-juan-barroso-carmona-a3aa225/"},
+    { title = "X", url = "https://www.x.com/flipper83"},
+    { title = "BlueSky", url = "https://bsky.app/profile/flipper83.bsky.social"}
   ]
 +++
+
 {{<speaker_bio>}}
 Jorge J Barroso, gutxi garatzaile eta asko ikasle. Teklatuaren eta aulkiaren artean urte gehiegi; bideojokoak, mugikor-aplikazioak, backend eta, baita, frontend pixka bat ere programatu du. Denbora librean familiaren konpainiaz gozatzen du, mahai-jokoak jokatzen ditu eta bereak diseinatzeko eta argitaratzeko tartea ateratzen du. Orain, topi-n gauzak apurtzen ditu.
 {{</speaker_bio>}}

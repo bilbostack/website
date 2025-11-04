@@ -6,13 +6,16 @@ tagline = 'Agile dibulgatzailea'
 taglineLarge = 'Agile dibulgatzailea'
 day = 'Ostirala 30'
 time = '10:00h'
-description = 'Maria Berenguerek #Bilbostack25ean hitz egingo du'
+description = 'Maria Berenguerek #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/maria.jpeg'
 [params]
   links = [
     { title = "LinkedIn", url = "https://www.linkedin.com/in/mariaberenguer/"},
+    { title = "X", url = "https://x.com/merybere"},
+    { title = "BlueSky", url = "https://bsky.app/profile/merybere.bsky.social"}
   ]
 +++
+
 {{<speaker_bio>}}
 
 Gaur egungo pentsalaria. Aragoiarra, agilista polifazetikoa, pianista, aktorea, informatika ingeniaria, eta beti ikaslea.

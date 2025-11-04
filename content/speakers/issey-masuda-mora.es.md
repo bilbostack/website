@@ -6,13 +6,14 @@ tagline = 'Co-founder & CTO @ Cala AI'
 taglineLarge = 'Co-founder & CTO @ Cala AI'
 day = 'Sábado 31'
 time = '10:00h'
-description = 'Issey Masuda Mora hablará en el #Bilbostack25'
+description = 'Issey Masuda Mora hablará en el #Bilbostack26'
 image = 'img/speakers/issey.jpeg'
 [params]
   links = [
     { title = "Linkedin", url = "https://www.linkedin.com/in/issey-masuda-mora/"},
   ]
 +++
+
 {{<speaker_bio>}}
 
 Ingeniero en Telecomunicaciones, llevo toda mi carrera profesional en el mundo de la IA. Tuve la suerte de empezar temprano justo cuando el Deep Learning empezaba, pudiendo experimentar la evolución del Machine Learning clásico a los modelos neuronales (cuando no había frameworks, limitación de GPUs y podías incluso implementar modelos desde 0 en python), hasta el día de hoy con la explosión de genAI y LLMs. Profesionalmente me he movido en el entorno startup, de particular relevancia Vilynx, adquirida por Apple en 2020. Estuve los 4 años siguientes en Apple liderando equipos de IA, hasta que finalmente decidí dejarlo para volver al mundo startup e iniciar un nuevo proyecto como CTO y cofundador con Elisenda Bou, Cala AI. Aquí es dónde me veréis dedicando mi atención y picando código estos días :)

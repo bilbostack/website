@@ -6,13 +6,16 @@ tagline = 'Agile advocate'
 taglineLarge = 'Agile advocate'
 day = 'Friday 30'
 time = '10:00h'
-description = 'Maria Berenguer will speak at #Bilbostack25'
+description = 'Maria Berenguer will speak at #Bilbostack26'
 image = 'img/speakers/maria.jpeg'
 [params]
   links = [
     { title = "LinkedIn", url = "https://www.linkedin.com/in/mariaberenguer/"},
+    { title = "X", url = "https://x.com/merybere"},
+    { title = "BlueSky", url = "https://bsky.app/profile/merybere.bsky.social"}
   ]
 +++
+
 {{<speaker_bio>}}
 
 Contemporary mindset thinker. From Aragón, a multifaceted agilist, pianist, actress, computer engineer, always a learner.

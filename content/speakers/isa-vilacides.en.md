@@ -2,17 +2,18 @@
 layout = 'speaker-detail'
 type = 'speaker'
 title = 'Isa Vilacides'
-tagline = 'Director of Engineering @GitHub'
-taglineLarge = 'Director of Engineering @GitHub'
+tagline = 'Director of Ecosystem and Infrastructure @Welltech'
+taglineLarge = 'Director of Ecosystem and Infrastructure @Welltech'
 day = 'Saturday 31'
 time = '10:00h'
-description = 'Isa Vilacides will speak at #Bilbostack25'
+description = 'Isa Vilacides will speak at #Bilbostack26'
 image = 'img/speakers/isa.jpeg'
 [params]
   links = [
     { title = "LinkedIn", url = "https://www.linkedin.com/in/vilacides/"},
   ]
 +++
+
 {{<speaker_bio>}}
 
 TBD

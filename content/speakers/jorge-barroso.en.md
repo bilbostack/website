@@ -6,13 +6,15 @@ tagline = 'Senior Software Engineer @Topi'
 taglineLarge = 'Senior Software Engineer @Topi'
 day = 'Saturday 31'
 time = '10:00h'
-description = 'Jorge Barroso will speak at #Bilbostack25'
+description = 'Jorge Barroso will speak at #Bilbostack26'
 image = 'img/speakers/jorge.jpeg'
 [params]
   links = [
-    { title = "LinkedIn", url = "https://www.linkedin.com/in/jorge-juan-barroso-carmona-a3aa225/"},
+    { title = "X", url = "https://www.x.com/flipper83"},
+    { title = "BlueSky", url = "https://bsky.app/profile/flipper83.bsky.social"}
   ]
 +++
+
 {{<speaker_bio>}}
 Jorge J Barroso, developer of little, learner of much. Too many years between the keyboard and the chair; he has programmed video games, mobile apps, backends, and even dared to do some frontend. In his spare time he enjoys his family, plays board games, and finds time to design his own and get them published. He now breaks things at topi.
 {{</speaker_bio>}}

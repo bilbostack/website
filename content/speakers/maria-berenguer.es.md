@@ -6,15 +6,17 @@ tagline = 'Divulgadora Agile'
 taglineLarge = 'Divulgadora Agile'
 day = 'Viernes 30'
 time = '10:00h'
-description = 'Maria Berenguer hablará en el #Bilbostack25'
+description = 'Maria Berenguer hablará en el #Bilbostack26'
 image = 'img/speakers/maria.jpeg'
 [params]
   links = [
-    { title = "Linkedin", url = "https://www.linkedin.com/in/mariaberenguer/"},
+    { title = "LinkedIn", url = "https://www.linkedin.com/in/mariaberenguer/"},
+    { title = "X", url = "https://x.com/merybere"},
+    { title = "BlueSky", url = "https://bsky.app/profile/merybere.bsky.social"}
   ]
 +++
-{{<speaker_bio>}}
 
+{{<speaker_bio>}}
 
 Pensadora mental contemporánea. Maña, agilista multifacética, pianista, actriz, ingeniera informática, siempre aprendiz.
 Agile Expert, Mentora y Trainer. Con amplia experiencia en transformaciones Agile "desde dentro" en diferentes roles: desde la trinchera del equipo hasta las capas de dirección de la organización.

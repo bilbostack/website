@@ -6,7 +6,7 @@ tagline = 'Ingeniaritzako burua @BestSecret'
 taglineLarge = 'Ingeniaritzako burua BestSecret-en'
 day = 'Larunbata 31'
 time = '10:00h'
-description = 'Leopoldo Romachok #Bilbostack25ean hitz egingo du'
+description = 'Leopoldo Romachok #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/leo.jpg'
 [params]
   links = [
@@ -14,6 +14,7 @@ image = 'img/speakers/leo.jpg'
       { title = "X", url = "https://x.com/leopoldomgomez"},
   ]
 +++
+
 {{<speaker_bio>}}
 
 Software ingeniaritza nire pasioa da, eta taldeei egunero hobeto lan egiten laguntzea ere bai.
