@@ -7,7 +7,7 @@ taglineLarge = 'CEO and co-founder at Runroom'
 day = 'Saturday 31'
 time = '10:00h'
 description = 'Carlos Iglesias will speak at #Bilbostack26'
-image = 'img/speakers/carlos-iglesias.jpeg'
+image = 'img/speakers/carlos-iglesias.jpg'
 [params]
   links = [
     { title = "Linkedin", url = "https://www.linkedin.com/in/carlosthesailor/"},
