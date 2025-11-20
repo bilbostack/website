@@ -22,7 +22,6 @@ Fui Partner oficial de Meta Spark AR y he sido seleccionada para participar en p
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Pendiente">}}
-Pendiente
-
+{{<speaker_talk title="Real y Virtual: dos mundos y un match">}}
+En esta sesión exploramos la convergencia entre el mundo físico y los entornos virtuales para crear experiencias inmersivas mediante realidad aumentada, realidad mixta y realidad virtual (AR, MR, VR). Veremos los principales SDKs, sus capacidades y casos de uso de la realidad extendida (XR). Os compartiré mi framework de trabajo para mostrar cómo estos proyectos pueden abordarse desde una amplia variedad de perfiles de desarrollo y creativos. Cerraremos con una mirada al hardware que marcará el futuro, donde lo real y lo virtual hacen el match perfecto.
 {{</speaker_talk>}}
