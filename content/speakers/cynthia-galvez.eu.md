@@ -21,7 +21,7 @@ Informatika ingeniaritza eta diseinu grafikoko diseinatzailea, 2012az geroztik t
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Zehazteke">}}
-Zehazteke
+{{<speaker_talk title="Erreala eta Birtuala: bi mundu eta bat-egite bat">}}
+Saio honetan mundu fisikoaren eta ingurune birtualen arteko konbergentzia aztertuko dugu, errealitate areagotuaren, errealitate mistoaren eta errealitate birtualaren bidez (AR, MR, VR) esperientzia immersiboak sortzeko. XR errealitate hedatuko (Extended Reality) SDK nagusiak, haien gaitasunak eta erabilera-kasuek ikusiko ditugu. Nire lan-markoa partekatuko dut proiektu hauek garapen- eta sormen-profil askotatik nola landu daitezkeen erakusteko. Amaieran, etorkizuna markatuko duen hardwareari begiratuko diogu, benetakoa eta birtuala perfektuki uztartzen diren tokian.
 
 {{</speaker_talk>}}

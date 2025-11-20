@@ -21,7 +21,7 @@ Computer engineer and graphic designer specialized in immersive technologies sin
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="TBD">}}
-TBD
+{{<speaker_talk title="Real and Virtual: two worlds and a match">}}
+In this session we explore the convergence between the physical world and virtual environments to create immersive experiences through augmented reality, mixed reality, and virtual reality (AR, MR, VR). We will look at the main SDKs, their capabilities, and use cases of extended reality (XR). I will share my working framework to show how these projects can be approached from a wide variety of development and creative profiles. We will wrap up with a look at the hardware that will shape the future, where the real and the virtual make the perfect match.
 
 {{</speaker_talk>}}
