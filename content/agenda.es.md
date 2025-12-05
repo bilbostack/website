@@ -16,78 +16,78 @@ show_header = true
 
 # === VIERNES 30 DE ENERO ===
 [[schedule_viernes]]
-time = "09:00-09:20"
+time = "16:50-17:00"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "Presentación"
+  title = "Bienvenida y Presentación"
 
 [[schedule_viernes]]
-time = "09:30-10:20"
+time = "17:00-17:40"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Valeria Castro"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/valeria-castro"
+  title = "Más allá del código: habilidades para desarrollar software en equipo"
+  speaker = "Maica Trinidad"
+  speaker_title = "Antropóloga agilista, experta en participación y amante del caos."
+  speaker_url = "/speakers/maika-trinidad"
 
 [[schedule_viernes]]
-time = "10:30-11:20"
+time = "17:50-18:30"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  title = "Una perturbación en la fuerza Agile"
+  speaker = "María Berenguer"
+  speaker_title = "Divulgadora Agile"
+  speaker_url = "/speakers/maria-berenguer"
 
 [[schedule_viernes]]
-time = "11:30-12:00"
+time = "18:40-19:20"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "Café"
+  title = "Community for the Win"
+  speaker = "Bart Farrell"
+  speaker_title = "CNCF Ambassador & KubeFM Host"
+  speaker_url = "/speakers/bart-farrell"
 
 [[schedule_viernes]]
-time = "12:00-12:50"
+time = "19:20-19:45"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS"
-  speaker = "Miguel Ángel Durán García"
-  speaker_title = "Ingeniero de Software en Adevinta, España"
-  speaker_url = "/speakers/miguel-angel-duran"
+  title = "Cierre y networking con patrocinadores"
 
 # === SÁBADO 31 DE ENERO ===
 [[schedule_sabado]]
 time = "09:00-09:20"
 type = "single"
   [[schedule_sabado.sessions]]
-  title = "Presentación"
+  title = "Bienvenida y Presentación"
 
 [[schedule_sabado]]
 time = "09:30-10:20"
 type = "parallel"
   [[schedule_sabado.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  title = "Construir confianza en tiempos de ruido"
+  speaker = "Issey Masuada"
+  speaker_title = "Co-founder & CTO @Cala AI"
+  speaker_url = "/speakers/issey-masuada"
   [[schedule_sabado.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  title = "#NoProduct"
+  speaker = "Carlos Iglesias"
+  speaker_title = "CEO y socio fundador de Runroom"
+  speaker_url = "/speakers/carlos-iglesias"
 
 [[schedule_sabado]]
 time = "10:30-11:20"
 type = "parallel"
   [[schedule_sabado.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  title = "Greatest Disaster Hits en Web Performance"
+  speaker = "Estela Franco"
+  speaker_title = "Senior Tech Architect en Shopify"
+  speaker_url = "/speakers/estela-franco"
   [[schedule_sabado.sessions]]
-  title = "El Boom de la IA Generativa: realidades, promesas, productos que transforman y situaciones incómodas"
-  speaker = "Jose Ramón Díaz"
-  speaker_title = "Senior Programme Manager at Microsoft"
-  speaker_url = "/speakers/jose-ramon-diaz"
+  title = "Real y Virtual: dos mundos y un match"
+  speaker = "Cynthia Galvez"
+  speaker_title = "Creative Technology Manager"
+  speaker_url = "/speakers/cynthia-galvez"
 
 [[schedule_sabado]]
 time = "11:30-12:00"
@@ -99,28 +99,29 @@ type = "single"
 time = "12:00-12:50"
 type = "parallel"
   [[schedule_sabado.sessions]]
-  title = "¡El Futuro de la Web! Lo nuevo de JavaScript, HTML y CSS"
-  speaker = "Miguel Ángel Durán García"
-  speaker_title = "Ingeniero de Software en Adevinta, España"
-  speaker_url = "/speakers/miguel-angel-duran"
+  title = "Pair Programming en la vida real: beneficios y aprendizajes"
+  speaker = "Leopoldo Romacho"
+  speaker_title = "Head of Engineering en BestSecret"
+  speaker_url = "/speakers/leopoldo-romacho"
   [[schedule_sabado.sessions]]
-  title = "Culture Driven Development, el motor de un equipo rápido, efectivo y sostenible"
-  speaker = "Sebi Collell"
-  speaker_url = "/speakers/sebi-collell"
+  title = "Mitos y verdades del hacking"
+  speaker = "Marta Barrio"
+  speaker_title = "Founder @ Securiters"
+  speaker_url = "/speakers/marta-barrio"
 
 [[schedule_sabado]]
 time = "13:00-13:50"
 type = "parallel"
   [[schedule_sabado.sessions]]
-  title = "10 años al mando de un estudio de videojuegos como Platonic Games"
-  speaker = "Valeria Castro"
-  speaker_title = "Co-Fundadora Platonic Games"
-  speaker_url = "/speakers/valeria-castro"
+  title = "Vida, ascendencia, nacimiento, crianza y aventuras de un backend"
+  speaker = "Jorge Barroso"
+  speaker_title = "Senior Software Engineer @Topi"
+  speaker_url = "/speakers/jorge-barroso"
   [[schedule_sabado.sessions]]
-  title = "Cuando los robots aprenden a hablar: Historias de fábricas inteligentes y data streams"
-  speaker = "Fernando Díaz"
-  speaker_title = ""
-  speaker_url = "/speakers/fernando-diaz"
+  title = "El día a día que transforma: prácticas para crear equipos de ingeniería diversos, inclusivos y de alto rendimiento"
+  speaker = "Isa Vilacides"
+  speaker_title = "Director of Ecosystem and Infrastructure en Welltech"
+  speaker_url = "/speakers/isa-vilacides"
 
 [[schedule_sabado]]
 time = "14:00-19:00"

@@ -5,7 +5,7 @@ defaultContentLanguageInSubdir = false
     hashtag = "#Bilbostack26"
     sponsorsDossierLink = "/docs/Bilbostack26-sponsors.es.pdf"
     sponsorsVisible = false
-    agendaVisible = false
+    agendaVisible = true
     ticketsOpen = true
     ticketsLink = "https://bilbostack2026.eventbrite.es"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
