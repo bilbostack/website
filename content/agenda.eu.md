@@ -66,9 +66,9 @@ time = "09:30-10:20"
 type = "parallel"
   [[schedule_sabado.sessions]]
   title = "Construir confianza en tiempos de ruido"
-  speaker = "Issey Masuada"
+  speaker = "Issey Masuda"
   speaker_title = "Co-founder & CTO @Cala AI"
-  speaker_url = "/speakers/issey-masuada"
+  speaker_url = "/speakers/issey-masuda"
   [[schedule_sabado.sessions]]
   title = "#NoProduct"
   speaker = "Carlos Iglesias"
