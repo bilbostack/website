@@ -6,7 +6,7 @@ tagline = 'Co-founder & CTO @ Cala AI'
 taglineLarge = 'Co-founder & CTO @ Cala AI'
 day = 'Sábado 31'
 time = '10:00h'
-description = 'Issey Masuda Mora hablará en el #Bilbostack26'
+description = 'Issey Masuda hablará en el #Bilbostack26'
 image = 'img/speakers/issey.jpeg'
 [params]
   links = [
