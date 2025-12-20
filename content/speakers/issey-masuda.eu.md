@@ -5,7 +5,7 @@ title = 'Issey Masuda Mora'
 tagline = 'Cofundatzailea eta CTO @ Cala AI'
 taglineLarge = 'Cofundatzailea eta CTO @ Cala AI'
 day = 'Larunbata 31'
-time = '10:00h'
+time = '09:30h'
 description = 'Issey Masuda #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/issey.jpeg'
 [params]

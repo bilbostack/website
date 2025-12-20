@@ -5,7 +5,7 @@ title = 'Leopoldo Romacho'
 tagline = 'Head of Engineering @BestSecret'
 taglineLarge = 'Head of Engineering en BestSecret'
 day = 'Sábado 31'
-time = '10:00h'
+time = '12:00h'
 description = 'Leopoldo Romacho hablará en el #Bilbostack26'
 image = 'img/speakers/leo.jpg'
 [params]

@@ -5,7 +5,7 @@ title = 'Marta Barrio'
 tagline = 'Founder Securiters'
 taglineLarge = 'Founder Securiters'
 day = 'Sábado 31'
-time = '10:00h'
+time = '12:00h'
 description = 'Marta Barrio Mora hablará en el #Bilbostack26'
 image = 'img/speakers/marta.jpeg'
 [params]

@@ -5,7 +5,7 @@ title = 'Isa Vilacides'
 tagline = 'Director of Ecosystem and Infrastructure @Welltech'
 taglineLarge = 'Director of Ecosystem and Infrastructure @Welltech'
 day = 'Saturday 31'
-time = '10:00h'
+time = '13:00h'
 description = 'Isa Vilacides will speak at #Bilbostack26'
 image = 'img/speakers/isa.jpeg'
 [params]

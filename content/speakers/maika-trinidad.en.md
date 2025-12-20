@@ -5,7 +5,7 @@ title = 'Maica Trinidad'
 tagline = 'Agile & Lean coach'
 taglineLarge = 'Agile & Lean coach'
 day = 'Friday 30'
-time = '17:35h'
+time = '17:00h'
 description = 'Maica Trinidad will speak at #Bilbostack26'
 image = 'img/speakers/maica.jpeg'
 [params]

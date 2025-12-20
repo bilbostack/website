@@ -5,7 +5,7 @@ title = 'Isa Vilacides'
 tagline = 'Ekosistemaren eta Azpiegituren Zuzendaria @Welltech'
 taglineLarge = 'Ekosistemaren eta Azpiegituren Zuzendaria @Welltech'
 day = 'Larunbata 31'
-time = '10:00h'
+time = '13:00h'
 description = 'Isa Vilacidesek #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/isa.jpeg'
 [params]

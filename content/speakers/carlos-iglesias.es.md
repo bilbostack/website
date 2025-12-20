@@ -5,7 +5,7 @@ title = 'Carlos Iglesias'
 tagline = 'CEO y socio fundador de Runroom'
 taglineLarge = 'CEO y socio fundador de Runroom'
 day = 'Sábado 31'
-time = '10:00h'
+time = '09:30h'
 description = 'Carlos Iglesias hablará en el #Bilbostack26'
 image = 'img/speakers/carlos-iglesias.jpg'
 [params]

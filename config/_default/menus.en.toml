@@ -6,13 +6,13 @@ weight = 10
 [main.params]
 desc = "About the event, sponsors and organizers"
 
-#[[main]]
-#name = "Schedule"
-#identifier = "agenda"
-#url = "/agenda/"
-#weight = 20
-#[main.params]
-#desc = "Schedule, speakers and La Espuela"
+[[main]]
+name = "Schedule"
+identifier = "agenda"
+url = "/agenda/"
+weight = 20
+[main.params]
+desc = "Schedule, speakers and La Espuela"
 
 [[main]]
 name = "Attendee information"

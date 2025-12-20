@@ -5,7 +5,7 @@ title = 'Cynthia Gálvez'
 tagline = 'Creative Technology Manager'
 taglineLarge = 'Creative Technology Manager'
 day = 'Saturday 31'
-time = '10:00h'
+time = '10:30h'
 description = 'Cynthia Gálvez will speak at #Bilbostack26'
 image = 'img/speakers/cynthia.png'
 [params]

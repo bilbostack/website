@@ -5,7 +5,7 @@ title = 'Carlos Iglesias'
 tagline = 'CEO and co-founder at Runroom'
 taglineLarge = 'CEO and co-founder at Runroom'
 day = 'Saturday 31'
-time = '10:00h'
+time = '09:30h'
 description = 'Carlos Iglesias will speak at #Bilbostack26'
 image = 'img/speakers/carlos-iglesias.jpg'
 [params]

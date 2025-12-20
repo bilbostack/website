@@ -5,7 +5,7 @@ title = 'Bart Farrell'
 tagline = 'CNCF Ambassador & KubeFM Host'
 taglineLarge = 'CNCF Ambassador & KubeFM Host'
 day = 'Viernes 30'
-time = '17:00h'
+time = '18:50h'
 description = 'Bart Farrell hablará en el #Bilbostack26'
 image = 'img/speakers/bart.jpeg'
 [params]

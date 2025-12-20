@@ -5,7 +5,7 @@ title = 'Jorge Barroso'
 tagline = 'Software ingeniari seniorra @Topi'
 taglineLarge = 'Software ingeniari seniorra @Topi'
 day = 'Larunbata 31'
-time = '10:00h'
+time = '13:00h'
 description = 'Jorge Barrosok #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/jorge.jpeg'
 [params]

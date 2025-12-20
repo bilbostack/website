@@ -5,7 +5,7 @@ title = 'Estela Franco'
 tagline = 'Senior Tech Architect @Shopify'
 taglineLarge = 'Senior Tech Architect en Shopify'
 day = 'Sábado 31'
-time = '9:30h'
+time = '10:30h'
 description = 'Estela Franco hablará en el #Bilbostack26'
 image = 'img/speakers/estela.jpeg'
 [params]

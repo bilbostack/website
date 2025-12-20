@@ -5,7 +5,7 @@ title = 'Maria Berenguer'
 tagline = 'Agile dibulgatzailea'
 taglineLarge = 'Agile dibulgatzailea'
 day = 'Ostirala 30'
-time = '10:00h'
+time = '17:50h'
 description = 'Maria Berenguerek #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/maria.jpeg'
 [params]
