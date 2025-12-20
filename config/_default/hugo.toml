@@ -67,7 +67,7 @@ defaultContentLanguageInSubdir = false
         title = "sponsors_plata"
         class = "sponsors-m"
         sponsors = [
-            { name = "Habla Computing", url = "https://www.hablaapps.com", image = "img/sponsors/habla.svg"  },
+            { name = "Habla Computing", url = "https://www.hablapps.com", image = "img/sponsors/habla.svg"  },
             { name = "Technosylva", url = "https://www.technosylva.com/es", image = "img/sponsors/techno-logo-color-300.png"  },
 
         ]
