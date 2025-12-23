@@ -101,7 +101,7 @@ type = "parallel"
   [[schedule_sabado.sessions]]
   title = "Pair Programming en la vida real: beneficios y aprendizajes"
   speaker = "Leopoldo Romacho"
-  speaker_title = "Head of Engineering en BestSecret"
+  speaker_title = "Head of Engineering en BESTSECRET"
   speaker_url = "/speakers/leopoldo-romacho"
   [[schedule_sabado.sessions]]
   title = "Mitos y verdades del hacking"
