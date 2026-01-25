@@ -120,7 +120,7 @@ type = "parallel"
   [[schedule_sabado.sessions]]
   title = "El día a día que transforma: prácticas para crear equipos de ingeniería diversos, inclusivos y de alto rendimiento"
   speaker = "Isa Vilacides"
-  speaker_title = "Director of Ecosystem and Infrastructure en Welltech"
+  speaker_title = "Director of Ecosystem and Infrastructure en Welltech (ex GitHub)"
   speaker_url = "/speakers/isa-vilacides"
 
 [[schedule_sabado]]
