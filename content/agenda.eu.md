@@ -34,10 +34,10 @@ type = "single"
 time = "17:50-18:30"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "Una perturbación en la fuerza Agile"
-  speaker = "María Berenguer"
-  speaker_title = "Divulgadora Agile"
-  speaker_url = "/speakers/maria-berenguer"
+  title = "The End of Software"
+  speaker = "Jorge Uriarte"
+  speaker_title = "Director at Gailen"
+  speaker_url = "/speakers/jorge-uriarte"
 
 [[schedule_viernes]]
 time = "18:40-19:20"
