@@ -7,7 +7,7 @@ taglineLarge = 'Director at Gailen'
 day = 'Ostirala 30'
 time = '17:50h'
 description = 'Jorge Uriartek #Bilbostack26ean hitz egingo du'
-image = 'img/speakers/maria.jpeg'
+image = 'img/speakers/jorge-uriarte.jpeg'
 [params]
   links = [
     { title = "BlueSky", url = "https://bsky.app/profile/jorgeuriarte.omelas.net"}

@@ -7,7 +7,7 @@ taglineLarge = 'Director at Gailen'
 day = 'Friday 30'
 time = '17:50h'
 description = 'Jorge Uriarte will speak at #Bilbostack26'
-image = 'img/speakers/maria.jpeg'
+image = 'img/speakers/jorge-uriarte.jpeg'
 [params]
   links = [
     { title = "BlueSky", url = "https://bsky.app/profile/jorgeuriarte.omelas.net"}
