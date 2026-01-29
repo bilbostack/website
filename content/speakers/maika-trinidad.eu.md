@@ -24,7 +24,7 @@ Gizarte Zientzien arlotik nator; 20 urte baino gehiago daramatzat gizarte esku-h
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Kodeaz harantz: taldean softwarea garatzeko gaitasunak">}}
+{{<speaker_talk title="Kodeaz harantz: lankidetza-algoritmoa">}}
 Hizkuntzak, tresnak edo metodologiak ikastea bidean zati bat besterik ez da. Teknologiako ibilbide bat benetan eraldatzen duena kodeaz harantz gertatzen da: beste pertsonekin komunikatzen, kolaboratzen eta ikasten dugun moduan. Hitzaldi hau geldialdiari eta taldeek funtzionatzen dituzten gaitasunei buruz pentsatzeko gonbita bat da, ideia bat bizitza hartzen duenean, akats bat ikasketa bihurtzen denean. Hitz egingo dugu nola integratu talde batean zure ahotsa galdu gabe, nola jaso feedback-a, nola ulertu eraiki denaren benetako balioa. Teknologian lan egitea ez delako kode idaztea bakarrik: garrantzitsua den zerbait sortzea da, elkarrekin, jakin-minetik, kolaboraziotik eta helburu partekatutik.
 
 {{</speaker_talk>}}
