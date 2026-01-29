@@ -24,7 +24,7 @@ Around 2010 I discovered agile methodologies and began helping different compani
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Beyond the code: skills for developing software as a team">}}
+{{<speaker_talk title="Beyond the code: the algorithm of cooperation">}}
 Learning languages, tools, or methodologies is only part of the journey. What really transforms a career in technology happens beyond the code: in the way we communicate, collaborate, and learn with other people. This talk is an invitation to pause and think about the skills that make a team work, that bring an idea to life, that turn a mistake into learning. We'll talk about how to integrate into a team without losing your voice, how to receive feedback, how to understand the real value of what's being built. Because working in technology isn't just about writing code: it's about creating something that matters, together, from curiosity, collaboration, and shared purpose.
 
 {{</speaker_talk>}}
