@@ -24,7 +24,7 @@ En torno a 2010 descubrí las metodologías ágiles y comencé a ayudar a difere
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Más allá del código: habilidades para desarrollar software en equipo">}}
+{{<speaker_talk title="Más allá del código: el algoritmo de la cooperación">}}
 Aprender lenguajes, herramientas o metodologías es solo una parte del camino. Lo que realmente transforma una carrera en tecnología ocurre más allá del código: en la forma en que nos comunicamos, colaboramos y aprendemos con otras personas. Esta charla es una invitación a detenerse y pensar en las habilidades que hacen que un equipo funcione, que una idea cobre vida, que un error se convierta en aprendizaje. Hablaremos de cómo integrarse en un equipo sin perder la voz, de cómo recibir feedback, de cómo entender el valor real de lo que se construye. Porque trabajar en tecnología no es solo escribir código: es crear algo que importe, juntos, desde la curiosidad, la colaboración y el propósito compartido.
 
 {{</speaker_talk>}}
