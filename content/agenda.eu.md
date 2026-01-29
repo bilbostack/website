@@ -25,7 +25,7 @@ type = "single"
 time = "17:00-17:40"
 type = "single"
   [[schedule_viernes.sessions]]
-  title = "Más allá del código: habilidades para desarrollar software en equipo"
+  title = "Más allá del código: el algoritmo de la cooperación"
   speaker = "Maica Trinidad"
   speaker_title = "Antropóloga agilista, experta en participación y amante del caos."
   speaker_url = "/speakers/maika-trinidad"
