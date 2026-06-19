@@ -1,0 +1,27 @@
+#sponsors {
+  .list {
+
+    .item {
+
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      .item {
+        width: 100%;
+        height: auto;
+        &.sponsors-xxl img,
+        &.sponsors-xl img,
+        &.sponsors-l img,
+        &.sponsors-m img,
+        &.sponsors-s img {
+          height: auto;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+

@@ -2,62 +2,133 @@
 title = 'Egitaraua'
 type = 'agenda'
 draft = false
+
+# Configuración de días
+[schedule_config_viernes]
+title = "#LaPrevia a Bilbostack - Entrada Libre"
+where = "Zabalgune Eraikina"
+show_header = false
+
+[schedule_config_sabado]
+title = "BilboStack"
+where = "Palacio Euskalduna, Bilbao"
+show_header = true
+
+# === VIERNES 30 DE ENERO ===
+[[schedule_viernes]]
+time = "16:50-17:00"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Bienvenida y Presentación"
+
+[[schedule_viernes]]
+time = "17:00-17:40"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Más allá del código: el algoritmo de la cooperación"
+  speaker = "Maica Trinidad"
+  speaker_title = "Antropóloga agilista, experta en participación y amante del caos."
+  speaker_url = "/speakers/maika-trinidad"
+
+[[schedule_viernes]]
+time = "17:50-18:30"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "The End of Software"
+  speaker = "Jorge Uriarte"
+  speaker_title = "Director at Gailen"
+  speaker_url = "/speakers/jorge-uriarte"
+
+[[schedule_viernes]]
+time = "18:40-19:20"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Community for the Win"
+  speaker = "Bart Farrell"
+  speaker_title = "CNCF Ambassador & KubeFM Host"
+  speaker_url = "/speakers/bart-farrell"
+
+[[schedule_viernes]]
+time = "19:20-19:45"
+type = "single"
+  [[schedule_viernes.sessions]]
+  title = "Cierre y networking con patrocinadores"
+
+# === SÁBADO 31 DE ENERO ===
+[[schedule_sabado]]
+time = "09:00-09:20"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "Bienvenida y Presentación"
+
+[[schedule_sabado]]
+time = "09:30-10:20"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "Construir confianza en tiempos de ruido"
+  speaker = "Issey Masuda"
+  speaker_title = "Co-founder & CTO @Cala AI"
+  speaker_url = "/speakers/issey-masuda"
+  [[schedule_sabado.sessions]]
+  title = "#NoProduct"
+  speaker = "Carlos Iglesias"
+  speaker_title = "CEO y socio fundador de Runroom"
+  speaker_url = "/speakers/carlos-iglesias"
+
+[[schedule_sabado]]
+time = "10:30-11:20"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "Greatest Disaster Hits en Web Performance"
+  speaker = "Estela Franco"
+  speaker_title = "Senior Tech Architect en Shopify"
+  speaker_url = "/speakers/estela-franco"
+  [[schedule_sabado.sessions]]
+  title = "Real y Virtual: dos mundos y un match"
+  speaker = "Cynthia Galvez"
+  speaker_title = "Creative Technology Manager"
+  speaker_url = "/speakers/cynthia-galvez"
+
+[[schedule_sabado]]
+time = "11:30-12:00"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "Café"
+
+[[schedule_sabado]]
+time = "12:00-12:50"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "Pair Programming en la vida real: beneficios y aprendizajes"
+  speaker = "Leopoldo Romacho"
+  speaker_title = "Head of Engineering en BESTSECRET"
+  speaker_url = "/speakers/leopoldo-romacho"
+  [[schedule_sabado.sessions]]
+  title = "Mitos y verdades del hacking"
+  speaker = "Marta Barrio"
+  speaker_title = "Founder @ Securiters"
+  speaker_url = "/speakers/marta-barrio"
+
+[[schedule_sabado]]
+time = "13:00-13:50"
+type = "parallel"
+  [[schedule_sabado.sessions]]
+  title = "Vida, ascendencia, nacimiento, crianza y aventuras de un backend"
+  speaker = "Jorge Barroso"
+  speaker_title = "Senior Software Engineer @Topi"
+  speaker_url = "/speakers/jorge-barroso"
+  [[schedule_sabado.sessions]]
+  title = "El día a día que transforma: prácticas para crear equipos de ingeniería diversos, inclusivos y de alto rendimiento"
+  speaker = "Isa Vilacides"
+  speaker_title = "Director of Ecosystem and Infrastructure en Welltech (ex GitHub)"
+  speaker_url = "/speakers/isa-vilacides"
+
+[[schedule_sabado]]
+time = "14:00-19:00"
+type = "single"
+  [[schedule_sabado.sessions]]
+  title = "#laEspuela - Networking"
+  location = "La Espuela"
+  address = "https://maps.app.goo.gl/RTkwbZrX4X11JLUA6"
+
 +++
-
-<div class="hidden-small table">
-
-|                | [Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)                                                                                     | [Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)                                                                            |
-|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| 09:00 - 09:20  | Ongietorria eta aurkezpena                                                                                                                               | -                                                                                                                                               |
-| 09:30 - 10:20  | [**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**Nerea Luis](/eu/speakers/nerea-luis#talk) | [**Eta 'zuzena dena egitea' zuzena izango ez balitz?**Jordi Martí](/eu/speakers/jordi-marti#talk)                                               |
-| 10:30 - 11:20  | [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)            | [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk)                                                                   |
-| 11:30 - 12:00  | Kafea                                                                                                                                                    | -                                                                                                                                               |
-| 12:00 - 12:50  | [**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk)                  | [**Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
-| 13:00 - 13:50  | [**10 urte Platonic Games bideo-joko estudioaren gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk)                                           | [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)        |
-| 14:00 - ~19:00 | **_[#laEspuela](https://maps.app.goo.gl/RTkwbZrX4X11JLUA6)_, Networking-a**                                                                              | -                                                                                                                                               |
-
-</div>
-
-<div class="hidden-big table">
-
-| 09:00 - 09:20                  |
-| ------------------------------ |
-| **Ongietorria eta aurkezpena** |
-
-| 09:30 - 10:20                                                     |
-| ----------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)**                                                        |
-| [**IA Generatiboaren Boom-a: errealitateak, promesak, bizitza aldatzen duten produktuak eta egoera deserosoak**Nerea Luis](/eu/speakers/nerea-luis#talk)   |
-| **[Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)**                                                        |
-| [**Eta 'zuzena dena egitea' zuzena izango ez balitz?**Jordi Martí](/eu/speakers/jordi-marti#talk) |
-
-| 10:30 - 11:20                                                         |
-| --------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)**                                                            |
-| [**Memorian oinarritutako datu-baseak: aplikazio modernoetarako erabilera-kasuak eta soluzioak**Katia Aresti](/eu/speakers/katia-aresti#talk)   |
-| **[Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)**                                                            |
-| [**Oso txarto, eskerrik asko**Irene Morgado](/eu/speakers/irene-morgado#talk) |
-
-| 11:30 - 12:00 |
-| ------------- |
-| **Kafea**     |
-
-| 12:00 - 12:50                                                                       |
-| ----------------------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)**                                                                          |
-| [**Webaren Etorkizuna! JavaScript, HTML eta CSS-en berrikuntza teknologikoak**Miguel Ángel Durán](/eu/speakers/miguel-angel-duran#talk)     |
-| **[Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)**                                                                          |
-| [**Culture Driven Development, talde azkar, eraginkor eta iraunkor baten motorra**Sebi Collell y Censu Karayel](/eu/speakers/sebi-collell#talk) |
-
-| 13:00 - 13:50                                                           |
-| ----------------------------------------------------------------------- |
-| **[Track 0E](https://www.euskaldunabilbao.com/eu/espazioak/0e-aretoa/)**                                                              |
-| [**10 urte Platonic Games bideo-joko estudioaren gidaritzan**Valeria Castro](/eu/speakers/valeria-castro#talk) |
-| **[Track 0D](https://www.euskaldunabilbao.com/eu/espazioak/0d-aretoa/)**                                                              |
-| [**Robotek hitz egiten ikasten dutenean: Fabrika adimendunen eta datu-fluxuen istorioak**Fernando Díaz](/eu/speakers/fernando-diaz#talk)   |
-
-| 14:00 - ~19:00           |
-| ----------------------- |
-| **_[#laEspuela](https://maps.app.goo.gl/RTkwbZrX4X11JLUA6)_, Networking-a** |
-
-</div>

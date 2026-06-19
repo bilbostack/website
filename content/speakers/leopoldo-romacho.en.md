@@ -2,11 +2,11 @@
 layout = 'speaker-detail'
 type = 'speaker'
 title = 'Leopoldo Romacho'
-tagline = 'Head of Engineering @BestSecret'
-taglineLarge = 'Head of Engineering at BestSecret'
+tagline = 'Head of Engineering @BESTSECRET'
+taglineLarge = 'Head of Engineering at BESTSECRET'
 day = 'Saturday 31'
-time = '10:00h'
-description = 'Leopoldo Romacho will speak at #Bilbostack25'
+time = '12:00h'
+description = 'Leopoldo Romacho will speak at #Bilbostack26'
 image = 'img/speakers/leo.jpg'
 [params]
   links = [
@@ -14,6 +14,7 @@ image = 'img/speakers/leo.jpg'
       { title = "X", url = "https://x.com/leopoldomgomez"},
   ]
 +++
+
 {{<speaker_bio>}}
 
 I’m passionate about software engineering and helping teams work better every day.

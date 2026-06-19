@@ -2,12 +2,12 @@ baseURL = "https://bilbostack.com/"
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
-    hashtag = "#Bilbostack25"
-    sponsorsDossierLink = "/docs/Bilbostack25-sponsors.es.pdf"
+    hashtag = "#Bilbostack26"
+    sponsorsDossierLink = "/docs/Bilbostack26-sponsors.es.pdf"
     sponsorsVisible = true
     agendaVisible = true
     ticketsOpen = true
-    ticketsLink = "https://www.eventbrite.es/e/entradas-bilbostack-2025-1023698398467"
+    ticketsLink = "https://bilbostack2026.eventbrite.es"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [
@@ -51,44 +51,38 @@ defaultContentLanguageInSubdir = false
         title = "sponsors_platino"
         class = "sponsors-xl"
         sponsors = [
-            { name = "WordPress", url = "https://developer.wordpress.com/es/", image = "img/sponsors/WP.png"  },
-            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-lanbide/", image = "img/sponsors/bbk.png"  },
+            { name = "WordPress", url = "https://wordpress.com/es/hosting/?utm_medium=referral&utm_source=BilboStack26&utm_campaign=organizerlink", image = "img/sponsors/WP.png"  },
+            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-2/", image = "img/sponsors/bbk.png"  },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_oro"
         class = "sponsors-l"
         sponsors = [
-            { name = "Open Bank", url = "https://opendigitalservices.com", image = "img/sponsors/Logo ODS Negro.png"  },
-            { name = "Freepik", url = "https://www.freepik.es", image = "img/sponsors/Freepik.svg"    },
-            { name = "Okta", url = "https://okta.com", image = "img/sponsors/Okta.png"   },
+            { name = "Manfred", url = "https://getmanfred.com", image = "img/sponsors/manfred.svg"  },
             { name = "Inetum", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_20CM.png"   },
-            { name = "Catworks", url = "https://catworkx.one/es/", image = "img/sponsors/catworks.png"   },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_plata"
         class = "sponsors-m"
         sponsors = [
-            { name = "Quaderno", url = "https://www.quaderno.io/es/api/unifica-tu-facturacion", image = "img/sponsors/quaderno-logo.png"  },
-            { name = "Voxel", url = "https://www.voxelgroup.net/es/", image = "img/sponsors/voxel.png"  },
-            { name = "Factorial", url = "https://www.factorialhr.com", image = "img/sponsors/factorial.png"  },
-            { name = "SeQura", url = "https://www.sequra.com", image = "img/sponsors/sequra.png"  },
-            { name = "Kairos", url = "https://www.kairosds.com/", image = "img/sponsors/kairos.png"  },
+            { name = "Habla Computing", url = "https://www.hablapps.com", image = "img/sponsors/habla.svg"  },
+            { name = "Technosylva", url = "https://www.technosylva.com/es", image = "img/sponsors/techno-logo-color-300.png"  },
+
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_bronce"
         class = "sponsors-s"
         sponsors = [
-            { name = "Technosylva", url = "https://www.technosylva.com", image = "img/sponsors/techno-logo-color-300.png"  },
-            { name = "Gnoss", url = "https://www.gnoss.com", image = "img/sponsors/gnoss_marca.png"  },
+            { name = "SeQura", url = "https://sequra.recruitee.com/career-page-jobs?jobs-b16f6b3f%5Btab%5D=Tech", image = "img/sponsors/sequra.png"  },
         ]
     [[params.collaboratorsBlocks]]
         display = false
         title = "collaborators"
         collaborators = [
-            { name = "Bilboko Udala", url = "https://www.bilbao.eus/BilbaoEkintza", image = "img/sponsors/bilbao.png", height = "2em", width = "auto"  }
+            { name = "Bilboko Udala", url = "https://www.bilbaoekintza.eus/", image = "img/sponsors/bilbao.png", height = "2em", width = "auto"  }
         ]
 [languages]
     [languages.es]

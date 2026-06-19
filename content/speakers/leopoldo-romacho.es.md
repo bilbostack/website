@@ -2,11 +2,11 @@
 layout = 'speaker-detail'
 type = 'speaker'
 title = 'Leopoldo Romacho'
-tagline = 'Head of Engineering @BestSecret'
-taglineLarge = 'Head of Engineering en BestSecret'
+tagline = 'Head of Engineering @BESTSECRET'
+taglineLarge = 'Head of Engineering en BESTSECRET'
 day = 'Sábado 31'
-time = '10:00h'
-description = 'Leopoldo Romacho hablará en el #Bilbostack25'
+time = '12:00h'
+description = 'Leopoldo Romacho hablará en el #Bilbostack26'
 image = 'img/speakers/leo.jpg'
 [params]
   links = [
@@ -14,6 +14,7 @@ image = 'img/speakers/leo.jpg'
       { title = "X", url = "https://x.com/leopoldomgomez"},
   ]
 +++
+
 {{<speaker_bio>}}
 
 Me apasiona la ingeniería del software y ayudar a los equipos a trabajar mejor cada día.

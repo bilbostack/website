@@ -10,13 +10,13 @@ previa_title = "La Previa"
 previa_text = """Un evento gratuito para quienes llegan a Bilbao el día antes y quieren empezar a conectar con la comunidad.
 Tres charlas orientadas a personas que empiezan en el sector, en un ambiente distendido, con el espíritu de un meetup y el toque de Bilbostack.
 <br><br>
-<i>*La entrada '#LaPrevia a BilboStack - Viernes 26/01/2024' será sólo válida para el VIERNES previo a BilboStack 2024. Si quieres acudir también al evento principal el sábado, debes adquirir una 'Entrada General'</i>"""
+<i>*La entrada '#LaPrevia a BilboStack - Viernes 30/01/2026' será sólo válida para el VIERNES previo a BilboStack 2026. Si quieres acudir también al evento principal el sábado, debes adquirir una 'Entrada General'</i>"""
 previa_como_llegar_link = "https://maps.app.goo.gl/Puo6KJba6cz939tW7"
 previa_como_llegar_text = "CÓMO LLEGAR - Google Maps"
 # Zabalgune Eraikina
 previa_donde = "Edificio Ensanche"
 previa_compra = "Entrada gratuita"
-previa_compra_link = "#"
+previa_compra_link = "https://bilbostack2026.eventbrite.es"
 bilbostack_date = "Sábado 31 de enero"
 bilbostack_title = """BilboStack <span class="small">+ La Espuela</span>"""
 bilbostack_text = """El día grande. <br>Dos tracks con ocho charlas de ponentes de alto nivel, una pausa para el café y por la tarde... ¡La Espuela!.<br><br>La Espuela es nuestro emblemático espacio de networking, considerado uno de los mejores del panorama tech español. Un punto de encuentro donde se mezclan ideas, experiencias y nuevas conexiones que perduran mucho después del evento."""
@@ -24,7 +24,7 @@ bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
 bilbostack_como_llegar_text = "CÓMO LLEGAR - Google Maps"
 bilbostack_donde = "Palacio Euskalduna"
 bilbostack_compra = "Compra tus entradas"
-bilbostack_compra_link = "https://tienda.bilbostack.com/"
+bilbostack_compra_link = "https://bilbostack2026.eventbrite.es"
 
 # home-cta-sponsors.html
 cta_sponsors_title = "Vendrás por la conferencia, volverás por la experiencia"

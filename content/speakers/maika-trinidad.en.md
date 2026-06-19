@@ -5,14 +5,17 @@ title = 'Maica Trinidad'
 tagline = 'Agile & Lean coach'
 taglineLarge = 'Agile & Lean coach'
 day = 'Friday 30'
-time = '10:00h'
-description = 'Maica Trinidad will speak at #Bilbostack25'
+time = '17:00h'
+description = 'Maica Trinidad will speak at #Bilbostack26'
 image = 'img/speakers/maica.jpeg'
 [params]
   links = [
     { title = "LinkedIn", url = "https://www.linkedin.com/in/maicatrinidad/"},
+    { title = "LinkedIn Learning", url = "https://www.linkedin.com/learning/instructors/maica-trinidad"},
+    { title = "Web", url = "http://maicatrinidad.com/"}
   ]
 +++
+
 {{<speaker_bio>}}
 
 I am an organizational consultant, change agent, facilitator, and trainer. Border-crossing, hybrid, and holistic to the core. I specialize in corporate cultural change processes toward Agile and Lean approaches. I help organize self-managed, high-performance teams that can improve processes by eliminating waste (everything that does not add business value) to improve outcomes and business viability.
@@ -21,7 +24,7 @@ Around 2010 I discovered agile methodologies and began helping different compani
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="TBD">}}
-TBD
+{{<speaker_talk title="Beyond the code: the algorithm of cooperation">}}
+Learning languages, tools, or methodologies is only part of the journey. What really transforms a career in technology happens beyond the code: in the way we communicate, collaborate, and learn with other people. This talk is an invitation to pause and think about the skills that make a team work, that bring an idea to life, that turn a mistake into learning. We'll talk about how to integrate into a team without losing your voice, how to receive feedback, how to understand the real value of what's being built. Because working in technology isn't just about writing code: it's about creating something that matters, together, from curiosity, collaboration, and shared purpose.
 
 {{</speaker_talk>}}

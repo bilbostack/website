@@ -5,14 +5,17 @@ title = 'Maica Trinidad'
 tagline = 'Agile eta Lean coach'
 taglineLarge = 'Agile eta Lean coach'
 day = 'Ostirala 30'
-time = '10:00h'
-description = 'Maica Trinidadek #Bilbostack25ean hitz egingo du'
+time = '17:00h'
+description = 'Maica Trinidadek #Bilbostack26ean hitz egingo du'
 image = 'img/speakers/maica.jpeg'
 [params]
   links = [
     { title = "LinkedIn", url = "https://www.linkedin.com/in/maicatrinidad/"},
+    { title = "LinkedIn Learning", url = "https://www.linkedin.com/learning/instructors/maica-trinidad"},
+    { title = "Web", url = "http://maicatrinidad.com/"}
   ]
 +++
+
 {{<speaker_bio>}}
 
 Antolaketa-aholkularia, aldaketaren eragilea, erraztatzailea eta prestatzailea naiz. Muga-hauslea, hibridoa eta ikuspegi holistikoa muineraino. Enpresa-kultura aldaketako prozesuetan espezializatua nago, Agile eta Lean ikuspegietara bideratuta. Autokudeatutako errendimendu handiko taldeak antolatzen laguntzen dut, prozesuak hobetuz eta alferrikakoa (balio komertzialik ematen ez duen guztia) ezabatuz, emaitzak eta enpresen bideragarritasuna hobetzeko.
@@ -21,7 +24,7 @@ Gizarte Zientzien arlotik nator; 20 urte baino gehiago daramatzat gizarte esku-h
 
 {{</speaker_bio>}}
 
-{{<speaker_talk title="Zehazteke">}}
-Zehazteke
+{{<speaker_talk title="Kodeaz harantz: lankidetza-algoritmoa">}}
+Hizkuntzak, tresnak edo metodologiak ikastea bidean zati bat besterik ez da. Teknologiako ibilbide bat benetan eraldatzen duena kodeaz harantz gertatzen da: beste pertsonekin komunikatzen, kolaboratzen eta ikasten dugun moduan. Hitzaldi hau geldialdiari eta taldeek funtzionatzen dituzten gaitasunei buruz pentsatzeko gonbita bat da, ideia bat bizitza hartzen duenean, akats bat ikasketa bihurtzen denean. Hitz egingo dugu nola integratu talde batean zure ahotsa galdu gabe, nola jaso feedback-a, nola ulertu eraiki denaren benetako balioa. Teknologian lan egitea ez delako kode idaztea bakarrik: garrantzitsua den zerbait sortzea da, elkarrekin, jakin-minetik, kolaboraziotik eta helburu partekatutik.
 
 {{</speaker_talk>}}
