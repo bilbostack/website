@@ -95,13 +95,14 @@
     margin-top: 0.5rem;
 
     .tag {
-        background-color: var(--current-color-500);
-        color: var(--color-light);
+        background-color: var(--accent-ink);
+        color: var(--color-primary-light);
         padding: 0.3rem 1rem;
         font-weight: 700;
 
         &-day {
-            background-color: var(--current-color-400);
+            // Darker shade so primary-light text passes AA at small/bold size in both themes.
+            background-color: var(--current-color-600);
         }
 
         @media screen and (max-width: $breakpoint-sm) {
@@ -143,12 +144,12 @@
             margin-top: 0;
             margin-bottom: 1rem;
             line-height: 1;
-            color: var(--current-color-400);
+            color: var(--accent-ink);
             font-size: 6rem;
         }
 
         .position {
-            color: var(--current-color-400);
+            color: var(--accent-ink);
             font-weight: 700;
             font-size: 1.5rem;
             // margin-bottom: 1rem;
@@ -176,7 +177,7 @@
             .talk-title {
                 font-size: 2rem;
                 margin-bottom: 2rem;
-                color: var(--current-color-400);
+                color: var(--accent-ink);
                 font-weight: 600;
             }
 

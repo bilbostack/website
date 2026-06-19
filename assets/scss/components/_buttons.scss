@@ -2,10 +2,10 @@
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
-    background-color: var(--current-color-400);
-    color: var(--color-light);
+    background-color: var(--accent-ink);
+    color: var(--color-primary-light);
     font-size: 1.25rem;
-    border: 2px solid var(--current-color-400);
+    border: 2px solid var(--accent-ink);
     cursor: pointer;
     position: relative;
     display: flex;
@@ -27,11 +27,16 @@
     }
 
     &:hover {
-        color: var(--color-light);
+        color: var(--color-primary-light);
     }
 
     &:hover:before {
         top: 0.4rem;
+    }
+
+    &:focus-visible {
+        @include focus-ring(4px);
+        outline-color: var(--accent-ink);
     }
 
     &-outline {

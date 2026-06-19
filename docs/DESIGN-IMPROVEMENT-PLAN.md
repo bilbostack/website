@@ -120,7 +120,13 @@ The gaps are in four areas, in priority order:
 Effort: **S** ≈ <½ day · **M** ≈ 1–2 days · **L** ≈ 3+ days. Do P0 first; it's mostly
 cheap and high-impact.
 
-### P0 — Accessibility & correctness (do first)
+### P0 — Accessibility & correctness (do first) — ✅ done (2026-06-19)
+
+Implemented: semantic `--accent` / `--accent-ink` tokens, reduced-motion guards in
+JS + SCSS, AA-safe accent fills/text on buttons/tags/agenda, a `visually-hidden`
+mixin/utility replacing the hidden-`h1` hacks, `:focus-visible` rings, theme-toggle
+`aria-label` (+ `theme_toggle` i18n), higher language-switcher contrast, and the
+DESIGN.md accent drift resolved to `aqua`.
 
 1. **Respect `prefers-reduced-motion`.** _(S)_
    - In `main.js`: if `matchMedia('(prefers-reduced-motion: reduce)').matches`, skip

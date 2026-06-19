@@ -33,7 +33,7 @@ h3,
     line-height: 0.94;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--current-color-400);
+    color: var(--accent-ink);
 }
 
 h4,
@@ -57,13 +57,13 @@ a {
     transition: all 0.2s ease;
 
     &:hover {
-        color: var(--current-color-400);
+        color: var(--accent-ink);
     }
 }
 
 .heading-square {
     font-size: 1.25rem;
-    color: var(--current-color-400);
+    color: var(--accent-ink);
     font-weight: 700;
     padding-left: 1.5rem;
     position: relative;

@@ -4,10 +4,7 @@
 
 #agenda {
     h1 {
-        visibility: hidden;
-        height: 0;
-        margin: 0;
-        padding: 0;
+        @include visually-hidden;
     }
 
     .breadcrumbs {
@@ -38,8 +35,12 @@
         }
 
         &:focus,
-        &:focus-visible,
         &:active {
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            @include focus-ring;
             text-decoration: none;
         }
 
@@ -55,11 +56,12 @@
         }
 
         &:first-child {
-            background-color: var(--current-color-300);
+            // Darker shade keeps --color-primary-light text legible in both themes.
+            background-color: var(--current-color-600);
         }
 
         &:last-child {
-            background-color: var(--current-color-400);
+            background-color: var(--accent-ink);
         }
     }
 }
@@ -94,7 +96,7 @@
         padding: 1rem;
         text-align: center;
         border-radius: var(--border-radius);
-        background-color: var(--current-color-400);
+        background-color: var(--accent-ink);
     }
 
     @media screen and (max-width: $breakpoint-md) {
@@ -110,7 +112,7 @@
 
 #agenda .content .tab-content#tab-viernes {
     .agenda-row.header {
-        background-color: var(--current-color-300);
+        background-color: var(--current-color-600);
     }
 }
 
@@ -127,7 +129,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
-        background: var(--current-color-400);
+        background: var(--accent-ink);
         color: var(--color-primary-light);
         border-radius: 10px;
 
@@ -185,8 +187,8 @@
         display: inline-block;
         border-radius: 10px;
 
-        background: var(--current-color-400);
-        color: white;
+        background: var(--accent-ink);
+        color: var(--color-primary-light);
         font-weight: 700;
     }
 }
@@ -218,11 +220,11 @@
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
-        color: var(--current-color-400);
+        color: var(--accent-ink);
         margin-top: 1rem;
 
         a {
-            color: var(--current-color-400);
+            color: var(--accent-ink);
             text-decoration: none;
 
             &:hover {
@@ -234,7 +236,7 @@
             display: block;
             font-size: 1.2rem;
             font-weight: 400;
-            color: var(--current-color-400);
+            color: var(--accent-ink);
         }
     }
 

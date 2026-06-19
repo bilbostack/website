@@ -64,6 +64,16 @@
         --current-color-fixed-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
     }
 
+    // Accent semantics
+    // --accent      : decorative use only (squares, shapes, logo layers, shadows).
+    // --accent-ink  : accent used as TEXT or as a text-bearing fill. Uses the -500
+    //                 ramp shade so it keeps AA contrast against --color-primary-light
+    //                 in BOTH themes (the ramp is inverted under .dark-theme, and
+    //                 --color-primary-light flips with it, so the pair stays legible).
+    //                 Pair text-bearing fills with `color: var(--color-primary-light)`.
+    --accent: var(--current-color-400);
+    --accent-ink: var(--current-color-500);
+
     // FONT
     --font-family: "Plus Jakarta Sans", sans-serif;
     --font-size-base: clamp(0.875rem, 0.8182rem + 0.1515vw, 1rem);

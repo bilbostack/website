@@ -62,15 +62,29 @@ Each hue is a token ramp; `-400` is the "main" shade. Tokens (verbatim from `_va
 The site-wide accent (headings `h3`, link hover, buttons, `.heading-square`) is **not** a fixed colour — it's `--current-color-400`, generated from the Sass variable `$current-color` in `_variables.scss`:
 
 ```scss
-$current-color: "violet"; // 2026 edition accent → generates --current-color-100..700
+$current-color: "aqua"; // 2027 edition accent → generates --current-color-100..700
 ```
+
+The current edition accent is **per-edition** — it changes each year (see the `edition`
+skill). Always read the live value from `_variables.scss`; don't assume a fixed hue.
 
 To re-theme a new edition, change `$current-color` to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the ramp via `generate-inverted-colors()`.
 
 Each past edition also carries its own `color` name in the `editions` array of `config/_default/hugo.toml` (`orange`, `blue`, `purple`, `violet`, `pink`, `aqua`, `red`, `dark-yellow`, `cyan`); the editions timeline applies it inline as `--color: var(--{color}-400)`.
 
-**Do:** use `--current-color-400` for edition accents/highlights; use ramp shades for depth; keep clear hierarchy.
-**Don't:** invent new brand colours; hardcode hex for theme-sensitive surfaces/text; use accent colours for long body text; low-contrast pairs.
+**Accent contrast tokens** (in `_variables.scss`): use the right one or you'll fail AA.
+
+- `--accent` (= `--current-color-400`): **decorative only** — the square bullet, shapes,
+  logo layers, drop-shadows. Never put text on it or use it *as* text.
+- `--accent-ink` (= `--current-color-500`): the accent **as text** or as a **text-bearing
+  fill** (buttons, tags, agenda headers, accent headings/links). It keeps AA contrast
+  against `--color-primary-light` in both themes; pair text-bearing fills with
+  `color: var(--color-primary-light)`.
+
+**Do:** use `--accent` for decoration and `--accent-ink` for anything carrying/being text;
+use ramp shades for depth; keep clear hierarchy.
+**Don't:** invent new brand colours; hardcode hex for theme-sensitive surfaces/text; use
+`--accent` (the bright -400) for text or text-bearing fills; low-contrast pairs.
 
 ## Typography
 
