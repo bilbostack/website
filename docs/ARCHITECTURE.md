@@ -217,10 +217,13 @@ Agenda, Info, Past editions.
 Compiled by Hugo Pipes (`toCSS`) via the `site-style.html` partial — requires Hugo
 Extended. Entry point `assets/scss/style.scss` imports, in order:
 
-- `abstracts/` — `_variables` (design tokens: colour ramps + accent semantics, the fluid
-  heading scale `--font-size-h*`, the spacing scale `--space-*` / `--section-gap`), `_mixins`
-  (`visually-hidden`, `focus-ring`), `_typography`
-- `base/` — `_base` (visually-hidden utility, default focus ring, reduced-motion block),
+- `abstracts/` — `_variables` (design tokens: colour ramps + accent semantics, the font
+  voices `--font-family` / `--font-family-display` / `--font-family-mono`, the fluid heading
+  scale `--font-size-h*`, the spacing scale `--space-*` / `--section-gap`), `_mixins`
+  (`visually-hidden`, `focus-ring`), `_typography` (heading voices + the `.mono` utility)
+- `base/` — `_fonts` (self-hosted `@font-face` for Space Grotesk + JetBrains Mono),
+  `_base` (visually-hidden utility, default focus ring, reduced-motion block),
+  `_atmosphere` (dot-grid texture `.bs-texture-dots` + layered-squares motif `.bs-stack`),
   `_images`, `_responsive`
 - `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`
 - `layout/` — `_header`, `_footer`, `_layout`
@@ -241,13 +244,16 @@ Add new component styles as a partial under the matching folder and `@import` it
 
 `assets/js/main.js` is served compiled/fingerprinted. It initializes GSAP
 ScrollSmoother on `#smooth-wrapper`/`#smooth-content`, wires smooth scrolling for
-in-page anchor links, and drives scroll-based effects. GSAP libraries themselves are
-loaded from a CDN in `baseof.html`.
+in-page anchor links, and drives scroll-based effects — including `initRevealAnimations()`,
+the staggered scroll-reveal of the speakers grid and program cards. All scroll-driven
+choreography (smoother, pins, logo timeline, reveals) is gated on
+`prefers-reduced-motion`. GSAP libraries themselves are loaded from a CDN in `baseof.html`.
 
 ## Static assets & caching
 
 Files in `static/` are copied verbatim to the site root (favicons, the sponsor PDF
-under `static/docs/`, the venue image, raw icons). `static/_headers` sets a 7-day
+under `static/docs/`, the venue image, raw icons, and the self-hosted fonts under
+`static/fonts/` — referenced by absolute path from `base/_fonts.scss`). `static/_headers` sets a 7-day
 `Cache-Control` for image/video assets on Netlify. Note that processed images and
 SVGs referenced in templates live in `assets/img/` (run through Hugo Pipes), while
 raw favicons/manifest live in `static/img/`.

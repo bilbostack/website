@@ -9,6 +9,11 @@
     .speaker {
         color: var(--font-color);
         text-decoration: none;
+        // Composed transform so two independent effects never clobber each other:
+        //   --bs-grid-offset : the static asymmetric grid-break (set per nth-child below)
+        //   --bs-reveal-y    : the JS scroll-reveal rise (animated by GSAP, 0 at rest)
+        // Both default to 0, so with no JS / reduced motion the card sits in place.
+        transform: translateY(var(--bs-grid-offset, 0)) translateY(var(--bs-reveal-y, 0));
 
         h4 {
             margin-top: var(--space-4);
@@ -58,6 +63,13 @@
     @media screen and (min-width: $breakpoint-md) {
         .speakers-list {
             grid-template-columns: repeat(3, 1fr);
+
+            // Grid-break: nudge alternate cards down so the grid reads as a deliberate
+            // brick rhythm instead of a flat uniform table. Static (survives reduced
+            // motion); composes with the reveal via --bs-reveal-y.
+            .speaker:nth-child(even) {
+                --bs-grid-offset: var(--space-7);
+            }
         }
 
         .speaker {
@@ -97,6 +109,9 @@
     .tag {
         background-color: var(--accent-ink);
         color: var(--color-primary-light);
+        font-family: var(--font-family-mono); // technical: day / time labels
+        font-feature-settings: "tnum" 1;
+        letter-spacing: -0.02em;
         padding: 0.3rem 1rem;
         font-weight: 700;
 

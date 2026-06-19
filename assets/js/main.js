@@ -192,6 +192,48 @@ function initAnimations() {
     initSpeakerAnimation();
     initInfoAnimation();
     initAgendaAnimation();
+    initRevealAnimations();
+}
+
+// Staggered scroll-reveal for content grids. Only runs when motion is allowed (called
+// from initAnimations, which returns early under prefers-reduced-motion). Cards start
+// hidden and rise into place as each row enters the viewport.
+function initRevealAnimations() {
+    // Speaker cards. The rise is driven through the --bs-reveal-y custom property so it
+    // composes with the static grid-break offset (--bs-grid-offset) in CSS instead of
+    // overwriting the card's transform.
+    const speakers = gsap.utils.toArray('#speakers .speaker');
+    if (speakers.length) {
+        gsap.set(speakers, { '--bs-reveal-y': '28px', opacity: 0 });
+        ScrollTrigger.batch(speakers, {
+            start: 'top 88%',
+            onEnter: batch => gsap.to(batch, {
+                '--bs-reveal-y': '0px',
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.07,
+                ease: 'power2.out',
+                overwrite: true,
+            }),
+        });
+    }
+
+    // Program cards. No grid offset here, so a plain transform rise is fine.
+    const cards = gsap.utils.toArray('#programa .card-programa');
+    if (cards.length) {
+        gsap.set(cards, { y: 36, opacity: 0 });
+        ScrollTrigger.batch(cards, {
+            start: 'top 85%',
+            onEnter: batch => gsap.to(batch, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.12,
+                ease: 'power2.out',
+                overwrite: true,
+            }),
+        });
+    }
 }
 
 function initHomeAnimation() {

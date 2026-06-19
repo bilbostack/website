@@ -75,7 +75,14 @@
     --accent-ink: var(--current-color-500);
 
     // FONT
+    // Three voices: body (Plus Jakarta Sans), display (Space Grotesk — geometric,
+    // for h1/h2/hero) and mono (JetBrains Mono — technical details: agenda times,
+    // years, edition number, stats, the <Tech Conference/> motif). The new faces are
+    // self-hosted (see base/_fonts). Body stays on its existing webfont.
     --font-family: "Plus Jakarta Sans", sans-serif;
+    --font-family-display: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+    --font-family-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo",
+        monospace;
     --font-size-base: clamp(0.875rem, 0.8182rem + 0.1515vw, 1rem);
     --line-height-base: 1.4;
     --font-color: var(--color-primary-dark);

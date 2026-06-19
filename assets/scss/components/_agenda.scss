@@ -176,6 +176,9 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: var(--font-family-mono); // technical: schedule times
+    font-feature-settings: "tnum" 1;
+    letter-spacing: -0.02em;
     font-size: 1.5rem;
     font-weight: 500;
 

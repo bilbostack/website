@@ -46,12 +46,17 @@
             }
 
             .edition-year {
+                font-family: var(--font-family-mono); // technical: edition year
+                font-feature-settings: "tnum" 1;
+                letter-spacing: -0.03em;
                 font-size: 2.8rem;
                 font-weight: 600;
                 flex: 40%;
             }
 
             .edition-data {
+                font-family: var(--font-family-mono); // technical: per-edition stats
+                font-feature-settings: "tnum" 1;
                 flex: 15%;
             }
 

@@ -1,6 +1,10 @@
 /*.(jpg|jpeg|png|gif|webp|svg|mp4|webm)
   Cache-Control: public, max-age=604800
 
+# Self-hosted fonts — stable filenames, safe to cache long
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # Fingerprinted CSS/JS (content-hashed filenames) can be cached forever
 /*.min.*.css
   Cache-Control: public, max-age=31536000, immutable

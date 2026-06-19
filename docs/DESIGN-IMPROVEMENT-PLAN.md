@@ -192,7 +192,20 @@ emptied, `laprevia/style.scss` documented as orphaned in `ARCHITECTURE.md`).
    - Remove/repurpose dead `fix.scss`; document or fold in `laprevia/style.scss`;
      extract the repeated `font-size: 1.25rem` "lead" size into a token/utility.
 
-### P2 — Aesthetic elevation (the "energy" the brand asks for)
+### P2 — Aesthetic elevation (the "energy" the brand asks for) — ✅ done (2026-06-20)
+
+Implemented: a self-hosted display + mono voice — **Space Grotesk** for `h1`/`h2`/hero
+(`--font-family-display`) and **JetBrains Mono** for the technical details
+(`--font-family-mono`: agenda times, edition years, per-edition stats, the
+`<Tech Conference/>` motif), both as variable woff2 in `static/fonts/` with
+`font-display: swap` + preload (Plus Jakarta Sans stays the body voice). Atmosphere via
+a new `base/_atmosphere.scss`: a theme-aware dot-grid texture (`.bs-texture-dots`, behind
+the hero + speakers) and a layered-squares motif (`.bs-stack`) echoing the logo's
+`capa1–4` layers (the accent color-blocks already lived in the program cards + sponsors
+CTA). Motion via `initRevealAnimations()` in `main.js`: reduced-motion-guarded staggered
+scroll-reveal of the speakers grid (through `--bs-reveal-y` so it composes with the
+grid-break) and the program cards, plus a static asymmetric grid-break that offsets
+alternate speaker cards (`--bs-grid-offset`).
 
 10. **Add a distinctive display + mono voice.** _(M)_  → see [Open questions](#open-questions)
     - Pair a characterful geometric display face for `h2`/hero with a mono accent for
@@ -243,8 +256,8 @@ per the existing conventions in `CLAUDE.md` and `DESIGN.md`.
 
 ## Open questions
 
-- **Type direction (item 10):** which display/mono pairing fits the brand? Needs a
-  choice before implementing — bring 2–3 candidates to the maintainers.
+- **Type direction (item 10):** ✅ resolved (2026-06-20) — **Space Grotesk** (display) +
+  **JetBrains Mono** (mono), self-hosted, with Plus Jakarta Sans kept for body.
 - **Scroll-hijacking (item 13):** is ScrollSmoother a deliberate signature effect to
   preserve, or acceptable to drop for performance/accessibility?
 - **Per-edition accent:** confirm the canonical 2027 accent so item 6 closes the drift.
