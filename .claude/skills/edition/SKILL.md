@@ -1,6 +1,6 @@
 ---
 name: edition
-description: Roll the Bilbostack site over to a new edition (new year) — change the edition accent color (with ramp + dark-theme inversion), refresh event config (hashtag, tickets, dossier, video, visibility toggles), update the edition dates (config params + date-bearing strings), archive the previous edition into the editions list, and reset/scaffold edition content (speakers, agenda, sponsors). Use when the user wants to bootstrap the site for a new year, change the edition color or date, or roll the site to the next edition. Does NOT rewrite claims/marketing texts — those i18n strings are edited by hand.
+description: Roll the Bilbostack site over to a new edition (new year) — change the edition accent color (with ramp + dark-theme inversion), refresh event config (hashtag, tickets, dossier, video, visibility toggles), update the edition dates and the edition number (the "Nth edition" count, derived from the editions list), archive the previous edition into the editions list, and reset/scaffold edition content (speakers, agenda, sponsors). Use when the user wants to bootstrap the site for a new year, change the edition color/date/number, or roll the site to the next edition. Does NOT rewrite marketing prose/slogans (only the factual edition number inside them) — that wording is edited by hand.
 argument-hint: "<new year + accent color, or what to roll over>"
 ---
 
@@ -9,17 +9,18 @@ argument-hint: "<new year + accent color, or what to roll over>"
 Each year reuses this codebase with a new **accent color**, updated **event config**, the previous
 edition **archived** into the timeline, and **content reset** (speakers/agenda/sponsors).
 
-**Out of scope:** claims and marketing **prose** (e.g. `main_claim`, `home_slogan*`, the
-`meta_description` / `home_slogan_short` edition-count text like "14ª Edición") — those are edited by
-hand, not by this skill. Leave them alone unless the user explicitly asks. **Dates are in scope** —
-they are facts, not marketing, and appear in several date-bearing strings (see §4b). Update them.
+**Out of scope:** claims and marketing **prose wording** (e.g. `main_claim`, `home_slogan*`
+sentences) — those are edited by hand, not by this skill. Leave the wording alone unless the user
+explicitly asks. **In scope (facts, not marketing):** the **dates** (§4b) and the **edition number**
+(the "Nth edition" count, §4c). Update both. For the edition number, swap **only the number** inside
+the existing sentence — don't rewrite the surrounding prose.
 
 Read `docs/ARCHITECTURE.md` and `docs/DESIGN.md` first if unsure. This skill edits:
 
 - `assets/scss/abstracts/_variables.scss` — edition accent color (+ ramp).
 - `config/_default/hugo.toml` — `editions` array, event params (incl. event date/location params).
 - `i18n/*.toml`, `i18n/home/*.toml`, `content/_index.*.md`, `content/agenda.*.md` — date-bearing
-  strings only (§4b), not marketing prose.
+  strings (§4b) and the edition-number count (§4c); not the surrounding marketing prose.
 - `content/speakers/` and the sponsor blocks in `hugo.toml` — content reset.
 
 **Config-over-code:** prefer editing params; only touch SCSS for the color.
@@ -34,6 +35,7 @@ the rest in **one `AskUserQuestion` round** where possible. Collect:
 | Field | For… |
 |-------|------|
 | New year | `editions` array, `hashtag`, ticket/dossier naming |
+| Edition number | The "Nth edition" count (§4c). Default = entries in `editions[]` after appending the new one (= previous + 1). Confirm; **don't** compute from the year — some years were skipped (e.g. no 2021). |
 | Edition date | Main event day (the conference Saturday). The previa is the **Friday before** it. Drives event params + all date strings (§4b). Ask for the year if not already implied. |
 | Accent color | One ramp name (see §2). Drives `$current-color` and the new edition's `color`. |
 | Tickets link + open? | `ticketsLink`, `ticketsOpen` (Eventbrite usually `bilbostack<year>.eventbrite.es`) |
@@ -144,7 +146,27 @@ Do all three languages (`es`, `en`, `eu`) for every i18n/content row. The `previ
 `bilbostack_compra_link` Eventbrite URLs follow the same `<year>` change already covered by
 `ticketsLink` in §4 — update them to match.
 
-Leave the surrounding marketing prose (edition count, slogans) untouched.
+Leave the surrounding marketing prose (slogans, claims) untouched — the edition number it contains is
+handled separately in §4c.
+
+---
+
+## 4c. Edition number (factual)
+
+The "Nth edition" is a **fact**, not marketing: it equals the **number of entries in the `editions`
+array** (§3) *after* appending the new one — currently **15** for 2027. Increment it by one each
+edition. **Don't** derive it from the year: there are gaps (no 2021 edition), so year − 2011 is wrong.
+
+Swap **only the number**, keeping each language's existing wording and format:
+
+| Location | Key | Format example (es / en / eu) |
+|----------|-----|-------------------------------|
+| `i18n/<lang>.toml` | `main_claim` | `15ª Edición…` / `15th edition…` / `…15. edizioa` |
+| `i18n/<lang>.toml` | `meta_description` | `…15ª Edición…` / `…15th edition…` / `…15. edizioa.` |
+| `i18n/home/<lang>.toml` | `home_slogan_short` | `Edición nº15…` / `15th edition…` / `…15. edizioa` |
+
+Do all three languages (`es`, `en`, `eu`). Leave the rest of each sentence (the marketing wording)
+untouched.
 
 ---
 
@@ -188,6 +210,8 @@ on the home page) reflects the new `startDate`/`endDate`.
 - [ ] Event dates updated everywhere (§4b): `eventStartDate`/`eventEndDate` params, `header_when`,
       `meta_title`, `previa_date` (Friday), `bilbostack_date` (Saturday), `previa_text`,
       `_index` descriptions, agenda comment headers — all three languages.
+- [ ] Edition number incremented (= count of `editions[]`) in `main_claim`, `meta_description`,
+      `home_slogan_short` — all three languages (§4c); number only, surrounding wording untouched.
 - [ ] Speakers/sponsors reset per the user's choice; visibility toggles off until ready.
-- [ ] Marketing prose / edition-count claims left untouched (out of scope).
+- [ ] Marketing prose / slogans left untouched (out of scope).
 - [ ] `hugo --minify` builds clean; site verified in light and dark themes.
