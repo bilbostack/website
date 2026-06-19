@@ -58,7 +58,7 @@
     --violet-700: #112636;
 
     //Current Color Edition
-    $current-color: "violet";
+    $current-color: "aqua";
     @for $i from 1 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
         --current-color-fixed-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
@@ -111,5 +111,5 @@ html.dark-theme {
     --color-primary-dark: var(--color-light);
     --color-primary-light: var(--color-dark);
 
-    @include generate-inverted-colors("violet");
+    @include generate-inverted-colors("aqua");
 }

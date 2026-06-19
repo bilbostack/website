@@ -2,12 +2,12 @@ baseURL = "https://bilbostack.com/"
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 [params]
-    hashtag = "#Bilbostack26"
-    sponsorsDossierLink = "/docs/Bilbostack26-sponsors.es.pdf"
-    sponsorsVisible = true
-    agendaVisible = true
-    ticketsOpen = true
-    ticketsLink = "https://bilbostack2026.eventbrite.es"
+    hashtag = "#Bilbostack27"
+    sponsorsDossierLink = "/docs/Bilbostack27-sponsors.es.pdf"
+    sponsorsVisible = false
+    agendaVisible = false
+    ticketsOpen = false
+    ticketsLink = "https://bilbostack2027.eventbrite.es"
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [
@@ -36,7 +36,8 @@ defaultContentLanguageInSubdir = false
         { year = 2023, url = "https://2023.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='dark-yellow' },
         { year = 2024, url = "https://2024.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='purple' },
         { year = 2025, url = "https://2025.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='cyan' },
-        { year = 2026, url = "https://bilbostack.com/", current = true, color='purple' }
+        { year = 2026, url = "https://2026.bilbostack.com/", tracks = 2, speakers = 8, attendees = 150, network = "10x", color='purple' },
+        { year = 2027, url = "https://bilbostack.com/", current = true, color='aqua' }
     ]
     [[params.sponsorBlocks]]
         display = true
@@ -51,32 +52,24 @@ defaultContentLanguageInSubdir = false
         title = "sponsors_platino"
         class = "sponsors-xl"
         sponsors = [
-            { name = "WordPress", url = "https://wordpress.com/es/hosting/?utm_medium=referral&utm_source=BilboStack26&utm_campaign=organizerlink", image = "img/sponsors/WP.png"  },
-            { name = "BBK", url = "https://www.bbk.eus/es/proyectos/bbk-bootcamp-2/", image = "img/sponsors/bbk.png"  },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_oro"
         class = "sponsors-l"
         sponsors = [
-            { name = "Manfred", url = "https://getmanfred.com", image = "img/sponsors/manfred.svg"  },
-            { name = "Inetum", url = "https://inetum.com/es", image = "img/sponsors/RVB_INETUM_20CM.png"   },
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_plata"
         class = "sponsors-m"
         sponsors = [
-            { name = "Habla Computing", url = "https://www.hablapps.com", image = "img/sponsors/habla.svg"  },
-            { name = "Technosylva", url = "https://www.technosylva.com/es", image = "img/sponsors/techno-logo-color-300.png"  },
-
         ]
     [[params.sponsorBlocks]]
         display = true
         title = "sponsors_bronce"
         class = "sponsors-s"
         sponsors = [
-            { name = "SeQura", url = "https://sequra.recruitee.com/career-page-jobs?jobs-b16f6b3f%5Btab%5D=Tech", image = "img/sponsors/sequra.png"  },
         ]
     [[params.collaboratorsBlocks]]
         display = false
