@@ -14,7 +14,7 @@ title = "BilboStack"
 where = "Palacio Euskalduna, Bilbao"
 show_header = true
 
-# === VIERNES 30 DE ENERO ===
+# === VIERNES 29 DE ENERO ===
 [[schedule_viernes]]
 time = "16:50-17:00"
 type = "single"
@@ -54,7 +54,7 @@ type = "single"
   [[schedule_viernes.sessions]]
   title = "Cierre y networking con patrocinadores"
 
-# === SÁBADO 31 DE ENERO ===
+# === SÁBADO 30 DE ENERO ===
 [[schedule_sabado]]
 time = "09:00-09:20"
 type = "single"

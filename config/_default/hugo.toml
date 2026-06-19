@@ -1,8 +1,14 @@
 baseURL = "https://bilbostack.com/"
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
 [params]
     hashtag = "#Bilbostack27"
+    eventStartDate = "2027-01-30T09:00:00+01:00"
+    eventEndDate = "2027-01-30T20:00:00+01:00"
+    eventLocationName = "Palacio Euskalduna"
+    eventLocationCity = "Bilbao"
+    eventLocationRegion = "Bizkaia"
     sponsorsDossierLink = "/docs/Bilbostack27-sponsors.es.pdf"
     sponsorsVisible = false
     agendaVisible = false

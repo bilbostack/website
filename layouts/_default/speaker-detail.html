@@ -6,13 +6,13 @@
     <div class="content speaker-wrapper">
         <div class="speaker-left">
             <div class="image-wrapper">
-                {{$imagePermalink := ""}}
+                {{$img := false}}
                 {{ with resources.Get .Params.image }}
-                {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
-                {{$imagePermalink = .Permalink}}
+                {{ $img = .Resize (printf "%dx webp q70 lanczos" .Width) }}
                 {{end}}
-                {{end}}
-                <img class="image" src="{{$imagePermalink}}" alt="Speaker image" />
+                {{ with $img }}
+                <img class="image" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.title }}" fetchpriority="high" decoding="async" />
+                {{ end }}
 
                 <span class="shadow shadow--1"></span>
                 <span class="shadow shadow--2"></span>

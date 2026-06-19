@@ -5,25 +5,25 @@ home_slogan = "Bi egunetan zehar, bertako eta nazioarteko erreferente teknologik
 # home-program.html
 agenda_title = "Bi egun komunitatearekin konektatzeko"
 agenda_subtitle = "Bi ekitaldi, bi kokaleku eta hitzaldi ugari"
-previa_date = "Ostirala, urtarrilak 30"
+previa_date = "Ostirala, urtarrilak 29"
 previa_title = "laPrevia"
 previa_text = """Bilbora lehenago iristen diren eta komunitatearekin konektatzen hasteko gogoa dutenentzako doako ekitaldia.
 Sektorean hasten diren pertsonei zuzendutako hiru hitzaldi, giro lasai batean, meetup baten espirituarekin eta Bilbostack-en ukitu bereziarekin.
 <br><br>
-<i>*'#laPrevia BilboStack - Ostirala 30/01/2026' sarrera ostiral horretarako bakarrik izango da balioduna. Larunbateko ekitaldi nagusira joan nahi baduzu, 'Sarrera orokorra' erosi behar duzu.</i>"""
+<i>*'#laPrevia BilboStack - Ostirala 29/01/2027' sarrera ostiral horretarako bakarrik izango da balioduna. Larunbateko ekitaldi nagusira joan nahi baduzu, 'Sarrera orokorra' erosi behar duzu.</i>"""
 previa_como_llegar_link = "https://maps.app.goo.gl/Puo6KJba6cz939tW7"
 previa_como_llegar_text = "Jarraibideak - Google Maps"
 previa_donde = "Zabalgune Eraikina"
 previa_compra = "Doako sarrera"
-previa_compra_link = "https://bilbostack2026.eventbrite.es"
-bilbostack_date = "Larunbata, urtarrilak 31"
+previa_compra_link = "https://bilbostack2027.eventbrite.es"
+bilbostack_date = "Larunbata, urtarrilak 30"
 bilbostack_title = """BilboStack <span class="small">+ #laEspuela</span>"""
 bilbostack_text = """Egun handia. <br>Bi pista, zortzi hizlari maila goreneko hitzaldiekin, kafe etenaldia eta arratsaldean... laEspuela!<br><br>laEspuela gure networking gune enblematikoa da, Espainiako eszena teknologikoko onenetakoa bezala aitortua. Ideiak, esperientziak eta harreman berriak nahasten diren topagunea, ekitaldia igaro ondoren ere iraunkorrak direnak."""
 bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
 bilbostack_como_llegar_text = "Jarraibideak - Google Maps"
 bilbostack_donde = "Euskalduna jauregia"
 bilbostack_compra = "Erosi sarrerak"
-bilbostack_compra_link = "https://bilbostack2026.eventbrite.es"
+bilbostack_compra_link = "https://bilbostack2027.eventbrite.es"
 
 # home-cta-sponsors.html
 cta_sponsors_title = "Konferentziagatik etorriko zara, esperientziagatik itzuliko zara"

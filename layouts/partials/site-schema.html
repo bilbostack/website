@@ -1,0 +1,46 @@
+{{/* JSON-LD structured data. Event schema only on the home page; Organization site-wide. */}}
+{{ $img := false }}
+{{ with resources.Get "img/bilbostack-logo-permalink.png" }}{{ $img = .Permalink }}{{ end }}
+{{ $description := printf "%s. %s" .Description (T "meta_description") | default (T "meta_description") }}
+{{- if .IsHome -}}
+{{ $year := 0 }}
+{{ range .Site.Params.editions }}{{ if .current }}{{ $year = .year }}{{ end }}{{ end }}
+{{ $event := dict
+    "@context" "https://schema.org"
+    "@type" "Event"
+    "name" (printf "Bilbostack %d" $year)
+    "url" .Site.BaseURL
+    "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+    "eventStatus" "https://schema.org/EventScheduled"
+    "description" (T "meta_description")
+    "location" (dict
+        "@type" "Place"
+        "name" .Site.Params.eventLocationName
+        "address" (dict
+            "@type" "PostalAddress"
+            "addressLocality" .Site.Params.eventLocationCity
+            "addressRegion" .Site.Params.eventLocationRegion
+            "addressCountry" "ES"))
+    "organizer" (dict
+        "@type" "Organization"
+        "name" "Bilbostack"
+        "url" .Site.BaseURL)
+}}
+{{ with .Site.Params.eventStartDate }}{{ $event = merge $event (dict "startDate" .) }}{{ end }}
+{{ with .Site.Params.eventEndDate }}{{ $event = merge $event (dict "endDate" .) }}{{ end }}
+{{ with $img }}{{ $event = merge $event (dict "image" (slice .)) }}{{ end }}
+{{ if .Site.Params.ticketsOpen }}{{ $event = merge $event (dict "offers" (dict
+    "@type" "Offer"
+    "url" .Site.Params.ticketsLink
+    "priceCurrency" "EUR"
+    "availability" "https://schema.org/InStock")) }}{{ end }}
+<script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
+{{- end -}}
+<script type="application/ld+json">{{ dict
+    "@context" "https://schema.org"
+    "@type" "Organization"
+    "name" "Bilbostack"
+    "url" .Site.BaseURL
+    "logo" $img
+    "sameAs" (apply .Site.Params.links "index" "." "url")
+    | jsonify | safeJS }}</script>

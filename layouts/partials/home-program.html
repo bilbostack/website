@@ -50,7 +50,7 @@
                     </div>
                     <div class="card-content-right">
                         {{ with resources.Get "img/bilbostack_publico.webp" }}
-                        <img src="{{ .RelPermalink }}" alt="Público de Bilbostack">
+                        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Público de Bilbostack" loading="lazy" decoding="async">
                         {{ end }}
                     </div>
                 </div>

@@ -5,25 +5,25 @@ home_slogan = "For 2 days, local and international tech leaders gather to share 
 # home-program.html
 agenda_title = "Two days to connect with the community"
 agenda_subtitle = "Two events, two venues and lots of talks"
-previa_date = "Friday, January 30"
+previa_date = "Friday, January 29"
 previa_title = "The Previa"
 previa_text = """A free event for those arriving in Bilbao the day before who want to start connecting with the community.
 Three talks aimed at people starting in the tech industry, in a relaxed atmosphere, with the spirit of a meetup and the Bilbostack touch.
 <br><br>
-<i>*The '#LaPrevia a BilboStack - Friday 30/01/2026' ticket will only be valid for the FRIDAY before BilboStack 2026. If you also want to attend the main event on Saturday, you must purchase a 'General Ticket'</i>"""
+<i>*The '#LaPrevia a BilboStack - Friday 29/01/2027' ticket will only be valid for the FRIDAY before BilboStack 2027. If you also want to attend the main event on Saturday, you must purchase a 'General Ticket'</i>"""
 previa_como_llegar_link = "https://maps.app.goo.gl/Puo6KJba6cz939tW7"
 previa_como_llegar_text = "HOW TO GET THERE - Google Maps"
 previa_donde = "Ensanche Building"
 previa_compra = "Free ticket"
-previa_compra_link = "https://bilbostack2026.eventbrite.es"
-bilbostack_date = "Saturday, January 31"
+previa_compra_link = "https://bilbostack2027.eventbrite.es"
+bilbostack_date = "Saturday, January 30"
 bilbostack_title = """BilboStack <span class="small">+ La Espuela</span>"""
 bilbostack_text = """The big day. <br>Two tracks with eight high-level talks, a coffee break, and in the afternoon... La Espuela!<br><br>La Espuela is our iconic networking space, considered one of the best in the Spanish tech scene. A meeting point where ideas, experiences, and new connections blend — many lasting long after the event."""
 bilbostack_como_llegar_link = "https://maps.app.goo.gl/eT8EoSxS7N2pW7Qx6"
 bilbostack_como_llegar_text = "HOW TO GET THERE - Google Maps"
 bilbostack_donde = "Euskalduna Palace"
 bilbostack_compra = "Buy your tickets"
-bilbostack_compra_link = "https://bilbostack2026.eventbrite.es"
+bilbostack_compra_link = "https://bilbostack2027.eventbrite.es"
 
 # home-cta-sponsors.html
 cta_sponsors_title = "You'll come for the conference, you'll return for the experience"
