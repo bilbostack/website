@@ -217,13 +217,24 @@ Agenda, Info, Past editions.
 Compiled by Hugo Pipes (`toCSS`) via the `site-style.html` partial — requires Hugo
 Extended. Entry point `assets/scss/style.scss` imports, in order:
 
-- `abstracts/` — `_variables`, `_mixins`, `_typography`
-- `base/` — `_base`, `_images`, `_responsive`
+- `abstracts/` — `_variables` (design tokens: colour ramps + accent semantics, the fluid
+  heading scale `--font-size-h*`, the spacing scale `--space-*` / `--section-gap`), `_mixins`
+  (`visually-hidden`, `focus-ring`), `_typography`
+- `base/` — `_base` (visually-hidden utility, default focus ring, reduced-motion block),
+  `_images`, `_responsive`
 - `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`
 - `layout/` — `_header`, `_footer`, `_layout`
-- `fix` — last-resort overrides
+- `fix` — last-resort overrides (kept empty by default; fix the real partial instead)
 
-There is a separate `assets/scss/laprevia/style.scss` and a top-level `assets/scss/fix.scss`.
+**Spacing & type:** prefer the tokens — `--space-1…--space-10` and `--section-gap` for
+margins/padding/gaps, `--font-size-h*` for headings, `--font-size-lead` for intro/lead body
+copy — over hardcoded `rem` values, so rhythm stays consistent.
+
+`assets/scss/laprevia/style.scss` is a **standalone, orphaned** stylesheet (self-contained,
+no `@import`, not referenced by any template or the `style.scss` entry point) — a leftover
+from an old "la previa" page. It is **not** part of the current build; leave it alone unless
+reviving that page.
+
 Add new component styles as a partial under the matching folder and `@import` it from `style.scss`.
 
 ## JavaScript

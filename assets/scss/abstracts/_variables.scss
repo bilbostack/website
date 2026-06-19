@@ -80,6 +80,35 @@
     --line-height-base: 1.4;
     --font-color: var(--color-primary-dark);
 
+    // Lead / intro body size (paragraphs that should read larger than base body copy).
+    --font-size-lead: 1.25rem;
+
+    // FLUID HEADING SCALE
+    // Single modular scale; each step scales smoothly between a mobile min and a
+    // desktop max so headings don't jump at breakpoints. See abstracts/_typography.
+    --font-size-h1: clamp(2.5rem, 1.8rem + 3.5vw, 4rem); // dominant display size
+    --font-size-h2: clamp(2rem, 1.5rem + 2.6vw, 3.4rem); // section display
+    --font-size-h3: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --font-size-h4: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1rem;
+
+    // SPACING SCALE
+    // Small steps on a 0.25rem (4px) base; larger steps carry layout rhythm.
+    --space-1: 0.25rem; // 4
+    --space-2: 0.5rem; // 8
+    --space-3: 0.75rem; // 12
+    --space-4: 1rem; // 16
+    --space-5: 1.5rem; // 24
+    --space-6: 2rem; // 32
+    --space-7: 3rem; // 48
+    --space-8: 4rem; // 64
+    --space-9: 5rem; // 80
+    --space-10: 8rem; // 128
+
+    // Fluid vertical rhythm between major page sections.
+    --section-gap: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+
     // BORDERS
     --border-radius: 0.5rem;
     --border-radius-xs: 0.25rem;

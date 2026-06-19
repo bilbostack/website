@@ -4,8 +4,8 @@
 
     &.pin-wrapper {
         h2 {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding-top: var(--space-6);
+            padding-bottom: var(--space-6);
             background-color: var(--color-light);
             position: relative;
             z-index: 9;
@@ -18,15 +18,15 @@
 
         &.sponsors-xxl {
             font-size: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: var(--space-7);
         }
     }
 
     .list {
         display: flex;
-        gap: 2rem 3rem;
+        gap: var(--space-6) var(--space-7);
         flex-wrap: wrap;
-        margin-bottom: 5rem;
+        margin-bottom: var(--space-9);
 
         .item {
             img {
@@ -62,6 +62,10 @@
 
         @media screen and (max-width: $breakpoint-sm) {
             .item {
+                // One logo per row on phones, scaled to fit.
+                width: 100%;
+                height: auto;
+
                 &.sponsors-xxl img,
                 &.sponsors-xl img,
                 &.sponsors-l img,
@@ -76,11 +80,11 @@
 }
 
 #cta-sponsors {
-    margin-top: 8rem;
+    margin-top: var(--space-10);
 
     .content {
         display: flex;
-        gap: 2rem;
+        gap: var(--space-6);
         padding: 0;
         background-color: var(--current-color-400);
 
@@ -97,10 +101,10 @@
         }
 
         .cta-text {
-            padding: 3rem 2rem 2rem;
+            padding: var(--space-7) var(--space-6) var(--space-6);
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: var(--space-6);
 
             h2 {
                 color: var(--color-light);
@@ -108,7 +112,7 @@
             }
 
             p {
-                font-size: 1.25rem;
+                font-size: var(--font-size-lead);
                 color: var(--color-light);
                 margin: 0;
             }

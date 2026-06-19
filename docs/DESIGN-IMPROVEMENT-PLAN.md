@@ -166,7 +166,14 @@ DESIGN.md accent drift resolved to `aqua`.
    - Decide the canonical 2027 accent and make `DESIGN.md` and `_variables.scss`
      agree (and note this is per-edition in `DESIGN.md`).
 
-### P1 — Design-system foundation (unblocks everything else)
+### P1 — Design-system foundation (unblocks everything else) — ✅ done (2026-06-19)
+
+Implemented: a `--space-1…--space-10` spacing scale + fluid `--section-gap`, a fluid
+heading scale (`--font-size-h*` with `clamp()`) that fixes the `h1 < h2` inversion and
+adds `text-wrap: balance`, a `--font-size-lead` token for intro copy, the hardcoded
+margins/paddings in `_layout`/`_footer`/`_cards`/`_sponsors`/`_speakers` replaced with
+tokens, and SCSS cleanup (the one real `fix.scss` rule folded into `_sponsors`, `fix.scss`
+emptied, `laprevia/style.scss` documented as orphaned in `ARCHITECTURE.md`).
 
 7. **Introduce a spacing scale.** _(M)_
    - Add tokens (e.g. `--space-1…--space-12` on a 4/8px base, plus a
