@@ -223,7 +223,7 @@ Extended. Entry point `assets/scss/style.scss` imports, in order:
   (`visually-hidden`, `focus-ring`), `_typography` (heading voices + the `.mono` utility)
 - `base/` — `_fonts` (self-hosted `@font-face` for Space Grotesk + JetBrains Mono),
   `_base` (visually-hidden utility, default focus ring, reduced-motion block),
-  `_atmosphere` (dot-grid texture `.bs-texture-dots` + layered-squares motif `.bs-stack`),
+  `_atmosphere` (dot-grid texture `.bs-texture-dots`),
   `_images`, `_responsive`
 - `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`
 - `layout/` — `_header`, `_footer`, `_layout`

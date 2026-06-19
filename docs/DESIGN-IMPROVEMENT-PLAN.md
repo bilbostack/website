@@ -200,12 +200,14 @@ Implemented: a self-hosted display + mono voice — **Space Grotesk** for `h1`/`
 `<Tech Conference/>` motif), both as variable woff2 in `static/fonts/` with
 `font-display: swap` + preload (Plus Jakarta Sans stays the body voice). Atmosphere via
 a new `base/_atmosphere.scss`: a theme-aware dot-grid texture (`.bs-texture-dots`, behind
-the hero + speakers) and a layered-squares motif (`.bs-stack`) echoing the logo's
-`capa1–4` layers (the accent color-blocks already lived in the program cards + sponsors
-CTA). Motion via `initRevealAnimations()` in `main.js`: reduced-motion-guarded staggered
-scroll-reveal of the speakers grid (through `--bs-reveal-y` so it composes with the
-grid-break) and the program cards, plus a static asymmetric grid-break that offsets
-alternate speaker cards (`--bs-grid-offset`).
+the hero + speakers) — the accent color-blocks already lived in the program cards +
+sponsors CTA. Motion via `initRevealAnimations()` in `main.js`: reduced-motion-guarded staggered
+scroll-reveal of the speakers grid (through `--bs-reveal-y`) and the program cards.
+
+> Note: the `.bs-stack` layered-squares motif and the asymmetric "brick" grid-break for
+> the speakers grid were implemented but **removed at the maintainer's request** — the
+> speakers grid stays a uniform grid, and the atmosphere is carried by the dot texture +
+> accent color-blocks. The staggered scroll-reveal is kept.
 
 10. **Add a distinctive display + mono voice.** _(M)_  → see [Open questions](#open-questions)
     - Pair a characterful geometric display face for `h2`/hero with a mono accent for

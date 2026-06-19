@@ -199,9 +199,8 @@ function initAnimations() {
 // from initAnimations, which returns early under prefers-reduced-motion). Cards start
 // hidden and rise into place as each row enters the viewport.
 function initRevealAnimations() {
-    // Speaker cards. The rise is driven through the --bs-reveal-y custom property so it
-    // composes with the static grid-break offset (--bs-grid-offset) in CSS instead of
-    // overwriting the card's transform.
+    // Speaker cards. The rise is driven through the --bs-reveal-y custom property (the
+    // card's `transform` reads it) rather than animating `transform` directly.
     const speakers = gsap.utils.toArray('#speakers .speaker');
     if (speakers.length) {
         gsap.set(speakers, { '--bs-reveal-y': '28px', opacity: 0 });
