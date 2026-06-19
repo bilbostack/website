@@ -86,7 +86,7 @@
     <div class="languages">
       {{ with .AllTranslations }}
       {{ range . }}
-      <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="current" {{ end }}>{{ .Language.LanguageName }}</a>
+      <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="current" {{ end }}>{{ .Language.Label }}</a>
       {{ end }}
       {{ end }}
     </div>
