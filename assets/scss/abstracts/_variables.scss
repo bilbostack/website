@@ -58,21 +58,68 @@
     --violet-700: #112636;
 
     //Current Color Edition
-    $current-color: "violet";
+    $current-color: "aqua";
     @for $i from 1 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
         --current-color-fixed-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
     }
 
+    // Accent semantics
+    // --accent      : decorative use only (squares, shapes, logo layers, shadows).
+    // --accent-ink  : accent used as TEXT or as a text-bearing fill. Uses the -500
+    //                 ramp shade so it keeps AA contrast against --color-primary-light
+    //                 in BOTH themes (the ramp is inverted under .dark-theme, and
+    //                 --color-primary-light flips with it, so the pair stays legible).
+    //                 Pair text-bearing fills with `color: var(--color-primary-light)`.
+    --accent: var(--current-color-400);
+    --accent-ink: var(--current-color-500);
+
     // FONT
+    // Three voices: body (Plus Jakarta Sans), display (Space Grotesk — geometric,
+    // for h1/h2/hero) and mono (JetBrains Mono — technical details: agenda times,
+    // years, edition number, stats, the <Tech Conference/> motif). The new faces are
+    // self-hosted (see base/_fonts). Body stays on its existing webfont.
     --font-family: "Plus Jakarta Sans", sans-serif;
+    --font-family-display: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+    --font-family-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Menlo",
+        monospace;
     --font-size-base: clamp(0.875rem, 0.8182rem + 0.1515vw, 1rem);
     --line-height-base: 1.4;
     --font-color: var(--color-primary-dark);
 
+    // Lead / intro body size (paragraphs that should read larger than base body copy).
+    --font-size-lead: 1.25rem;
+
+    // FLUID HEADING SCALE
+    // Single modular scale; each step scales smoothly between a mobile min and a
+    // desktop max so headings don't jump at breakpoints. See abstracts/_typography.
+    --font-size-h1: clamp(2.5rem, 1.8rem + 3.5vw, 4rem); // dominant display size
+    --font-size-h2: clamp(2rem, 1.5rem + 2.6vw, 3.4rem); // section display
+    --font-size-h3: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --font-size-h4: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1rem;
+
+    // SPACING SCALE
+    // Small steps on a 0.25rem (4px) base; larger steps carry layout rhythm.
+    --space-1: 0.25rem; // 4
+    --space-2: 0.5rem; // 8
+    --space-3: 0.75rem; // 12
+    --space-4: 1rem; // 16
+    --space-5: 1.5rem; // 24
+    --space-6: 2rem; // 32
+    --space-7: 3rem; // 48
+    --space-8: 4rem; // 64
+    --space-9: 5rem; // 80
+    --space-10: 8rem; // 128
+
+    // Fluid vertical rhythm between major page sections.
+    --section-gap: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+
     // BORDERS
     --border-radius: 0.5rem;
     --border-radius-xs: 0.25rem;
+    --border-radius-pill: 50px; // buttons + tags: fully-rounded pill
 
     // HEADER
     --header-height: 110px;
@@ -111,5 +158,5 @@ html.dark-theme {
     --color-primary-dark: var(--color-light);
     --color-primary-light: var(--color-dark);
 
-    @include generate-inverted-colors("violet");
+    @include generate-inverted-colors("aqua");
 }

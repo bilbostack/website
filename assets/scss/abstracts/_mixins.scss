@@ -1,0 +1,22 @@
+// Visually hide an element while keeping it available to screen readers and the
+// document outline. Use instead of `display:none` / `visibility:hidden` for headings
+// (e.g. the page-level h1) that must exist semantically but not appear on screen.
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Standard keyboard focus ring, theme-aware. Offset so it clears pill buttons and
+// their offset drop-shadow.
+@mixin focus-ring($offset: 2px) {
+    outline: 2px solid var(--font-color);
+    outline-offset: $offset;
+    border-radius: var(--border-radius-xs);
+}

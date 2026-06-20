@@ -1,8 +1,8 @@
-<a class="speaker" href="{{.Permalink}}">
+<a class="speaker" href="{{.RelPermalink}}">
     {{$imagePermalink := ""}}
     {{ with resources.Get .Params.image }}
     {{ with .Resize (printf "%dx webp q70 lanczos" .Width) }}
-    {{$imagePermalink = .Permalink}}
+    {{$imagePermalink = .RelPermalink}}
     {{end}}
     {{end}}
     <div class="image-wrapper">

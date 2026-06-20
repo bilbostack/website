@@ -62,37 +62,69 @@ Each hue is a token ramp; `-400` is the "main" shade. Tokens (verbatim from `_va
 The site-wide accent (headings `h3`, link hover, buttons, `.heading-square`) is **not** a fixed colour — it's `--current-color-400`, generated from the Sass variable `$current-color` in `_variables.scss`:
 
 ```scss
-$current-color: "violet"; // 2026 edition accent → generates --current-color-100..700
+$current-color: "aqua"; // 2027 edition accent → generates --current-color-100..700
 ```
+
+The current edition accent is **per-edition** — it changes each year (see the `edition`
+skill). Always read the live value from `_variables.scss`; don't assume a fixed hue.
 
 To re-theme a new edition, change `$current-color` to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the ramp via `generate-inverted-colors()`.
 
 Each past edition also carries its own `color` name in the `editions` array of `config/_default/hugo.toml` (`orange`, `blue`, `purple`, `violet`, `pink`, `aqua`, `red`, `dark-yellow`, `cyan`); the editions timeline applies it inline as `--color: var(--{color}-400)`.
 
-**Do:** use `--current-color-400` for edition accents/highlights; use ramp shades for depth; keep clear hierarchy.
-**Don't:** invent new brand colours; hardcode hex for theme-sensitive surfaces/text; use accent colours for long body text; low-contrast pairs.
+**Accent contrast tokens** (in `_variables.scss`): use the right one or you'll fail AA.
+
+- `--accent` (= `--current-color-400`): **decorative only** — the square bullet, shapes,
+  logo layers, drop-shadows. Never put text on it or use it *as* text.
+- `--accent-ink` (= `--current-color-500`): the accent **as text** or as a **text-bearing
+  fill** (buttons, tags, agenda headers, accent headings/links). It keeps AA contrast
+  against `--color-primary-light` in both themes; pair text-bearing fills with
+  `color: var(--color-primary-light)`.
+
+**Do:** use `--accent` for decoration and `--accent-ink` for anything carrying/being text;
+use ramp shades for depth; keep clear hierarchy.
+**Don't:** invent new brand colours; hardcode hex for theme-sensitive surfaces/text; use
+`--accent` (the bright -400) for text or text-bearing fills; low-contrast pairs.
 
 ## Typography
 
-**Plus Jakarta Sans** (`--font-family: "Plus Jakarta Sans", sans-serif`). Loaded weights, fluid base size:
+Three voices (tokens in `_variables.scss`):
+
+- **Body — Plus Jakarta Sans** (`--font-family`). The default for all running text.
+- **Display — Space Grotesk** (`--font-family-display`). Geometric/technical; applied to
+  `h1`/`.h1` and `h2`/`.h2` (hero + section headings) only.
+- **Mono — JetBrains Mono** (`--font-family-mono`). Reserved for genuinely *technical*
+  tokens — agenda times (`.time-slot`), edition years + per-edition stats, the footer
+  `<Tech Conference/>` motif, and the speaker day/time `.tag`s. Use the `.mono` utility
+  (it also enables tabular figures) for new cases; **never** for body copy.
+
+All three faces are **self-hosted** variable woff2 (latin + latin-ext; Plus Jakarta Sans
+also ships an italic) in `static/fonts/`, declared in `assets/scss/base/_fonts.scss` with
+`font-display: swap` and preloaded in `baseof.html` — no third-party font request. Fluid
+base size:
 
 ```css
 --font-size-base: clamp(0.875rem, 0.8182rem + 0.1515vw, 1rem);
 --line-height-base: 1.4;
 ```
 
-Heading scale (from `_typography.scss`):
+Heading scale — a single fluid modular scale (`--font-size-h*` in `_variables.scss`,
+applied in `_typography.scss`). Each step `clamp()`s between a mobile min and desktop max,
+so headings scale smoothly with no breakpoint jumps:
 
-| El | Size | Notes |
-|----|------|-------|
-| `h1` / `.h1` | `3rem` | |
-| `h2` / `.h2` | `3.4rem` | line-height 1.1; ↓ `2.5rem` @md, `2rem` @sm |
-| `h3` / `.h3` | `2rem` | weight 700, **coloured `--current-color-400`** |
-| `h4` / `.h4` | `1.5rem` | weight 500 |
+| El | Token (min → max) | Notes |
+|----|-------------------|-------|
+| `h1` / `.h1` | `2.5rem → 4rem` | **dominant display size**; Space Grotesk |
+| `h2` / `.h2` | `2rem → 3.4rem` | section display, line-height 1.1; Space Grotesk |
+| `h3` / `.h3` | `1.5rem → 2rem` | weight 700, **coloured `--accent-ink`** |
+| `h4` / `.h4` | `1.25rem → 1.5rem` | weight 500 |
 | `h5` / `.h5` | `1.25rem` | |
 | `h6` / `.h6` | `1rem` | |
 
-Note `h2` is intentionally larger than `h1` (h2 is the dominant section display size). `h3` is the coloured accent heading. Never replace logo typography with live text.
+`h1` is the dominant display size and `h2` the section size just below it (the earlier
+`h1 < h2` inversion was fixed in P1). `h1`/`h2` use the Space Grotesk display voice; `h3`
+is the coloured accent heading. Headings use `text-wrap: balance`. Never replace logo
+typography with live text.
 
 ## Components (real classes)
 
@@ -154,7 +186,9 @@ Always use official assets in `assets/img/` (`bilbostack-logo*.svg`, `logo-heade
 
 ## Agent checklist
 
-- [ ] Plus Jakarta Sans via `--font-family`.
+- [ ] Body in Plus Jakarta Sans (`--font-family`); `h1`/`h2`/hero in the display voice
+  (`--font-family-display`); mono (`--font-family-mono` / `.mono`) only on technical
+  tokens (times, years, stats, `<Tech Conference/>`), never body copy.
 - [ ] Colours from the official tokens; no new/random hex; no hardcoded theme-sensitive colours.
 - [ ] Accents via `--current-color-400`; both light and dark themes verified.
 - [ ] Logo from official asset; not recoloured/distorted/cropped/shadowed.

@@ -2,22 +2,25 @@
     .speakers-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        row-gap: 3rem;
+        gap: var(--space-4);
+        row-gap: var(--space-7);
     }
 
     .speaker {
         color: var(--font-color);
         text-decoration: none;
+        // --bs-reveal-y is the JS scroll-reveal rise (animated by GSAP, 0 at rest). It
+        // defaults to 0, so with no JS / reduced motion the card sits in place.
+        transform: translateY(var(--bs-reveal-y, 0));
 
         h4 {
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
             font-size: 1.5rem;
         }
 
         .card-text {
-            margin: 0 0 0.5rem;
+            margin: 0 0 var(--space-2);
             font-size: 1rem;
             font-weight: 600;
         }
@@ -63,7 +66,7 @@
         .speaker {
             h4 {
                 font-size: 2rem;
-                margin-bottom: 1rem;
+                margin-bottom: var(--space-4);
             }
         }
     }
@@ -71,8 +74,8 @@
     @media screen and (min-width: $breakpoint-lg) {
         .speakers-list {
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            row-gap: 4rem;
+            gap: var(--space-6);
+            row-gap: var(--space-8);
         }
     }
 
@@ -95,13 +98,18 @@
     margin-top: 0.5rem;
 
     .tag {
-        background-color: var(--current-color-500);
-        color: var(--color-light);
+        background-color: var(--accent-ink);
+        color: var(--color-primary-light);
+        font-family: var(--font-family-mono); // technical: day / time labels
+        font-feature-settings: "tnum" 1;
+        letter-spacing: -0.02em;
         padding: 0.3rem 1rem;
+        border-radius: var(--border-radius-pill); // full pill (see DESIGN.md)
         font-weight: 700;
 
         &-day {
-            background-color: var(--current-color-400);
+            // Darker shade so primary-light text passes AA at small/bold size in both themes.
+            background-color: var(--current-color-600);
         }
 
         @media screen and (max-width: $breakpoint-sm) {
@@ -114,9 +122,9 @@
     .speaker-wrapper {
         display: flex;
         flex-direction: row;
-        gap: 5rem;
-        margin-bottom: 5rem;
-        padding: 0 5rem;
+        gap: var(--space-9);
+        margin-bottom: var(--space-9);
+        padding: 0 var(--space-9);
 
         .speaker-left {
             max-width: 35%;
@@ -124,6 +132,9 @@
 
             img {
                 max-width: 100%;
+                // The <img> carries width/height attributes; without this the height
+                // attribute stays fixed while the width shrinks, squishing the photo.
+                height: auto;
             }
         }
 
@@ -135,53 +146,53 @@
             background-color: var(--color-primary-light);
             z-index: 1;
             position: relative;
-            padding-top: 2rem;
-            padding-bottom: 0.5rem;
+            padding-top: var(--space-6);
+            padding-bottom: var(--space-2);
         }
 
         h1 {
             margin-top: 0;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
             line-height: 1;
-            color: var(--current-color-400);
+            color: var(--accent-ink);
             font-size: 6rem;
         }
 
         .position {
-            color: var(--current-color-400);
+            color: var(--accent-ink);
             font-weight: 700;
             font-size: 1.5rem;
             // margin-bottom: 1rem;
         }
 
         .social-media {
-            margin-bottom: 2rem;
+            margin-bottom: var(--space-6);
         }
 
         .bio {
-            font-size: 1.25rem;
-            margin-bottom: 4rem;
+            font-size: var(--font-size-lead);
+            margin-bottom: var(--space-8);
         }
 
         .talk {
             h2 {
                 font-size: 2rem;
-                margin-bottom: 1rem;
+                margin-bottom: var(--space-4);
             }
 
             .tags {
-                margin-bottom: 2rem;
+                margin-bottom: var(--space-6);
             }
 
             .talk-title {
                 font-size: 2rem;
-                margin-bottom: 2rem;
-                color: var(--current-color-400);
+                margin-bottom: var(--space-6);
+                color: var(--accent-ink);
                 font-weight: 600;
             }
 
             .talk-description {
-                font-size: 1.25rem;
+                font-size: var(--font-size-lead);
             }
         }
 
@@ -192,14 +203,14 @@
             .speaker-left {
                 max-width: 100%;
                 width: calc(100% - 10rem);
-                padding: 0 5rem;
+                padding: 0 var(--space-9);
             }
         }
     }
 
     .image-wrapper {
         position: relative;
-        margin-top: 2rem;
+        margin-top: var(--space-6);
 
         img {
             z-index: 3;

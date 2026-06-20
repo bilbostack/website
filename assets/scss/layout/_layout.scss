@@ -4,11 +4,11 @@ html {
 }
 
 .main-content {
-    padding: var(--header-height) 0 2rem;
+    padding: var(--header-height) 0 var(--space-6);
     background-color: var(--color-primary-light);
 
     > section {
-        margin-bottom: 4rem;
+        margin-bottom: var(--section-gap);
     }
 }
 
@@ -18,8 +18,8 @@ html {
 
 .row {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 5rem;
+    gap: var(--space-6);
+    margin-bottom: var(--space-9);
     flex-wrap: wrap;
     align-items: flex-start;
 
@@ -30,18 +30,18 @@ html {
 }
 
 .block-heading {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
     background-color: var(--color-primary-light);
     position: relative;
     z-index: 9;
     margin-bottom: 0;
 
     h2 {
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--space-2);
     }
     h3 {
-        margin-top: 0.5rem;
+        margin-top: var(--space-2);
         margin-bottom: 0;
     }
 }

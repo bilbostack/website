@@ -1,0 +1,22 @@
+// Accessibility utility — see @mixin visually-hidden in abstracts/_mixins.
+.visually-hidden {
+    @include visually-hidden;
+}
+
+// Default keyboard focus ring for any interactive element that doesn't define its own.
+:focus-visible {
+    @include focus-ring;
+}
+
+// Respect users who ask for less motion: drop the scroll-driven choreography (handled
+// in JS) and neutralize transitions/animations/hover transforms site-wide.
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

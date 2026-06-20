@@ -1,7 +1,7 @@
 footer {
     background-color: var(--color-dark);
     color: var(--color-light);
-    padding-top: 1rem;
+    padding-top: var(--space-4);
 }
 
 #organizadores {
@@ -9,16 +9,16 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 1rem;
+        gap: var(--space-4);
 
         .org {
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
-            gap: 1rem;
+            gap: var(--space-4);
 
             background: var(--current-color-fixed-500);
-            padding: 1rem 1.5rem 1rem 1rem;
+            padding: var(--space-4) var(--space-5) var(--space-4) var(--space-4);
             border-radius: var(--border-radius);
 
             color: var(--color-light);
@@ -39,7 +39,7 @@ footer {
         }
 
         @media screen and (max-width: $breakpoint-md) {
-            gap: 1rem;
+            gap: var(--space-4);
 
             .org {
                 flex: 1 1 100%;
@@ -53,14 +53,14 @@ footer {
 }
 
 #footer-menu {
-    margin-bottom: 5rem;
+    margin-bottom: var(--space-9);
 
     .horizontal-menu {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
-        gap: 2rem;
+        gap: var(--space-6);
         justify-content: flex-start;
 
         li {
@@ -76,22 +76,22 @@ footer {
         }
     }
     @media screen and (max-width: $breakpoint-sm) {
-        margin-bottom: 4rem;
+        margin-bottom: var(--space-8);
 
         .horizontal-menu {
             flex-direction: column;
-            gap: 1.5rem;
+            gap: var(--space-5);
         }
     }
 }
 
 #editions {
-    margin-bottom: 5rem;
+    margin-bottom: var(--space-9);
 
     .editions {
         color: var(--color-light);
         display: flex;
-        gap: 1rem;
+        gap: var(--space-4);
         align-items: center;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -99,6 +99,7 @@ footer {
         a,
         span {
             color: var(--color-light);
+            font-family: var(--font-family-mono); // years read as technical tokens
             font-weight: 600;
             font-size: 1.5rem;
 
@@ -108,7 +109,7 @@ footer {
             }
 
             &.current {
-                background-color: var(--current-color-fixed-400);
+                background-color: var(--current-color-fixed-500);
                 text-decoration: none;
                 cursor: default;
                 padding: 0.2rem 0.5rem;
@@ -120,8 +121,8 @@ footer {
 
 #contact {
     display: flex;
-    gap: 1.5rem 5rem;
-    margin-bottom: 4rem;
+    gap: var(--space-5) var(--space-9);
+    margin-bottom: var(--space-8);
     flex-wrap: wrap;
 
     a {
@@ -149,11 +150,14 @@ footer {
 }
 
 .tech {
+    font-family: var(--font-family-mono); // the <Tech Conference/> code motif
+    letter-spacing: -0.03em;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-6);
 
     i {
         color: var(--current-color-fixed-400);
+        font-style: normal; // mono angle brackets read better upright
     }
 }

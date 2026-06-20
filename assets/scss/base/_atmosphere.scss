@@ -1,0 +1,51 @@
+// ===================================
+// ATMOSPHERE & DEPTH (design plan item 11)
+// ===================================
+// Restrained background texture + geometric motifs so the page reads
+// "colourful / geometric / technical" even on a screenshot, without fighting the
+// content. Everything here is decorative (pointer-events: none, sits behind content)
+// and theme-aware via tokens. Accent color-blocks already live in the program cards
+// and the sponsors CTA; this file adds the missing *pattern* and *geometric shapes*.
+
+:root {
+    // Faint dot colour — derived from the (theme-flipping) foreground so it reads as a
+    // dark grid on light and a light grid on dark. color-mix keeps it translucent.
+    --bs-dot-color: color-mix(in srgb, var(--font-color) 7%, transparent);
+    --bs-dot-size: 24px;
+}
+
+// Subtle dot-grid texture, painted behind a section's content. Add the class to a
+// positioned section; the ::before fills it and fades out top/bottom so it never
+// hard-edges against neighbouring sections.
+.bs-texture-dots {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image: radial-gradient(
+            circle,
+            var(--bs-dot-color) 1.5px,
+            transparent 1.5px
+        );
+        background-size: var(--bs-dot-size) var(--bs-dot-size);
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent,
+            #000 12%,
+            #000 88%,
+            transparent
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent,
+            #000 12%,
+            #000 88%,
+            transparent
+        );
+    }
+}

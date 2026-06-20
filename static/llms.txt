@@ -1,0 +1,41 @@
+# Bilbostack
+
+> Bilbostack is Bilbao's annual technology conference, held since 2012. The 2027 edition
+> takes place on 30 January 2027 at the Palacio Euskalduna in Bilbao (Bizkaia, Spain).
+> Single-track and parallel talks on software development, design and tech culture, run by
+> and for the community. Tagline: "Come for the talks. Return for the experience."
+
+The site is trilingual: Spanish (default, served at the root), English (`/en/`) and Basque
+(`/eu/`). Replace the path prefix to switch language (e.g. `/agenda/` → `/en/agenda/`).
+Event hashtag: #Bilbostack27. Contact: info@bilbostack.com.
+
+## Main pages
+
+- [Home](https://bilbostack.com/): Event overview, edition date and venue, organizers and sponsors.
+- [Agenda](https://bilbostack.com/agenda/): Schedule, talks and speakers for the current edition.
+- [Attendee information](https://bilbostack.com/info/): How to get there, code of conduct and discounts.
+- [Past editions](https://bilbostack.com/past-editions/): The history of Bilbostack and its wall of fame.
+
+## Languages
+
+- [English site](https://bilbostack.com/en/): Full site in English.
+- [Basque site (Euskara)](https://bilbostack.com/eu/): Full site in Basque.
+
+## Organizers
+
+- [Vicenç García-Altés](https://x.com/vgaltes)
+- [Ibon Landa](https://x.com/ibonilm)
+- [Asier Marqués](https://bsky.app/profile/asiermarques.com)
+- [Fran Mosteiro](https://x.com/fran_mosteiro)
+
+## Community & social
+
+- [Telegram](https://t.me/bilbostack): Community chat and announcements.
+- [Bluesky](https://bsky.app/profile/bilbostack.com): News and updates.
+- [X / Twitter](https://x.com/bilbostack): News and updates.
+- [GitHub](https://github.com/bilbostack): Open-source projects, including this website.
+
+## Optional
+
+- [robots.txt](https://bilbostack.com/robots.txt): Crawl directives.
+- [sitemap.xml](https://bilbostack.com/sitemap.xml): Full list of pages across all languages.

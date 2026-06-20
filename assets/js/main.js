@@ -1,22 +1,29 @@
 let smoother;
 
+// Users who request reduced motion get native scrolling and no scroll-driven
+// choreography (smoother, pins, logo timeline). Functional behaviour (menu, tabs,
+// theme) still runs. See the matching SCSS block in base/_base.scss.
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin)
 
     /// ScrollSmoother
-    smoother = ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.5,
-        effects: true,
-        normalizeScroll: true,
-        smoothTouch: 0.1,
-        ignoreMobileResize: true,
-        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-        onUpdate: (self) => {
-            ScrollTrigger.update();
-        }
-    });
+    if (!prefersReducedMotion) {
+        smoother = ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 1.5,
+            effects: true,
+            normalizeScroll: true,
+            smoothTouch: 0.1,
+            ignoreMobileResize: true,
+            autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+            onUpdate: (self) => {
+                ScrollTrigger.update();
+            }
+        });
+    }
 
     // Scrollsmoother - hacer scroll en los anchor links
     const links = document.querySelectorAll('a[href^="#"]');
@@ -27,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const id = e.target.getAttribute("href"),
                 trigger = ScrollTrigger.getById(id);
             gsap.to(window, {
-                duration: .4,
+                duration: prefersReducedMotion ? 0 : .4,
                 scrollTo: trigger ? trigger.start : id
             });
         });
@@ -41,7 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         // Esperar a que todo esté cargado antes de hacer scroll
         gsap.delayedCall(0.5, () => {
             gsap.to(window, {
-                duration: .6,
+                duration: prefersReducedMotion ? 0 : .6,
                 scrollTo: trigger ? trigger.start : hash
             });
         });
@@ -174,13 +181,58 @@ function initMenu() {
 }
 
 function initAnimations() {
+    // Tabs are functional UI, not motion — always wire them up.
+    initAgendaTabs();
+
+    if (prefersReducedMotion) return;
+
     initLogoAnimation();
     // initStickyCards();
     initHomeAnimation();
     initSpeakerAnimation();
     initInfoAnimation();
-    initAgendaTabs();
     initAgendaAnimation();
+    initRevealAnimations();
+}
+
+// Staggered scroll-reveal for content grids. Only runs when motion is allowed (called
+// from initAnimations, which returns early under prefers-reduced-motion). Cards start
+// hidden and rise into place as each row enters the viewport.
+function initRevealAnimations() {
+    // Speaker cards. The rise is driven through the --bs-reveal-y custom property (the
+    // card's `transform` reads it) rather than animating `transform` directly.
+    const speakers = gsap.utils.toArray('#speakers .speaker');
+    if (speakers.length) {
+        gsap.set(speakers, { '--bs-reveal-y': '28px', opacity: 0 });
+        ScrollTrigger.batch(speakers, {
+            start: 'top 88%',
+            onEnter: batch => gsap.to(batch, {
+                '--bs-reveal-y': '0px',
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.07,
+                ease: 'power2.out',
+                overwrite: true,
+            }),
+        });
+    }
+
+    // Program cards. No grid offset here, so a plain transform rise is fine.
+    const cards = gsap.utils.toArray('#programa .card-programa');
+    if (cards.length) {
+        gsap.set(cards, { y: 36, opacity: 0 });
+        ScrollTrigger.batch(cards, {
+            start: 'top 85%',
+            onEnter: batch => gsap.to(batch, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.12,
+                ease: 'power2.out',
+                overwrite: true,
+            }),
+        });
+    }
 }
 
 function initHomeAnimation() {

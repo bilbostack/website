@@ -10,19 +10,19 @@
 .cards-programa {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--space-4);
     position: relative;
 
     .card-programa {
         position: relative;
         background-color: var(--current-color-100);
         border-radius: var(--border-radius);
-        padding: 2rem 1rem 1rem;
+        padding: var(--space-6) var(--space-4) var(--space-4);
         flex: 0.35;
 
         h3 {
             color: var(--font-color);
-            margin: 0 0 2rem 0;
+            margin: 0 0 var(--space-6) 0;
             font-size: 4.4rem;
 
             .small {
@@ -32,8 +32,8 @@
         }
 
         h4 {
-            color: var(--current-color-400);
-            margin: 0 0 1rem 0;
+            color: var(--accent-ink);
+            margin: 0 0 var(--space-4) 0;
             font-size: 1.5rem;
             font-weight: 600;
         }
@@ -49,7 +49,7 @@
         }
 
         p {
-            font-size: 1.25rem;
+            font-size: var(--font-size-lead);
             line-height: 1.4;
         }
 
@@ -66,9 +66,9 @@
         .card-content {
             flex: auto;
             display: flex;
-            gap: 3rem;
+            gap: var(--space-7);
             box-sizing: border-box;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
 
             img {
                 width: 100%;
@@ -79,11 +79,15 @@
             }
 
             .card-content-left {
-                padding-left: 1rem;
+                padding-left: var(--space-4);
+                // Column flex so the actions can be pushed to the bottom (margin-top:auto),
+                // keeping the CTAs aligned across cards regardless of text length.
+                display: flex;
+                flex-direction: column;
             }
 
             .card-content-right {
-                font-size: 1.25rem;
+                font-size: var(--font-size-lead);
                 aspect-ratio: 3 / 4;
                 width: 40%;
                 min-width: 40%;
@@ -92,7 +96,7 @@
                 h3 {
                     font-size: 4rem;
                     margin-top: 0;
-                    margin-bottom: 1rem;
+                    margin-bottom: var(--space-4);
                 }
 
                 @media screen and (max-width: $breakpoint-md) {
@@ -101,12 +105,13 @@
             }
 
             .card-actions {
-                margin-top: 3rem;
-                margin-bottom: 2rem;
+                margin-top: auto; // push CTAs to the bottom so they line up across cards
+                padding-top: var(--space-7); // keep a minimum gap when text is long
+                margin-bottom: var(--space-6);
                 z-index: 0;
                 position: relative;
                 display: flex;
-                gap: 1rem;
+                gap: var(--space-4);
             }
         }
     }
@@ -122,6 +127,34 @@
 
         h4 {
             color: var(--current-color-300);
+        }
+
+        // This card's background is --current-color-500 (= --accent-ink), so the default
+        // primary button would blend in. Invert the primary CTA to a solid light fill so
+        // it pops, and demote the secondary to a quiet outline to keep the hierarchy.
+        .btn {
+            background-color: var(--color-primary-light);
+            color: var(--accent-ink);
+            border-color: var(--color-primary-light);
+
+            &:hover {
+                color: var(--accent-ink);
+            }
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--color-primary-light);
+            color: var(--color-primary-light);
+
+            &:before {
+                background-color: transparent;
+            }
+
+            &:hover {
+                background-color: var(--color-primary-light);
+                color: var(--accent-ink);
+            }
         }
 
         .card-footer {
@@ -150,7 +183,7 @@
     }
 
     .card-footer {
-        padding: 1rem;
+        padding: var(--space-4);
         background: var(--current-color-200);
         border-radius: var(--border-radius);
 
@@ -172,9 +205,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 0.3rem;
-                margin-left: 1rem;
+                margin-left: var(--space-4);
                 line-height: 1.2;
-                font-size: 1.25rem;
+                font-size: var(--font-size-lead);
                 font-weight: bold;
                 color: var(--current-color-600);
             }
@@ -199,7 +232,7 @@
         flex-direction: column;
 
         .card-programa {
-            padding: 1rem;
+            padding: var(--space-4);
 
             .card-content .card-content-left,
             .card-content .card-content-right {
@@ -212,7 +245,7 @@
 .card {
     .card-wrapper {
         background-color: var(--current-color-100);
-        padding: 2rem;
+        padding: var(--space-6);
         border-radius: var(--border-radius);
     }
 
@@ -222,12 +255,12 @@
     }
 
     h3 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-top: var(--space-4);
+        margin-bottom: var(--space-4);
     }
 
     h3 + p {
-        margin-top: 1rem;
+        margin-top: var(--space-4);
     }
 
     img,
@@ -238,7 +271,7 @@
 
     @media screen and (max-width: $breakpoint-sm) {
         .card-wrapper {
-            padding: 1rem;
+            padding: var(--space-4);
         }
     }
 }

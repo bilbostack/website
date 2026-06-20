@@ -2,7 +2,7 @@
   <div class="navbar">
     <!-- Left Block: Logo and Text -->
     <div class="navbar-left">
-      <a href="{{ .Site.BaseURL }}" class="logo-link">
+      <a href="{{ .Site.Home.RelPermalink }}" class="logo-link">
         {{ with resources.Get "img/bilbostack-logo-square.svg" }}
         {{ .Content | safeHTML }}
         {{ end }}
@@ -20,7 +20,7 @@
       {{end}}
       <!-- Theme Toggle Switch -->
       <label class="theme-switch" for="theme-toggle-checkbox">
-        <input type="checkbox" id="theme-toggle-checkbox">
+        <input type="checkbox" id="theme-toggle-checkbox" aria-label="{{ T "theme_toggle" }}">
         <div class="slider"></div>
       </label>
 
@@ -52,7 +52,7 @@
 <div id="mobile-menu" class="sidenav">
   <div class="sidenav-top">
     <a id="close-btn" class="close-btn">&times;</a>
-    <a href="{{ .Site.BaseURL }}" class="logo-link">
+    <a href="{{ .Site.Home.RelPermalink }}" class="logo-link">
       {{ with resources.Get "img/bilbostack-logo-square.svg" }}
       {{ .Content | safeHTML }}
       {{ end }}
@@ -86,7 +86,7 @@
     <div class="languages">
       {{ with .AllTranslations }}
       {{ range . }}
-      <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="current" {{ end }}>{{ .Language.LanguageName }}</a>
+      <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="current" {{ end }}>{{ .Language.Label }}</a>
       {{ end }}
       {{ end }}
     </div>

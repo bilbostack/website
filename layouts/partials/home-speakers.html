@@ -1,4 +1,6 @@
-<section id="speakers" class="pin-wrapper">
+{{ $speakers := where .Site.Pages "Type" "speaker" }}
+{{ with $speakers }}
+<section id="speakers" class="pin-wrapper bs-texture-dots">
     <div class="content">
         <div class="block-heading pin-element">
             <h2>{{T "speakers_title"}}</h2>
@@ -6,9 +8,10 @@
         </div>
 
         <div class="speakers-list">
-            {{ range where .Site.Pages "Type" "speaker" }}
+            {{ range . }}
             {{ partial "speaker-grid-card.html" .}}
             {{end}}
         </div>
     </div>
 </section>
+{{ end }}

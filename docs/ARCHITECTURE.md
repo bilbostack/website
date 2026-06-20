@@ -1,14 +1,17 @@
-# Architecture — Bilbostack 2026 Website
+# Architecture — Bilbostack Website
 
-This document describes the structure of the Bilbostack 2026 website for both humans
+This document describes the structure of the Bilbostack website for both humans
 and AI agents working on the codebase. It explains how the Hugo project is organized,
-the data model, and where to change things.
+the data model, and where to change things. The codebase is **reused each year** — the
+current edition is **2027** (accent `aqua`). See [`DESIGN.md`](./DESIGN.md) for the design
+system and tokens, and [`design-plan.md`](./design-plan.md) for the standing design backlog.
 
 ## Overview
 
-- **Generator:** [Hugo](https://gohugo.io/) static site generator (Hugo **Extended**, version `0.148.2` — pinned in `netlify.toml`). The Extended build is required because SCSS is compiled with `toCSS`.
+- **Generator:** [Hugo](https://gohugo.io/) static site generator (Hugo **Extended**, version `0.161.0` — pinned in `netlify.toml`). The Extended build is required because SCSS is compiled with `toCSS`.
 - **Hosting:** [Netlify](https://www.netlify.com/). Build command `hugo --minify`, publish directory `public/`. Deploy is automatic on push.
 - **Languages:** Multilingual site — Spanish (`es`, default), English (`en`), Basque (`eu`). The default language is served at the root (no `/es/` prefix).
+- **URLs:** `relativeURLs = true` (links are emitted relative, so the build works from any host/path). `enableRobotsTXT = true` generates `robots.txt`.
 - **Local dev:** `hugo server` from the project root (install Hugo first).
 
 ## Directory layout
@@ -25,7 +28,6 @@ the data model, and where to change things.
 │   ├── agenda.<lang>.md    # Agenda/schedule (data-driven, see below)
 │   ├── info.<lang>.md      # Attendee info
 │   ├── past-editions.<lang>.md
-│   ├── wall-of-fame.<lang>.md
 │   └── speakers/           # One file per speaker per language: <slug>.<lang>.md
 ├── layouts/                # Hugo templates
 │   ├── _default/           # baseof, single, page, section, taxonomy, speaker-detail
@@ -34,7 +36,6 @@ the data model, and where to change things.
 │   ├── agenda/single.html  # Agenda page template
 │   ├── info/single.html
 │   ├── past-editions/single.html
-│   ├── wall-of-fame/single.html
 │   └── index.html          # Home page template
 ├── i18n/                   # Translation strings (TOML), grouped by area
 │   ├── <lang>.toml         # Global strings
@@ -59,7 +60,9 @@ the data model, and where to change things.
 Content files use Hugo's filename-based language convention: `name.<lang>.md`
 (e.g. `agenda.es.md`, `agenda.en.md`, `agenda.eu.md`). Every content page should
 exist in all three languages. Languages are declared in `config/_default/hugo.toml`
-under `[languages]` (`es` weight 1, `en` weight 2, `eu` weight 3).
+under `[languages]` (`es` weight 1, `en` weight 2, `eu` weight 3). (A couple of pages —
+`info` and `past-editions` — currently ship `es` only; add the `en`/`eu` translations when
+that content is finalized.)
 
 - `defaultContentLanguage = 'es'`
 - `defaultContentLanguageInSubdir = false` — Spanish is served at `/`, others at `/en/`, `/eu/`.
@@ -75,7 +78,9 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 
 | Param | Purpose |
 |-------|---------|
-| `hashtag` | Event hashtag (`#Bilbostack26`) |
+| `hashtag` | Event hashtag (`#Bilbostack27`) |
+| `eventStartDate`, `eventEndDate` | ISO 8601 event datetimes — feed the JSON-LD `Event` schema (`site-schema.html`) |
+| `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Eventbrite URL |
 | `youtubeEmbedURL` | Promo video embed |
@@ -101,13 +106,23 @@ attribute support. Inline shortcodes are enabled under `[security]`.
 `layouts/_default/baseof.html` is the base shell for every page. It defines blocks
 `header`, `main`, and `footer`:
 
-- `<head>`: Google Fonts (Plus Jakarta Sans), then partials `site-favicon`, `site-style`, `site-meta`.
+- `<head>`: a `cdn.jsdelivr.net` preconnect, self-hosted font preloads (the three latin subsets that paint above the fold; see `base/_fonts.scss`), then partials `site-favicon`, `site-style`, `site-meta`, `site-schema`.
 - `header` block → defaults to `site-header.html` partial.
 - `main` block → filled by each page's layout.
 - `footer` block → `site-footer.html` (rendered with `partialCached`).
 - Scripts: GSAP + ScrollSmoother/ScrollTrigger/ScrollToPlugin from CDN, then compiled `js/main.js`.
 
 Page content is wrapped in `#smooth-wrapper > #smooth-content` for GSAP ScrollSmoother.
+
+### SEO & structured data
+
+- `site-meta.html` emits the per-page `<title>`, meta description, canonical and social
+  (OpenGraph/Twitter) tags.
+- `site-schema.html` emits JSON-LD: an `Organization` block site-wide, plus an `Event`
+  block **only on the home page**. The `Event` is assembled from the `eventStartDate` /
+  `eventEndDate` params and the `eventLocationName` / `eventLocationCity` /
+  `eventLocationRegion` params, the `current` edition's `year`, and — when `ticketsOpen` —
+  an `Offer` pointing at `ticketsLink`. Keep these params accurate at each rollover.
 
 ### Layout selection
 
@@ -120,7 +135,6 @@ Hugo picks the template by the front-matter `type`/`layout`:
 | Agenda | `type = 'agenda'` | `layouts/agenda/single.html` |
 | Info | `type = 'info'` | `layouts/info/single.html` |
 | Past editions | `type = 'past-editions'` | `layouts/past-editions/single.html` |
-| Wall of fame | `type = 'wall-of-fame'` | `layouts/wall-of-fame/single.html` |
 
 ### Home (`layouts/index.html`)
 
@@ -130,7 +144,7 @@ Composes the landing page from partials in order: `home-header`, `home-cta-spons
 
 ### Partials
 
-- **Site chrome:** `site-header`, `site-footer`, `site-meta`, `site-favicon`, `site-style`, `site-editions`, `site-sponsors`, `site-collaborators`.
+- **Site chrome:** `site-header`, `site-footer`, `site-meta`, `site-schema`, `site-favicon`, `site-style`, `site-editions`, `site-sponsors`, `site-collaborators`, `site-wall-of-fame`.
 - **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
 - **Speakers:** `speaker-grid-card`.
@@ -158,7 +172,7 @@ tagline = 'Founder Securiters'
 taglineLarge = 'Founder Securiters'
 day = 'Sábado 31'
 time = '12:00h'
-description = 'Marta Barrio Mora hablará en el #Bilbostack26'
+description = 'Marta Barrio Mora hablará en el #Bilbostack27'
 image = 'img/speakers/marta.jpeg'   # resolved via resources.Get (assets/img/speakers/)
 [params]
   links = [
@@ -202,9 +216,10 @@ pulled from i18n keys `track_1`, `track_2`. The whole page respects `agendaVisib
 
 ### Wall of fame & past editions
 
-`wall-of-fame.<lang>.md` is a hand-maintained Markdown list of every past speaker with
-their years. `past-editions.<lang>.md` is currently a `TBD` stub; edition stats come
-from the `editions` array in `hugo.toml`.
+The Wall of Fame is rendered from `data/walloffame.yaml` (single source of truth) via
+the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`.
+`past-editions.<lang>.md` is currently a `TBD` stub; edition stats come from the
+`editions` array in `hugo.toml`.
 
 ### Navigation menus
 
@@ -217,26 +232,64 @@ Agenda, Info, Past editions.
 Compiled by Hugo Pipes (`toCSS`) via the `site-style.html` partial — requires Hugo
 Extended. Entry point `assets/scss/style.scss` imports, in order:
 
-- `abstracts/` — `_variables`, `_mixins`, `_typography`
-- `base/` — `_base`, `_images`, `_responsive`
+- `abstracts/` — `_variables` (design tokens: colour ramps + accent semantics, the font
+  voices `--font-family` Plus Jakarta Sans / `--font-family-display` Space Grotesk /
+  `--font-family-mono` JetBrains Mono, the fluid heading scale `--font-size-h*`, the spacing
+  scale `--space-*` / `--section-gap`), `_mixins` (`visually-hidden`, `focus-ring`,
+  `generate-inverted-colors`), `_typography` (heading voices + the `.mono` utility)
+- `base/` — `_fonts` (self-hosted `@font-face` for Plus Jakarta Sans + Space Grotesk + JetBrains Mono),
+  `_base` (visually-hidden utility, default focus ring, reduced-motion block),
+  `_atmosphere` (dot-grid texture `.bs-texture-dots`),
+  `_images`, `_responsive`
 - `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`
 - `layout/` — `_header`, `_footer`, `_layout`
-- `fix` — last-resort overrides
+- `fix` — last-resort overrides (kept empty by default; fix the real partial instead)
 
-There is a separate `assets/scss/laprevia/style.scss` and a top-level `assets/scss/fix.scss`.
+**Spacing & type:** prefer the tokens — `--space-1…--space-10` and `--section-gap` for
+margins/padding/gaps, `--font-size-h*` for headings, `--font-size-lead` for intro/lead body
+copy — over hardcoded `rem` values, so rhythm stays consistent.
+
+**Colour & theming (light/dark):** each edition picks an accent via the `$current-color`
+SCSS var in `_variables.scss` (e.g. `"aqua"`), which maps the chosen colour ramp onto the
+`--current-color-*` (and `--current-color-fixed-*`) custom properties. Components use the
+semantic split: `--accent` (= `--current-color-400`, decorative only) and `--accent-ink`
+(= `--current-color-500`, accent used as text or text-bearing fill). The site ships a real
+**dark theme**: `html.dark-theme` re-runs the `generate-inverted-colors($color)` mixin to
+invert the ramp (`--current-color-N` ← ramp `(8−i)*100`), so the same `--accent` tokens stay
+legible in both themes. The theme is toggled at runtime via cookie (see JavaScript). When
+rolling editions, change `$current-color` — keep the dark-theme inversion driven by the same
+value rather than a second hardcoded hue. See `DESIGN.md` for the full token contract.
+
+`assets/scss/laprevia/style.scss` is a **standalone, orphaned** stylesheet (self-contained,
+no `@import`, not referenced by any template or the `style.scss` entry point) — a leftover
+from an old "la previa" page. It is **not** part of the current build; leave it alone unless
+reviving that page.
+
 Add new component styles as a partial under the matching folder and `@import` it from `style.scss`.
 
 ## JavaScript
 
-`assets/js/main.js` is served compiled/fingerprinted. It initializes GSAP
-ScrollSmoother on `#smooth-wrapper`/`#smooth-content`, wires smooth scrolling for
-in-page anchor links, and drives scroll-based effects. GSAP libraries themselves are
-loaded from a CDN in `baseof.html`.
+`assets/js/main.js` is served minified/fingerprinted (with a Subresource Integrity hash).
+It initializes GSAP ScrollSmoother on `#smooth-wrapper`/`#smooth-content`, wires smooth
+scrolling for in-page anchor links, the mobile menu, the agenda day tabs (`initAgendaTabs`),
+and drives scroll-based effects — including `initRevealAnimations()`, the staggered
+scroll-reveal of the speakers grid and program cards, plus the logo "stack" timeline and
+sticky program cards. All scroll-driven choreography (smoother, pins, logo timeline, reveals)
+is gated on `prefers-reduced-motion`. GSAP libraries themselves are loaded from a CDN in
+`baseof.html`.
+
+**Theme toggle:** `initThemeToggle()` reads/writes the `bilbostack-theme` cookie
+(`getThemeFromCookie` / `setThemeCookie`, defaulting to `prefers-color-scheme`) and calls
+`applyTheme()` to set `html.dark-theme` / `html.light-theme`, which drives the SCSS ramp
+inversion described above. (Note: the theme is applied from `main.js`, which is `defer`-loaded,
+so there is currently an initial light-theme paint for dark users — see `design-plan.md` §2.1.)
 
 ## Static assets & caching
 
 Files in `static/` are copied verbatim to the site root (favicons, the sponsor PDF
-under `static/docs/`, the venue image, raw icons). `static/_headers` sets a 7-day
+under `static/docs/`, the venue image, raw icons, the self-hosted fonts under
+`static/fonts/` — referenced by absolute path from `base/_fonts.scss` — and `static/llms.txt`,
+the [llmstxt.org](https://llmstxt.org) site summary served at `/llms.txt`). `static/_headers` sets a 7-day
 `Cache-Control` for image/video assets on Netlify. Note that processed images and
 SVGs referenced in templates live in `assets/img/` (run through Hugo Pipes), while
 raw favicons/manifest live in `static/img/`.
@@ -252,6 +305,8 @@ raw favicons/manifest live in `static/img/`.
 | Change a UI string | `i18n/<lang>.toml` or `i18n/<area>/<lang>.toml` |
 | Edit navigation | `config/_default/menus.<lang>.toml` |
 | Add an edition | `editions` array in `hugo.toml` |
+| Change the edition accent / roll a new edition | `$current-color` in `assets/scss/abstracts/_variables.scss` + the `current` edition flag in `hugo.toml` (use the `edition` skill) |
+| Update event date / venue (also feeds JSON-LD) | `eventStartDate` / `eventEndDate` / `eventLocation*` in `[params]` |
 | Change styles | SCSS partial under `assets/scss/*` + import in `style.scss` |
 | Update Hugo version | `netlify.toml` (`HUGO_VERSION`) |
 

@@ -20,13 +20,15 @@
                 {{ $year := .year | string }}
                 {{ $yearImage := printf "img/year-%s.svg" $year }}
                 {{ with resources.Get $yearImage }}
-                <span class="img-tag"><img src="{{ .Permalink }}" alt="{{T " past_editions_year" (dict "number" $year)}}"></span>
+                <span class="img-tag"><img src="{{ .RelPermalink }}" alt="{{T " past_editions_year" (dict "number" $year)}}"></span>
                 {{ end }}
 
             </a>
         </div>
         {{ end }}
     </div>
+
+    {{ partial "site-wall-of-fame.html" . }}
 </article>
 
 {{ partial "site-sponsors.html" .}}
