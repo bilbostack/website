@@ -1,0 +1,229 @@
+# Wall of Fame — single source of truth (language-independent).
+# Speakers in order of first appearance. Edit here; rendered in past-editions.
+speakers:
+  - name: "Aitor Alzola"
+    years: [2012]
+  - name: "Alfredo Fernandez"
+    years: [2012, 2014]
+  - name: "Ainhoa Iglesias"
+    years: [2012]
+  - name: "Javier Jimenez"
+    years: [2012]
+  - name: "Asier Marqués"
+    years: [2012, 2014, 2015]
+  - name: "Rodrigo Corral"
+    years: [2012, 2013, 2014]
+  - name: "Guillermo G. Almazor"
+    years: [2012, 2014]
+  - name: "Pablo Garaizar"
+    years: [2012, 2013, 2015, 2022]
+  - name: "Ibon Landa"
+    years: [2012, 2015]
+  - name: "Andoni Arroyo"
+    years: [2012]
+  - name: "Jorge Uriarte"
+    years: [2012, 2017, 2026]
+  - name: "Carlos Sanchez"
+    years: [2013]
+  - name: "Naiara Abaroa"
+    years: [2013, 2017, 2022]
+  - name: "Javier Eguiluz"
+    years: [2013]
+  - name: "Gerard López"
+    years: [2013]
+  - name: "Joseba Rodríguez"
+    years: [2013]
+  - name: "Mikel Trujillo"
+    years: [2013]
+  - name: "Jon E. Eguiluz"
+    years: [2013]
+  - name: "David Barahona"
+    years: [2013, 2014]
+  - name: "Carlos Hernández"
+    years: [2014, 2022]
+  - name: "Luis Artola"
+    years: [2014]
+  - name: "Ana Malagon"
+    years: [2014]
+  - name: "Goio Tellexea"
+    years: [2014]
+  - name: "Vicenç García Altés"
+    years: [2014, 2016]
+  - name: "Bea Martín"
+    years: [2014, 2018, 2020, 2022]
+  - name: "Jose Rubio"
+    years: [2014]
+  - name: "David Bonilla"
+    years: [2014]
+  - name: "Javi Santana"
+    years: [2015]
+  - name: "Quique Martínez"
+    years: [2015]
+  - name: "Ujue Agudo"
+    years: [2015, 2024]
+  - name: "Aritz Suescun"
+    years: [2015]
+  - name: "Eduard Tomás"
+    years: [2015]
+  - name: "Borja Reinares"
+    years: [2015]
+  - name: "Hugo Biarge"
+    years: [2015, 2016, 2017]
+  - name: "Oihana Alberdi"
+    years: [2015]
+  - name: "Jerórimo López"
+    years: [2016]
+  - name: "Teodora Bozheva"
+    years: [2016, 2022]
+  - name: "Alex Casquete"
+    years: [2016]
+  - name: "Carlos Fernández Llamas"
+    years: [2016]
+  - name: "Ibon Tolosana"
+    years: [2016]
+  - name: "Zuriñe Menendez"
+    years: [2016]
+  - name: "Diego Rodriguez"
+    years: [2016]
+  - name: "Josué Yeray"
+    years: [2017]
+  - name: "Carlos Iglesias"
+    years: [2017, 2026]
+  - name: "Catalina Oyaneder"
+    years: [2017, 2022]
+  - name: "Gorka Laucirica"
+    years: [2017]
+  - name: "Beñat Espiña"
+    years: [2017]
+  - name: "Isabel Cabezas"
+    years: [2017]
+  - name: "Juliet Moreiro"
+    years: [2017]
+  - name: "Amalia Hernández"
+    years: [2018]
+  - name: "Diana Aceves"
+    years: [2018]
+  - name: "Angélica Lozano"
+    years: [2018]
+  - name: "Carmen Ansio"
+    years: [2018]
+  - name: "Javier Ferrer"
+    years: [2018]
+  - name: "Rafa Gómez"
+    years: [2018]
+  - name: "Mario Marín"
+    years: [2018]
+  - name: "Franziska Sauerwein"
+    years: [2018]
+  - name: "Eduardo Ferro"
+    years: [2019, 2022]
+  - name: "Cristina Santamarina"
+    years: [2019]
+  - name: "Inés Huertas"
+    years: [2019]
+  - name: "Belén Albeza"
+    years: [2019]
+  - name: "Ricardo Borillo"
+    years: [2019]
+  - name: "Virginia Aguirre"
+    years: [2019]
+  - name: "Carlos Buenosvinos"
+    years: [2019]
+  - name: "Jose Armesto"
+    years: [2019]
+  - name: "Laura Morillo-Velarde Rodríguez"
+    years: [2020]
+  - name: "Luis Fraile Hernández"
+    years: [2020]
+  - name: "Eduardo Matallanas"
+    years: [2020]
+  - name: "Sergi González"
+    years: [2020]
+  - name: "Isabel Garrido"
+    years: [2020]
+  - name: "Ignacio Velázquez"
+    years: [2020]
+  - name: "Berta Devant"
+    years: [2020]
+  - name: "Joan León"
+    years: [2020]
+  - name: "Silvia Calvet"
+    years: [2020]
+  - name: "Edu Tomás"
+    years: [2022]
+  - name: "Glòria Langreo"
+    years: [2023]
+  - name: "Rosa Gutiérrez Escudero"
+    years: [2023]
+  - name: "Elena Torró"
+    years: [2023]
+  - name: "Gema Parreño Piqueras"
+    years: [2023]
+  - name: "Núria Soriano"
+    years: [2023]
+  - name: "Isma Navarro"
+    years: [2023]
+  - name: "Debbie O'Brien"
+    years: [2023]
+  - name: "Aleix Morgadas"
+    years: [2023]
+  - name: "Meritxell Calvo"
+    years: [2023]
+  - name: "Alena Nikolaeva"
+    years: [2024]
+  - name: "Adrià Fontcuberta"
+    years: [2024]
+  - name: "Isidro López"
+    years: [2024]
+  - name: "Gabriela 'Gabs' García"
+    years: [2024]
+  - name: "Karlos G Liberal"
+    years: [2024]
+  - name: "Mario López Martínez"
+    years: [2024]
+  - name: "Esther Borao"
+    years: [2024]
+  - name: "Natalia Venditto"
+    years: [2024]
+  - name: "Laura Lacarra"
+    years: [2025]
+  - name: "Mikel Ors Valle"
+    years: [2025]
+  - name: "Pedro Moreira dos Santos"
+    years: [2025]
+  - name: "Cansu Karayel"
+    years: [2025]
+  - name: "Fernando Díaz Garrido"
+    years: [2025]
+  - name: "Irene M Morgado"
+    years: [2025]
+  - name: "Jordi Martí Carrera"
+    years: [2025]
+  - name: "Katia Aresti"
+    years: [2025]
+  - name: "Miguel Ángel Durán García"
+    years: [2025]
+  - name: "Nerea Luis Mingueza"
+    years: [2025]
+  - name: "Sebi Collell"
+    years: [2025]
+  - name: "Valeria Castro"
+    years: [2025]
+  - name: "Bart Farrell"
+    years: [2026]
+  - name: "Cynthia Gálvez"
+    years: [2026]
+  - name: "Estela Franco"
+    years: [2026]
+  - name: "Isa Vilacides"
+    years: [2026]
+  - name: "Issey Masuda Mora"
+    years: [2026]
+  - name: "Jorge Barroso"
+    years: [2026]
+  - name: "Leopoldo Romacho"
+    years: [2026]
+  - name: "Maica Trinidad"
+    years: [2026]
+  - name: "Marta Barrio"
+    years: [2026]

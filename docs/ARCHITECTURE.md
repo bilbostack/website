@@ -25,7 +25,6 @@ the data model, and where to change things.
 │   ├── agenda.<lang>.md    # Agenda/schedule (data-driven, see below)
 │   ├── info.<lang>.md      # Attendee info
 │   ├── past-editions.<lang>.md
-│   ├── wall-of-fame.<lang>.md
 │   └── speakers/           # One file per speaker per language: <slug>.<lang>.md
 ├── layouts/                # Hugo templates
 │   ├── _default/           # baseof, single, page, section, taxonomy, speaker-detail
@@ -34,7 +33,6 @@ the data model, and where to change things.
 │   ├── agenda/single.html  # Agenda page template
 │   ├── info/single.html
 │   ├── past-editions/single.html
-│   ├── wall-of-fame/single.html
 │   └── index.html          # Home page template
 ├── i18n/                   # Translation strings (TOML), grouped by area
 │   ├── <lang>.toml         # Global strings
@@ -120,7 +118,6 @@ Hugo picks the template by the front-matter `type`/`layout`:
 | Agenda | `type = 'agenda'` | `layouts/agenda/single.html` |
 | Info | `type = 'info'` | `layouts/info/single.html` |
 | Past editions | `type = 'past-editions'` | `layouts/past-editions/single.html` |
-| Wall of fame | `type = 'wall-of-fame'` | `layouts/wall-of-fame/single.html` |
 
 ### Home (`layouts/index.html`)
 
@@ -202,9 +199,10 @@ pulled from i18n keys `track_1`, `track_2`. The whole page respects `agendaVisib
 
 ### Wall of fame & past editions
 
-`wall-of-fame.<lang>.md` is a hand-maintained Markdown list of every past speaker with
-their years. `past-editions.<lang>.md` is currently a `TBD` stub; edition stats come
-from the `editions` array in `hugo.toml`.
+The Wall of Fame is rendered from `data/walloffame.yaml` (single source of truth) via
+the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`.
+`past-editions.<lang>.md` is currently a `TBD` stub; edition stats come from the
+`editions` array in `hugo.toml`.
 
 ### Navigation menus
 

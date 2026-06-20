@@ -1,0 +1,24 @@
+{{/* Wall of Fame — rendered from data/walloffame.yaml (single source of truth).
+     Speakers are listed in order of first appearance. */}}
+{{ $speakers := hugo.Data.walloffame.speakers }}
+{{ $since := 0 }}
+{{ range $speakers }}{{ range .years }}{{ if or (eq $since 0) (lt . $since) }}{{ $since = . }}{{ end }}{{ end }}{{ end }}
+<section class="wall-of-fame" aria-labelledby="wof-title">
+    <div class="wall-of-fame__head">
+        <p class="wall-of-fame__kicker">{{ T "past_editions_wall_kicker" }}</p>
+        <h2 id="wof-title" class="wall-of-fame__title">{{ T "past_editions_wall_title" }}</h2>
+        <p class="wall-of-fame__lead">
+            <span class="wall-of-fame__num">{{ len $speakers }}</span>
+            <span class="wall-of-fame__sub">{{ T "past_editions_wall_subtitle" }} · {{ T "past_editions_wall_since" (dict "year" $since) }}</span>
+        </p>
+    </div>
+    <ul class="wall-of-fame__list">
+        {{ range $speakers }}
+        <li class="wof-entry">
+            <span class="wof-entry__name">{{ .name }}</span>
+            <span class="wof-entry__leader" aria-hidden="true"></span>
+            <span class="wof-entry__years" aria-hidden="true">{{ range $i, $y := .years }}<span class="wof-entry__year">&rsquo;{{ substr (printf "%d" $y) 2 }}</span>{{ end }}</span>
+        </li>
+        {{ end }}
+    </ul>
+</section>

@@ -5,7 +5,7 @@
 }
 
 .past-editions {
-    margin: var(--main-gap) 0;
+    margin: var(--main-gap) 0 0;
 
     .edition {
         &:first-child a {
@@ -104,6 +104,162 @@
                     border-radius: var(--border-radius);
                 }
             }
+        }
+    }
+}
+
+// WALL OF FAME ──────────────────────────────────────────────────────────────
+// The roll of every speaker who has taken the stage. Designed to *balance* the
+// editions table above it: the table is a sparse, year-led ledger; this is its
+// counterweight — a dense index of names anchored by one big count. Shared
+// language: accent year tokens in mono, the same hover-fill as the table rows.
+.wall-of-fame {
+    margin-top: var(--section-gap);
+    // Inset the content to the same 2rem the edition rows use for their year text,
+    // so the title/number column lines up with the years above. No top border here:
+    // the editions table already closes with its last row's bottom rule.
+    padding: 0 2rem var(--space-7);
+
+    &__head {
+        display: grid;
+        gap: var(--space-3);
+        margin-bottom: var(--space-8);
+    }
+
+    // Small mono label with the brand's filled-square marker.
+    &__kicker {
+        font-family: var(--font-family-mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-ink);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0;
+
+        &::before {
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: var(--current-color-400);
+            flex: none;
+        }
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    // Big count + caption sharing a baseline — the anchor of the block.
+    &__lead {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: var(--space-2) var(--space-5);
+        margin: 0;
+    }
+
+    &__num {
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: clamp(3rem, calc(1.8rem + 6vw), 6.5rem);
+        font-weight: 700;
+        line-height: 0.85;
+        letter-spacing: -0.04em;
+        color: var(--current-color-400);
+    }
+
+    &__sub {
+        max-width: 34ch;
+        font-size: 1rem;
+        line-height: 1.35;
+        color: var(--font-color);
+        opacity: 0.75;
+    }
+
+    // The index itself: an aligned, multi-column ledger of names. Flows
+    // top-to-bottom down each column (preserving appearance order), so the
+    // names line up on a shared left edge instead of ragging across the row —
+    // the ordered counterpart to the editions table above.
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        column-width: 15rem;
+        column-gap: var(--space-7);
+    }
+}
+
+// One name = one ledger row: name flush left, year tokens flush right, joined
+// by a faint dotted leader so the eye tracks across the gap.
+.wof-entry {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    line-height: 1.2;
+    // Keep a row whole when it lands on a column boundary.
+    break-inside: avoid;
+    border-bottom: 1px solid color-mix(in srgb, var(--font-color) 12%, transparent);
+    transition: color 0.18s ease, border-color 0.18s ease;
+
+    &__name {
+        font-weight: 600;
+    }
+
+    // Dotted leader bridging name → years. Nudged down so the dots sit on the
+    // text baseline rather than the cap line.
+    &__leader {
+        flex: 1 1 1rem;
+        min-width: 0.75rem;
+        align-self: stretch;
+        border-bottom: 1px dotted
+            color-mix(in srgb, var(--font-color) 35%, transparent);
+        transform: translateY(-0.32em);
+    }
+
+    // Two-digit year tokens ('12 '14 …) — the recurring technical accent.
+    &__years {
+        display: inline-flex;
+        gap: 0.35rem;
+        flex: none;
+    }
+
+    &__year {
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: 0.82em;
+        letter-spacing: -0.02em;
+        color: var(--accent-ink);
+        transition: color 0.18s ease;
+    }
+
+    // Hover lifts the whole row into the accent — the same fill-language the
+    // edition rows use, kept as a text wash here so the columns stay aligned.
+    &:hover {
+        border-color: var(--current-color-400);
+
+        .wof-entry__name,
+        .wof-entry__year {
+            color: var(--current-color-400);
+        }
+
+        .wof-entry__leader {
+            border-bottom-color: var(--current-color-400);
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .wall-of-fame {
+        padding-left: 1rem; // match the edition rows' tighter mobile inset
+        padding-right: 1rem;
+
+        &__list {
+            column-width: 12rem;
+            column-gap: var(--space-5);
         }
     }
 }
