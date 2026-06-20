@@ -2,7 +2,7 @@
   <div class="navbar">
     <!-- Left Block: Logo and Text -->
     <div class="navbar-left">
-      <a href="{{ .Site.BaseURL }}" class="logo-link">
+      <a href="{{ .Site.Home.RelPermalink }}" class="logo-link">
         {{ with resources.Get "img/bilbostack-logo-square.svg" }}
         {{ .Content | safeHTML }}
         {{ end }}
@@ -52,7 +52,7 @@
 <div id="mobile-menu" class="sidenav">
   <div class="sidenav-top">
     <a id="close-btn" class="close-btn">&times;</a>
-    <a href="{{ .Site.BaseURL }}" class="logo-link">
+    <a href="{{ .Site.Home.RelPermalink }}" class="logo-link">
       {{ with resources.Get "img/bilbostack-logo-square.svg" }}
       {{ .Content | safeHTML }}
       {{ end }}

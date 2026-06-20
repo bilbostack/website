@@ -1,4 +1,5 @@
 baseURL = "https://bilbostack.com/"
+relativeURLs = true
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
