@@ -289,51 +289,57 @@ function initLogoAnimation() {
     const logo = document.querySelector('.logo-header svg');
     if (!logo) return;
 
-    const capa1 = logo.querySelector('.capa1');
-    const capa2 = logo.querySelector('.capa2');
-    const capa3 = logo.querySelector('.capa3');
-    const capa4 = logo.querySelector('.capa4');
-
-    if (!capa1 || !capa2 || !capa3 || !capa4) return;
-
     const container = document.querySelector('.logo-header');
     if (!container) return;
 
-    // Obtener el viewBox del SVG para calcular la escala
-    const viewBox = logo.viewBox.baseVal;
-    const svgViewBoxHeight = viewBox.height;
-    const svgRealHeight = logo.getBoundingClientRect().height;
+    // Capas ordenadas de la que cae primero a la que cae última.
+    const capas = [
+        logo.querySelector('.capa4'),
+        logo.querySelector('.capa3'),
+        logo.querySelector('.capa2'),
+        logo.querySelector('.capa1'),
+    ];
+    if (capas.some(capa => !capa)) return;
 
-    // Calcular la escala: unidades SVG por píxel
-    const scale = svgViewBoxHeight / svgRealHeight;
+    // La caída de cada capa se expresa en unidades del viewBox del SVG, así que
+    // depende tanto de la altura renderizada del logo como de la del contenedor
+    // (que mide 100dvh menos el header). Ambas cambian al redimensionar, por eso
+    // este valor hay que recalcularlo y no hornearlo una sola vez.
+    const getMoveDistancePx = () => {
+        const svgRealHeight = logo.getBoundingClientRect().height;
+        if (!svgRealHeight) return 0;
+        const scale = logo.viewBox.baseVal.height / svgRealHeight;
+        return (container.offsetHeight - svgRealHeight) * scale;
+    };
 
-    // Calcular la distancia de movimiento en píxeles
-    const moveDistancePx = (container.offsetHeight - logo.getBoundingClientRect().height) * scale;
-
-    const tl = gsap.timeline({
-        delay: 0.5,
+    const tl = gsap.timeline({ delay: 0.5 });
+    const moveDistancePx = getMoveDistancePx();
+    capas.forEach((capa, i) => {
+        tl.to(capa, {
+            y: moveDistancePx,
+            ease: "power4.out",
+            duration: 1.5
+        }, i * 0.2);
     });
 
-    tl.to(capa4, {
-        y: moveDistancePx,
-        ease: "power4.out",
-        duration: 1.5
-    }, 0)
-        .to(capa3, {
-            y: moveDistancePx,
-            ease: "power4.out",
-            duration: 1.5
-        }, 0.2)
-        .to(capa2, {
-            y: moveDistancePx,
-            ease: "power4.out",
-            duration: 1.5
-        }, 0.4)
-        .to(capa1, {
-            y: moveDistancePx,
-            ease: "power4.out",
-            duration: 1.5
-        }, 0.6);
+    // Reaplicar la posición de las capas al redimensionar. Si la intro ya
+    // terminó, basta con fijar el nuevo destino; si sigue en marcha, se
+    // actualiza el destino del timeline para que aterrice en su sitio.
+    let resizeRaf;
+    window.addEventListener('resize', () => {
+        cancelAnimationFrame(resizeRaf);
+        resizeRaf = requestAnimationFrame(() => {
+            const y = getMoveDistancePx();
+            if (tl.progress() === 1) {
+                gsap.set(capas, { y });
+            } else {
+                tl.getChildren().forEach(child => {
+                    child.vars.y = y;
+                });
+                tl.invalidate();
+            }
+        });
+    });
 }
 
 function initStickyCards() {
