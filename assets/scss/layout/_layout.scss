@@ -13,7 +13,14 @@ html {
 }
 
 .content {
-    padding: var(--main-gap);
+    // Columna centrada de ancho máximo. El elemento sigue siendo full-width (los
+    // fondos y bandas sticky como .block-heading conservan su sangre completa),
+    // pero en pantallas panorámicas el gutter horizontal crece hasta dejar el
+    // contenido en una columna fija centrada en vez de estirarse de borde a borde.
+    // `max()` va interpolado para que Dart Sass lo emita como función CSS y no
+    // intente evaluarlo como su `max()` de Sass (fallaría con var() como argumento).
+    padding-block: var(--main-gap);
+    padding-inline: #{"max(var(--main-gap), calc((100% - var(--content-max)) / 2))"};
 }
 
 .row {

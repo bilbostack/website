@@ -16,6 +16,14 @@ See `docs/ARCHITECTURE.md` for the full structure, data model, and common tasks.
 - `hugo server` — local dev server.
 - `hugo --minify` — production build (output in `public/`). Requires **Hugo Extended** (SCSS); match `HUGO_VERSION` in `netlify.toml`.
 
+## Verify before finishing
+
+After any SCSS or template change, confirm the site **builds and starts** before considering the task done:
+
+- **Clean build:** `rm -rf public resources/_gen && hugo --minify`. The clean step is mandatory — Hugo caches compiled SCSS partials in `resources/_gen`, so a plain `hugo --minify` can return **exit 0 from cache while the real source is broken**. A failed SCSS transform (e.g. a Sass error) breaks `style.scss` and leaves the whole site unstyled.
+- **Server boots:** `hugo server` should start and serve HTTP 200 with no `ERROR`/`failed to transform` lines in its output.
+- **SCSS gotcha:** Dart Sass evaluates `max()`/`min()`/`clamp()` as Sass functions; with `var()` arguments interpolate them (`#{"max(var(--a), …)"}`) so they emit as literal CSS.
+
 ## Conventions
 
 - **Trilingual:** every content page exists in `es` (default), `en`, and `eu` as `name.<lang>.md`. Always update all three.
