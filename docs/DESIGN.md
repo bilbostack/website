@@ -98,10 +98,10 @@ Three voices (tokens in `_variables.scss`):
   `<Tech Conference/>` motif, and the speaker day/time `.tag`s. Use the `.mono` utility
   (it also enables tabular figures) for new cases; **never** for body copy.
 
-The display + mono faces are **self-hosted** variable woff2 (latin + latin-ext) in
-`static/fonts/`, declared in `assets/scss/base/_fonts.scss` with `font-display: swap` and
-preloaded in `baseof.html`. Plus Jakarta Sans is still loaded as a webfont. Fluid base
-size:
+All three faces are **self-hosted** variable woff2 (latin + latin-ext; Plus Jakarta Sans
+also ships an italic) in `static/fonts/`, declared in `assets/scss/base/_fonts.scss` with
+`font-display: swap` and preloaded in `baseof.html` — no third-party font request. Fluid
+base size:
 
 ```css
 --font-size-base: clamp(0.875rem, 0.8182rem + 0.1515vw, 1rem);

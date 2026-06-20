@@ -1,6 +1,6 @@
 .btn {
     padding: 1rem 2rem;
-    border-radius: 50px;
+    border-radius: var(--border-radius-pill);
     text-decoration: none;
     background-color: var(--accent-ink);
     color: var(--color-primary-light);
@@ -21,7 +21,7 @@
         top: 0;
         left: 0;
         background-color: var(--color-primary-dark);
-        border-radius: 50px;
+        border-radius: var(--border-radius-pill);
         z-index: -1;
         transition: all 0.2s ease;
     }

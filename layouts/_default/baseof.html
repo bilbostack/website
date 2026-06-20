@@ -2,12 +2,10 @@
 <html lang="{{ .Site.Language.Locale | default .Site.Language.Lang }}">
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <!-- Self-hosted display + mono voices (see assets/scss/base/_fonts). Preload the
-       latin subsets that paint above the fold (hero h2, agenda times). -->
+  <!-- Self-hosted fonts (see assets/scss/base/_fonts), no third-party request. Preload
+       the latin subsets that paint above the fold (body, hero h2, agenda times). -->
+  <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
   {{ partial "site-favicon.html" .}}

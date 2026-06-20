@@ -101,7 +101,7 @@ attribute support. Inline shortcodes are enabled under `[security]`.
 `layouts/_default/baseof.html` is the base shell for every page. It defines blocks
 `header`, `main`, and `footer`:
 
-- `<head>`: Google Fonts (Plus Jakarta Sans), then partials `site-favicon`, `site-style`, `site-meta`.
+- `<head>`: self-hosted font preloads (all three faces; see `base/_fonts.scss`), then partials `site-favicon`, `site-style`, `site-meta`.
 - `header` block → defaults to `site-header.html` partial.
 - `main` block → filled by each page's layout.
 - `footer` block → `site-footer.html` (rendered with `partialCached`).

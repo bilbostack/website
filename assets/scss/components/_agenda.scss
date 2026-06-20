@@ -131,7 +131,7 @@
         padding: 1rem 2rem;
         background: var(--accent-ink);
         color: var(--color-primary-light);
-        border-radius: 10px;
+        border-radius: var(--border-radius);
 
         .day-title {
             font-size: 2.5rem;
@@ -188,7 +188,7 @@
 
         width: auto;
         display: inline-block;
-        border-radius: 10px;
+        border-radius: var(--border-radius);
 
         background: var(--accent-ink);
         color: var(--color-primary-light);

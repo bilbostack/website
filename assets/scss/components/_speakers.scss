@@ -104,6 +104,7 @@
         font-feature-settings: "tnum" 1;
         letter-spacing: -0.02em;
         padding: 0.3rem 1rem;
+        border-radius: var(--border-radius-pill); // full pill (see DESIGN.md)
         font-weight: 700;
 
         &-day {

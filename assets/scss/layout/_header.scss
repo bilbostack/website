@@ -121,7 +121,7 @@ body.menu-open #mobile-menu {
         background-color: var(--color-primary-light);
         border: 2px solid var(--color-primary-dark);
         transition: 0.4s;
-        border-radius: 50px;
+        border-radius: var(--border-radius-pill);
 
         &::before {
             position: absolute;
