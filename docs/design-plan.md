@@ -93,7 +93,15 @@ keeps the design system trustworthy.
 
 ## 3. P1 — High-impact design improvements
 
-### 3.1 Give the hero an information scent + a primary action
+> **Status: partially implemented** (2026-06-20). Only **3.4 (program cards)** is fully
+> live. After maintainer feedback: **3.1 (hero) and 3.3 (sponsors) were reverted
+> entirely** (the hero keeps its original logo + slogan; sponsors keep the original single
+> light block, no per-logo tiles), and **3.2** keeps only the agenda empty-state (the
+> speakers "coming soon" placeholder was reverted — the speakers section stays hidden when
+> empty). Verified with a clean build and `hugo server` (home, `/agenda`, `/en` → HTTP
+> 200, no SCSS/transform errors). Notes on each item are inline below.
+
+### 3.1 Give the hero an information scent + a primary action — ❌ Reverted (not adopted)
 **Problem.** On desktop the hero is a full `100dvh` with the wordmark at the top, the
 slogan pinned to the bottom, and a **large empty middle**. There's no in-hero CTA and no
 scroll affordance — the date/location live only as small text in the header. A first-time
@@ -115,8 +123,16 @@ the very bottom. The first CTA encountered on scroll is the *sponsors* dossier
 `i18n/home/*` (CTA + scroll labels), maybe `main.js` (chevron fade on scroll).
 **Effort.** ~half day. **Impact.** High — turns a striking-but-static hero into a
 converting one.
+**Implementation notes.** Tried all three sub-parts — (a) a `.hero-meta` mono
+date+location block, (b) a `.hero-actions` primary CTA, (c) a `.hero-scroll` cue — and
+**all three were reverted on maintainer feedback**: the date already lives top-of-page
+next to the location, the in-hero CTA wasn't convincing, and the floating "programa"
+scroll cue overlapped the slogan. The hero is back to its original composition (logo +
+slogan). The only residual change is a small correctness tidy in `main.js` (the anchor
+click handler reads `currentTarget` instead of `target`). If the empty middle is
+revisited later, do it without a bottom-anchored floating element over the slogan band.
 
-### 3.2 Design the empty / early-cycle states
+### 3.2 Design the empty / early-cycle states — ⚠️ Partially done (agenda only)
 **Problem.** The site is checked in here in a **fresh-edition reset** (no speakers,
 agenda unpublished). In that state the speakers section **silently disappears**
 (`{{ with $speakers }}`) and `/agenda` shows a bare line of text. Early in the cycle the
@@ -133,8 +149,16 @@ the agenda page shows only "La agenda no está publicada aún." with no visual t
 **Files.** `home-speakers.html`, `layouts/agenda/single.html` (+ partials),
 `i18n/home/*` & `i18n/agenda/*`, `_speakers.scss` / new `_emptystate.scss`.
 **Effort.** ~half day. **Impact.** High for the many months the site lives in this state.
+**Implementation notes.** New reusable `partials/empty-state.html` (eyebrow / title /
+text / CTA) + `components/_emptystate.scss` (centred `--current-color-100` card, theme-
+aware). **`agenda/single.html`** uses it for the unpublished-agenda state in place of the
+bare sentence (CTA: tickets → discover; strings `agenda_empty_*` in es/en/eu). The
+**speakers** placeholder was reverted on maintainer feedback: the speakers section stays
+hidden (`{{ with $speakers }}`) when there are 0 speakers rather than showing a
+"coming soon" block, so the `speakers_empty_*` strings were removed. The reusable
+partial remains (used by the agenda) and is the place to hang any future empty states.
 
-### 3.3 Standardise the sponsors wall (tiles + dark-theme handling)
+### 3.3 Standardise the sponsors wall (tiles + dark-theme handling) — ❌ Reverted (not adopted)
 **Problem.** Logos come in mixed formats and aspect ratios (PNG/SVG, wide/tall) and are
 laid out as free-floating images sized only by tier height. The result is uneven optical
 weight, and in **dark theme** the whole section is a hard, full-width **white slab**
@@ -150,8 +174,17 @@ is permanently white.
 - Keep tiers, keep logos untouched (no grayscale/recolour — that violates `DESIGN.md`).
 **Files.** `_sponsors.scss`, possibly `site-sponsors.html` (tile wrapper markup).
 **Effort.** ~half day. **Impact.** Medium-high — sponsors are a key stakeholder surface.
+**Implementation notes.** Built the per-logo white-tile grid (fixed per-tier boxes,
+`object-fit: contain`, hover lift, focus ring) and previewed it with test sponsors in
+both themes. **Reverted on maintainer feedback:** the per-logo white box looked wrong in
+dark theme, and the maintainer prefers to keep the previous design line — a single light
+block for the whole sponsors section with the logos floating on it (sized by tier
+height). `#sponsors` is back to `background: --color-light; color: --color-dark` in both
+themes. Takeaway for any future pass: the maintainer is fine with the light block; do
+**not** reintroduce per-logo boxes. (The dark-theme "white slab" the item originally
+flagged is acceptable to the maintainer.)
 
-### 3.4 Program cards: clarify hierarchy & the giant numerals
+### 3.4 Program cards: clarify hierarchy & the giant numerals — ✅ Done
 **Problem.** The two program cards use very large `h3` (`4.4rem`, the date/number) which
 can crowd the copy, and the light vs accent-500 card pairing is strong but the CTA
 hierarchy shifts between them. Worth a deliberate pass.
@@ -163,6 +196,13 @@ confirm the "cómo llegar" footer doesn't compete with the main CTA. Verify alig
 CTAs across cards (the `margin-top:auto` trick) at all breakpoints.
 **Files.** `_cards.scss`, possibly `home-program.html`. **Effort.** ~2–3h.
 **Impact.** Medium.
+**Implementation notes.** The card title `h3` (it's the talk title, not a numeral) moved
+off the one-off `4.4rem` to the fluid `--font-size-h1` token (with `line-height: 1.05`),
+and the date label `h4` to `--font-size-h4`; both now scale on the shared modular scale,
+so the bespoke `≤sm` overrides were removed. CTA hierarchy was already correct on both
+card backgrounds (the `card-programa-2` accent-500 card inverts the primary to a solid
+light fill and demotes the secondary to outline) and CTAs align via the existing
+`margin-top:auto` with equal-height flex cards — left as-is.
 
 ---
 
@@ -211,8 +251,8 @@ These are the "delight" layer. All must remain gated on `prefers-reduced-motion`
 | Phase | Items | Rough effort |
 |-------|-------|--------------|
 | **Sprint 1 — defects** | 2.1 FOUC, 2.2 mobile overlap, 2.3 dark inversion, 2.4 token drift | ~1 day |
-| **Sprint 2 — impact** | 3.1 hero CTA/scent, 3.2 empty states | ~1.5 days |
-| **Sprint 3 — surfaces** | 3.3 sponsors wall, 3.4 program cards | ~1 day |
+| **Sprint 2 — impact** ✅ | 3.1 hero CTA/scent, 3.2 empty states | ~1.5 days |
+| **Sprint 3 — surfaces** | 3.3 sponsors wall (reverted), 3.4 program cards ✅ | ~1 day |
 | **Sprint 4 — polish** | §4 micro-interactions, §5 a11y pass | ~1 day |
 
 ---

@@ -22,6 +22,8 @@ Read `docs/ARCHITECTURE.md` and `docs/DESIGN.md` first if unsure. This skill edi
 - `i18n/*.toml`, `i18n/home/*.toml`, `content/_index.*.md`, `content/agenda.*.md` — date-bearing
   strings (§4b) and the edition-number count (§4c); not the surrounding marketing prose.
 - `content/speakers/` and the sponsor blocks in `hugo.toml` — content reset.
+- `assets/img/bilbostack-logo-permalink.png` — social/oembed `og:image`, regenerated with the new
+  date by `share-image/generate.sh` (§4d).
 
 **Config-over-code:** prefer editing params; only touch SCSS for the color.
 
@@ -49,45 +51,49 @@ the rest in **one `AskUserQuestion` round** where possible. Collect:
 ## 2. Edition accent color
 
 The site-wide accent is `--current-color-*`, generated in `assets/scss/abstracts/_variables.scss`.
-The color name appears in **two places** — update **both**:
+The color name lives in **one place** — the global `$current-color` Sass variable near the
+top of the file. Both the light-theme ramp and the dark-theme inversion derive from it:
 
 ```scss
-// ~line 61, light theme
+// top of _variables.scss (file scope) — the ONLY place to change the edition colour
 $current-color: "violet";              // → change to the new edition color name
 
-// ~line 114, dark theme inversion
+// dark theme inverts the SAME ramp automatically — no edit needed here:
 html.dark-theme {
   ...
-  @include generate-inverted-colors("violet");   // → same new color name
+  @include generate-inverted-colors($current-color);
 }
 ```
 
 Also set the new edition's `color` in the `editions` array (§3) to the **same name**.
 
-### Color must have a full 100–700 ramp
+### Available accent colors
 
-The accent generator and dark-theme inversion read `--{color}-100 … --{color}-700`. Only
-`orange`, `aqua`, and `violet` ship a full ramp. The flat colors (`blue`, `cyan`, `purple`,
-`pink`, `yellow`, `dark-yellow`, `red`) define only `-400`.
+Every edition color now ships a full 100–700 ramp, so **any of them is a valid `$current-color`**:
 
-If the chosen color lacks a ramp, **generate it** in `_variables.scss` before using it as the
-edition color. Follow the existing `violet`/`aqua`/`orange` ramps as the pattern: light tints for
-100–300 (mix the `-400` toward `--color-light` #ffffff) and dark shades for 500–700 (mix toward
-`--color-dark` #08262e, so the dark end suits dark-theme backgrounds). Approximate mix targets,
-matching the violet ramp:
+| Color | Ramp | Seed `-400` |
+|-------|------|-------------|
+| `aqua` | hand-tuned | `#00a199` |
+| `orange` | hand-tuned | `#f08a17` |
+| `violet` | hand-tuned | `#7e31a2` |
+| `blue` | generated | `#2e2e83` |
+| `cyan` | generated | `#019cd1` |
+| `purple` | generated | `#991b80` |
+| `yellow` | generated | `#fcb817` |
+| `dark-yellow` | generated | `#d97a06` |
+| `red` | generated | `#e2241b` |
+| `pink` | generated | `#e1287c` |
 
-| Step | Mix |
-|------|-----|
-| `-100` | ~90% white |
-| `-200` | ~72% white |
-| `-300` | ~42% white |
-| `-400` | the main hex (unchanged) |
-| `-500` | ~55% toward #08262e |
-| `-600` | ~78% toward #08262e |
-| `-700` | ~88% toward #08262e |
+Generated ramps are built from the single `-400` seed by `make-ramp()` in `_variables.scss`
+(tints mix toward white, shades toward `--color-dark`); the dark-theme inversion derives from
+the same ramp, so there is **nothing to hand-author**.
 
-Compute the hex values and add the full `--{color}-100..700` block next to the other ramps. Then
-verify contrast of `-400` text/buttons on both light (`#fff`) and dark (`#08262e`) backgrounds.
+### Adding a brand-new color
+
+Add one `"name": #hex` entry to the `$ramp-seeds` map in `_variables.scss` — the full ramp and
+the dark-theme inversion are generated automatically. Then verify `-500` (the `--accent-ink`
+text/button shade) keeps **AA contrast on white**; warm hues (yellow/orange-ish) are the ones to
+check.
 
 ---
 
@@ -170,6 +176,35 @@ untouched.
 
 ---
 
+## 4d. Social share / oembed image (the date on `og:image`)
+
+The social/oembed preview image is `assets/img/bilbostack-logo-permalink.png` (referenced by
+`layouts/partials/site-meta.html` as `og:image` / `twitter:image`). It is the wordmark on the dark
+brand background with the **edition date in a pink box** at the bottom (`DD.MM.YYYY en Bilbao`). It is
+**not** dynamic — it's a committed PNG, so the date goes stale unless regenerated each edition.
+
+Regenerate it with the bundled script (keeps the artwork identical — only the date band is
+repainted; the rainbow wordmark only exists baked into this PNG):
+
+```bash
+.claude/skills/edition/share-image/generate.sh --date 30.01.2027
+```
+
+- `--date` is the **main event Saturday** as `DD.MM.YYYY` — the same date from §4b
+  (`eventStartDate`). Default in/out is the committed permalink PNG, so usually that's the only flag.
+- `--location "en Bilbao"` (default) — the text after the pink box. The image is single/language-neutral;
+  it stays Spanish unless the user asks otherwise.
+- How it works: builds an SVG that embeds the current PNG, covers the old date band with the brand-dark
+  `#08262e`, and draws the new pink box (`--pink-400` `#e1287c`) + date in the bundled **Space Grotesk**
+  (`share-image/fonts/SpaceGrotesk.ttf`, wired via a private fontconfig), then rasterizes with
+  `rsvg-convert` (librsvg — already on the build machine; no ImageMagick/PIL needed).
+- After running, **open the PNG** and confirm the date is correct and there's no remnant of the old box.
+
+If the wordmark artwork itself ever changes (new logo treatment), re-export the base PNG by hand first;
+the script only owns the date band, not the lettering.
+
+---
+
 ## 5. Reset / scaffold content
 
 For a fresh edition, last year's speakers/agenda and sponsor lineup are cleared (the new lineup is
@@ -203,7 +238,7 @@ on the home page) reflects the new `startDate`/`endDate`.
 
 ## Checklist
 
-- [ ] `$current-color` **and** `generate-inverted-colors(...)` updated to the new color name.
+- [ ] Global `$current-color` updated to the new color name (drives light + dark themes).
 - [ ] New color has a full 100–700 ramp (generated if needed); `-400` passes contrast in both themes.
 - [ ] Previous edition archived in `editions[]` with stats + versioned URL; new `current` entry added.
 - [ ] `hashtag`, `ticketsLink`, `sponsorsDossierLink`, `youtubeEmbedURL`, visibility toggles updated.
@@ -212,6 +247,8 @@ on the home page) reflects the new `startDate`/`endDate`.
       `_index` descriptions, agenda comment headers — all three languages.
 - [ ] Edition number incremented (= count of `editions[]`) in `main_claim`, `meta_description`,
       `home_slogan_short` — all three languages (§4c); number only, surrounding wording untouched.
+- [ ] Share/oembed image regenerated with the new date (§4d):
+      `share-image/generate.sh --date DD.MM.YYYY`; PNG opened and checked.
 - [ ] Speakers/sponsors reset per the user's choice; visibility toggles off until ready.
 - [ ] Marketing prose / slogans left untouched (out of scope).
 - [ ] `hugo --minify` builds clean; site verified in light and dark themes.

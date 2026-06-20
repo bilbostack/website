@@ -417,6 +417,9 @@ body.menu-open #mobile-menu {
 
         @media screen and (max-width: $breakpoint-md) {
             justify-content: flex-start;
+            // Reserve room for the fixed floating action bar so the slogan never
+            // renders behind the hamburger button on short phone viewports.
+            padding-bottom: var(--mobile-actionbar-height);
         }
     }
 

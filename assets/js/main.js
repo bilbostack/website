@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
 
-            const id = e.target.getAttribute("href"),
+            // currentTarget (the <a>) rather than target, so clicks landing on a child
+            // element (e.g. the hero scroll-cue chevron) still resolve the href.
+            const id = e.currentTarget.getAttribute("href"),
                 trigger = ScrollTrigger.getById(id);
             gsap.to(window, {
                 duration: prefersReducedMotion ? 0 : .4,

@@ -1,3 +1,6 @@
+// Sponsors live on a single light block (white in both themes) so the logos — which are
+// designed for a light background — stay legible without per-logo boxes or recolouring
+// (brand rule). Logos are sized by tier height and float on that block. See DESIGN.md.
 #sponsors {
     background-color: var(--color-light);
     color: var(--color-dark);

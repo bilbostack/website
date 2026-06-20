@@ -1,0 +1,21 @@
+{{- /*
+  Reusable designed empty / coming-soon state. Keeps early-cycle pages (no speakers,
+  unpublished agenda) feeling intentional instead of unfinished.
+  Params (dict):
+    eyebrow   (opt) small mono label, e.g. "// line-up in progress"
+    title     (req) headline
+    text      (opt) supporting copy (may contain inline HTML)
+    ctaLabel  (opt) call-to-action label   — rendered only with ctaUrl
+    ctaUrl    (opt) call-to-action href
+    ctaTarget (opt) link target, e.g. "_blank"
+*/ -}}
+<div class="empty-state">
+    <div class="empty-state-inner">
+        {{ with .eyebrow }}<p class="empty-state-eyebrow mono">{{ . }}</p>{{ end }}
+        <h3 class="empty-state-title">{{ .title }}</h3>
+        {{ with .text }}<p class="empty-state-text">{{ . | safeHTML }}</p>{{ end }}
+        {{ if and .ctaLabel .ctaUrl }}
+        <a href="{{ .ctaUrl }}"{{ with .ctaTarget }} target="{{ . }}" rel="noopener"{{ end }} class="btn btn-primary empty-state-cta">{{ .ctaLabel }}</a>
+        {{ end }}
+    </div>
+</div>

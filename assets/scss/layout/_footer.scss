@@ -6,12 +6,15 @@ footer {
 
 #organizadores {
     .orgs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        // Grid (not flex-wrap) so column count is exact — avoids the sub-pixel
+        // rounding that pushed the 4th card to its own row. 2-up by default.
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-4);
 
         .org {
+            min-width: 0;
+
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
@@ -27,23 +30,30 @@ footer {
             font-weight: 700;
 
             img {
+                width: 80px; // smaller logo so 4 cards fit a single row
+                height: auto;
                 aspect-ratio: 1;
                 object-fit: cover;
+                flex-shrink: 0;
             }
 
             &-name {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: 500;
                 margin-bottom: 0;
+                overflow-wrap: anywhere; // let long names break instead of overflowing
             }
         }
 
+        // 4 in a single row on laptop screens and up
+        @media screen and (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
         @media screen and (max-width: $breakpoint-md) {
-            gap: var(--space-4);
+            grid-template-columns: 1fr;
 
             .org {
-                flex: 1 1 100%;
-
                 &-name {
                     font-size: 1.5rem;
                 }

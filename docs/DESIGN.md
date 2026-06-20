@@ -62,13 +62,41 @@ Each hue is a token ramp; `-400` is the "main" shade. Tokens (verbatim from `_va
 The site-wide accent (headings `h3`, link hover, buttons, `.heading-square`) is **not** a fixed colour — it's `--current-color-400`, generated from the Sass variable `$current-color` in `_variables.scss`:
 
 ```scss
+// File scope (top of _variables.scss), so light + dark themes both read it.
 $current-color: "aqua"; // 2027 edition accent → generates --current-color-100..700
 ```
 
 The current edition accent is **per-edition** — it changes each year (see the `edition`
 skill). Always read the live value from `_variables.scss`; don't assume a fixed hue.
 
-To re-theme a new edition, change `$current-color` to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the ramp via `generate-inverted-colors()`.
+To re-theme a new edition, change `$current-color` (one place) to any colour that ships a full 100–700 ramp. The dark theme inverts the **same** ramp via `generate-inverted-colors($current-color)` — it's derived from `$current-color`, not a hardcoded hue, so there's nothing else to update.
+
+**Colours available as a full edition accent** — every design-system colour now qualifies:
+
+| Colour | Ramp | Seed `-400` |
+|--------|------|-------------|
+| `aqua` | hand-tuned | `#00a199` |
+| `orange` | hand-tuned | `#f08a17` |
+| `violet` | hand-tuned | `#7e31a2` |
+| `blue` | generated | `#2e2e83` |
+| `cyan` | generated | `#019cd1` |
+| `purple` | generated | `#991b80` |
+| `yellow` | generated | `#fcb817` |
+| `dark-yellow` | generated | `#d97a06` |
+| `red` | generated | `#e2241b` |
+| `pink` | generated | `#e1287c` |
+
+`aqua` / `orange` / `violet` carry hand-tuned ramps; the rest are generated from their single `-400` seed by the `make-ramp()` mixin + `$ramp-seeds` map in `_variables.scss` (tints mix toward white, shades toward `--color-dark`, so the dark-theme inversion gets coherent dark surfaces). To add a **new** colour, append one `"name": #hex` seed to `$ramp-seeds` — ramp and inversion are generated automatically. Always re-check `--accent-ink` (`-500`) for AA on white, especially warm hues.
+
+> **Why aqua / orange / violet are NOT in `$ramp-seeds` (deliberate).** Their **shades**
+> (`-500/-600/-700`) are *exactly* what `make-ramp()` produces (the 50/80/90% mixes toward
+> `--color-dark` were reverse-engineered from them), but their **light tints**
+> (`-100/-200/-300`) were hand-neutralised to be greyer than the formula. Example, aqua-100:
+> hand-tuned `#e6eef0` vs generated `#d1eeed` (more saturated/teal). Since the `@each` loop runs
+> *after* the explicit blocks inside `:root`, adding these three to `$ramp-seeds` would **override**
+> their hand-tuned tints and visibly shift the live edition — so they stay as explicit overrides.
+> If you ever want a fully uniform system, move all three into `$ramp-seeds` and delete their
+> explicit blocks, accepting the small tint shift on the current edition.
 
 Each past edition also carries its own `color` name in the `editions` array of `config/_default/hugo.toml` (`orange`, `blue`, `purple`, `violet`, `pink`, `aqua`, `red`, `dark-yellow`, `cyan`); the editions timeline applies it inline as `--color: var(--{color}-400)`.
 
@@ -132,12 +160,14 @@ typography with live text.
 /* Square-bullet heading — coloured 1rem square before the text, in --current-color-400.
    Used for slogans and section subtitles (class "heading-square"). Square hidden @sm. */
 
-/* Pill button — fully rounded (50px), accent fill, sliding offset shadow on hover */
+/* Pill button — fully rounded (50px), accent fill, sliding offset shadow on hover.
+   Fill is --accent-ink (= --current-color-500), the text-bearing accent shade, so the
+   white label keeps AA contrast in BOTH themes (see "Accent semantics" above). */
 .btn {
   padding: 1rem 2rem; border-radius: 50px; font-size: 1.25rem;
-  background: var(--current-color-400);
-  color: var(--color-light);
-  border: 2px solid var(--current-color-400);
+  background: var(--accent-ink);
+  color: var(--color-primary-light);
+  border: 2px solid var(--accent-ink);
 }
 .btn-outline {           /* outlined variant: text/border in --font-color, accent slides up on hover */
   border-color: var(--font-color); color: var(--font-color);
@@ -156,6 +186,14 @@ typography with live text.
 ```
 
 `--border-radius: 0.5rem` / `--border-radius-xs: 0.25rem` exist for cards/blocks; buttons and tags are full pills. Section blocks use `.block-heading` (sticky-ish heading band). Cards are structured and clean — use colour as a label/accent border, not as a fill on every card.
+
+**Empty / early-cycle states** (`partials/empty-state.html`, `components/_emptystate.scss`).
+Reusable "coming soon" card: a centred `--current-color-100` surface with a mono eyebrow,
+an `h3` title, copy and a primary `.btn`. Theme-aware via the ramp. Pass `dict` params
+`eyebrow` (opt), `title`, `text` (opt), `ctaLabel`/`ctaUrl`/`ctaTarget` (opt). Currently
+used for the unpublished-agenda state (`agenda/single.html`). Note: the **speakers**
+section deliberately stays *hidden* when there are no speakers (`{{ with $speakers }}`)
+rather than showing a placeholder — don't reintroduce a speakers empty-state.
 
 ## Imagery
 

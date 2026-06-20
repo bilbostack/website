@@ -1,3 +1,41 @@
+// Current edition accent ramp name. Declared at file scope (NOT inside a selector) so
+// BOTH the light-theme ramp below and the dark-theme inversion can read it — change the
+// edition colour here in ONE place. Must be a colour with a full 100–700 ramp — i.e. any
+// of the hand-tuned ramps (aqua, orange, violet) or any seed in $ramp-seeds below.
+$current-color: "aqua";
+
+// Dark anchor used to build the dark end of every generated ramp. Keep in sync with the
+// --color-dark custom property declared inside :root.
+$color-dark: #08262e;
+
+// Edition colours that get a full ramp GENERATED from a single -400 seed. orange / aqua /
+// violet are intentionally NOT here — they keep their hand-tuned ramps inside :root. Every
+// name here is a valid full edition accent ($current-color).
+$ramp-seeds: (
+    "blue": #2e2e83,
+    "cyan": #019cd1,
+    "purple": #991b80,
+    "yellow": #fcb817,
+    "dark-yellow": #d97a06, // own amber, distinct from orange
+    "red": #e2241b, // real brand red (was overridden to blue)
+    "pink": #e1287c,
+);
+
+// Build a --<name>-100..700 ramp from one -400 seed: 400 is the brand hue, tints (100–300)
+// mix toward white, shades (500–700) mix toward $color-dark so the dark-theme inversion
+// gets coherent dark surfaces. The 50/80/90% dark mixes reproduce the hand-tuned ramps'
+// 500/600/700 exactly. NOTE: custom-property values must be interpolated (#{…}) or Sass
+// emits the literal mix() call instead of the computed hex (same gotcha as max()/clamp()).
+@mixin make-ramp($name, $seed) {
+    --#{$name}-100: #{mix(#fff, $seed, 82%)};
+    --#{$name}-200: #{mix(#fff, $seed, 69%)};
+    --#{$name}-300: #{mix(#fff, $seed, 43%)};
+    --#{$name}-400: #{$seed};
+    --#{$name}-500: #{mix($color-dark, $seed, 50%)};
+    --#{$name}-600: #{mix($color-dark, $seed, 80%)};
+    --#{$name}-700: #{mix($color-dark, $seed, 90%)};
+}
+
 :root {
     // COLORS
 
@@ -27,26 +65,11 @@
     --aqua-600: #063f43;
     --aqua-700: #073239;
 
-    // Blue
-    --blue-400: #2e2e83; //main
-
-    // Cyan
-    --cyan-400: #019cd1; //main
-
-    // Purple
-    --purple-400: #991b80; //main
-
-    // Yellow
-    --yellow-400: #fcb817; //main
-
-    // Dark Yellow
-    --dark-yellow-400: #f08a17; //main
-
-    // Red
-    --red-400: #2e2e83; //e2241b
-
-    // Pink
-    --pink-400: #e1287c; //main
+    // Generated ramps (seeds in $ramp-seeds): blue, cyan, purple, yellow, dark-yellow,
+    // red, pink. Each is a full 100–700 ramp, so any of them is a valid edition accent.
+    @each $name, $seed in $ramp-seeds {
+        @include make-ramp($name, $seed);
+    }
 
     // Violet
     --violet-100: #ebe8ec;
@@ -57,8 +80,7 @@
     --violet-600: #1a253e;
     --violet-700: #112636;
 
-    //Current Color Edition
-    $current-color: "aqua";
+    //Current Color Edition (ramp name is the global $current-color above)
     @for $i from 1 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
         --current-color-fixed-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
@@ -124,6 +146,11 @@
     // HEADER
     --header-height: 110px;
 
+    // Footprint of the fixed floating mobile action bar (`.navbar-mobile`: bottom 2rem +
+    // ~4rem hamburger + breathing room). Bottom-anchored mobile content (e.g. the hero
+    // slogan) reserves this so it never renders behind the bar. Mobile-only surface.
+    --mobile-actionbar-height: 6rem;
+
     --main-gap: 1rem;
     --sidenav-width: 100vw;
 
@@ -163,5 +190,7 @@ html.dark-theme {
     --color-primary-dark: var(--color-light);
     --color-primary-light: var(--color-dark);
 
-    @include generate-inverted-colors("aqua");
+    // Invert the SAME ramp the light theme uses — derived from $current-color, not a
+    // hardcoded hue, so a new edition only changes the accent in one place.
+    @include generate-inverted-colors($current-color);
 }

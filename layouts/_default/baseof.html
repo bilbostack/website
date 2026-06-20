@@ -2,6 +2,24 @@
 <html lang="{{ .Site.Language.Locale | default .Site.Language.Lang }}">
 
 <head>
+  <!-- Theme decision BEFORE first paint to avoid a light-theme flash (FOUC) for dark
+       users. Reads the `bilbostack-theme` cookie, falling back to prefers-color-scheme,
+       and sets the html class synchronously. main.js (deferred) still owns the toggle
+       interaction and cookie persistence; it just reuses this initial class. Keep this
+       inline + blocking and first in <head>, before any CSS. -->
+  <script>
+    (function () {
+      try {
+        var m = document.cookie.match(/(?:^|;\s*)bilbostack-theme=([^;]+)/);
+        var theme = m ? decodeURIComponent(m[1]) : null;
+        if (!theme) {
+          theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        var el = document.documentElement;
+        el.classList.add(theme === 'dark' ? 'dark-theme' : 'light-theme');
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <!-- Self-hosted fonts (see assets/scss/base/_fonts), no third-party request. Preload
        the latin subsets that paint above the fold (body, hero h2, agenda times). -->
