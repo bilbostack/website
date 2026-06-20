@@ -64,7 +64,7 @@
   </div>
   <ul class="sidenav-menu">
     {{ range .Site.Menus.main }}
-    <li><a href="{{ .URL }}">
+    <li><a href="{{ .URL | relLangURL }}">
         <span class="nav-link-title">{{ .Name }}</span>
         <span class="nav-link-desc hide-on-mobile">{{ .Params.desc }}</span>
       </a></li>
