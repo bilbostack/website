@@ -1,0 +1,22 @@
+{{- /*
+  Breadcrumb "path bar" — styled as a terminal / filesystem path (see
+  components/_breadcrumbs.scss). Two variants:
+
+    Trail (Home / Section):
+      {{ partial "breadcrumbs.html" (dict "page" .) }}
+
+    Back link (single ← link), e.g. speaker detail:
+      {{ partial "breadcrumbs.html" (dict "back" (dict
+          "url" (ref . "/#speakers") "label" (T "speakers_back"))) }}
+*/ -}}
+{{- with .back -}}
+<nav class="breadcrumbs breadcrumbs--back" aria-label="Breadcrumb">
+    <a class="breadcrumbs__back" href="{{ .url }}">{{ .label }}</a>
+</nav>
+{{- else -}}
+{{- $page := .page -}}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a class="breadcrumbs__crumb" href="{{ ref $page "/" }}">{{ T "home_back" }}</a>
+    <span class="breadcrumbs__crumb breadcrumbs__crumb--current" aria-current="page">{{ $page.Title }}</span>
+</nav>
+{{- end -}}

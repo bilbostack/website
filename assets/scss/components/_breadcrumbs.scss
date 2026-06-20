@@ -1,13 +1,160 @@
+// ===================================
+// BREADCRUMBS · "path bar"
+// ===================================
+// Styled as a terminal / filesystem path to echo the conference's technical voice
+// (JetBrains Mono + the <Tech Conference/> motif + the brand's geometric squares).
+// A small accent square sits at the head as a live "prompt cursor"; slash separators
+// carry the path; links highlight like a selected path segment on hover.
+//
+// Markup comes from partials/breadcrumbs.html. Two variants:
+//   .breadcrumbs            → trail   (▪ Home / Section)
+//   .breadcrumbs--back      → single back link (← label)
+
 .breadcrumbs {
-    font-size: 1.25rem;
-    color: var(--font-color);
+    // Muted ink for inactive crumbs — derived from the (theme-flipping) foreground so
+    // it stays legible in both themes. Slash + cursor use the live accent.
+    --bc-ink: color-mix(in srgb, var(--font-color) 58%, transparent);
+    --bc-tint: color-mix(in srgb, var(--current-color-400) 16%, transparent);
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+
+    font-family: var(--font-family-mono);
+    font-feature-settings: "tnum" 1; // tabular figures (years etc. align)
+    font-size: #{"clamp(0.9375rem, 0.875rem + 0.3vw, 1.0625rem)"};
+    letter-spacing: -0.02em;
+    line-height: 1;
+
     padding: calc(var(--main-gap) * 2) var(--main-gap) var(--main-gap);
 
-    a {
-        text-decoration: none;
+    // Prompt cursor — the brand's geometric square, marking the start of the path.
+    &::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-right: var(--space-3);
+        background: var(--current-color-400);
+    }
+}
+
+// --- Crumb segments -------------------------------------------------------------
+.breadcrumbs__crumb {
+    position: relative;
+    color: var(--bc-ink);
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: var(--border-radius-xs);
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+// Slash separator before every crumb that follows another (skips the first).
+.breadcrumbs__crumb + .breadcrumbs__crumb::before {
+    content: "/";
+    display: inline-block;
+    margin: 0 var(--space-3);
+    color: var(--current-color-400);
+    font-weight: 600;
+}
+
+// Links: terminal-style "selection" highlight on hover/focus. box-shadow paints the
+// pad so the highlight has breathing room without shifting the layout.
+a.breadcrumbs__crumb {
+    &:hover,
+    &:focus-visible {
+        color: var(--accent-ink);
+        background-color: var(--bc-tint);
+        box-shadow: 0 0 0 0.3em var(--bc-tint);
+        outline: none;
+    }
+}
+
+// Current page — the active path segment, in the accent ink.
+.breadcrumbs__crumb--current {
+    color: var(--accent-ink);
+    font-weight: 600;
+}
+
+// --- Back variant (single ← link) -----------------------------------------------
+// No prompt square; the animated arrow is the marker instead.
+.breadcrumbs--back {
+    &::before {
+        display: none;
+    }
+}
+
+.breadcrumbs__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--bc-ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &::before {
+        content: "←";
+        color: var(--current-color-400);
+        font-weight: 600;
+        transition: transform 0.2s ease;
     }
 
-    span {
-        color: var(--current-color-400);
+    &:hover,
+    &:focus-visible {
+        color: var(--accent-ink);
+        outline: none;
+
+        &::before {
+            transform: translateX(-0.25rem);
+        }
+    }
+}
+
+// --- Entrance ---------------------------------------------------------------------
+// One quiet, orchestrated reveal on load: the cursor pops, the crumbs rise in.
+@media (prefers-reduced-motion: no-preference) {
+    .breadcrumbs {
+        &::before {
+            animation: bc-cursor-in 0.4s ease-out both;
+        }
+    }
+
+    .breadcrumbs__crumb,
+    .breadcrumbs__back {
+        animation: bc-crumb-in 0.45s ease-out both;
+    }
+
+    // Stagger the trail so the path "types" itself left-to-right.
+    .breadcrumbs__crumb {
+        animation-delay: 0.08s;
+    }
+    .breadcrumbs__crumb--current {
+        animation-delay: 0.18s;
+    }
+}
+
+@keyframes bc-cursor-in {
+    from {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes bc-crumb-in {
+    from {
+        opacity: 0;
+        transform: translateY(0.25rem);
+    }
+    to {
+        opacity: 1;
+        transform: none;
     }
 }

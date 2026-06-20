@@ -1,8 +1,6 @@
 {{ define "main" }}
 <article id="info" class="main-content">
-    <div class="breadcrumbs">
-        <a href="{{ref . "/"}}" class="back">{{T "home_back"}}</a> > <span>{{ .Title }}</span>
-    </div>
+    {{ partial "breadcrumbs.html" (dict "page" .) }}
     <div class="content">
         <h1>{{ .Title }}</h1>
         <div>
