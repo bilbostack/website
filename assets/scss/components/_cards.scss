@@ -20,10 +20,14 @@
         padding: var(--space-6) var(--space-4) var(--space-4);
         flex: 0.35;
 
+        // Card title. Uses the fluid h1 size token (the dominant display step) instead
+        // of a one-off 4.4rem, so it stays on the shared modular scale and scales
+        // smoothly across breakpoints. See DESIGN.md §Typography.
         h3 {
             color: var(--font-color);
             margin: 0 0 var(--space-6) 0;
-            font-size: 4.4rem;
+            font-size: var(--font-size-h1);
+            line-height: 1.05;
 
             .small {
                 display: block;
@@ -31,21 +35,12 @@
             }
         }
 
+        // Date label above the title — the h4 token, accent-ink for emphasis.
         h4 {
             color: var(--accent-ink);
             margin: 0 0 var(--space-4) 0;
-            font-size: 1.5rem;
+            font-size: var(--font-size-h4);
             font-weight: 600;
-        }
-
-        @media screen and (max-width: $breakpoint-sm) {
-            h3 {
-                font-size: 3.5rem;
-            }
-
-            h4 {
-                font-size: 1.25rem;
-            }
         }
 
         p {

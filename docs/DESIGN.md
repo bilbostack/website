@@ -187,6 +187,14 @@ typography with live text.
 
 `--border-radius: 0.5rem` / `--border-radius-xs: 0.25rem` exist for cards/blocks; buttons and tags are full pills. Section blocks use `.block-heading` (sticky-ish heading band). Cards are structured and clean — use colour as a label/accent border, not as a fill on every card.
 
+**Empty / early-cycle states** (`partials/empty-state.html`, `components/_emptystate.scss`).
+Reusable "coming soon" card: a centred `--current-color-100` surface with a mono eyebrow,
+an `h3` title, copy and a primary `.btn`. Theme-aware via the ramp. Pass `dict` params
+`eyebrow` (opt), `title`, `text` (opt), `ctaLabel`/`ctaUrl`/`ctaTarget` (opt). Currently
+used for the unpublished-agenda state (`agenda/single.html`). Note: the **speakers**
+section deliberately stays *hidden* when there are no speakers (`{{ with $speakers }}`)
+rather than showing a placeholder — don't reintroduce a speakers empty-state.
+
 ## Imagery
 
 Real event moments over stock: talks, attendees, networking, learning, diverse/inclusive groups, Bilbao atmosphere. Keep natural; no palette-fighting filters; pair with colour blocks/labels. Don't pass off packed-room photos as diversity.

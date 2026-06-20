@@ -1,6 +1,7 @@
 # home-header.html
 home_slogan_short = "Edición nº15 de la conferencia tech más esperada en Bilbao"
 home_slogan = "Durante 2 días, referentes tech de aquí y del mundo se reúnen para compartir ideas, charlas y mucha innovación"
+hero_cta_discover = "Conoce el evento"
 
 # home-program.html
 agenda_title = "Dos días para conectar con la comunidad"

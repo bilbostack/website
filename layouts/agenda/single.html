@@ -6,7 +6,21 @@
     <div class="content pin-wrapper">
         <div>
             {{ if not .Site.Params.agendaVisible }}
-            <h4>{{ T "agenda_not_visible" }}</h4>
+            {{ $ctaLabel := T "hero_cta_discover" }}
+            {{ $ctaUrl := "/#programa" }}
+            {{ $ctaTarget := "" }}
+            {{ if .Site.Params.ticketsOpen }}
+            {{ $ctaLabel = T "cta_tickets" }}
+            {{ $ctaUrl = .Site.Params.ticketsLink }}
+            {{ $ctaTarget = "_blank" }}
+            {{ end }}
+            {{ partial "empty-state.html" (dict
+                "eyebrow" (T "agenda_empty_eyebrow")
+                "title" (T "agenda_not_visible")
+                "text" (T "agenda_empty_text")
+                "ctaLabel" $ctaLabel
+                "ctaUrl" $ctaUrl
+                "ctaTarget" $ctaTarget) }}
             {{ else }}
             <h1>{{ .Title }}</h1>
 

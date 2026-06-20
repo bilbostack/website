@@ -1,6 +1,7 @@
 # home-header.html
 home_slogan_short = "Bilboko urteroko teknologia ekitaldi ospetsuenaren 15. edizioa"
 home_slogan = "Bi egunetan zehar, bertako eta nazioarteko erreferente teknologikoak elkartuko dira ideiak, hitzaldiak eta berrikuntza partekatzeko"
+hero_cta_discover = "Ezagutu ekitaldia"
 
 # home-program.html
 agenda_title = "Bi egun komunitatearekin konektatzeko"

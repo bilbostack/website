@@ -1,6 +1,7 @@
 # home-header.html
 home_slogan_short = "15th edition of the most anticipated tech conference in Bilbao"
 home_slogan = "For 2 days, local and international tech leaders gather to share ideas, talks, and plenty of innovation"
+hero_cta_discover = "Discover the event"
 
 # home-program.html
 agenda_title = "Two days to connect with the community"
