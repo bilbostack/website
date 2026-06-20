@@ -1,8 +1,6 @@
 {{ define "main" }}
 <article id="agenda" class="main-content">
-    <div class="breadcrumbs">
-        <a href="{{ref . "/"}}" class="back">{{T "home_back"}}</a> > <span>{{ .Title }}</span>
-    </div>
+    {{ partial "breadcrumbs.html" (dict "page" .) }}
     <div class="content pin-wrapper">
         <div>
             {{ if not .Site.Params.agendaVisible }}

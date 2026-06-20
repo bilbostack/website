@@ -1,8 +1,6 @@
 {{ define "main" }}
 <article id="speaker" class="main-content">
-    <div class="breadcrumbs">
-        <a href="{{ref . "/#speakers"}}" class="back">← {{T "speakers_back"}}</a>
-    </div>
+    {{ partial "breadcrumbs.html" (dict "back" (dict "url" (ref . "/#speakers") "label" (T "speakers_back"))) }}
     <div class="content speaker-wrapper">
         <div class="speaker-left">
             <div class="image-wrapper">

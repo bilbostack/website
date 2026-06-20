@@ -1,10 +1,7 @@
 {{ define "main" }}
 <article id="past-editions" class="main-content">
+    {{ partial "breadcrumbs.html" (dict "page" .) }}
     <h1>{{ .Title }}</h1>
-
-    <div class="breadcrumbs">
-        <a href="{{ref . "/"}}" class="back">{{T "home_back"}}</a> > <span>{{ .Title }}</span>
-    </div>
     <div class="past-editions">
         {{ $editions := $.Site.Params.Editions }}
         {{ range $index, $edition := $editions }}
