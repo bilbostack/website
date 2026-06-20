@@ -9,11 +9,11 @@ enableRobotsTXT = true
     eventLocationName = "Palacio Euskalduna"
     eventLocationCity = "Bilbao"
     eventLocationRegion = "Bizkaia"
-    sponsorsDossierLink = "/docs/Bilbostack27-sponsors.es.pdf"
+    sponsorsDossierLink = "/docs/Bilbostack26-sponsors.es.pdf"
     sponsorsVisible = false
     agendaVisible = false
     ticketsOpen = false
-    ticketsLink = "https://bilbostack2027.eventbrite.es"
+    ticketsLink = ""
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [
