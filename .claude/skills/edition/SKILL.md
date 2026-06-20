@@ -22,6 +22,8 @@ Read `docs/ARCHITECTURE.md` and `docs/DESIGN.md` first if unsure. This skill edi
 - `i18n/*.toml`, `i18n/home/*.toml`, `content/_index.*.md`, `content/agenda.*.md` — date-bearing
   strings (§4b) and the edition-number count (§4c); not the surrounding marketing prose.
 - `content/speakers/` and the sponsor blocks in `hugo.toml` — content reset.
+- `assets/img/bilbostack-logo-permalink.png` — social/oembed `og:image`, regenerated with the new
+  date by `share-image/generate.sh` (§4d).
 
 **Config-over-code:** prefer editing params; only touch SCSS for the color.
 
@@ -174,6 +176,35 @@ untouched.
 
 ---
 
+## 4d. Social share / oembed image (the date on `og:image`)
+
+The social/oembed preview image is `assets/img/bilbostack-logo-permalink.png` (referenced by
+`layouts/partials/site-meta.html` as `og:image` / `twitter:image`). It is the wordmark on the dark
+brand background with the **edition date in a pink box** at the bottom (`DD.MM.YYYY en Bilbao`). It is
+**not** dynamic — it's a committed PNG, so the date goes stale unless regenerated each edition.
+
+Regenerate it with the bundled script (keeps the artwork identical — only the date band is
+repainted; the rainbow wordmark only exists baked into this PNG):
+
+```bash
+.claude/skills/edition/share-image/generate.sh --date 30.01.2027
+```
+
+- `--date` is the **main event Saturday** as `DD.MM.YYYY` — the same date from §4b
+  (`eventStartDate`). Default in/out is the committed permalink PNG, so usually that's the only flag.
+- `--location "en Bilbao"` (default) — the text after the pink box. The image is single/language-neutral;
+  it stays Spanish unless the user asks otherwise.
+- How it works: builds an SVG that embeds the current PNG, covers the old date band with the brand-dark
+  `#08262e`, and draws the new pink box (`--pink-400` `#e1287c`) + date in the bundled **Space Grotesk**
+  (`share-image/fonts/SpaceGrotesk.ttf`, wired via a private fontconfig), then rasterizes with
+  `rsvg-convert` (librsvg — already on the build machine; no ImageMagick/PIL needed).
+- After running, **open the PNG** and confirm the date is correct and there's no remnant of the old box.
+
+If the wordmark artwork itself ever changes (new logo treatment), re-export the base PNG by hand first;
+the script only owns the date band, not the lettering.
+
+---
+
 ## 5. Reset / scaffold content
 
 For a fresh edition, last year's speakers/agenda and sponsor lineup are cleared (the new lineup is
@@ -216,6 +247,8 @@ on the home page) reflects the new `startDate`/`endDate`.
       `_index` descriptions, agenda comment headers — all three languages.
 - [ ] Edition number incremented (= count of `editions[]`) in `main_claim`, `meta_description`,
       `home_slogan_short` — all three languages (§4c); number only, surrounding wording untouched.
+- [ ] Share/oembed image regenerated with the new date (§4d):
+      `share-image/generate.sh --date DD.MM.YYYY`; PNG opened and checked.
 - [ ] Speakers/sponsors reset per the user's choice; visibility toggles off until ready.
 - [ ] Marketing prose / slogans left untouched (out of scope).
 - [ ] `hugo --minify` builds clean; site verified in light and dark themes.
