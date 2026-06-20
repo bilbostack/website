@@ -126,6 +126,11 @@
 
     --main-gap: 1rem;
     --sidenav-width: 100vw;
+
+    // Tope de la columna de contenido. En pantallas panorámicas / ultrawide el
+    // contenido deja de estirarse de borde a borde y se asienta centrado a este
+    // ancho (ver `.content` en layout/_layout). Los fondos siguen a sangre.
+    --content-max: 1600px;
 }
 
 // Breakpoints
