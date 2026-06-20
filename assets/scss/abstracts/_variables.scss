@@ -1,3 +1,8 @@
+// Current edition accent ramp name. Declared at file scope (NOT inside a selector) so
+// BOTH the light-theme ramp below and the dark-theme inversion can read it — change the
+// edition colour here in ONE place. Must be a ramp with a full 100–700 set (see DESIGN.md).
+$current-color: "aqua";
+
 :root {
     // COLORS
 
@@ -57,8 +62,7 @@
     --violet-600: #1a253e;
     --violet-700: #112636;
 
-    //Current Color Edition
-    $current-color: "aqua";
+    //Current Color Edition (ramp name is the global $current-color above)
     @for $i from 1 through 7 {
         --current-color-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
         --current-color-fixed-#{$i * 100}: var(--#{$current-color}-#{$i * 100});
@@ -124,6 +128,11 @@
     // HEADER
     --header-height: 110px;
 
+    // Footprint of the fixed floating mobile action bar (`.navbar-mobile`: bottom 2rem +
+    // ~4rem hamburger + breathing room). Bottom-anchored mobile content (e.g. the hero
+    // slogan) reserves this so it never renders behind the bar. Mobile-only surface.
+    --mobile-actionbar-height: 6rem;
+
     --main-gap: 1rem;
     --sidenav-width: 100vw;
 
@@ -163,5 +172,7 @@ html.dark-theme {
     --color-primary-dark: var(--color-light);
     --color-primary-light: var(--color-dark);
 
-    @include generate-inverted-colors("aqua");
+    // Invert the SAME ramp the light theme uses — derived from $current-color, not a
+    // hardcoded hue, so a new edition only changes the accent in one place.
+    @include generate-inverted-colors($current-color);
 }

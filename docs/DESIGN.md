@@ -62,13 +62,14 @@ Each hue is a token ramp; `-400` is the "main" shade. Tokens (verbatim from `_va
 The site-wide accent (headings `h3`, link hover, buttons, `.heading-square`) is **not** a fixed colour — it's `--current-color-400`, generated from the Sass variable `$current-color` in `_variables.scss`:
 
 ```scss
+// File scope (top of _variables.scss), so light + dark themes both read it.
 $current-color: "aqua"; // 2027 edition accent → generates --current-color-100..700
 ```
 
 The current edition accent is **per-edition** — it changes each year (see the `edition`
 skill). Always read the live value from `_variables.scss`; don't assume a fixed hue.
 
-To re-theme a new edition, change `$current-color` to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the ramp via `generate-inverted-colors()`.
+To re-theme a new edition, change `$current-color` (one place) to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the **same** ramp via `generate-inverted-colors($current-color)` — it's derived from `$current-color`, not a hardcoded hue, so there's nothing else to update.
 
 Each past edition also carries its own `color` name in the `editions` array of `config/_default/hugo.toml` (`orange`, `blue`, `purple`, `violet`, `pink`, `aqua`, `red`, `dark-yellow`, `cyan`); the editions timeline applies it inline as `--color: var(--{color}-400)`.
 
@@ -132,12 +133,14 @@ typography with live text.
 /* Square-bullet heading — coloured 1rem square before the text, in --current-color-400.
    Used for slogans and section subtitles (class "heading-square"). Square hidden @sm. */
 
-/* Pill button — fully rounded (50px), accent fill, sliding offset shadow on hover */
+/* Pill button — fully rounded (50px), accent fill, sliding offset shadow on hover.
+   Fill is --accent-ink (= --current-color-500), the text-bearing accent shade, so the
+   white label keeps AA contrast in BOTH themes (see "Accent semantics" above). */
 .btn {
   padding: 1rem 2rem; border-radius: 50px; font-size: 1.25rem;
-  background: var(--current-color-400);
-  color: var(--color-light);
-  border: 2px solid var(--current-color-400);
+  background: var(--accent-ink);
+  color: var(--color-primary-light);
+  border: 2px solid var(--accent-ink);
 }
 .btn-outline {           /* outlined variant: text/border in --font-color, accent slides up on hover */
   border-color: var(--font-color); color: var(--font-color);

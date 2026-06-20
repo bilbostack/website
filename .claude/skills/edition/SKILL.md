@@ -49,16 +49,17 @@ the rest in **one `AskUserQuestion` round** where possible. Collect:
 ## 2. Edition accent color
 
 The site-wide accent is `--current-color-*`, generated in `assets/scss/abstracts/_variables.scss`.
-The color name appears in **two places** — update **both**:
+The color name lives in **one place** — the global `$current-color` Sass variable near the
+top of the file. Both the light-theme ramp and the dark-theme inversion derive from it:
 
 ```scss
-// ~line 61, light theme
+// top of _variables.scss (file scope) — the ONLY place to change the edition colour
 $current-color: "violet";              // → change to the new edition color name
 
-// ~line 114, dark theme inversion
+// dark theme inverts the SAME ramp automatically — no edit needed here:
 html.dark-theme {
   ...
-  @include generate-inverted-colors("violet");   // → same new color name
+  @include generate-inverted-colors($current-color);
 }
 ```
 
@@ -203,7 +204,7 @@ on the home page) reflects the new `startDate`/`endDate`.
 
 ## Checklist
 
-- [ ] `$current-color` **and** `generate-inverted-colors(...)` updated to the new color name.
+- [ ] Global `$current-color` updated to the new color name (drives light + dark themes).
 - [ ] New color has a full 100–700 ramp (generated if needed); `-400` passes contrast in both themes.
 - [ ] Previous edition archived in `editions[]` with stats + versioned URL; new `current` entry added.
 - [ ] `hashtag`, `ticketsLink`, `sponsorsDossierLink`, `youtubeEmbedURL`, visibility toggles updated.
