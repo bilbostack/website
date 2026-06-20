@@ -69,7 +69,34 @@ $current-color: "aqua"; // 2027 edition accent → generates --current-color-100
 The current edition accent is **per-edition** — it changes each year (see the `edition`
 skill). Always read the live value from `_variables.scss`; don't assume a fixed hue.
 
-To re-theme a new edition, change `$current-color` (one place) to one of the ramp names that has a full 100–700 ramp (`orange`, `aqua`, `violet`). The dark theme inverts the **same** ramp via `generate-inverted-colors($current-color)` — it's derived from `$current-color`, not a hardcoded hue, so there's nothing else to update.
+To re-theme a new edition, change `$current-color` (one place) to any colour that ships a full 100–700 ramp. The dark theme inverts the **same** ramp via `generate-inverted-colors($current-color)` — it's derived from `$current-color`, not a hardcoded hue, so there's nothing else to update.
+
+**Colours available as a full edition accent** — every design-system colour now qualifies:
+
+| Colour | Ramp | Seed `-400` |
+|--------|------|-------------|
+| `aqua` | hand-tuned | `#00a199` |
+| `orange` | hand-tuned | `#f08a17` |
+| `violet` | hand-tuned | `#7e31a2` |
+| `blue` | generated | `#2e2e83` |
+| `cyan` | generated | `#019cd1` |
+| `purple` | generated | `#991b80` |
+| `yellow` | generated | `#fcb817` |
+| `dark-yellow` | generated | `#d97a06` |
+| `red` | generated | `#e2241b` |
+| `pink` | generated | `#e1287c` |
+
+`aqua` / `orange` / `violet` carry hand-tuned ramps; the rest are generated from their single `-400` seed by the `make-ramp()` mixin + `$ramp-seeds` map in `_variables.scss` (tints mix toward white, shades toward `--color-dark`, so the dark-theme inversion gets coherent dark surfaces). To add a **new** colour, append one `"name": #hex` seed to `$ramp-seeds` — ramp and inversion are generated automatically. Always re-check `--accent-ink` (`-500`) for AA on white, especially warm hues.
+
+> **Why aqua / orange / violet are NOT in `$ramp-seeds` (deliberate).** Their **shades**
+> (`-500/-600/-700`) are *exactly* what `make-ramp()` produces (the 50/80/90% mixes toward
+> `--color-dark` were reverse-engineered from them), but their **light tints**
+> (`-100/-200/-300`) were hand-neutralised to be greyer than the formula. Example, aqua-100:
+> hand-tuned `#e6eef0` vs generated `#d1eeed` (more saturated/teal). Since the `@each` loop runs
+> *after* the explicit blocks inside `:root`, adding these three to `$ramp-seeds` would **override**
+> their hand-tuned tints and visibly shift the live edition — so they stay as explicit overrides.
+> If you ever want a fully uniform system, move all three into `$ramp-seeds` and delete their
+> explicit blocks, accepting the small tint shift on the current edition.
 
 Each past edition also carries its own `color` name in the `editions` array of `config/_default/hugo.toml` (`orange`, `blue`, `purple`, `violet`, `pink`, `aqua`, `red`, `dark-yellow`, `cyan`); the editions timeline applies it inline as `--color: var(--{color}-400)`.
 

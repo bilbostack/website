@@ -65,30 +65,33 @@ html.dark-theme {
 
 Also set the new edition's `color` in the `editions` array (§3) to the **same name**.
 
-### Color must have a full 100–700 ramp
+### Available accent colors
 
-The accent generator and dark-theme inversion read `--{color}-100 … --{color}-700`. Only
-`orange`, `aqua`, and `violet` ship a full ramp. The flat colors (`blue`, `cyan`, `purple`,
-`pink`, `yellow`, `dark-yellow`, `red`) define only `-400`.
+Every edition color now ships a full 100–700 ramp, so **any of them is a valid `$current-color`**:
 
-If the chosen color lacks a ramp, **generate it** in `_variables.scss` before using it as the
-edition color. Follow the existing `violet`/`aqua`/`orange` ramps as the pattern: light tints for
-100–300 (mix the `-400` toward `--color-light` #ffffff) and dark shades for 500–700 (mix toward
-`--color-dark` #08262e, so the dark end suits dark-theme backgrounds). Approximate mix targets,
-matching the violet ramp:
+| Color | Ramp | Seed `-400` |
+|-------|------|-------------|
+| `aqua` | hand-tuned | `#00a199` |
+| `orange` | hand-tuned | `#f08a17` |
+| `violet` | hand-tuned | `#7e31a2` |
+| `blue` | generated | `#2e2e83` |
+| `cyan` | generated | `#019cd1` |
+| `purple` | generated | `#991b80` |
+| `yellow` | generated | `#fcb817` |
+| `dark-yellow` | generated | `#d97a06` |
+| `red` | generated | `#e2241b` |
+| `pink` | generated | `#e1287c` |
 
-| Step | Mix |
-|------|-----|
-| `-100` | ~90% white |
-| `-200` | ~72% white |
-| `-300` | ~42% white |
-| `-400` | the main hex (unchanged) |
-| `-500` | ~55% toward #08262e |
-| `-600` | ~78% toward #08262e |
-| `-700` | ~88% toward #08262e |
+Generated ramps are built from the single `-400` seed by `make-ramp()` in `_variables.scss`
+(tints mix toward white, shades toward `--color-dark`); the dark-theme inversion derives from
+the same ramp, so there is **nothing to hand-author**.
 
-Compute the hex values and add the full `--{color}-100..700` block next to the other ramps. Then
-verify contrast of `-400` text/buttons on both light (`#fff`) and dark (`#08262e`) backgrounds.
+### Adding a brand-new color
+
+Add one `"name": #hex` entry to the `$ramp-seeds` map in `_variables.scss` — the full ramp and
+the dark-theme inversion are generated automatically. Then verify `-500` (the `--accent-ink`
+text/button shade) keeps **AA contrast on white**; warm hues (yellow/orange-ish) are the ones to
+check.
 
 ---
 
