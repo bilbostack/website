@@ -9,100 +9,194 @@
     margin: var(--main-gap) 0 0;
 
     .edition {
-        &:first-child a {
+        // The row itself carries the rule + hover fill. A transparent stretched
+        // <a class="edition-link"> overlays it (see below) so the whole row links
+        // to the edition site, while the media icons sit above it as their own links.
+        border-bottom: 2px solid var(--current-color-400);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        color: var(--current-color-400);
+        margin-top: -2px;
+        position: relative;
+
+        &:first-child {
             border-top: 2px solid var(--current-color-400);
         }
 
         //filas impares
-        &:nth-child(even) a .img-tag {
+        &:nth-child(even) .img-tag {
             transform: rotate(15deg);
         }
 
         //filas pares
-        &:nth-child(odd) a .img-tag {
+        &:nth-child(odd) .img-tag {
             transform: rotate(-15deg);
         }
 
-        a {
-            border-bottom: 2px solid var(--current-color-400);
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            color: var(--current-color-400);
+        &:hover {
+            background-color: var(--color);
+            border-color: var(--color);
+            color: var(--color-primary-light);
+
+            .img-tag {
+                opacity: 1;
+            }
+
+            // Icons follow the rest of the text when the row fills.
+            .edition-media__link .fill-main {
+                fill: var(--color-primary-light);
+            }
+        }
+
+        // Transparent full-row link. Sits above the text columns so clicking
+        // anywhere on the row navigates to the edition, but below the media
+        // icons (which raise their own z-index) so those stay clickable.
+        .edition-link {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
             text-decoration: none;
-            margin-top: -2px;
-            position: relative;
+        }
 
-            &:hover {
-                background-color: var(--color);
-                border-color: var(--color);
+        .edition-year {
+            font-family: var(--font-family-mono); // technical: edition year
+            font-feature-settings: "tnum" 1;
+            letter-spacing: -0.03em;
+            font-size: 2.8rem;
+            font-weight: 600;
+            flex: 40%;
+        }
 
-                color: var(--color-primary-light);
+        .edition-data {
+            font-family: var(--font-family-mono); // technical: per-edition stats
+            font-feature-settings: "tnum" 1;
+            flex: 15%;
+        }
 
-                .img-tag {
-                    opacity: 1;
+        // Media column: replaces the old "networking" column. Holds the photo /
+        // video icon links, in the edition-current accent like the rest of the
+        // text, growing + tilting into white on hover for contrast.
+        .edition-media {
+            flex: 15%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            &__link {
+                position: relative;
+                z-index: 2; // above the stretched .edition-link overlay
+                display: inline-flex;
+                width: 1.6rem;
+
+                // Only the drawing scales/tilts — the link box stays put so the
+                // tooltip label (a child) keeps a stable size and position.
+                svg {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    transform-origin: center;
+                    transition: transform 0.2s ease;
                 }
+
+                .fill-main {
+                    fill: var(--current-color-400);
+                    transition: fill 0.2s ease;
+                }
+
+                &:hover {
+                    svg {
+                        transform: scale(2) rotate(-8deg);
+                    }
+
+                    .fill-main {
+                        fill: var(--color-light);
+                    }
+
+                    .edition-media__label {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            // Tooltip pill sitting above the icon, revealed on hover, naming what
+            // the icon links to. Accent fill + white text so it reads on both the
+            // plain row and the colour-filled hover state.
+            &__label {
+                position: absolute;
+                bottom: calc(100% + 0.5rem);
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 3;
+                padding: 0.15rem 0.5rem;
+                border-radius: var(--border-radius);
+                background-color: var(--color-light);
+                color: var(--current-color-400);
+                font-family: var(--font-family-mono);
+                font-size: 0.75rem;
+                font-weight: 600;
+                line-height: 1.4;
+                white-space: nowrap;
+                opacity: 0;
+                pointer-events: none;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                transition: opacity 0.2s ease;
+            }
+        }
+
+        .img-tag {
+            position: absolute;
+            left: 15%;
+            bottom: 20%;
+            max-width: 20%;
+            transition: none;
+            opacity: 0;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            .edition-year {
+                flex: 30%;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            padding: 1rem;
+            background-color: var(--color);
+            border-color: var(--color);
+            color: var(--color-light);
+
+            .img-tag {
+                display: none;
             }
 
             .edition-year {
-                font-family: var(--font-family-mono); // technical: edition year
-                font-feature-settings: "tnum" 1;
-                letter-spacing: -0.03em;
-                font-size: 2.8rem;
-                font-weight: 600;
-                flex: 40%;
+                flex: 100%;
             }
 
-            .edition-data {
-                font-family: var(--font-family-mono); // technical: per-edition stats
-                font-feature-settings: "tnum" 1;
-                flex: 15%;
+            .edition-data:not(.edition-data--empty) {
+                flex: unset;
+                border: 1px solid;
+                padding: 0.1rem 0.4rem;
+                border-radius: var(--border-radius);
             }
 
-            .img-tag {
-                position: absolute;
-                left: 15%;
-                bottom: 20%;
-                max-width: 20%;
-                transition: none;
-                opacity: 0;
+            // On mobile the row is always filled with the edition colour, so the
+            // icons ride the same light tone as the text.
+            .edition-media {
+                flex: unset;
 
-                svg {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            @media screen and (max-width: $breakpoint-md) {
-                .edition-year {
-                    flex: 30%;
-                }
-            }
-
-            @media screen and (max-width: $breakpoint-sm) {
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                gap: 0.5rem;
-                padding: 1rem;
-                background-color: var(--color);
-                border-color: var(--color);
-                color: var(--color-light);
-
-                .img-tag {
-                    display: none;
-                }
-
-                .edition-year {
-                    flex: 100%;
-                }
-
-                .edition-data:not(.edition-data--empty) {
-                    flex: unset;
-                    border: 1px solid;
-                    padding: 0.1rem 0.4rem;
-                    border-radius: var(--border-radius);
+                &__link .fill-main {
+                    fill: var(--color-light);
                 }
             }
         }

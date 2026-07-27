@@ -3,24 +3,41 @@
     {{ partial "breadcrumbs.html" (dict "page" .) }}
     <h1>{{ .Title }}</h1>
     <div class="past-editions">
-        {{ $editions := $.Site.Params.Editions }}
+        {{ $editions := sort $.Site.Params.Editions "year" "desc" }}
         {{ range $index, $edition := $editions }}
+        {{ $year := .year | string }}
         <div class="edition" style="--color: var(--{{.color}}-400)">
 
-            <a href="{{.url}}" target="_blank" class="{{ if .current }}current{{ end }}">
-                <span class="edition-year">{{.year}}</span>
-                <span class="edition-data{{ if not .tracks }} edition-data--empty{{ end }}">{{ if .tracks }}{{T "past_editions_tracks" (dict "number" .tracks)}}{{ end }}</span>
-                <span class="edition-data{{ if not .speakers }} edition-data--empty{{ end }}">{{ if .speakers }}{{T "past_editions_speakers" (dict "number" .speakers)}}{{ end }}</span>
-                <span class="edition-data{{ if not .attendees }} edition-data--empty{{ end }}">{{ if .attendees }}{{T "past_editions_attendees" (dict "number" .attendees)}}{{ end }}</span>
-                <span class="edition-data{{ if not .network }} edition-data--empty{{ end }}">{{ if .network }}{{T "past_editions_networking" (dict "number" .network)}}{{ end }}</span>
+            {{/* Stretched overlay: makes the whole row link to the edition site while
+                 leaving the media icons below as independently clickable siblings
+                 (nesting <a> inside <a> would be invalid HTML). */}}
+            <a href="{{.url}}" target="_blank" rel="noopener" class="edition-link{{ if .current }} current{{ end }}" aria-label="{{ T "past_editions_year" (dict "year" $year) }}"></a>
 
-                {{ $year := .year | string }}
-                {{ $yearImage := printf "img/year-%s.svg" $year }}
-                {{ with resources.Get $yearImage }}
-                <span class="img-tag"><img src="{{ .RelPermalink }}" alt="{{T " past_editions_year" (dict "number" $year)}}"></span>
+            <span class="edition-year">{{.year}}</span>
+            <span class="edition-data{{ if not .tracks }} edition-data--empty{{ end }}">{{ if .tracks }}{{T "past_editions_tracks" (dict "number" .tracks)}}{{ end }}</span>
+            <span class="edition-data{{ if not .speakers }} edition-data--empty{{ end }}">{{ if .speakers }}{{T "past_editions_speakers" (dict "number" .speakers)}}{{ end }}</span>
+            <span class="edition-data{{ if not .attendees }} edition-data--empty{{ end }}">{{ if .attendees }}{{T "past_editions_attendees" (dict "number" .attendees)}}{{ end }}</span>
+
+            <span class="edition-media{{ if not (or .photos .videos) }} edition-media--empty{{ end }}">
+                {{ with .photos }}
+                <a href="{{ . }}" target="_blank" rel="noopener" class="edition-media__link" title="{{ T "past_editions_photos" (dict "year" $year) }}" aria-label="{{ T "past_editions_photos" (dict "year" $year) }}">
+                    {{ with resources.Get "img/icons/icon-google-photos.svg" }}{{ .Content | safeHTML }}{{ end }}
+                    <span class="edition-media__label">{{ T "past_editions_photos_label" }}</span>
+                </a>
                 {{ end }}
+                {{ with .videos }}
+                <a href="{{ . }}" target="_blank" rel="noopener" class="edition-media__link" title="{{ T "past_editions_videos" (dict "year" $year) }}" aria-label="{{ T "past_editions_videos" (dict "year" $year) }}">
+                    {{ with resources.Get "img/icons/icon-youtube.svg" }}{{ .Content | safeHTML }}{{ end }}
+                    <span class="edition-media__label">{{ T "past_editions_videos_label" }}</span>
+                </a>
+                {{ end }}
+            </span>
 
-            </a>
+            {{ $yearImage := printf "img/year-%s.svg" $year }}
+            {{ with resources.Get $yearImage }}
+            <span class="img-tag"><img src="{{ .RelPermalink }}" alt="{{T "past_editions_year" (dict "year" $year)}}"></span>
+            {{ end }}
+
         </div>
         {{ end }}
     </div>
