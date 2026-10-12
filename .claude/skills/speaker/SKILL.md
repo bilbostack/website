@@ -28,27 +28,65 @@ From `$ARGUMENTS` and the conversation, decide:
 invent or guess bios, talk content, taglines, links, or scheduling. The user is the source of
 truth for this information.
 
-Run the interview as a short conversation:
+Run the interview as an **interactive form** with the `AskUserQuestion` tool. Don't ask in
+prose and wait for the user to type the data. Show the fields as questions with options, let
+the user fill them in (pick an option, or type the value in the **"Other"** free-text box) and
+submit. Each `AskUserQuestion` call is one form page with up to 4 questions and a submit.
 
-1. First pull whatever is already given in `$ARGUMENTS`/the conversation, and (for updates) read
-   the existing files — so you don't re-ask what you already know.
-2. Then ask for everything still missing. Prefer one `AskUserQuestion` round that batches the
-   open fields (it can hold up to 4 questions) over a long back-and-forth; fall back to plain
-   prose questions for free-text fields like the bio and talk description.
-3. Confirm anything ambiguous (e.g. exact spelling/accents of the name, which day/time).
+1. **Prefill first.** Pull whatever is already in `$ARGUMENTS`/the conversation and, for updates,
+   read the three existing files. Gather the option sources before building the form:
+   - Day options: the edition days used in `content/agenda.es.md` (e.g. `Viernes 30`, `Sábado 31`).
+   - Time options: the talk slots in `content/agenda.es.md` (pick the ones that look free or most
+     likely; max 3 plus "not decided").
+   - Photo options: `ls assets/img/speakers/` (suggest the files that match the name).
+   Leave out of the form any field that is already known. Put the known value as the first option
+   (label `Keep: <value>`) only when the user may want to confirm or change it, as on an update.
+2. **Page 1: identity and schedule** (one `AskUserQuestion` call, up to 4 questions):
+
+   | Question | header | Options (user types the real value in "Other" when it isn't listed) |
+   | --- | --- | --- |
+   | Speaker's full name, with exact accents? | `Nombre` | Value from `$ARGUMENTS` if any + `Type in "Other"` |
+   | Tagline / role / company? | `Tagline` | `Pending`, `Type in "Other"` |
+   | Which day do they speak? | `Día` | edition days from the agenda + `Not decided yet` |
+   | What time? | `Hora` | 2–3 agenda slots (`12:00h` …) + `Not decided yet` |
+
+3. **Page 2: photo, links and content** (one `AskUserQuestion` call):
+
+   | Question | header | Options |
+   | --- | --- | --- |
+   | Which photo? | `Foto` | matching files in `assets/img/speakers/` + `Provide later` (a new local path goes in "Other") |
+   | Social links? Paste every URL in "Other", one after another | `Links` | `No links yet`, `Paste in "Other"` |
+   | Speaker bio (any language: es/en/eu)? | `Bio` | `Pending`, `Paste in "Other"` |
+   | Talk title and abstract (title on the first line)? | `Charla` | `Pending (title TBD)`, `Paste in "Other"` |
+
+   Put the option's purpose in its `description` (for example "Type the full name in Other").
+   Use `preview` only to show the speaker card that results from page 1.
+4. **Handle the answers.** A field the user answered with an option that only says "type it in
+   Other", without actually typing anything, counts as missing: ask for it again in a short
+   follow-up `AskUserQuestion` round, not in prose. `Pending` / `Not decided yet` / `Provide later`
+   mean the field isn't decided yet, so apply the documented fallback.
+   Ask about anything ambiguous in that same follow-up round, such as name spelling or a
+   pasted link whose network is unclear.
+5. **Submit page.** Show a short recap (name, tagline per language, day/time, photo, links, which
+   texts are pending). Then ask one last `AskUserQuestion` (header `Confirmar`) with the options
+   `Write the files`, `Change a field`. On `Change a field`, open a page with only the fields to
+   fix, then show the recap again. Write files only after `Write the files`.
+
+If `AskUserQuestion` isn't available (non-interactive run), fall back to asking for the missing
+fields in a single prose message.
 
 Collect every field below. Mark a field as "unknown" only if the user explicitly says it isn't
 decided yet — then use the documented fallback (omit the talk `title`, omit `day`/`time`).
 
-| Field | Ask the user for… | Notes |
-|-------|-------------------|-------|
-| Full name | Their full name | → `title` (same in all three languages) |
-| Tagline / role | Their job title / role / company | → `tagline` and `taglineLarge`. **You translate per language** (see examples below). |
-| Day & time | Which day and time they speak | `day` is translated per language; `time` (e.g. `12:00h`) is the same. May be "not decided yet". |
-| Photo | A photo file or path | Goes in `assets/img/speakers/`. If none yet, ask them to provide one; `image` is the same path in all three files. |
-| Social links | Their LinkedIn / Instagram / BlueSky / X / GitHub / web URLs | `title` + `url` pairs. URLs identical across languages; normalize `title` casing (see below). |
-| Bio | Their bio text (ask for at least one language) | Prose. You translate it into the other two languages. |
-| Talk title + description | The talk title and abstract (ask for at least one language) | You translate per language. If undecided, omit `title` so it falls back to the i18n "talk pending" string. |
+| Field                    | Ask the user for…                                            | Notes                                                                                                              |
+| ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Full name                | Their full name                                              | → `title` (same in all three languages)                                                                            |
+| Tagline / role           | Their job title / role / company                             | → `tagline` and `taglineLarge`. **You translate per language** (see examples below).                               |
+| Day & time               | Which day and time they speak                                | `day` is translated per language; `time` (e.g. `12:00h`) is the same. May be "not decided yet".                    |
+| Photo                    | A photo file or path                                         | Goes in `assets/img/speakers/`. If none yet, ask them to provide one; `image` is the same path in all three files. |
+| Social links             | Their LinkedIn / Instagram / BlueSky / X / GitHub / web URLs | `title` + `url` pairs. URLs identical across languages; normalize `title` casing (see below).                      |
+| Bio                      | Their bio text (ask for at least one language)               | Prose. You translate it into the other two languages.                                                              |
+| Talk title + description | The talk title and abstract (ask for at least one language)  | You translate per language. If undecided, omit `title` so it falls back to the i18n "talk pending" string.         |
 
 You only need the bio and talk text in **one** language from the user — produce faithful es/en/eu
 translations yourself (see the translation conventions below). If the user supplies text in
@@ -116,7 +154,7 @@ Rules:
 
 1. Complete the **interview (step 2)** first — don't start writing until you have the data.
 2. **Read a current example** for the live format before writing — e.g.
-   `content/speakers/marta-barrio.{es,en,eu}.md`. Conventions drift; trust the files over this doc.
+   `content/speakers/marta-barrio.{es,en,eu}.md.tpl`. Conventions drift; trust the files over this doc.
 3. **For updates**, read all three existing files for that slug first, then apply the change
    consistently to each language. If the user gives the change in one language, translate it
    for the others.

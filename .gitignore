@@ -2,3 +2,7 @@ public
 resources/_gen
 .hugo_build.lock
 .idea
+.DS_Store
+des-config.json
+mise.toml
+.nwave
