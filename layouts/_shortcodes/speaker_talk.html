@@ -1,4 +1,4 @@
-{{- $title := or (.Get "title") T "talk_title_pending" }}
+{{- $title := or (.Get "title") (T "talk_title_pending") }}
 {{- $day := or (.Get "day") $.Page.Params.day }}
 {{- $time := or (.Get "time") $.Page.Params.time }}
 
