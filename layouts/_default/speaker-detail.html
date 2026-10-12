@@ -31,7 +31,7 @@
 
             <div class="social-media">
                 {{ range .Params.Links }}
-                <a href="{{.url}}" class="social-icon social-icon--{{.title | lower}}" target="_blank" title="{{.title}}">
+                <a href="{{.url}}" class="social-icon social-icon--{{ .title | lower | replaceRE "[^a-z0-9]" "" }}" target="_blank" title="{{.title}}">
                     {{ with resources.Get .image }}
                     {{ .Content | safeHTML }}
                     {{ end }}
