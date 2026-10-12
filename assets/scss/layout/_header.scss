@@ -368,7 +368,7 @@ body.menu-open #mobile-menu {
         mask-position: center;
         background-color: var(--font-color);
 
-        $social-names: x, bluesky, linkedin, github, instagram, web, telegram, mastodon, youtube, twitch, itchio, imdb, blog;
+        $social-names: x, bluesky, linkedin, github, instagram, web, telegram;
         @each $name in $social-names {
             &--#{$name} {
                 -webkit-mask-image: url("/img/icons/icon-#{$name}.svg");
