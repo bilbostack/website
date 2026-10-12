@@ -6,3 +6,4 @@ resources/_gen
 des-config.json
 mise.toml
 .nwave
+config/development/
