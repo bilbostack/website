@@ -81,7 +81,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `hashtag` | Event hashtag (`#Bilbostack27`) |
 | `eventStartDate`, `eventEndDate` | ISO 8601 event datetimes — feed the JSON-LD `Event` schema (`site-schema.html`) |
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
-| `sponsorsVisible`, `agendaVisible`, `ticketsOpen` | Feature flags toggling sections |
+| `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Eventbrite URL |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
@@ -301,7 +301,7 @@ raw favicons/manifest live in `static/img/`.
 | Add/edit a speaker | `content/speakers/<slug>.<lang>.md` (×3 languages) + image in `assets/img/speakers/` |
 | Edit the schedule | `content/agenda.<lang>.md` front matter (`schedule_viernes` / `schedule_sabado`) |
 | Add/update a sponsor | `[[params.sponsorBlocks]]` in `config/_default/hugo.toml` + image in `assets/img/sponsors/` |
-| Show/hide a section | Feature flags in `[params]` (`agendaVisible`, `sponsorsVisible`, `ticketsOpen`) |
+| Show/hide a section | Feature flags in `[params]` (`agendaVisible`, `sponsorsVisible`, `speakersVisible`, `ticketsOpen`) |
 | Change a UI string | `i18n/<lang>.toml` or `i18n/<area>/<lang>.toml` |
 | Edit navigation | `config/_default/menus.<lang>.toml` |
 | Add an edition | `editions` array in `hugo.toml` |

@@ -1,3 +1,4 @@
+{{ if .Site.Params.speakersVisible }}
 {{ $speakers := where .Site.Pages "Type" "speaker" }}
 {{ with $speakers }}
 <section id="speakers" class="pin-wrapper bs-texture-dots">
@@ -14,4 +15,5 @@
         </div>
     </div>
 </section>
+{{ end }}
 {{ end }}

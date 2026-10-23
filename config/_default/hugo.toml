@@ -13,6 +13,7 @@ enableRobotsTXT = true
     sponsorsDossierLink = "/docs/Bilbostack27-sponsors.es.pdf"
     sponsorsVisible = false
     agendaVisible = false
+    speakersVisible = false
     ticketsOpen = false
     ticketsLink = ""
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
