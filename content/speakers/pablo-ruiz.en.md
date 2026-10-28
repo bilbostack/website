@@ -1,10 +1,10 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-title = 'Pablo Ruiz Musquiz'
+title = 'Pablo Ruiz Múzquiz'
 tagline = 'CEO and Co-founder, Kaleidos (Penpot)'
 taglineLarge = 'CEO and Co-founder, Kaleidos (Penpot)'
-description = 'Pablo Ruiz Musquiz will speak at #Bilbostack27'
+description = 'Pablo Ruiz Múzquiz will speak at #Bilbostack27'
 image = 'img/speakers/pablo.jpg'
 [params]
   links = [
