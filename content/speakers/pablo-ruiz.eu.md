@@ -1,10 +1,10 @@
 +++
 layout = 'speaker-detail'
 type = 'speaker'
-title = 'Pablo Ruiz Musquiz'
+title = 'Pablo Ruiz Múzquiz'
 tagline = 'Kaleidos-en (Penpot) CEOa eta sortzailekidea'
 taglineLarge = 'Kaleidos-en (Penpot) CEOa eta sortzailekidea'
-description = 'Pablo Ruiz Musquizek #Bilbostack27ean hitz egingo du'
+description = 'Pablo Ruiz Múzquizek #Bilbostack27ean hitz egingo du'
 image = 'img/speakers/pablo.jpg'
 [params]
   links = [
