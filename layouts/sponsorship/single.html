@@ -1,0 +1,269 @@
+{{ define "main" }}
+{{- $editions := site.Params.editions -}}
+{{- $current := index (where $editions "current" true) 0 -}}
+{{- $editionNumber := len $editions -}}
+
+{{- /* Past editions with attendance data, in year order. Feeds the KPI stack and the chart. */ -}}
+{{- $past := slice -}}
+{{- $attendees := slice -}}
+{{- $totalAttendees := 0 -}}
+{{- $totalSpeakers := 0 -}}
+{{- range sort $editions "year" -}}
+  {{- if .attendees -}}
+    {{- $past = $past | append . -}}
+    {{- $attendees = $attendees | append .attendees -}}
+    {{- $totalAttendees = add $totalAttendees .attendees -}}
+    {{- $totalSpeakers = add $totalSpeakers (.speakers | default 0) -}}
+  {{- end -}}
+{{- end -}}
+{{- $peak := int (math.Max $attendees) -}}
+{{- $peakEdition := index (where $past "attendees" $peak) 0 -}}
+{{- /* Chart ceiling rounded up to the next 200 so the tallest bar never touches the top.
+       Each stacked block in a bar is 100 people. */ -}}
+{{- $ceiling := mul (math.Ceil (div (float $peak) 200)) 200 -}}
+
+<article id="sponsorship" class="main-content">
+    {{ partial "breadcrumbs.html" (dict "page" .) }}
+
+    {{/* HERO ─ title, ticket with the key facts and pitch on the left; scoreboard on the right */}}
+    <header class="sp-hero content">
+        <div class="sp-hero__text">
+            <p class="sp-kicker">{{ T "sp_kicker" (dict "edition" $editionNumber "year" $current.year) }}</p>
+            <h1>{{ T "sp_title" (dict "year" $current.year) }}</h1>
+            {{/* Key facts as one stacked strip: a tear-off calendar sheet for the date,
+                 a pinned venue card and a deadline card behind caution tape whose
+                 countdown is filled in by main.js (hidden without JS). */}}
+            {{- $start := time.AsTime site.Params.eventStartDate -}}
+            {{- $deadline := time.AsTime site.Params.sponsorsPaymentDeadline -}}
+            <dl class="sp-facts">
+                <div class="sp-fact sp-fact--date">
+                    <dt>{{ T "sp_fact_date" }}</dt>
+                    <dd>
+                        <time class="sp-cal" datetime="{{ $start.Format "2006-01-02" }}">
+                            <span class="sp-cal__month">{{ time.Format "Jan" $start | strings.TrimSuffix "." }}</span>
+                            <span class="sp-cal__day">{{ $start.Day }}</span>
+                            <span class="sp-cal__meta">{{ time.Format "Monday" $start }} · {{ $start.Year }}</span>
+                        </time>
+                    </dd>
+                </div>
+                <div class="sp-fact sp-fact--venue">
+                    <dt>
+                        <svg class="sp-fact__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        {{ T "sp_fact_venue" }}
+                    </dt>
+                    <dd>
+                        <strong>{{ site.Params.eventLocationName }}</strong>
+                        <span>{{ site.Params.eventLocationCity }}, {{ site.Params.eventLocationRegion }}</span>
+                    </dd>
+                </div>
+                <div class="sp-fact sp-fact--deadline">
+                    <dt>
+                        <svg class="sp-fact__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/></svg>
+                        {{ T "sp_deadline_label" }}
+                    </dt>
+                    <dd>
+                        <time class="sp-fact__deadline" datetime="{{ $deadline.Format "2006-01-02" }}">{{ $deadline.Format "02.01.2006" }}</time>
+                        <span class="sp-countdown" data-deadline="{{ $deadline.Format "2006-01-02" }}"
+                              data-many="{{ T "sp_deadline_left" }}" data-one="{{ T "sp_deadline_last" }}"
+                              data-closed="{{ T "sp_deadline_closed" }}" hidden></span>
+                    </dd>
+                </div>
+            </dl>
+            <p class="sp-lead">{{ .Params.lead }}</p>
+            <div class="sp-actions">
+                <a href="{{ site.Params.sponsorsDossierLink }}" class="btn" target="_blank" rel="noopener">{{ T "sp_download" }}</a>
+                <a href="mailto:{{ site.Params.sponsorsContactEmail }}" class="btn btn-outline">{{ T "sp_contact" }}</a>
+            </div>
+        </div>
+
+        {{/* Scoreboard: the record (with a sparkline of every edition) on top, the
+             three cumulative figures in one aligned row underneath. */}}
+        <div class="sp-kpis" role="group" aria-label="{{ T "sp_stats_label" }}">
+            <div class="sp-kpi sp-kpi--hero">
+                <span class="sp-kpi__value">{{ lang.FormatNumber 0 $peak }}</span>
+                <span class="sp-kpi__label">{{ T "sp_stats_peak" (dict "year" $peakEdition.year) }}</span>
+                <span class="sp-kpi__spark" aria-hidden="true">
+                    {{- range $i, $e := $past }}
+                    <i class="{{ if eq $e.attendees $peak }}is-peak{{ end }}" style="--ratio: {{ div (float $e.attendees) $peak }}; --i: {{ $i }}"></i>
+                    {{- end }}
+                </span>
+            </div>
+            <div class="sp-kpi">
+                <span class="sp-kpi__value">{{ len $past }}</span>
+                <span class="sp-kpi__label">{{ T "sp_stats_editions" }}</span>
+            </div>
+            <div class="sp-kpi">
+                <span class="sp-kpi__value">{{ lang.FormatNumber 0 $totalAttendees }}</span>
+                <span class="sp-kpi__label">{{ T "sp_stats_attendees" }}</span>
+            </div>
+            <div class="sp-kpi">
+                <span class="sp-kpi__value">{{ $totalSpeakers }}</span>
+                <span class="sp-kpi__label">{{ T "sp_stats_speakers" }}</span>
+            </div>
+        </div>
+    </header>
+
+    {{/* CHART ─ attendees per edition. Server-rendered bars; each bar is a stack of
+         100-person blocks, so the brand's "stack" doubles as the unit scale. */}}
+    <section class="sp-section content bs-texture-dots" aria-labelledby="sp-chart-title">
+        <div class="sp-section__head">
+            <p class="sp-kicker">{{ T "sp_chart_kicker" }}</p>
+            <h2 id="sp-chart-title">{{ T "sp_chart_title" }}</h2>
+            <p class="sp-section__note"><span class="sp-chart__unit-swatch" aria-hidden="true"></span>{{ T "sp_chart_unit" }}</p>
+        </div>
+
+        <figure class="sp-chart" style="--unit-ratio: {{ div 100.0 $ceiling }}">
+            <ol class="sp-chart__plot">
+                {{- $prevYear := 0 -}}
+                {{- $last := sub (len $past) 1 -}}
+                {{- range $i, $e := $past -}}
+                {{- if and $prevYear (gt (sub $e.year $prevYear) 1) -}}
+                <li class="sp-chart__col sp-chart__col--gap">
+                    <span class="sp-chart__gap" title="{{ T "sp_chart_gap" (dict "year" (add $prevYear 1)) }}">{{ T "sp_chart_gap" (dict "year" (add $prevYear 1)) }}</span>
+                    <span class="sp-chart__year" aria-hidden="true"><span class="sp-chart__year-full">{{ add $prevYear 1 }}</span><span class="sp-chart__year-short">’{{ printf "%02d" (mod (add $prevYear 1) 100) }}</span></span>
+                </li>
+                {{- end -}}
+                {{- $labelled := or (eq $i 0) (eq $i $last) (eq $e.attendees $peak) -}}
+                <li class="sp-chart__col{{ if $labelled }} is-labelled{{ end }}{{ if eq $e.attendees $peak }} is-peak{{ end }}" tabindex="0" style="--ratio: {{ div (float $e.attendees) $ceiling }}">
+                    <span class="visually-hidden">{{ $e.year }}: {{ T "past_editions_attendees" (dict "number" (lang.FormatNumber 0 $e.attendees)) }}{{ with $e.speakers }}, {{ T "past_editions_speakers" (dict "number" .) }}{{ end }}</span>
+                    <span class="sp-chart__value" aria-hidden="true">{{ lang.FormatNumber 0 $e.attendees }}</span>
+                    <span class="sp-chart__bar" aria-hidden="true"></span>
+                    <span class="sp-chart__tip" aria-hidden="true">
+                        <strong>{{ $e.year }}</strong>
+                        <span>{{ T "past_editions_attendees" (dict "number" (lang.FormatNumber 0 $e.attendees)) }}</span>
+                        {{ with $e.speakers }}<span>{{ T "past_editions_speakers" (dict "number" .) }}</span>{{ end }}
+                    </span>
+                    <span class="sp-chart__year" aria-hidden="true"><span class="sp-chart__year-full">{{ $e.year }}</span><span class="sp-chart__year-short">’{{ printf "%02d" (mod $e.year 100) }}</span></span>
+                </li>
+                {{- $prevYear = $e.year -}}
+                {{- end -}}
+            </ol>
+            <figcaption class="visually-hidden">{{ T "sp_chart_title" }}</figcaption>
+        </figure>
+
+        <details class="sp-chart__data">
+            <summary>{{ T "sp_chart_table" }}</summary>
+            <table>
+                <thead>
+                    <tr><th scope="col">{{ T "sp_table_year" }}</th><th scope="col">{{ T "sp_table_attendees" }}</th><th scope="col">{{ T "sp_table_speakers" }}</th></tr>
+                </thead>
+                <tbody>
+                    {{- range $past }}
+                    <tr><th scope="row">{{ .year }}</th><td>{{ lang.FormatNumber 0 .attendees }}</td><td>{{ .speakers }}</td></tr>
+                    {{- end }}
+                </tbody>
+            </table>
+        </details>
+    </section>
+
+    {{/* WHY ─ reasons rendered in the brand's <Tag/> code motif */}}
+    <section class="sp-section content" aria-labelledby="sp-reasons-title">
+        <div class="sp-section__head">
+            <p class="sp-kicker">{{ T "sp_reasons_kicker" (dict "year" $current.year) }}</p>
+            <h2 id="sp-reasons-title">{{ T "sp_reasons_title" }}</h2>
+        </div>
+        {{/* Rendered as a code editor window: every reason is a component with an
+             opening tag (the h3), its text as children, and a closing tag. */}}
+        <div class="sp-editor">
+            <div class="sp-editor__bar" aria-hidden="true">
+                <span class="sp-editor__dots"><i></i><i></i><i></i></span>
+                <span class="sp-editor__tab">{{ T "sp_reasons_file" }}</span>
+            </div>
+            <p class="sp-editor__root" aria-hidden="true"><span class="sp-reason__ln"></span><code><span class="sp-reason__punct">&lt;</span><b>{{ T "sp_reasons_component" }}</b> <em>{{ T "sp_reasons_attr" }}</em>=<q>{{ $current.year }}</q><span class="sp-reason__punct">&gt;</span></code></p>
+            <ol class="sp-reasons">
+                {{- range $i, $r := .Params.reasons }}
+                <li class="sp-reason">
+                    <span class="sp-reason__ln" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+                    <div class="sp-reason__body">
+                        <h3 class="sp-reason__tag"><span class="sp-reason__punct" aria-hidden="true">&lt;</span>{{ $r.title }}<span class="sp-reason__punct" aria-hidden="true">&gt;</span></h3>
+                        <p class="sp-reason__text">{{ $r.text }}</p>
+                        <span class="sp-reason__close" aria-hidden="true">&lt;/{{ $r.title }}&gt;</span>
+                    </div>
+                </li>
+                {{- end }}
+            </ol>
+            <p class="sp-editor__root" aria-hidden="true"><span class="sp-reason__ln"></span><code><span class="sp-reason__punct">&lt;/</span><b>{{ T "sp_reasons_component" }}</b><span class="sp-reason__punct">&gt;</span></code></p>
+            <div class="sp-editor__status" aria-hidden="true">
+                <span>{{ T "sp_reasons_status" (dict "count" (len .Params.reasons)) }}</span>
+                <span>{{ T "sp_event_label" (dict "year" $current.year) }}</span>
+            </div>
+        </div>
+    </section>
+
+    {{/* PACKAGES ─ ascending tiers, the featured one inverted onto the accent */}}
+    <section class="sp-section content" id="paquetes" aria-labelledby="sp-packages-title">
+        <div class="sp-section__head">
+            <p class="sp-kicker">{{ T "sp_packages_kicker" (dict "year" $current.year) }}</p>
+            <h2 id="sp-packages-title">{{ T "sp_packages_title" }}</h2>
+            <p class="sp-section__note">{{ T "sp_packages_note" }}</p>
+        </div>
+        <ol class="sp-packages">
+            {{- range $i, $p := .Params.packages }}
+            <li class="sp-package{{ if $p.featured }} sp-package--featured{{ end }}" style="--tier: {{ $i }}">
+                <div class="sp-package__head">
+                    <span class="sp-package__icon" aria-hidden="true">{{ $p.icon }}</span>
+                    <h3 class="sp-package__name">{{ $p.name }}</h3>
+                    {{ if $p.featured }}<span class="sp-package__badge">{{ T "sp_packages_featured" }}</span>{{ end }}
+                </div>
+                <p class="sp-package__price">{{ $p.price }}</p>
+                <p class="sp-package__max">{{ T "sp_packages_max" (dict "number" $p.max) }}</p>
+                <ul class="sp-package__benefits">
+                    {{- range $p.benefits }}
+                    <li>{{ . }}</li>
+                    {{- end }}
+                </ul>
+            </li>
+            {{- end }}
+        </ol>
+    </section>
+
+    {{/* EXTRAS + CONDITIONS */}}
+    <section class="sp-section sp-split content" aria-labelledby="sp-extras-title">
+        <div class="sp-extras">
+            <p class="sp-kicker">{{ T "sp_extras_kicker" }}</p>
+            <h2 id="sp-extras-title">{{ T "sp_extras_title" }}</h2>
+            <p>{{ T "sp_extras_text" }}</p>
+            <ul class="sp-chips">
+                {{- range .Params.extras }}
+                <li class="sp-chip"><span aria-hidden="true">{{ .icon }}</span> {{ .label }}{{ if .pending }}<sup title="{{ T "sp_extras_pending" }}">*</sup>{{ end }}</li>
+                {{- end }}
+            </ul>
+            <p class="sp-footnote">* {{ T "sp_extras_pending" }}</p>
+        </div>
+
+        <div class="sp-conditions">
+            <p class="sp-kicker">{{ T "sp_conditions_kicker" }}</p>
+            <h2>{{ T "sp_conditions_title" }}</h2>
+            <ul class="sp-conditions__list">
+                {{- range .Params.conditions }}
+                <li>{{ . }}</li>
+                {{- end }}
+            </ul>
+            <dl class="sp-dates">
+                <div>
+                    <dt>{{ T "sp_deadline_label" }}</dt>
+                    <dd>{{ time.Format "02.01.2006" site.Params.sponsorsPaymentDeadline }}</dd>
+                </div>
+                <div>
+                    <dt>{{ T "sp_event_label" (dict "year" $current.year) }}</dt>
+                    <dd>{{ time.Format "02.01.2006" site.Params.eventStartDate }}</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    {{/* CLOSING CTA */}}
+    <section class="sp-cta content" aria-labelledby="sp-cta-title">
+        <div class="sp-cta__inner">
+            <h2 id="sp-cta-title">{{ T "sp_cta_title" }}</h2>
+            <p>{{ T "sp_cta_text" }}</p>
+            <div class="sp-actions">
+                <a href="{{ site.Params.sponsorsDossierLink }}" class="btn" target="_blank" rel="noopener">{{ T "sp_download" }}</a>
+                <a href="mailto:{{ site.Params.sponsorsContactEmail }}" class="sp-cta__mail">{{ site.Params.sponsorsContactEmail }}</a>
+            </div>
+        </div>
+    </section>
+</article>
+
+{{ partial "site-sponsors.html" . }}
+{{ end }}

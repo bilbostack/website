@@ -1,0 +1,1217 @@
+// SPONSORSHIP PAGE ──────────────────────────────────────────────────────────
+// A sponsor-facing "spec sheet": mono kickers and figures, the dossier's
+// <Tag/> code motif, and the brand's *stack* as the recurring shape — the
+// headline numbers are a stack of cards and every chart bar is a stack of
+// 100-person blocks.
+
+#sponsorship {
+    // Shared offset used by every "stacked" element (hero cards, featured tier).
+    --sp-offset: 0.5rem;
+}
+
+// Small mono label with the filled-square marker (same voice as the wall of fame).
+.sp-kicker {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 var(--space-3);
+
+    &::before {
+        content: "";
+        flex: none;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--accent);
+    }
+}
+
+.sp-lead {
+    font-size: var(--font-size-lead);
+    line-height: 1.5;
+    max-width: 38rem;
+    margin: 0 0 var(--space-6);
+}
+
+.sp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-5);
+    // .btn's offset shadow sits on z-index:-1; give it a stacking context.
+    position: relative;
+    z-index: 0;
+}
+
+// HERO ──────────────────────────────────────────────────────────────────────
+.sp-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: center;
+
+    h1 {
+        margin: 0 0 var(--space-5);
+    }
+
+    .sp-lead {
+        margin-bottom: var(--space-6);
+    }
+}
+
+// Key facts as one stacked strip, same offset shadow as the scoreboard: a
+// tear-off calendar sheet for the date (binding holes along the top), a pinned
+// venue card, and the deadline card under caution tape with a live countdown.
+.sp-facts {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    width: fit-content;
+    max-width: calc(100% - var(--sp-offset));
+    margin: 0 0 var(--space-6);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary-light);
+    box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--font-color);
+    overflow: hidden;
+
+    dt {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-ink);
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+
+.sp-fact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: var(--space-5) var(--space-6) var(--space-4);
+
+    & + & {
+        border-left: 2px solid var(--font-color);
+    }
+
+    &__icon {
+        flex: none;
+        width: 1rem;
+        height: 1rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.25;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    &--venue dd {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+
+        strong {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-h5);
+            line-height: 1.15;
+        }
+
+        span {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+    }
+
+    // Caution tape across the top edge: the one fact with a clock on it.
+    &--deadline {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 0.4rem;
+            background: repeating-linear-gradient(-45deg,
+                    var(--accent) 0 0.45rem,
+                    var(--font-color) 0.45rem 0.9rem);
+        }
+
+        dd {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-2);
+        }
+    }
+
+    &__deadline {
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: var(--font-size-h5);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.02em;
+    }
+
+    // The date is the headline: a calendar sheet in the edition colour.
+    &--date {
+        background-color: var(--accent-ink);
+        color: var(--color-primary-light);
+        padding-top: var(--space-6);
+
+        dt {
+            @include visually-hidden;
+        }
+
+        // Binding holes punched along the top of the sheet.
+        &::before {
+            content: "";
+            position: absolute;
+            top: var(--space-2);
+            left: var(--space-4);
+            right: var(--space-4);
+            height: 0.45rem;
+            background: radial-gradient(circle, var(--color-primary-light) 0 0.18rem, transparent 0.2rem) 0 50% / 0.9rem 100% space no-repeat;
+            opacity: 0.9;
+        }
+    }
+}
+
+.sp-cal {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+        "day month"
+        "day meta";
+    align-items: end;
+    justify-content: start;
+    column-gap: var(--space-3);
+
+    &__day {
+        grid-area: day;
+        font-family: var(--font-family-display);
+        font-size: #{"clamp(2.75rem, 2.2rem + 1.6vw, 3.5rem)"};
+        font-weight: 700;
+        line-height: 0.82;
+        letter-spacing: -0.04em;
+        font-feature-settings: "tnum" 1;
+    }
+
+    &__month {
+        grid-area: month;
+        align-self: end;
+        font-family: var(--font-family-display);
+        font-size: var(--font-size-h5);
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    &__meta {
+        grid-area: meta;
+        align-self: start;
+        margin-top: 0.3rem;
+        font-family: var(--font-family-mono);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 0.85;
+    }
+}
+
+// "Quedan N días": filled by main.js, with a beacon that pulses while open.
+.sp-countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.2rem 0.55rem 0.2rem 0.45rem;
+    border-radius: 999px;
+    background-color: var(--font-color);
+    color: var(--color-primary-light);
+    font-family: var(--font-family-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &::before {
+        content: "";
+        flex: none;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background-color: var(--accent);
+        box-shadow: 0 0 0 0 var(--accent);
+        animation: sp-beacon 1.8s ease-out infinite;
+    }
+
+    &.is-closed {
+        background-color: transparent;
+        color: var(--font-color);
+        box-shadow: inset 0 0 0 1px var(--font-color);
+
+        &::before {
+            background-color: currentColor;
+            animation: none;
+        }
+    }
+}
+
+@keyframes sp-beacon {
+    0% {
+        box-shadow: 0 0 0 0 var(--accent);
+    }
+
+    70%,
+    100% {
+        box-shadow: 0 0 0 0.4rem transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-countdown::before {
+        animation: none;
+    }
+}
+
+// Headline numbers as one scoreboard block: the record on top, filled with the
+// accent and carrying a sparkline of every edition; the three cumulative figures
+// share borders in a single aligned row below. One offset shadow for the whole
+// block keeps the "stack" motif without staggering the cards.
+.sp-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-right: var(--sp-offset);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary-light);
+    box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--font-color);
+    overflow: hidden;
+}
+
+.sp-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: var(--space-5);
+
+    & + & {
+        border-left: 2px solid var(--font-color);
+    }
+
+    &__value {
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: #{"clamp(1.5rem, 1.2rem + 1vw, 2.25rem)"};
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 1;
+    }
+
+    &__label {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    &--hero {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "value spark"
+            "label spark";
+        align-items: end;
+        column-gap: var(--space-5);
+        padding: var(--space-6) var(--space-5);
+        background-color: var(--accent-ink);
+        color: var(--color-primary-light);
+        border-bottom: 2px solid var(--font-color);
+
+        .sp-kpi__value {
+            grid-area: value;
+            font-size: #{"clamp(3rem, 2.2rem + 3vw, 4.75rem)"};
+        }
+
+        .sp-kpi__label {
+            grid-area: label;
+            font-family: var(--font-family-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+    }
+
+    // Sparkline of attendance per edition; the record year is drawn solid.
+    &__spark {
+        grid-area: spark;
+        display: flex;
+        align-items: flex-end;
+        gap: 3px;
+        height: 4.5rem;
+
+        i {
+            width: 0.5rem;
+            height: calc(var(--ratio) * 100%);
+            border-radius: 2px 2px 0 0;
+            background-color: color-mix(in srgb, var(--color-primary-light) 40%, transparent);
+            transform-origin: bottom;
+            animation: sp-spark-grow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+            animation-delay: calc(0.3s + var(--i) * 0.05s);
+        }
+
+        .is-peak {
+            background-color: var(--color-primary-light);
+        }
+    }
+}
+
+@keyframes sp-spark-grow {
+    from {
+        transform: scaleY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-kpi__spark i {
+        animation: none;
+    }
+}
+
+// SECTIONS ──────────────────────────────────────────────────────────────────
+.sp-section {
+    margin-top: var(--section-gap);
+
+    &__head {
+        margin-bottom: var(--space-7);
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__note {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin: var(--space-4) 0 0;
+        max-width: 40rem;
+        opacity: 0.8;
+    }
+}
+
+// CHART ─────────────────────────────────────────────────────────────────────
+.sp-chart {
+    --plot-h: #{"clamp(14rem, 10rem + 14vw, 22rem)"};
+    --unit: calc(var(--plot-h) * var(--unit-ratio));
+    --block-gap: 2px;
+    margin: 0;
+
+    &__plot {
+        list-style: none;
+        margin: 0;
+        padding: var(--space-7) 0 0; // headroom for the top value label
+        display: flex;
+        align-items: flex-end;
+        gap: #{"clamp(2px, 0.6vw, var(--space-3))"};
+        border-bottom: 2px solid var(--font-color);
+    }
+
+    &__col {
+        position: relative;
+        flex: 1 1 0;
+        min-width: 0;
+        height: var(--plot-h);
+        display: flex;
+        align-items: flex-end;
+        outline: none;
+        cursor: default;
+
+        &:focus-visible .sp-chart__bar {
+            @include focus-ring(3px);
+        }
+    }
+
+    // The bar is a repeating stack of unit blocks separated by a surface gap,
+    // anchored at the baseline; the top block is cut wherever the value lands.
+    &__bar {
+        display: block;
+        width: 100%;
+        height: calc(var(--plot-h) * var(--ratio));
+        border-radius: 4px 4px 0 0;
+        background: repeating-linear-gradient(
+            to top,
+            var(--accent) 0,
+            var(--accent) calc(var(--unit) - var(--block-gap)),
+            transparent calc(var(--unit) - var(--block-gap)),
+            transparent var(--unit)
+        );
+        transform-origin: bottom;
+        transition: filter 0.15s ease;
+    }
+
+    &__col:hover &__bar,
+    &__col:focus-visible &__bar {
+        background: repeating-linear-gradient(
+            to top,
+            var(--accent-ink) 0,
+            var(--accent-ink) calc(var(--unit) - var(--block-gap)),
+            transparent calc(var(--unit) - var(--block-gap)),
+            transparent var(--unit)
+        );
+    }
+
+    // Direct labels only on first, peak and latest bars; the rest via tooltip.
+    &__value {
+        position: absolute;
+        left: 50%;
+        bottom: calc(var(--plot-h) * var(--ratio) + var(--space-2));
+        transform: translateX(-50%);
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: 0.8rem;
+        font-weight: 700;
+        white-space: nowrap;
+        opacity: 0;
+    }
+
+    &__col.is-labelled &__value {
+        opacity: 1;
+    }
+
+    &__col:hover &__value,
+    &__col:focus-visible &__value {
+        opacity: 0;
+    }
+
+    &__tip {
+        position: absolute;
+        left: 50%;
+        bottom: calc(var(--plot-h) * var(--ratio) + var(--space-3));
+        transform: translate(-50%, 4px);
+        z-index: 3;
+        display: grid;
+        gap: 0.1rem;
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--border-radius);
+        background-color: var(--font-color);
+        color: var(--color-primary-light);
+        font-family: var(--font-family-mono);
+        font-size: 0.75rem;
+        line-height: 1.4;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.15s ease, transform 0.15s ease;
+
+        strong {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__col:hover &__tip,
+    &__col:focus-visible &__tip {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    // Keep the edge tooltips inside the plot.
+    &__col:first-child &__tip {
+        left: 0;
+        transform: translate(0, 4px);
+    }
+    &__col:last-child &__tip {
+        left: auto;
+        right: 0;
+        transform: translate(0, 4px);
+    }
+    &__col:first-child:hover &__tip,
+    &__col:last-child:hover &__tip,
+    &__col:first-child:focus-visible &__tip,
+    &__col:last-child:focus-visible &__tip {
+        transform: translate(0, 0);
+    }
+
+    &__year {
+        position: absolute;
+        top: calc(100% + var(--space-2));
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0.75;
+    }
+
+    &__year-short {
+        display: none;
+    }
+
+    // Missing year (no 2021 edition): a hairline dashed placeholder.
+    &__col--gap {
+        flex: 0.6 1 0;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    &__gap {
+        width: 0;
+        border-left: 2px dashed color-mix(in srgb, var(--font-color) 35%, transparent);
+        font-size: 0;
+        color: transparent;
+        overflow: hidden;
+    }
+
+    // Swatch for the "each block = 100 people" legend.
+    &__unit-swatch {
+        display: inline-block;
+        width: 1rem;
+        height: 0.6rem;
+        border-radius: 2px;
+        background-color: var(--accent);
+    }
+
+    &__data {
+        margin-top: var(--space-8);
+        font-size: 0.9rem;
+
+        summary {
+            cursor: pointer;
+            font-family: var(--font-family-mono);
+            color: var(--accent-ink);
+            width: fit-content;
+
+            &:focus-visible {
+                @include focus-ring(3px);
+            }
+        }
+
+        table {
+            margin-top: var(--space-4);
+            border-collapse: collapse;
+            font-family: var(--font-family-mono);
+            font-feature-settings: "tnum" 1;
+        }
+
+        th,
+        td {
+            padding: var(--space-1) var(--space-5) var(--space-1) 0;
+            text-align: right;
+            border-bottom: 1px solid color-mix(in srgb, var(--font-color) 15%, transparent);
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+    }
+}
+
+// REASONS ─ code editor ─────────────────────────────────────────────────────
+// The dossier writes each benefit as <Tag/>; here that motif becomes a whole
+// editor window. It is a *fixed* dark surface (same in both themes, like the
+// sponsors wall is fixed light), so it uses the fixed ramp + fixed light/dark,
+// and an accent offset shadow so it still separates from the dark-theme page.
+.sp-editor {
+    --ed-bg: var(--current-color-fixed-700);
+    --ed-line: color-mix(in srgb, var(--color-light) 10%, transparent);
+    --ed-tag: var(--current-color-fixed-300);
+    --ed-punct: var(--orange-300);
+    --ed-muted: color-mix(in srgb, var(--color-light) 45%, transparent);
+
+    position: relative;
+    margin-right: var(--sp-offset);
+    border-radius: var(--border-radius);
+    background-color: var(--ed-bg);
+    color: var(--color-light);
+    box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--accent);
+    overflow: hidden;
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+        padding: var(--space-3) var(--space-5);
+        background-color: var(--color-dark);
+        border-bottom: 1px solid var(--ed-line);
+    }
+
+    // Window controls in brand hues instead of the OS traffic lights.
+    &__dots {
+        display: flex;
+        gap: 0.4rem;
+
+        i {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: var(--orange-400);
+
+            &:nth-child(2) {
+                background-color: var(--yellow-400);
+            }
+            &:nth-child(3) {
+                background-color: var(--aqua-400);
+            }
+        }
+    }
+
+    &__tab {
+        font-family: var(--font-family-mono);
+        font-size: 0.8rem;
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--border-radius-xs);
+        background-color: var(--ed-bg);
+        border-bottom: 2px solid var(--accent);
+    }
+
+    &__status {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-4);
+        padding: var(--space-2) var(--space-5);
+        background-color: var(--current-color-fixed-500);
+        font-family: var(--font-family-mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+}
+
+// Opening/closing line of the root component that wraps every benefit.
+.sp-editor__root {
+    display: grid;
+    grid-template-columns: var(--ed-gutter) minmax(0, 1fr);
+    margin: 0;
+    font-family: var(--font-family-mono);
+    font-size: 0.95rem;
+
+    code {
+        padding: var(--space-4) var(--space-5);
+        font-family: inherit;
+        color: var(--ed-tag);
+        overflow-wrap: anywhere;
+    }
+
+    b {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: normal;
+        color: var(--color-light);
+    }
+
+    q {
+        color: var(--ed-punct);
+
+        &::before,
+        &::after {
+            content: '"';
+        }
+    }
+}
+
+.sp-editor {
+    --ed-gutter: 3.5rem;
+    --ed-indent: var(--space-7); // one nesting level inside the root component
+}
+
+.sp-reasons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sp-reason {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--ed-gutter) minmax(0, 1fr);
+    font-family: var(--font-family-mono);
+    transition: background-color 0.2s ease;
+
+    // A trailing odd item takes the full width so the last row closes.
+    &:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    // Line-number gutter. Its right rule spans the full item height, so the rules
+    // of consecutive items join into one continuous gutter line.
+    &__ln {
+        padding: calc(var(--space-4) + 0.35rem) var(--space-3) 0 0;
+        border-right: 1px solid var(--ed-line);
+        text-align: right;
+        font-size: 0.75rem;
+        font-feature-settings: "tnum" 1;
+        color: var(--ed-muted);
+        transition: color 0.2s ease;
+    }
+
+    &__body {
+        padding: var(--space-4) var(--space-6) var(--space-4) var(--ed-indent);
+    }
+
+    // Second column: the gutter sits mid-editor, so mark it the same way.
+    &:nth-child(even) .sp-reason__ln {
+        border-left: 1px solid var(--ed-line);
+    }
+
+    &__tag {
+        margin: 0;
+        font-family: var(--font-family-mono);
+        font-size: var(--font-size-h4);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--ed-tag);
+        overflow-wrap: anywhere;
+    }
+
+    &__punct {
+        color: var(--ed-punct);
+        font-weight: 400;
+    }
+
+    // Children are prose, so they switch back to the body face, indented one level.
+    &__text {
+        margin: var(--space-2) 0 var(--space-2) var(--space-5);
+        font-family: var(--font-family);
+        font-size: 1.05rem;
+        line-height: 1.45;
+        max-width: 34rem;
+    }
+
+    &__close {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--ed-muted);
+
+        // Caret that only blinks on the "active line". It sits after the short
+        // closing tag, so showing it never reflows the prose above.
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 0.55em;
+            height: 1.1em;
+            margin-left: 0.2em;
+            vertical-align: text-bottom;
+            background-color: var(--accent);
+            opacity: 0;
+        }
+    }
+
+    &:hover {
+        background-color: var(--ed-line);
+
+        .sp-reason__ln {
+            color: var(--color-light);
+        }
+
+        .sp-reason__close::after {
+            animation: sp-caret 1s steps(1) infinite;
+        }
+    }
+
+    &:hover::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3px;
+        background-color: var(--accent);
+    }
+}
+
+@keyframes sp-caret {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-reason:hover .sp-reason__close::after {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+// PACKAGES ──────────────────────────────────────────────────────────────────
+.sp-packages {
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--sp-offset) var(--sp-offset) 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-5);
+    align-items: start;
+}
+
+.sp-package {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary-light);
+    // Tiers climb: each one starts a little higher than the previous, a bar chart
+    // of value in itself. Reset on narrow screens where cards stack.
+    margin-top: calc((3 - var(--tier)) * var(--space-6));
+
+    &__head {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    &__name {
+        margin: 0;
+        font-family: var(--font-family-display);
+        font-size: var(--font-size-h4);
+        color: inherit;
+    }
+
+    &__badge {
+        margin-left: auto;
+        padding: 0.15rem 0.6rem;
+        border-radius: var(--border-radius-pill);
+        background-color: var(--color-primary-light);
+        color: var(--accent-ink);
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    &__price {
+        margin: var(--space-5) 0 0;
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: #{"clamp(2rem, 1.6rem + 1.2vw, 2.6rem)"};
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 1;
+    }
+
+    &__max {
+        margin: var(--space-2) 0 var(--space-5);
+        font-family: var(--font-family-mono);
+        font-size: 0.8rem;
+        opacity: 0.75;
+    }
+
+    &__benefits {
+        list-style: none;
+        margin: 0;
+        padding: var(--space-4) 0 0;
+        border-top: 2px solid currentColor;
+        display: grid;
+        gap: var(--space-3);
+        font-size: 0.95rem;
+
+        li {
+            position: relative;
+            padding-left: 1.2rem;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.45em;
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: var(--accent);
+            }
+        }
+    }
+
+    &--featured {
+        background-color: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: var(--color-primary-light);
+        box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--font-color);
+
+        .sp-package__benefits li::before {
+            background-color: var(--color-primary-light);
+        }
+    }
+}
+
+// EXTRAS + CONDITIONS ───────────────────────────────────────────────────────
+.sp-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+    align-items: start;
+
+    h2 {
+        margin: 0 0 var(--space-4);
+    }
+}
+
+.sp-chips {
+    list-style: none;
+    margin: var(--space-5) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.sp-chip {
+    padding: var(--space-2) var(--space-4);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius-pill);
+    font-weight: 600;
+    transition: transform 0.2s ease;
+
+    &:nth-child(odd):hover {
+        transform: rotate(-3deg);
+    }
+    &:nth-child(even):hover {
+        transform: rotate(3deg);
+    }
+
+    sup {
+        color: var(--accent-ink);
+    }
+}
+
+.sp-footnote {
+    margin: var(--space-4) 0 0;
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.sp-conditions__list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: var(--space-3);
+
+    li::marker {
+        color: var(--accent-ink);
+    }
+}
+
+.sp-dates {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0 0;
+
+    div {
+        padding: var(--space-4);
+        border: 2px solid var(--font-color);
+        border-radius: var(--border-radius);
+    }
+
+    dt {
+        font-size: 0.85rem;
+    }
+
+    dd {
+        margin: var(--space-2) 0 0;
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: var(--font-size-h4);
+        font-weight: 700;
+        color: var(--accent-ink);
+    }
+}
+
+// CLOSING CTA ───────────────────────────────────────────────────────────────
+.sp-cta {
+    margin-top: var(--section-gap);
+
+    &__inner {
+        padding: var(--space-8) var(--space-6);
+        border: 2px solid var(--font-color);
+        border-radius: var(--border-radius);
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        gap: var(--space-4);
+        background-color: var(--current-color-100);
+
+        h2 {
+            margin: 0;
+        }
+
+        p {
+            max-width: 36rem;
+            margin: 0 0 var(--space-4);
+        }
+    }
+
+    &__mail {
+        font-family: var(--font-family-mono);
+        font-weight: 700;
+        color: var(--font-color);
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.25em;
+
+        &:hover {
+            color: var(--accent-ink);
+        }
+    }
+}
+
+// RESPONSIVE ────────────────────────────────────────────────────────────────
+@media screen and (max-width: $breakpoint-lg) {
+    .sp-hero {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+
+    .sp-packages {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sp-reasons {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-reason:nth-child(even) .sp-reason__ln {
+        border-left: 0;
+    }
+
+    .sp-package {
+        margin-top: 0;
+    }
+
+    .sp-split {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .sp-chart__year-full {
+        display: none;
+    }
+    .sp-chart__year-short {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .sp-packages {
+        grid-template-columns: 1fr;
+    }
+
+    // Tighter gutter so the code still has room at phone width.
+    .sp-editor {
+        --ed-gutter: 2.5rem;
+        --ed-indent: var(--space-4);
+    }
+
+    .sp-editor__root code {
+        padding-inline: var(--space-3);
+    }
+
+    .sp-reason {
+        &__body {
+            padding-right: var(--space-4);
+        }
+
+        &__text {
+            margin-left: var(--space-3);
+        }
+    }
+
+    .sp-editor__status span:last-child {
+        display: none;
+    }
+
+    // Facts: calendar sheet across the top, venue + deadline side by side below.
+    .sp-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: auto;
+    }
+
+    .sp-fact {
+        padding: var(--space-4);
+
+        &--date {
+            grid-column: 1 / -1;
+            padding-top: var(--space-6);
+        }
+
+        & + & {
+            border-top: 2px solid var(--font-color);
+        }
+
+        &--date + & {
+            border-left: 0;
+        }
+    }
+
+    // Record tile stacks vertically; the sparkline takes the full width below.
+    .sp-kpi--hero {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "value"
+            "label"
+            "spark";
+        row-gap: var(--space-2);
+    }
+
+    .sp-kpi__spark {
+        height: 3rem;
+        margin-top: var(--space-3);
+
+        i {
+            flex: 1;
+            width: auto;
+        }
+    }
+
+    .sp-kpi {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .sp-dates {
+        grid-template-columns: 1fr;
+    }
+
+    .sp-chart__value {
+        font-size: 0.65rem;
+    }
+
+    // Bars are too narrow for neighbouring labels: keep only the peak.
+    .sp-chart__col.is-labelled:not(.is-peak) .sp-chart__value {
+        opacity: 0;
+    }
+}
