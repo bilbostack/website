@@ -28,6 +28,7 @@ system and tokens, and [`design-plan.md`](./design-plan.md) for the standing des
 │   ├── agenda.<lang>.md    # Agenda/schedule (data-driven, see below)
 │   ├── info.<lang>.md      # Attendee info
 │   ├── past-editions.<lang>.md
+│   ├── sponsorship.<lang>.md  # Sponsor packages page (data-driven front matter)
 │   └── speakers/           # One file per speaker per language: <slug>.<lang>.md
 ├── layouts/                # Hugo templates
 │   ├── _default/           # baseof, single, page, section, taxonomy, speaker-detail
@@ -36,10 +37,11 @@ system and tokens, and [`design-plan.md`](./design-plan.md) for the standing des
 │   ├── agenda/single.html  # Agenda page template
 │   ├── info/single.html
 │   ├── past-editions/single.html
+│   ├── sponsorship/single.html
 │   └── index.html          # Home page template
 ├── i18n/                   # Translation strings (TOML), grouped by area
 │   ├── <lang>.toml         # Global strings
-│   └── <area>/<lang>.toml  # home, sponsors, info, past_editions, agenda, speaker_detail
+│   └── <area>/<lang>.toml  # home, sponsors, sponsorship, info, past_editions, agenda, speaker_detail
 ├── assets/                 # Processed by Hugo Pipes (fingerprinted/compiled)
 │   ├── scss/               # SCSS source (see SCSS section)
 │   ├── js/main.js          # GSAP ScrollSmoother + interactions
@@ -85,6 +87,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `ticketsLink` | Eventbrite URL |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
+| `sponsorsContactEmail`, `sponsorsPaymentDeadline` | Sponsorship page contact and payment deadline (ISO date) |
 | `org` | Array of organizers (`name`, `url`, `image`) |
 | `links` | Social links (`title`, `url`, `image`) |
 | `editions` | Array of all past/current editions (`year`, `url`, stats, `color`, `current`) |
@@ -135,6 +138,7 @@ Hugo picks the template by the front-matter `type`/`layout`:
 | Agenda | `type = 'agenda'` | `layouts/agenda/single.html` |
 | Info | `type = 'info'` | `layouts/info/single.html` |
 | Past editions | `type = 'past-editions'` | `layouts/past-editions/single.html` |
+| Sponsorship | `type = 'sponsorship'` | `layouts/sponsorship/single.html` |
 
 ### Home (`layouts/index.html`)
 
@@ -221,11 +225,28 @@ the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single
 `past-editions.<lang>.md` is currently a `TBD` stub; edition stats come from the
 `editions` array in `hugo.toml`.
 
+### Sponsorship page (`content/sponsorship.<lang>.md`)
+
+Sponsor-facing page at `/sponsorship/` (×3 languages). Translated, page-specific data lives
+in front matter: `lead`, `reasons[]` (`title`, `text` — rendered as `<Title/>`),
+`packages[]` (`name`, `icon`, `price` as a localized string, `max`, `featured`, `benefits[]`),
+`extras[]` (`icon`, `label`, `pending`) and `conditions[]`. Keep the arrays in the same order
+across languages. Section headings are i18n keys in `i18n/sponsorship/`. Site-wide values come
+from params: event date/venue, `sponsorsDossierLink`, `sponsorsContactEmail`,
+`sponsorsPaymentDeadline`. The hero's key-facts strip derives its calendar sheet (day, month,
+weekday, localized by Hugo) from `eventStartDate`; the deadline card's "N days left" pill is
+filled client-side by `initSponsorCountdown()` in `main.js` (strings `sp_deadline_left/last/closed`,
+hidden without JS). The headline numbers and the attendees bar chart are computed at
+build time from the `editions` array (editions with `attendees`), so they update when an
+edition is archived; the chart is pure HTML/CSS (each bar is a stack of 100-person blocks,
+gaps between years are drawn as a dashed placeholder) with a `<details>` data table. Bars grow
+in via `initRevealAnimations()` in `main.js`.
+
 ### Navigation menus
 
 Defined per language in `config/_default/menus.<lang>.toml` as `[[main]]` entries
 (`name`, `identifier`, `url`, `weight`, plus `[main.params].desc`). Items: Home,
-Agenda, Info, Past editions.
+Agenda, Info, Past editions. (The sponsorship page is intentionally not in the menu yet; it is reachable at `/sponsorship/`.)
 
 ## Styling (SCSS)
 
@@ -241,7 +262,7 @@ Extended. Entry point `assets/scss/style.scss` imports, in order:
   `_base` (visually-hidden utility, default focus ring, reduced-motion block),
   `_atmosphere` (dot-grid texture `.bs-texture-dots`),
   `_images`, `_responsive`
-- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`
+- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`, `_sponsorship`
 - `layout/` — `_header`, `_footer`, `_layout`
 - `fix` — last-resort overrides (kept empty by default; fix the real partial instead)
 

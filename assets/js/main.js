@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initHeader();
     initMenu();
     initAnimations();
+    initSponsorCountdown();
 });
 
 function initHeader() {
@@ -230,6 +231,60 @@ function initRevealAnimations() {
                 opacity: 1,
                 duration: 0.6,
                 stagger: 0.12,
+                ease: 'power2.out',
+                overwrite: true,
+            }),
+        });
+    }
+
+    // Sponsorship chart: bars grow from the baseline, left to right, once the plot
+    // scrolls into view. Value labels fade in after their bar lands.
+    const plot = document.querySelector('#sponsorship .sp-chart__plot');
+    if (plot) {
+        const bars = plot.querySelectorAll('.sp-chart__bar');
+        const values = plot.querySelectorAll('.is-labelled .sp-chart__value');
+        gsap.set(bars, { scaleY: 0 });
+        gsap.set(values, { opacity: 0 });
+        ScrollTrigger.create({
+            trigger: plot,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                gsap.to(bars, { scaleY: 1, duration: 0.7, stagger: 0.05, ease: 'power3.out' });
+                gsap.to(values, { opacity: 1, duration: 0.3, delay: 0.9, clearProps: 'opacity' });
+            },
+        });
+    }
+
+    // Sponsorship "editor": each benefit is typed in, left to right, line by line.
+    const reasons = gsap.utils.toArray('#sponsorship .sp-reason__body');
+    if (reasons.length) {
+        gsap.set(reasons, { clipPath: 'inset(0 100% 0 0)' });
+        ScrollTrigger.create({
+            trigger: '#sponsorship .sp-editor',
+            start: 'top 75%',
+            once: true,
+            onEnter: () => gsap.to(reasons, {
+                clipPath: 'inset(0 0% 0 0)',
+                duration: 0.5,
+                stagger: 0.12,
+                ease: 'steps(18)',
+                clearProps: 'clipPath',
+            }),
+        });
+    }
+
+    // Sponsorship tiers rise in sequence.
+    const packages = gsap.utils.toArray('#sponsorship .sp-package');
+    if (packages.length) {
+        gsap.set(packages, { y: 36, opacity: 0 });
+        ScrollTrigger.batch(packages, {
+            start: 'top 88%',
+            onEnter: batch => gsap.to(batch, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1,
                 ease: 'power2.out',
                 overwrite: true,
             }),
@@ -577,6 +632,32 @@ function initAgendaAnimation() {
             });
         });
     });
+}
+
+// ===== SPONSORSHIP DEADLINE COUNTDOWN =====
+// Days left until the payment deadline (inclusive of the deadline day itself),
+// counted in calendar days on the visitor's clock. Strings come from i18n via
+// data attributes; the pill stays hidden if JS doesn't run.
+function initSponsorCountdown() {
+    const el = document.querySelector('#sponsorship .sp-countdown');
+    if (!el) return;
+
+    const [y, m, d] = el.dataset.deadline.split('-').map(Number);
+    const today = new Date();
+    // +1 so the deadline day counts: the plural string never sees "1".
+    const days = 1 + Math.round(
+        (Date.UTC(y, m - 1, d) - Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())) / 86400000
+    );
+
+    if (days < 1) {
+        el.textContent = el.dataset.closed;
+        el.classList.add('is-closed');
+    } else if (days === 1) {
+        el.textContent = el.dataset.one;
+    } else {
+        el.textContent = el.dataset.many.replace('{n}', days);
+    }
+    el.hidden = false;
 }
 
 // ===== THEME DARK / LIGHT MODES =====
