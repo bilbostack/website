@@ -2,6 +2,9 @@
 title = 'Babesletza'
 description = 'BilboStack 2027ko babesletza-paketeak: mailak, onurak, parte-hartzaileen historikoa eta PDF dosierra.'
 type = 'sponsorship'
+seoTitle = "Babestu BilboStack 2027 · Teknologia-konferentzia Bilbon"
+seoDescription = "Babestu BilboStack 2027, Bilboko teknologia-konferentzia: 800 profesional baino gehiago, 4 maila 800 €-tik aurrera, onurak eta PDF dosierra."
+image = 'img/bilbostack_publico.webp'   # social share (og:image)
 lead = 'BilboStack irabazi-asmorik gabeko teknologia-konferentzia da, 2012az geroztik urtero Bilbon egiten dena. Komunitateko pertsonek antolatzen dute, helburu bakarrarekin: teknologia zabaltzea.'
 
 reasons = [

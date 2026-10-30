@@ -14,6 +14,7 @@ Event hashtag: #Bilbostack27. Contact: info@bilbostack.com.
 - [Home](https://bilbostack.com/): Event overview, edition date and venue, organizers and sponsors.
 - [Agenda](https://bilbostack.com/agenda/): Schedule, talks and speakers for the current edition.
 - [Attendee information](https://bilbostack.com/info/): How to get there, code of conduct and discounts.
+- [Sponsorship](https://bilbostack.com/sponsorship/): Sponsorship packages, benefits, attendance history and the PDF brochure.
 - [Past editions](https://bilbostack.com/past-editions/): The history of Bilbostack and its wall of fame.
 
 ## Languages

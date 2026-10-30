@@ -2,6 +2,9 @@
 title = 'Sponsorship'
 description = 'BilboStack 2027 sponsorship packages: tiers, benefits, attendance history and the PDF brochure.'
 type = 'sponsorship'
+seoTitle = "Sponsor BilboStack 2027 · Tech conference in Bilbao"
+seoDescription = "Sponsor BilboStack 2027, Bilbao's tech conference: 800+ tech professionals, 4 packages from €800, benefits and the PDF brochure."
+image = 'img/bilbostack_publico.webp'   # social share (og:image)
 lead = 'BilboStack is a non-profit tech conference held every year in Bilbao since 2012, organised by people from the community with a single goal: sharing technical knowledge.'
 
 reasons = [

@@ -10,7 +10,12 @@
         <div class="cta-text">
             <h2>{{ T "cta_sponsors_title" }}</h2>
             <p>{{ T "cta_sponsors_text" | safeHTML}}</p>
-            <a href="{{ .Site.Params.sponsorsDossierLink }}" class="btn btn-outline" target="_blank">{{ T "cta_sponsors_btn" }}</a>
+            {{- /* Links to the sponsorship page (which offers the PDF) so it gets an internal link; falls back to the PDF. */}}
+            {{- with site.GetPage "/sponsorship" }}
+            <a href="{{ .RelPermalink }}" class="btn btn-outline">{{ T "cta_sponsors_btn" }}</a>
+            {{- else }}
+            <a href="{{ site.Params.sponsorsDossierLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "cta_sponsors_btn" }}</a>
+            {{- end }}
         </div>
     </div>
 </section>

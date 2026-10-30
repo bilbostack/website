@@ -32,7 +32,7 @@ cta_sponsors_title = "Vendrás por la conferencia, volverás por la experiencia"
 cta_sponsors_text = """BilboStack es una conferencia generalista que reúne a más de 800 profesionales del sector tecnológico de toda España.<br>
 A lo largo de los años, ha consolidado uno de los espacios de networking más valorados del panorama tech nacional.<br><br>
 Ofrece a los asistentes una experiencia única y, a las empresas, la oportunidad de posicionar su marca ante una comunidad activa, diversa y con gran influencia en el ecosistema tecnológico español."""
-cta_sponsors_btn = "Dossier de patrocinio (PDF)"
+cta_sponsors_btn = "Patrocina BilboStack"
 
 # home-speakers.html
 speakers_title = "Ponentes confirmados"

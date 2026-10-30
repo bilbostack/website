@@ -120,10 +120,14 @@ Page content is wrapped in `#smooth-wrapper > #smooth-content` for GSAP ScrollSm
 
 ### SEO & structured data
 
-- `site-meta.html` emits the per-page `<title>`, meta description, canonical and social
-  (OpenGraph/Twitter) tags.
-- `site-schema.html` emits JSON-LD: an `Organization` block site-wide, plus an `Event`
-  block **only on the home page**. The `Event` is assembled from the `eventStartDate` /
+- `site-meta.html` emits the per-page `<title>`, meta description, canonical, `hreflang`
+  alternates (`x-default` = the default-language version of the page) and social
+  (OpenGraph/Twitter) tags. By default the title is `<title> | meta_title` and the
+  description `<description>. meta_description`; front matter `seoTitle` /
+  `seoDescription` replace them verbatim (used by the sponsorship page). `image` in front
+  matter sets `og:image` (falls back to the logo).
+- `site-schema.html` emits JSON-LD: an `Organization` block site-wide, an `Event`
+  block **only on the home page**, and a `BreadcrumbList` (Home › page) on every other page. The `Event` is assembled from the `eventStartDate` /
   `eventEndDate` params and the `eventLocationName` / `eventLocationCity` /
   `eventLocationRegion` params, the `current` edition's `year`, and — when `ticketsOpen` —
   an `Offer` pointing at `ticketsLink`. Keep these params accurate at each rollover.
