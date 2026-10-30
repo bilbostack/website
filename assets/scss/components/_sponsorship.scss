@@ -627,6 +627,207 @@
     }
 }
 
+// MEDIA ─ contact sheet ─────────────────────────────────────────────────────
+// The recap reel as the big frame, a packed room and the venue stacked beside
+// it. Each frame carries the stack's offset shadow (the reel's in the accent)
+// and a mono slate caption. Captions sit over footage, so they use the fixed
+// dark/light pair in both themes.
+.sp-media {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+    padding: 0 var(--sp-offset) var(--sp-offset) 0;
+
+    &__item {
+        position: relative;
+        margin: 0;
+        min-height: 0;
+        border: 2px solid var(--font-color);
+        border-radius: var(--border-radius);
+        background-color: var(--color-dark);
+        box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--font-color);
+        overflow: hidden;
+
+        // Footage never sizes the frame: the reel's 16:9 sets the row height and
+        // the side frames crop to fit it.
+        img,
+        video {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        &:hover img,
+        &:hover video {
+            transform: scale(1.03);
+        }
+
+        // Anchor the crop to the top: keeps the faces, drops the burnt-in logo.
+        &--photo img {
+            object-position: 50% 0;
+        }
+
+        &--reel {
+            grid-row: 1 / -1;
+            aspect-ratio: 16 / 9;
+            box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--accent);
+        }
+    }
+
+    // Slate label pinned to the bottom-left corner of the frame.
+    &__cap {
+        position: absolute;
+        left: var(--space-3);
+        bottom: var(--space-3);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        max-width: calc(100% - 2 * var(--space-3));
+        padding: 0.3rem 0.6rem;
+        border-radius: var(--border-radius-xs);
+        background-color: var(--color-dark);
+        color: var(--color-light);
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.3;
+        text-transform: uppercase;
+        pointer-events: none;
+    }
+
+    // Camera "recording" tally: blinks while the reel plays.
+    &__rec {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding-right: var(--space-2);
+        border-right: 1px solid color-mix(in srgb, var(--color-light) 30%, transparent);
+        color: var(--orange-300);
+
+        &::before {
+            content: "";
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: currentColor;
+            animation: sp-caret 1.2s steps(1) infinite;
+        }
+    }
+
+    &.is-paused &__rec::before {
+        animation: none;
+        opacity: 0.4;
+    }
+
+    // Single play/pause control for every video in the sheet (shown by main.js).
+    &__toggle {
+        position: absolute;
+        top: var(--space-3);
+        right: var(--space-3);
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        border: 2px solid var(--color-light);
+        border-radius: 50%;
+        background-color: color-mix(in srgb, var(--color-dark) 70%, transparent);
+        color: var(--color-light);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &[hidden] {
+            display: none;
+        }
+
+        &:hover {
+            background-color: var(--color-dark);
+        }
+
+        &:focus-visible {
+            @include focus-ring(3px);
+        }
+
+        // Pause glyph: two bars drawn with borders.
+        &::before {
+            content: "";
+            width: 0.7rem;
+            height: 0.8rem;
+            border-inline: 0.22rem solid currentColor;
+        }
+    }
+
+    // Play glyph: a CSS triangle, nudged right to look optically centred.
+    &.is-paused &__toggle::before {
+        width: 0;
+        height: 0;
+        margin-left: 0.2rem;
+        border-style: solid;
+        border-width: 0.45rem 0 0.45rem 0.75rem;
+        border-color: transparent transparent transparent currentColor;
+    }
+
+    &__links {
+        list-style: none;
+        margin: var(--space-6) 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            border: 2px solid var(--font-color);
+            border-radius: var(--border-radius-pill);
+            color: var(--font-color);
+            font-family: var(--font-family-mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+            &::after {
+                content: "↗";
+                transition: transform 0.2s ease;
+            }
+
+            &:hover {
+                background-color: var(--accent-ink);
+                border-color: var(--accent-ink);
+                color: var(--color-primary-light);
+
+                &::after {
+                    transform: translate(2px, -2px);
+                }
+            }
+
+            &:focus-visible {
+                @include focus-ring(3px);
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-media__rec::before {
+        animation: none;
+    }
+
+    .sp-media__item:hover img,
+    .sp-media__item:hover video {
+        transform: none;
+    }
+}
+
 // REASONS ─ code editor ─────────────────────────────────────────────────────
 // The dossier writes each benefit as <Tag/>; here that motif becomes a whole
 // editor window. It is a *fixed* dark surface (same in both themes, like the
@@ -1132,9 +1333,10 @@
     }
 
     // Tighter gutter so the code still has room at phone width.
+    // Root, tag and prose each sit one 12px step deeper than the line above.
     .sp-editor {
         --ed-gutter: 2.5rem;
-        --ed-indent: var(--space-4);
+        --ed-indent: var(--space-5);
     }
 
     .sp-editor__root code {
@@ -1155,6 +1357,13 @@
         display: none;
     }
 
+    // Buttons stack at one shared width instead of two ragged pills.
+    .sp-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+
     // Facts: calendar sheet across the top, venue + deadline side by side below.
     .sp-facts {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1163,6 +1372,9 @@
 
     .sp-fact {
         padding: var(--space-4);
+
+        // Top-align so both labels share a baseline whatever the content height.
+        justify-content: flex-start;
 
         &--date {
             grid-column: 1 / -1;
@@ -1213,5 +1425,60 @@
     // Bars are too narrow for neighbouring labels: keep only the peak.
     .sp-chart__col.is-labelled:not(.is-peak) .sp-chart__value {
         opacity: 0;
+    }
+
+    // The gap column is narrower than a year label; its dashed line says enough.
+    .sp-chart__col--gap .sp-chart__year {
+        display: none;
+    }
+
+    // Reel across the top, the two stills side by side underneath.
+    .sp-media {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: var(--space-4);
+
+        &__item {
+            aspect-ratio: 1;
+
+            &--reel {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        &__cap {
+            left: var(--space-2);
+            bottom: var(--space-2);
+            max-width: calc(100% - 2 * var(--space-2));
+            font-size: 0.6rem;
+        }
+
+        &__links a {
+            box-sizing: border-box;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &__links li {
+            flex: 1 1 100%;
+        }
+    }
+
+    // Closing CTA follows the page's left edge instead of a centred ragged block.
+    .sp-cta__inner {
+        padding: var(--space-7) var(--space-5);
+        text-align: left;
+        justify-items: stretch;
+
+        .sp-actions {
+            align-items: stretch;
+        }
+    }
+
+    .sp-cta__mail {
+        align-self: flex-start;
+        overflow-wrap: anywhere;
     }
 }

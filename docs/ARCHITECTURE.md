@@ -85,6 +85,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Eventbrite URL |
+| `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
 | `sponsorsContactEmail`, `sponsorsPaymentDeadline` | Sponsorship page contact and payment deadline (ISO date) |
@@ -241,6 +242,11 @@ build time from the `editions` array (editions with `attendees`), so they update
 edition is archived; the chart is pure HTML/CSS (each bar is a stack of 100-person blocks,
 gaps between years are drawn as a dashed placeholder) with a `<details>` data table. Bars grow
 in via `initRevealAnimations()` in `main.js`.
+The "En imágenes" media sheet shows the `recapVideo` reel, `assets/img/bilbostack_publico.webp`
+and the venue loop (`static/video/euskalduna.*`), plus links to the latest edition in `editions`
+that has `videos` / `photos`. Videos keep native controls without JS; `initSponsorMedia()` in
+`main.js` swaps them for one play/pause toggle and only plays them while on screen (starts
+paused with reduced motion).
 
 ### Navigation menus
 

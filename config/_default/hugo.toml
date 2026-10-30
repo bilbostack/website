@@ -18,6 +18,8 @@ enableRobotsTXT = true
     speakersVisible = true
     ticketsOpen = false
     ticketsLink = ""
+    # Highlights reel served from static/ (<src>.webm + <src>.mp4): home CTA and sponsorship page.
+    recapVideo = { year = 2025, src = "video/resumen_bilbostack_2025" }
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
     contactEmail = "info@bilbostack.com"
     org = [

@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initMenu();
     initAnimations();
     initSponsorCountdown();
+    initSponsorMedia();
 });
 
 function initHeader() {
@@ -658,6 +659,44 @@ function initSponsorCountdown() {
         el.textContent = el.dataset.many.replace('{n}', days);
     }
     el.hidden = false;
+}
+
+// ===== SPONSORSHIP MEDIA =====
+// Muted loops that only play while on screen. JS swaps the native controls (the
+// no-JS fallback) for one play/pause toggle on the reel that drives every video,
+// so motion can always be stopped. Reduced motion: start paused.
+function initSponsorMedia() {
+    const media = document.querySelector('#sponsorship .sp-media');
+    if (!media) return;
+
+    const videos = [...media.querySelectorAll('video')];
+    const toggle = media.querySelector('.sp-media__toggle');
+    const label = toggle.querySelector('.visually-hidden');
+    let paused = prefersReducedMotion;
+    const visible = new Set();
+
+    const sync = () => {
+        videos.forEach(v => (!paused && visible.has(v) ? v.play().catch(() => {}) : v.pause()));
+        media.classList.toggle('is-paused', paused);
+        label.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+        sync();
+    }, { threshold: 0.25 });
+
+    videos.forEach(v => {
+        v.controls = false;
+        observer.observe(v);
+    });
+
+    toggle.addEventListener('click', () => {
+        paused = !paused;
+        sync();
+    });
+    toggle.hidden = false;
+    sync();
 }
 
 // ===== THEME DARK / LIGHT MODES =====
