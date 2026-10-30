@@ -26,3 +26,11 @@ url = "/past-editions/"
 weight = 40
 [main.params]
 desc = "La historia de Bilbostack"
+
+[[main]]
+name = "Patrocinio"
+identifier = "sponsorship"
+url = "/sponsorship/"
+weight = 50
+[main.params]
+desc = "Paquetes, cifras y dossier para patrocinadores"
