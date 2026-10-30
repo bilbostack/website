@@ -591,39 +591,97 @@
         border-radius: 2px;
         background-color: var(--accent);
     }
+}
 
-    &__data {
-        margin-top: var(--space-8);
-        font-size: 0.9rem;
+// ARCHIVE ─ links under the chart ───────────────────────────────────────────
+// Two index cards spanning the chart's width, in the scoreboard's voice (mono
+// figure, 2px border, offset shadow). On hover a card lifts off its stack: the
+// shadow grows into the accent and the arrow slides out.
+.sp-archive {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-8) var(--sp-offset) 0 0;
 
-        summary {
-            cursor: pointer;
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-6);
+        border: 2px solid var(--font-color);
+        border-radius: var(--border-radius);
+        background-color: var(--color-primary-light);
+        box-shadow: var(--sp-offset) var(--sp-offset) 0 var(--font-color);
+        color: var(--font-color);
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &::after {
+            content: "→";
+            margin-left: auto;
             font-family: var(--font-family-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--accent-ink);
-            width: fit-content;
+            transition: transform 0.2s ease;
+        }
 
-            &:focus-visible {
-                @include focus-ring(3px);
+        &:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: calc(var(--sp-offset) + 2px) calc(var(--sp-offset) + 2px) 0 var(--accent-ink);
+
+            &::after {
+                transform: translateX(6px);
             }
         }
 
-        table {
-            margin-top: var(--space-4);
-            border-collapse: collapse;
-            font-family: var(--font-family-mono);
-            font-feature-settings: "tnum" 1;
+        &:focus-visible {
+            @include focus-ring(3px);
+        }
+    }
+
+    // Fixed-width figure column so both titles start on the same line.
+    &__num {
+        flex: 0 0 auto;
+        min-width: 3ch;
+        padding-right: var(--space-5);
+        border-right: 2px solid var(--font-color);
+        font-family: var(--font-family-mono);
+        font-feature-settings: "tnum" 1;
+        font-size: #{"clamp(1.75rem, 1.4rem + 1vw, 2.5rem)"};
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--accent-ink);
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
+        min-width: 0;
+        line-height: 1.25;
+
+        strong {
+            font-size: 1.1rem;
         }
 
-        th,
-        td {
-            padding: var(--space-1) var(--space-5) var(--space-1) 0;
-            text-align: right;
-            border-bottom: 1px solid color-mix(in srgb, var(--font-color) 15%, transparent);
+        span {
+            font-size: 0.85rem;
+            opacity: 0.75;
         }
+    }
+}
 
-        th:first-child {
-            text-align: left;
-        }
+@media (prefers-reduced-motion: reduce) {
+    .sp-archive__link,
+    .sp-archive__link::after {
+        transition: none;
+    }
+
+    .sp-archive__link:hover,
+    .sp-archive__link:hover::after {
+        transform: none;
     }
 }
 
@@ -1330,6 +1388,20 @@
 @media screen and (max-width: $breakpoint-sm) {
     .sp-packages {
         grid-template-columns: 1fr;
+    }
+
+    .sp-archive {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+
+    .sp-archive__link {
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .sp-archive__num {
+        padding-right: var(--space-4);
     }
 
     // Tighter gutter so the code still has room at phone width.

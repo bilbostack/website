@@ -226,7 +226,8 @@ pulled from i18n keys `track_1`, `track_2`. The whole page respects `agendaVisib
 ### Wall of fame & past editions
 
 The Wall of Fame is rendered from `data/walloffame.yaml` (single source of truth) via
-the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`.
+the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`
+and anchored as `#wall-of-fame` (the sponsorship page links to it under the chart).
 `past-editions.<lang>.md` is currently a `TBD` stub; edition stats come from the
 `editions` array in `hugo.toml`.
 
