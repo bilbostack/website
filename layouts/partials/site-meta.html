@@ -1,7 +1,10 @@
 {{ $url := urls.Parse .Site.BaseURL }}
-{{ $title := printf "%s | %s" .Title (T "meta_title") }}
+{{- /* seoTitle / seoDescription in front matter replace the generated title and
+       description verbatim (no site-wide suffix) for pages that need their own wording. */ -}}
+{{ $title := .Params.seoTitle | default (printf "%s | %s" .Title (T "meta_title")) }}
 {{ $permalink := .Permalink | default .Site.BaseURL }}
-{{ $description := cond (ne .Description "") (printf "%s. %s" .Description (T "meta_description")) (T "meta_description") }}
+{{ $description := cond (ne .Description "") (printf "%s. %s" (strings.TrimSuffix "." .Description) (T "meta_description")) (T "meta_description") }}
+{{ with .Params.seoDescription }}{{ $description = . }}{{ end }}
 {{ $imagePermalink := false }}
 {{ with resources.Get .Params.image }}
     {{ with .Resize (printf "%dx jpeg q70 lanczos" .Width) }}
@@ -23,7 +26,10 @@
 {{ range .AllTranslations }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 {{ end }}
-<link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+{{- /* x-default must be identical on every translation: the default-language version of this page. */ -}}
+{{ $xDefault := hugo.Sites.Default.Home.Permalink }}
+{{ range .AllTranslations }}{{ if .Language.IsDefault }}{{ $xDefault = .Permalink }}{{ end }}{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $xDefault }}">
 <meta property="og:site_name" content="Bilbostack">
 <meta property="og:locale" content="{{ $locale }}">
 <meta property="og:url" content="{{ $permalink }}">

@@ -31,7 +31,7 @@ cta_sponsors_title = "Konferentziagatik etorriko zara, esperientziagatik itzulik
 cta_sponsors_text = """BilboStack Espainiako teknologia sektoreko 800 profesional baino gehiago biltzen dituen konferentzia 'orokorra' da.<br/>
 Urteetan zehar, Espainiako teknologia-eszenako sare-plataformarik baloratuenetariko bat bihurtu da.<br/><br/>
 Parte-hartzaileei esperientzia paregabea eskaintzen die, eta enpresei aukera ematen die beren marka komunitate aktibo, anitz eta Espainiako ekosistema teknologikoan eragin handikoa aurrean kokatzeko."""
-cta_sponsors_btn = "Babesle-dosierra (PDF)"
+cta_sponsors_btn = "Babestu BilboStack"
 
 # home-speakers.html
 speakers_title = "Berretsitako hizlariak"

@@ -2,6 +2,9 @@
 title = 'Patrocinio'
 description = 'Paquetes de patrocinio de BilboStack 2027: niveles, beneficios, histórico de asistentes y dossier en PDF.'
 type = 'sponsorship'
+seoTitle = "Patrocina BilboStack 2027 · Conferencia tecnológica en Bilbao"
+seoDescription = "Patrocina BilboStack 2027, la conferencia tecnológica de Bilbao: más de 800 profesionales, 4 niveles desde 800 €, beneficios y dossier en PDF."
+image = 'img/bilbostack_publico.webp'   # social share (og:image)
 lead = 'BilboStack es una conferencia tecnológica sin ánimo de lucro que se celebra cada año en Bilbao desde 2012, organizada por personas de la comunidad con un único objetivo: la divulgación tecnológica.'
 
 reasons = [

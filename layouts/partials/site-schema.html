@@ -1,7 +1,7 @@
-{{/* JSON-LD structured data. Event schema only on the home page; Organization site-wide. */}}
+{{/* JSON-LD structured data. Event schema only on the home page; BreadcrumbList on every
+     other page (mirrors breadcrumbs.html: Home › Page); Organization site-wide. */}}
 {{ $img := false }}
 {{ with resources.Get "img/bilbostack-logo-permalink.png" }}{{ $img = .Permalink }}{{ end }}
-{{ $description := printf "%s. %s" .Description (T "meta_description") | default (T "meta_description") }}
 {{- if .IsHome -}}
 {{ $year := 0 }}
 {{ range .Site.Params.editions }}{{ if .current }}{{ $year = .year }}{{ end }}{{ end }}
@@ -35,6 +35,14 @@
     "priceCurrency" "EUR"
     "availability" "https://schema.org/InStock")) }}{{ end }}
 <script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
+{{- else if .IsPage -}}
+<script type="application/ld+json">{{ dict
+    "@context" "https://schema.org"
+    "@type" "BreadcrumbList"
+    "itemListElement" (slice
+        (dict "@type" "ListItem" "position" 1 "name" (T "home_back") "item" .Site.Home.Permalink)
+        (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink))
+    | jsonify | safeJS }}</script>
 {{- end -}}
 <script type="application/ld+json">{{ dict
     "@context" "https://schema.org"

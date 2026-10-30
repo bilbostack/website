@@ -2,15 +2,20 @@
     <div class="content">
         <div class="cta-video">
             <video autoplay muted loop playsinline>
-                <source src="{{ "video/resumen_bilbostack_2025.webm" | relURL }}" type="video/webm">
-                <source src="{{ "video/resumen_bilbostack_2025.mp4" | relURL }}" type="video/mp4">
+                <source src="{{ printf "%s.webm" site.Params.recapVideo.src | relURL }}" type="video/webm">
+                <source src="{{ printf "%s.mp4" site.Params.recapVideo.src | relURL }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="cta-text">
             <h2>{{ T "cta_sponsors_title" }}</h2>
             <p>{{ T "cta_sponsors_text" | safeHTML}}</p>
-            <a href="{{ .Site.Params.sponsorsDossierLink }}" class="btn btn-outline" target="_blank">{{ T "cta_sponsors_btn" }}</a>
+            {{- /* Links to the sponsorship page (which offers the PDF) so it gets an internal link; falls back to the PDF. */}}
+            {{- with site.GetPage "/sponsorship" }}
+            <a href="{{ .RelPermalink }}" class="btn btn-outline">{{ T "cta_sponsors_btn" }}</a>
+            {{- else }}
+            <a href="{{ site.Params.sponsorsDossierLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "cta_sponsors_btn" }}</a>
+            {{- end }}
         </div>
     </div>
 </section>

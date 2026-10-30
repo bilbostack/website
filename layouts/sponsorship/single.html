@@ -141,19 +141,81 @@
             <figcaption class="visually-hidden">{{ T "sp_chart_title" }}</figcaption>
         </figure>
 
-        <details class="sp-chart__data">
-            <summary>{{ T "sp_chart_table" }}</summary>
-            <table>
-                <thead>
-                    <tr><th scope="col">{{ T "sp_table_year" }}</th><th scope="col">{{ T "sp_table_attendees" }}</th><th scope="col">{{ T "sp_table_speakers" }}</th></tr>
-                </thead>
-                <tbody>
-                    {{- range $past }}
-                    <tr><th scope="row">{{ .year }}</th><td>{{ lang.FormatNumber 0 .attendees }}</td><td>{{ .speakers }}</td></tr>
-                    {{- end }}
-                </tbody>
-            </table>
-        </details>
+        {{/* Way into the archive: every edition (sites, photos, videos) and the
+             wall of fame of past speakers. */}}
+        {{- with site.GetPage "/past-editions" }}
+        <nav class="sp-archive" aria-label="{{ T "sp_archive_label" }}">
+            <a class="sp-archive__link" href="{{ .RelPermalink }}">
+                <span class="sp-archive__num">{{ len $past }}</span>
+                <span class="sp-archive__text">
+                    <strong>{{ T "sp_archive_editions" }}</strong>
+                    <span>{{ T "sp_archive_editions_sub" }}</span>
+                </span>
+            </a>
+            <a class="sp-archive__link" href="{{ .RelPermalink }}#wall-of-fame">
+                <span class="sp-archive__num">{{ len hugo.Data.walloffame.speakers }}</span>
+                <span class="sp-archive__text">
+                    <strong>{{ T "sp_archive_speakers" }}</strong>
+                    <span>{{ T "sp_archive_speakers_sub" }}</span>
+                </span>
+            </a>
+        </nav>
+        {{- end }}
+    </section>
+
+    {{/* MEDIA ─ what a sponsor's logo sits in front of: the recap reel, a packed
+         room and the venue. Videos load lazily and are played by main.js only
+         while on screen (never with reduced motion); without JS they keep native
+         controls. Links point at the latest edition that published videos/photos. */}}
+    {{- $recap := site.Params.recapVideo -}}
+    {{- $withVideos := "" -}}
+    {{- $withPhotos := "" -}}
+    {{- range sort $editions "year" "desc" -}}
+      {{- if and .videos (not $withVideos) }}{{ $withVideos = . }}{{ end -}}
+      {{- if and .photos (not $withPhotos) }}{{ $withPhotos = . }}{{ end -}}
+    {{- end }}
+    <section class="sp-section content" aria-labelledby="sp-media-title">
+        <div class="sp-section__head">
+            <p class="sp-kicker">{{ T "sp_media_kicker" }}</p>
+            <h2 id="sp-media-title">{{ T "sp_media_title" }}</h2>
+            <p class="sp-section__note">{{ T "sp_media_note" }}</p>
+        </div>
+        <div class="sp-media">
+            <figure class="sp-media__item sp-media__item--reel">
+                <video class="sp-media__video" muted loop playsinline controls preload="metadata" aria-label="{{ T "sp_media_recap" (dict "year" $recap.year) }}">
+                    <source src="{{ printf "%s.webm#t=3" $recap.src | relURL }}" type="video/webm">
+                    <source src="{{ printf "%s.mp4#t=3" $recap.src | relURL }}" type="video/mp4">
+                </video>
+                <figcaption class="sp-media__cap"><span class="sp-media__rec" aria-hidden="true">REC</span>{{ T "sp_media_recap" (dict "year" $recap.year) }}</figcaption>
+                <button type="button" class="sp-media__toggle" data-pause="{{ T "sp_media_pause" }}" data-play="{{ T "sp_media_play" }}" hidden>
+                    <span class="visually-hidden">{{ T "sp_media_pause" }}</span>
+                </button>
+            </figure>
+            <figure class="sp-media__item sp-media__item--photo">
+                {{- with resources.Get "img/bilbostack_publico.webp" }}
+                {{- $img := .Resize "900x webp q78" }}
+                <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ T "sp_media_audience_alt" }}" loading="lazy" decoding="async">
+                {{- end }}
+                <figcaption class="sp-media__cap">{{ T "sp_media_audience" }}</figcaption>
+            </figure>
+            <figure class="sp-media__item sp-media__item--venue">
+                <video class="sp-media__video" muted loop playsinline controls preload="metadata" aria-label="{{ site.Params.eventLocationName }}">
+                    <source src="{{ "video/euskalduna.webm#t=1" | relURL }}" type="video/webm">
+                    <source src="{{ "video/euskalduna.mp4#t=1" | relURL }}" type="video/mp4">
+                </video>
+                <figcaption class="sp-media__cap">{{ site.Params.eventLocationName }} · {{ site.Params.eventLocationCity }}</figcaption>
+            </figure>
+        </div>
+        {{- if or $withVideos $withPhotos }}
+        <ul class="sp-media__links">
+            {{- with $withVideos }}
+            <li><a href="{{ .videos }}" target="_blank" rel="noopener">{{ T "sp_media_videos" (dict "year" .year) }}</a></li>
+            {{- end }}
+            {{- with $withPhotos }}
+            <li><a href="{{ .photos }}" target="_blank" rel="noopener">{{ T "sp_media_photos" (dict "year" .year) }}</a></li>
+            {{- end }}
+        </ul>
+        {{- end }}
     </section>
 
     {{/* WHY ─ reasons rendered in the brand's <Tag/> code motif */}}

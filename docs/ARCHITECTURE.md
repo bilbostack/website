@@ -85,6 +85,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Eventbrite URL |
+| `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
 | `sponsorsContactEmail`, `sponsorsPaymentDeadline` | Sponsorship page contact and payment deadline (ISO date) |
@@ -119,10 +120,14 @@ Page content is wrapped in `#smooth-wrapper > #smooth-content` for GSAP ScrollSm
 
 ### SEO & structured data
 
-- `site-meta.html` emits the per-page `<title>`, meta description, canonical and social
-  (OpenGraph/Twitter) tags.
-- `site-schema.html` emits JSON-LD: an `Organization` block site-wide, plus an `Event`
-  block **only on the home page**. The `Event` is assembled from the `eventStartDate` /
+- `site-meta.html` emits the per-page `<title>`, meta description, canonical, `hreflang`
+  alternates (`x-default` = the default-language version of the page) and social
+  (OpenGraph/Twitter) tags. By default the title is `<title> | meta_title` and the
+  description `<description>. meta_description`; front matter `seoTitle` /
+  `seoDescription` replace them verbatim (used by the sponsorship page). `image` in front
+  matter sets `og:image` (falls back to the logo).
+- `site-schema.html` emits JSON-LD: an `Organization` block site-wide, an `Event`
+  block **only on the home page**, and a `BreadcrumbList` (Home › page) on every other page. The `Event` is assembled from the `eventStartDate` /
   `eventEndDate` params and the `eventLocationName` / `eventLocationCity` /
   `eventLocationRegion` params, the `current` edition's `year`, and — when `ticketsOpen` —
   an `Offer` pointing at `ticketsLink`. Keep these params accurate at each rollover.
@@ -221,7 +226,8 @@ pulled from i18n keys `track_1`, `track_2`. The whole page respects `agendaVisib
 ### Wall of fame & past editions
 
 The Wall of Fame is rendered from `data/walloffame.yaml` (single source of truth) via
-the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`.
+the `site-wall-of-fame.html` partial, which is embedded in `past-editions/single.html`
+and anchored as `#wall-of-fame` (the sponsorship page links to it under the chart).
 `past-editions.<lang>.md` is currently a `TBD` stub; edition stats come from the
 `editions` array in `hugo.toml`.
 
@@ -241,6 +247,11 @@ build time from the `editions` array (editions with `attendees`), so they update
 edition is archived; the chart is pure HTML/CSS (each bar is a stack of 100-person blocks,
 gaps between years are drawn as a dashed placeholder) with a `<details>` data table. Bars grow
 in via `initRevealAnimations()` in `main.js`.
+The "En imágenes" media sheet shows the `recapVideo` reel, `assets/img/bilbostack_publico.webp`
+and the venue loop (`static/video/euskalduna.*`), plus links to the latest edition in `editions`
+that has `videos` / `photos`. Videos keep native controls without JS; `initSponsorMedia()` in
+`main.js` swaps them for one play/pause toggle and only plays them while on screen (starts
+paused with reduced motion).
 
 ### Navigation menus
 

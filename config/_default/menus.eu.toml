@@ -29,3 +29,11 @@ url = "/past-editions/"
 weight = 40
 [main.params]
 desc = "Bilbostack-en historia"
+
+[[main]]
+name = "Babesletza"
+identifier = "sponsorship"
+url = "/sponsorship/"
+weight = 50
+[main.params]
+desc = "Babesleentzako paketeak, zifrak eta dosierra"

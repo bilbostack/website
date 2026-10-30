@@ -3,7 +3,7 @@
 {{ $speakers := hugo.Data.walloffame.speakers }}
 {{ $since := 0 }}
 {{ range $speakers }}{{ range .years }}{{ if or (eq $since 0) (lt . $since) }}{{ $since = . }}{{ end }}{{ end }}{{ end }}
-<section class="wall-of-fame" aria-labelledby="wof-title">
+<section class="wall-of-fame" id="wall-of-fame" aria-labelledby="wof-title">
     <div class="wall-of-fame__head">
         <p class="wall-of-fame__kicker">{{ T "past_editions_wall_kicker" }}</p>
         <h2 id="wof-title" class="wall-of-fame__title">{{ T "past_editions_wall_title" }}</h2>
