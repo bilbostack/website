@@ -37,3 +37,12 @@ cta_sponsors_btn = "Patrocina BilboStack"
 # home-speakers.html
 speakers_title = "Ponentes confirmados"
 speakers_subtitle = "Te presentamos a los ponentes que estarán con nosotros en esta nueva edición."
+
+# home-merch.html
+merch_title = "La camiseta de esta edición"
+merch_subtitle = "Gatos, código y rock alrededor del logo"
+merch_text = "Ilustrada en exclusiva para esta edición.<br>Disponible en corte recto y entallado."
+merch_fit_regular = "Corte recto"
+merch_fit_fitted = "Corte entallado"
+merch_alt_regular = "Camiseta verde agua de BilboStack de corte recto, con el logo rodeado de gatos ilustrados"
+merch_alt_fitted = "Camiseta verde agua de BilboStack de corte entallado, con el logo rodeado de gatos ilustrados"

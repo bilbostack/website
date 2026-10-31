@@ -1,0 +1,149 @@
+// MERCH (home) ──────────────────────────────────────────────────────────────
+// The edition t-shirt as two garments on a rack: stacked cards (same offset
+// shadow as the sponsorship page) tilted like they were just hung, with a
+// garment tag naming the cut. The product shots ship on a white background,
+// so each card is a FIXED light tint and the photo is multiplied into it —
+// the white disappears in both themes without editing the source images.
+
+#merch {
+    --merch-offset: 0.5rem;
+    margin-top: var(--section-gap);
+    padding-block: var(--section-gap);
+}
+
+.merch-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.merch-text {
+    h2 {
+        margin: 0 0 var(--space-2);
+    }
+
+    h3 {
+        margin: var(--space-2) 0 var(--space-5);
+    }
+
+    p {
+        font-size: var(--font-size-lead);
+        line-height: 1.5;
+        max-width: 32rem;
+        margin: 0;
+    }
+}
+
+.merch-rack {
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--merch-offset) var(--merch-offset) 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+    align-items: start;
+}
+
+.merch-item {
+    position: relative;
+    margin: 0;
+    padding: var(--space-5) var(--space-4) var(--space-7);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--current-color-fixed-100);
+    box-shadow: var(--merch-offset) var(--merch-offset) 0 var(--accent);
+    rotate: -2deg;
+
+    // Stagger the second garment down and tilt it the other way.
+    &:nth-child(even) {
+        margin-top: var(--space-8);
+        rotate: 2.5deg;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        mix-blend-mode: multiply;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: rotate 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.2s ease;
+
+        img {
+            transition: scale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        &:hover {
+            rotate: 0deg;
+            box-shadow: calc(var(--merch-offset) * 1.6)
+                calc(var(--merch-offset) * 1.6) 0 var(--accent);
+
+            img {
+                scale: 1.04;
+            }
+        }
+    }
+}
+
+// Garment tag: dark label with a punched hole, hanging off the card's bottom
+// edge. Fixed colours because the card behind it is fixed-light in both themes.
+.merch-tag {
+    position: absolute;
+    left: var(--space-4);
+    bottom: calc(var(--space-4) * -1);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+    // Theme-aware outline so the half that overhangs the page stays visible on dark.
+    border: 1px solid var(--font-color);
+    border-radius: var(--border-radius-xs);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &::before {
+        content: "";
+        flex: none;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--current-color-fixed-100);
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+    .merch-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-7);
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .merch-rack {
+        gap: var(--space-4);
+    }
+
+    .merch-item {
+        padding: var(--space-3) var(--space-2) var(--space-6);
+
+        &:nth-child(even) {
+            margin-top: var(--space-6);
+        }
+    }
+
+    .merch-tag {
+        left: var(--space-2);
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        padding-inline: var(--space-2);
+    }
+}

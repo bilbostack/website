@@ -18,6 +18,12 @@ enableRobotsTXT = true
     speakersVisible = true
     ticketsOpen = false
     ticketsLink = ""
+    # Edition t-shirt showcase on the home (after the program). Images in assets/img/merch/.
+    merchVisible = true
+    merch = [
+        { image = "img/merch/tshirt-regular.jpeg", fit = "merch_fit_regular", alt = "merch_alt_regular" },
+        { image = "img/merch/tshirt-fitted.jpeg", fit = "merch_fit_fitted", alt = "merch_alt_fitted" },
+    ]
     # Highlights reel served from static/ (<src>.webm + <src>.mp4): home CTA and sponsorship page.
     recapVideo = { year = 2025, src = "video/resumen_bilbostack_2025" }
     youtubeEmbedURL = "https://www.youtube.com/embed/cibqKWMiMQA?si=Edt43LCo1IW_Geue"
