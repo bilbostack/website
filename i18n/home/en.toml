@@ -36,3 +36,12 @@ cta_sponsors_btn = "Sponsor BilboStack"
 # home-speakers.html
 speakers_title = "Confirmed speakers"
 speakers_subtitle = "Meet the speakers who will be with us in this new edition."
+
+# home-merch.html
+merch_title = "This edition's t-shirt"
+merch_subtitle = "Cats, code and rock around the logo"
+merch_text = "Illustrated exclusively for this edition.<br>Available in regular and fitted cuts."
+merch_fit_regular = "Regular fit"
+merch_fit_fitted = "Fitted cut"
+merch_alt_regular = "Aqua BilboStack regular-fit t-shirt, with the logo surrounded by illustrated cats"
+merch_alt_fitted = "Aqua BilboStack fitted t-shirt, with the logo surrounded by illustrated cats"

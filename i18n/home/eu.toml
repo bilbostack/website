@@ -36,3 +36,12 @@ cta_sponsors_btn = "Babestu BilboStack"
 # home-speakers.html
 speakers_title = "Berretsitako hizlariak"
 speakers_subtitle = "Edizio berri honetan gurekin izango diren hizlariak ezagutu itzazu"
+
+# home-merch.html
+merch_title = "Edizio honetako kamiseta"
+merch_subtitle = "Katuak, kodea eta rocka logoaren inguruan"
+merch_text = "Edizio honetarako bakarrik ilustratua.<br>Moztura zuzenean eta doituan eskuragarri."
+merch_fit_regular = "Moztura zuzena"
+merch_fit_fitted = "Moztura doitua"
+merch_alt_regular = "BilboStack-en ur-berde koloreko kamiseta, moztura zuzena, logoa katu ilustratuz inguratuta"
+merch_alt_fitted = "BilboStack-en ur-berde koloreko kamiseta, moztura doitua, logoa katu ilustratuz inguratuta"

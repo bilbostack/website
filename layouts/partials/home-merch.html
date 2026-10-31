@@ -1,0 +1,29 @@
+{{ if and site.Params.merchVisible site.Params.merch }}
+<section id="merch" class="bs-texture-dots">
+    <div class="content merch-layout">
+        <div class="merch-text">
+            <h2>{{ T "merch_title" }}</h2>
+            <h3 class="heading-square">{{ T "merch_subtitle" }}</h3>
+            <p>{{ T "merch_text" | safeHTML }}</p>
+        </div>
+
+        <ul class="merch-rack">
+            {{ range site.Params.merch }}
+            {{ $alt := T .alt }}
+            <li class="merch-item">
+                {{ with resources.Get .image }}
+                {{ $small := .Resize "480x webp q75 lanczos" }}
+                {{ $large := .Resize "900x webp q75 lanczos" }}
+                <img src="{{ $large.RelPermalink }}"
+                     srcset="{{ $small.RelPermalink }} 480w, {{ $large.RelPermalink }} 900w"
+                     sizes="(min-width: 992px) 30vw, 45vw"
+                     width="{{ $large.Width }}" height="{{ $large.Height }}"
+                     alt="{{ $alt }}" loading="lazy" decoding="async">
+                {{ end }}
+                <span class="merch-tag">{{ T .fit }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+{{ end }}

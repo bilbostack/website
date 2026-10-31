@@ -85,6 +85,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Eventbrite URL |
+| `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
@@ -148,13 +149,13 @@ Hugo picks the template by the front-matter `type`/`layout`:
 ### Home (`layouts/index.html`)
 
 Composes the landing page from partials in order: `home-header`, `home-cta-sponsors`,
-`home-speakers`, `home-program`, `site-sponsors` (collaborators commented out).
+`home-speakers`, `home-program`, `home-merch`, `site-sponsors` (collaborators commented out).
 `home-program` respects the `agendaVisible` flag.
 
 ### Partials
 
 - **Site chrome:** `site-header`, `site-footer`, `site-meta`, `site-schema`, `site-favicon`, `site-style`, `site-editions`, `site-sponsors`, `site-collaborators`, `site-wall-of-fame`.
-- **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-cta-sponsors`.
+- **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-merch`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
 - **Speakers:** `speaker-grid-card`.
 - **CTA:** `site-cta-la-espuela` (currently commented out).
