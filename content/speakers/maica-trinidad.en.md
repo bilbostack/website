@@ -24,5 +24,13 @@ I support teams, facilitate conversations, give training and ask a lot of questi
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="The algorithm of cooperation">}}
+Working as a team seems simple until disagreements, different interests or the feeling that we are putting in more than the others show up.
+
+What do we do then? Do we keep cooperating? Do we protect ourselves? Do we change how we act depending on what the others do?
+
+For decades, mathematics has tried to understand what makes cooperation possible, why it sometimes breaks down and which strategies work when we have to deal with the same people again and again.
+
+A journey through models, decisions and real relationships to discover how much an algorithm can tell us about working with other people, and where it starts to fall short.
+
 {{</speaker_talk>}}

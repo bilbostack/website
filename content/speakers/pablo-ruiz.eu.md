@@ -20,5 +20,7 @@ Pablo Kaleidos/Penpot-en CEOa eta sortzailekidea da. Prestakuntza zientifiko-tek
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="ᚠunk: teknologia-garatzaileek Gandalfekin egiteke duten elkarrizketa">}}
+Nolakoa izango litzateke mugimendu punk bat teknologiaren lubakietatik? Teknofeudalismoaz, autonomia materialaz, erantzukizunaz eta Gandalf pertsonaiaz hitz egingo dugu, AA sortzailearen inguruan gaizkiaren banalitate berri bat saihesteko.
+
 {{</speaker_talk>}}

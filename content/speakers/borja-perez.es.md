@@ -19,5 +19,7 @@ En Manfred trabajé en recruiting y después en comunicación y marketing, con f
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Las comunidades no están muertas: cómo crear comunidad desde dentro de una empresa">}}
+Qué puede hacer una persona para crear comunidad, cómo hacerlo desde dentro de la compañía y cómo la compañía puede aprovecharse de ello.
+
 {{</speaker_talk>}}

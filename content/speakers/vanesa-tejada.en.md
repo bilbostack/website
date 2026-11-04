@@ -21,5 +21,7 @@ Founder of Kizuna, where she builds a human product with the support of AI. Prod
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Product management when everyone can build">}}
+Today everyone can build with AI and with tools that speed up delivery, but that does not mean sacrificing the judgement, quality and identity of the product for speed. In this talk we look at product management when teams and agents accelerate at the same time: how to provide visibility and governance in the face of chaos, how to practise autonomy with control, the shift in workload between people, and the new tools that are here to stay.
+
 {{</speaker_talk>}}

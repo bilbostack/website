@@ -21,5 +21,11 @@ Bi aldiz izan naiz CTO, eta bietan ere ez zegoen nire planetan: taldea hazi egin
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Kodeak garrantzia du oraindik?">}}
+540n hamabi urte daramatzagu software pertsonalizatua eraikitzen, eta idazten genuen kodeari maitasun eta garrantzi handia ematen. Ez kapritxoz: arazo errealak konpondu nahi genituen, mantendu eta eboluzionarazi genezakeen softwarearekin.
+
+AA iritsi zen, dena aldatu zen eta kodea guk geuk idazteari utzi ahal izan genion. Baina horregatik ez zitzaigun axola izateari utzi: gure irizpidearekin softwarea guretzat eraikitzeko gai izango zen sistema bat eraiki nahi genuen, nahikoa segurua eta fidagarria izango zena. Helburua: sortzen dugun kodea irakurri behar ez izatera iristea, eta gauetan lasai lo egiten jarraitzea.
+
+Kontatuko dizuet nola ari garen bide hori egiten, probatuz, neurtuz eta iteratuz. Zer funtzionatu digun, zer ez, gure hankasartzeak eta zer ikasten ari garen AArekin softwarea garatzeko modu iraunkor bat eraikitzeko.
+
 {{</speaker_talk>}}

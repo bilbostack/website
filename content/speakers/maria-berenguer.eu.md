@@ -28,5 +28,17 @@ Agile eta teknologia komunitateetan aktiboki parte hartzen dut: Mulleres Tech, A
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Perturbazio bat Agile indarrean">}}
+Garaiak aldatu dira, eta waterfall inperioak posizioak berreskuratzen ditu. Agile taldeek, lidergo argirik ezean galduta, huts egiten dute beren lan-estrategietan. Perturbazio bat sumatzen dut indarrean. AA geldiezin doa aurrera galaxian zehar, eta Agile taldeek, aurreko guduek ahulduta, oraindik ulertzen ez duten mehatxu bati egin behar diote aurre.
+
+Erakunde teknologikoen konfederazioak urteak daramatza bere burua eraldatu nahian, ingurune berrietara egokitu nahian, aldaketa nagusitzen den konstante bakarra den galaxia honetan, AAren baimenarekin. Lortzen al dute? Gudu handi guztietan bezala, batzuetan irabazi egiten da eta beste batzuetan galdu.
+
+Agile ulertzeko erraza eta aplikatzeko zaila den mindset bat da. Agile talde batek dituen armetako bat eXtreme Programming da, bikaintasun teknikoa entrenatzeko tresnak eskaintzen dizkiguna, bere balio eta praktikekin, eta horrela taldeen indarra esnatzeko, orain AA softwarea garatzeko modua irauli eta gure bikaintasun teknikoa probatzen ari den honetan.
+
+Hitzaldi honetan ikusiko dugu nola XP kalitatezko kodea idaztetik haratago doan, garapen-taldeen esperientzia lehenetsiz eta haien potentzial osoa zabalduz.
+
+Bidaia hasi duten erakundeak gidatu ditudan istorioak partekatuko ditut: taldeetan Agile dimentsio berriak aurkitzeko bidea, bere akats eta asmatzeekin. Produktuak sortzean erantzukizun- eta lankidetza-kultura baterako eraldaketa.
+
+Prestatu zientzia-fikziotik ateratakoak diruditen benetako kasu batzuetarako.
+
 {{</speaker_talk>}}

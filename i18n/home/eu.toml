@@ -45,3 +45,6 @@ merch_fit_regular = "Moztura zuzena"
 merch_fit_fitted = "Moztura doitua"
 merch_alt_regular = "BilboStack-en ur-berde koloreko kamiseta, moztura zuzena, logoa katu ilustratuz inguratuta"
 merch_alt_fitted = "BilboStack-en ur-berde koloreko kamiseta, moztura doitua, logoa katu ilustratuz inguratuta"
+
+# home-tickets.html
+tickets_title = "Sarrerak"

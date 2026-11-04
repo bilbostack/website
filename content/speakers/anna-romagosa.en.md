@@ -18,5 +18,9 @@ Product Manager with more than 8 years of experience in the creation and evoluti
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Our journey through the greenfield">}}
+Building a product from scratch is not as easy as it seems, especially in a regulated sector, with demanding deadlines and without a good knowledge of the domain, the stakeholders or the customers.
+
+In this talk we explain how we led the transformation of a billing process in a greenfield context: moving from decisions based on intuition to decisions backed by data, building the trust of sceptical stakeholders and adapting to changes in strategy, all while aligning a large, highly senior team with different views on the "how", and still making decisions and delivering value. A real story of lessons, mistakes and decisions under uncertainty… with some humour along the way.
+
 {{</speaker_talk>}}

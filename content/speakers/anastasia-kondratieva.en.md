@@ -19,5 +19,13 @@ Tasia has worked at several product companies as an SRE and Platform Engineer. S
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Rebuilding a Platform team with the Ted Lasso playbook">}}
+A year and a half ago I joined a platform team that had just gone through an almost complete turnover: of the four people left, only one came from the previous team, the same team that had earned a reputation for blocking decisions that were not only theirs and for constant friction with the rest of engineering.
+
+In this talk I explain how we rebuilt the team and moved from reactive infrastructure to modern Platform Engineering, and from a team that everybody distrusted to one that everybody wants to work with. I share what we built, what we automated and which technical decisions we had to make along the way.
+
+Can you rebuild a team's culture before you have results to back it up? What comes first when you move from infrastructure to platform: tools, processes or trust? Can one team completely transform the dynamics of all of engineering?
+
+Spoiler: Ted Lasso had already asked himself the same questions in a football locker room.
+
 {{</speaker_talk>}}

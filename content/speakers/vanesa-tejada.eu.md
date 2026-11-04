@@ -21,5 +21,7 @@ Kizuna-ren sortzailea; bertan produktu gizatiar bat eraikitzen du AAn oinarritut
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Produktu-kudeaketa edonork eraiki dezakeenean">}}
+Gaur egun edonork eraiki dezake AArekin eta entrega azkartzen duten tresnekin, baina horrek ez du esan nahi produktuaren irizpidea, kalitatea eta nortasuna abiaduraren truke sakrifikatu behar direnik. Hitzaldi honetan produktu-kudeaketa aztertuko dugu taldeek eta agenteek aldi berean azkartzen dutenean: nola eman ikusgarritasuna eta gobernantza kaosaren aurrean, nola landu autonomia kontrolarekin, pertsonen arteko lan-kargaren aldaketa eta geratzeko etorri diren tresna berriak.
+
 {{</speaker_talk>}}

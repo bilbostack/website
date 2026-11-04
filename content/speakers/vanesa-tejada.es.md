@@ -21,5 +21,7 @@ Fundadora de Kizuna, donde construye un producto humano apoyándose en IA. Produ
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Gestión de producto cuando todo el mundo puede construir">}}
+Hoy todo el mundo puede construir con IA y con herramientas que aceleran la entrega, pero eso no significa sacrificar el criterio, la calidad e identidad del producto por la velocidad. En esta charla vemos la gestión del producto cuando aceleran equipos y agentes a la vez: cómo dar visibilidad y gobernanza frente al caos, practicar autonomía con control, el cambio de carga de trabajo entre las personas y las nuevas herramientas que han venido para quedarse.
+
 {{</speaker_talk>}}

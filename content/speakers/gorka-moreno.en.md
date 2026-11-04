@@ -21,5 +21,11 @@ At 540 I am fully immersed in AI. We want a software factory where the software 
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Does code still matter?">}}
+At 540 we have spent twelve years building custom software and putting a lot of care and importance into the code we wrote. Not on a whim: we wanted to solve real problems with software that we could maintain and evolve.
+
+Then AI arrived, everything changed and we were able to stop writing the code ourselves. But that did not mean we stopped caring about it: we wanted to build a system that could build software for us with our judgement, and that was safe and reliable enough. The goal: to reach the point where we don't have to read the code we generate and can still sleep soundly at night.
+
+I will tell you how we are walking that path by trying, measuring and iterating. What has worked for us, what hasn't, our screw-ups and what we are learning to build a way of developing software with AI that lasts.
+
 {{</speaker_talk>}}

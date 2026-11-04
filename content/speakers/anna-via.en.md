@@ -18,5 +18,11 @@ Professional with more than 10 years of experience in Data, Artificial Intellige
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="AI in the enterprise: unlocking its value beyond the hype">}}
+Generative AI models are reaching extraordinary capabilities. In certain tasks, they can match or even outperform human experts. However, the adoption and real impact of AI in many organisations is moving much more slowly than expected.
+
+Why is there such a gap between what AI is able to do and the value we actually manage to capture in the company?
+
+In this talk we will explore the main reasons for this apparent contradiction and, above all, the levers that allow us to close it. We will move from the fascination of “this is possible” that we feel when we interact with a model, to a much more demanding reality: “this works reliably and creates value for real people every day”.
+
 {{</speaker_talk>}}
