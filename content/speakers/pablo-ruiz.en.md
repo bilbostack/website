@@ -20,5 +20,7 @@ Pablo is the CEO and Co-founder of Kaleidos/Penpot. With a scientific and techni
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="ᚠunk: the pending conversation between technology developers and Gandalf">}}
+What would a punk movement look like from the trenches of technology? We talk about technofeudalism, material autonomy, responsibility and the character of Gandalf to avoid a new banality of evil around generative AI.
+
 {{</speaker_talk>}}

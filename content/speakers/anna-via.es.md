@@ -18,5 +18,11 @@ Profesional con más de 10 años de experiencia en Data, Inteligencia Artificial
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="IA en la empresa: activando su valor más allá del hype">}}
+Los modelos de IA generativa están alcanzando capacidades extraordinarias. En determinadas tareas, pueden igualar o incluso superar a humanos expertos. Sin embargo, la adopción y el impacto real de la IA en muchas organizaciones avanzan mucho más despacio de lo esperado.
+
+¿Por qué existe este gap entre lo que la IA es capaz de hacer y el valor que realmente conseguimos capturar en la empresa?
+
+En esta charla exploraremos las principales razones de esta aparente contradicción y, sobre todo, las palancas que permiten cerrarla. Pasaremos de la fascinación por el “esto es posible” que experimentamos al interactuar con un modelo, a una realidad mucho más exigente: “esto funciona de forma fiable y genera valor para personas reales todos los días”.
+
 {{</speaker_talk>}}

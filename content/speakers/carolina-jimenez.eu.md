@@ -23,5 +23,7 @@ Efektu bisualen artista, dibulgatzailea eta zinema-hezitzailea, nazioarteko indu
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Teknologiaren bilakaera zineman: zinematografotik adimen artifizialera">}}
+Zinematografoaren asmakuntzatik ordenagailuen eta adimen artifizialaren etorrerara arte, zinemaren historia beti egon da teknologiaren bilakaerari lotuta. Hitzaldi honetan istorioak sortzeko, filmatzeko eta kontatzeko modua eraldatu duten aurrerapen nagusietako batzuk errepasatuko ditugu: lehen trikimailu zinematografikoetatik eta efektu optikoetatik efektu bisual digitaletara, ingurune eta pertsonaia ezinezkoen sorrerara eta adimen artifizialean oinarritutako tresna berrietara. Mende bat baino gehiagoko berrikuntzan zeharreko bidaia, teknologiak irudimen zinematografikoaren mugak etengabe nola zabaldu dituen ulertzeko.
+
 {{</speaker_talk>}}

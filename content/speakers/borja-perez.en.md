@@ -19,5 +19,7 @@ At Manfred I worked in recruiting and then in communication and marketing, focus
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Communities are not dead: how to build community from inside a company">}}
+What one person can do to build community, how to do it from inside the company, and how the company can benefit from it.
+
 {{</speaker_talk>}}

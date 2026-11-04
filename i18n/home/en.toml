@@ -45,3 +45,6 @@ merch_fit_regular = "Regular fit"
 merch_fit_fitted = "Fitted cut"
 merch_alt_regular = "Aqua BilboStack regular-fit t-shirt, with the logo surrounded by illustrated cats"
 merch_alt_fitted = "Aqua BilboStack fitted t-shirt, with the logo surrounded by illustrated cats"
+
+# home-tickets.html
+tickets_title = "Tickets"

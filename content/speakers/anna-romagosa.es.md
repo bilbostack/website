@@ -18,5 +18,9 @@ Product Manager con más de 8 años de experiencia trabajando en la creación y 
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Nuestro viaje por el greenfield">}}
+Construir un producto desde cero no es tan fácil como parece, sobre todo si lo haces en un sector regulado, con deadlines exigentes y sin conocer bien el dominio, lxs stakeholders ni a lxs clientxs.
+
+En esta charla explicaremos cómo lideramos la transformación de un proceso de facturación en un contexto greenfield: pasando de decisiones basadas en intuiciones a apoyarnos en datos, construyendo la confianza de stakeholders escépticos y adaptándonos a los cambios de estrategia, todo ello mientras alineábamos un equipo grande, con alta seniority y con visiones diferentes sobre el "cómo", sin dejar de tomar decisiones y entregar valor. Una historia real de aprendizajes, errores y decisiones en incertidumbre… con algo de humor por el camino.
+
 {{</speaker_talk>}}

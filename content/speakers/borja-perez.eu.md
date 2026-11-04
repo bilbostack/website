@@ -19,5 +19,7 @@ Manfred-en recruiting arloan aritu nintzen lanean, eta gero komunikazioan eta ma
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Komunitateak ez daude hilda: nola sortu komunitatea enpresa baten barrutik">}}
+Pertsona batek zer egin dezakeen komunitatea sortzeko, nola egin konpainiaren barrutik eta konpainiak nola atera diezaiokeen etekina.
+
 {{</speaker_talk>}}

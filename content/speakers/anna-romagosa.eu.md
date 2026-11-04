@@ -18,5 +18,9 @@ Product Manager, 8 urte baino gehiagoko esperientziarekin produktu digitalak sor
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Gure bidaia greenfield-ean zehar">}}
+Produktu bat hutsetik eraikitzea ez da dirudien bezain erraza, batez ere sektore arautu batean egiten baduzu, epe zorrotzekin eta domeinua, stakeholderrak eta bezeroak ondo ezagutu gabe.
+
+Hitzaldi honetan azalduko dugu nola gidatu genuen fakturazio-prozesu baten eraldaketa greenfield testuinguru batean: intuizioetan oinarritutako erabakietatik datuetan oinarritutakoetara igaroz, stakeholder eszeptikoen konfiantza eraikiz eta estrategia-aldaketetara egokituz, eta, aldi berean, talde handi bat lerrokatuz, senioritate handikoa eta "nola"-ri buruz ikuspegi desberdinak zituena, erabakiak hartzeari eta balioa entregatzeari utzi gabe. Ikaskuntzen, akatsen eta ziurgabetasunean hartutako erabakien benetako istorio bat… bidean umore pixka batekin.
+
 {{</speaker_talk>}}

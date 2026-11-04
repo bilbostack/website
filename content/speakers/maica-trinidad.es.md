@@ -24,5 +24,13 @@ Acompaño a equipos, facilito conversaciones, doy formación y hago muchas pregu
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="El algoritmo de la cooperación">}}
+Trabajar en equipo parece sencillo hasta que aparecen los desacuerdos, los intereses distintos o la sensación de que estamos poniendo más de nuestra parte que los demás.
+
+¿Qué hacemos entonces? ¿Seguimos cooperando? ¿Nos protegemos? ¿Cambiamos nuestra forma de actuar según lo que hacen los otros?
+
+Durante décadas, las matemáticas han intentado entender qué hace posible la cooperación, por qué a veces se rompe y qué estrategias funcionan cuando tenemos que relacionarnos una y otra vez con las mismas personas.
+
+Un recorrido entre modelos, decisiones y relaciones reales para descubrir cuánto puede explicarnos un algoritmo sobre trabajar con otras personas y dónde empieza a quedarse corto.
+
 {{</speaker_talk>}}

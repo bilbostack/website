@@ -20,5 +20,7 @@ Pablo es el CEO y Cofundador de Kaleidos/Penpot. De formación científico-técn
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="ᚠunk: la conversación pendiente de los desarrolladores de tecnología con Gandalf">}}
+¿Qué pinta tendría un movimiento punk desde las trincheras de la tecnología? Hablamos de tecnofeudalismo, autonomía material, responsabilidad y el personaje de Gandalf para evitar una nueva banalidad del mal en torno a la IA generativa.
+
 {{</speaker_talk>}}

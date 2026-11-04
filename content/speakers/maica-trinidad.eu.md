@@ -24,5 +24,13 @@ Taldeei laguntzen diet, elkarrizketak dinamizatzen ditut, prestakuntza ematen du
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Lankidetzaren algoritmoa">}}
+Taldean lan egitea erraza dirudi desadostasunak, interes desberdinak edo besteek baino gehiago jartzen ari garen sentsazioa agertu arte.
+
+Zer egiten dugu orduan? Lankidetzan jarraitzen dugu? Geure burua babesten dugu? Gure jokatzeko modua aldatzen dugu besteek egiten dutenaren arabera?
+
+Hamarkadetan zehar, matematika ulertzen saiatu da zerk egiten duen posible lankidetza, zergatik hausten den batzuetan eta zer estrategiak funtzionatzen duten pertsona berekin behin eta berriz harremanetan jarri behar dugunean.
+
+Ereduen, erabakien eta benetako harremanen arteko ibilbide bat, algoritmo batek beste pertsonekin lan egiteari buruz zenbat azal diezagukeen eta non hasten den laburregi geratzen aurkitzeko.
+
 {{</speaker_talk>}}

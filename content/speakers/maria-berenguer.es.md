@@ -28,5 +28,17 @@ Colaboro activamente en comunidades Agile y tecnológicas: Mulleres Tech, Agile 
 
 {{</speaker_bio>}}
 
-{{<speaker_talk>}}
+{{<speaker_talk title="Una perturbación en la fuerza Agile">}}
+Los tiempos han cambiado, el imperio waterfall recupera posiciones. Los equipos Agile, perdidos por la falta de un liderazgo claro, fallan en sus estrategias de trabajo. Siento una perturbación en la fuerza. La IA avanza imparable por la galaxia, mientras los equipos Agile, debilitados por anteriores batallas, se enfrentan a una amenaza que aún no comprenden.
+
+La confederación de organizaciones tecnológicas lleva años tratando de transformarse, de adaptarse a los nuevos entornos en esta galaxia donde el cambio es la única constante que prevalece, con permiso de la IA. ¿Lo consiguen? Como en todas las grandes batallas, a veces se gana, a veces se pierde.
+
+Agile es un mindset fácil de entender, difícil de aplicar. Una de las armas con las que cuenta un equipo Agile es eXtreme Programming, que nos ofrece herramientas para entrenar la excelencia técnica, con sus valores y prácticas, y así despertar la fuerza de los equipos, ahora que la IA está revolucionando la forma de desarrollar software y poniendo a prueba nuestra excelencia técnica.
+
+En esta charla descubriremos cómo XP va más allá de escribir código de calidad, priorizando la experiencia de los equipos de desarrollo, y desplegando todo su potencial.
+
+Compartiré historias en las que he guiado a organizaciones que han iniciado su viaje: un camino de descubrimiento de nuevas dimensiones Agile en los equipos, con sus errores y aciertos. Una transformación a una cultura de responsabilidad y colaboración en la creación de productos.
+
+Prepárate para una serie de casos reales que parecen sacados de la ciencia ficción.
+
 {{</speaker_talk>}}
