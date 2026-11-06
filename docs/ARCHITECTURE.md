@@ -84,7 +84,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventStartDate`, `eventEndDate` | ISO 8601 event datetimes — feed the JSON-LD `Event` schema (`site-schema.html`) |
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
-| `ticketsLink` | Eventbrite URL |
+| `ticketsLink` | Ticket sales URL (Entradium event page) |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |

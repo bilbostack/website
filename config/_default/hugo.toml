@@ -17,7 +17,7 @@ enableRobotsTXT = true
     agendaVisible = false
     speakersVisible = true
     ticketsOpen = true
-    ticketsLink = "https://entradium.com/organizers/bilbostack-conference"
+    ticketsLink = "https://entradium.com/es/events/bilbostack-2027"
     # Edition t-shirt showcase on the home (after the program). Images in assets/img/merch/.
     merchVisible = true
     merch = [
