@@ -1,0 +1,13 @@
+{{- /*
+  Stroke icon for a networking line-up item. Context: the icon name
+  (drinks | food | networking | music | raffle). Decorative: the item title carries
+  the meaning, so the SVG is aria-hidden. Styled by .nw-icon (components/_networking).
+*/ -}}
+{{- $paths := dict
+    "drinks" `<path d="M7 3h10l-1.2 7.2a3.85 3.85 0 0 1-7.6 0Z"/><path d="M7.6 7h8.8M12 14v7M8 21h8"/>`
+    "food" `<path d="M6 3v6a2 2 0 0 0 4 0V3M8 3v18"/><path d="M18 21V3c-2.2 1.2-3.5 4.4-3.5 8.5V13H18"/>`
+    "networking" `<path d="M3 4.5h11v8H8.5L5 15.5v-3H3Z"/><path d="M14 8.5h7v8h-2v3l-3.5-3H10v-4"/>`
+    "music" `<path d="M9 18V5.5L20 3v12.5"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M9 9.5 20 7"/>`
+    "raffle" `<path d="M3 6h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4Z"/><path d="M15 6v2.5M15 11v2M15 15.5V18"/>`
+-}}
+<svg class="nw-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{{ index $paths . | default (index $paths "networking") | safeHTML }}</svg>

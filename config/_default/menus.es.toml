@@ -13,6 +13,15 @@ weight = 20
 [main.params]
 desc = "Agenda, ponentes y La Espuela"
 [[main]]
+name = "Networking"
+identifier = "networking"
+url = "/networking/"
+weight = 25
+[main.params]
+desc = "La tarde del sábado en San Mamés: bebida, comida, música y sorteos"
+flag = "networkingVisible"   # entry hidden when this site param is false
+
+[[main]]
 name = "Información asistentes"
 identifier = "info"
 url = "/info/"

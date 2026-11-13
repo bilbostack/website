@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initAnimations();
     initSponsorCountdown();
     initSponsorMedia();
+    initNetworkingClock();
 });
 
 function initHeader() {
@@ -659,6 +660,58 @@ function initSponsorCountdown() {
         el.textContent = el.dataset.many.replace('{n}', days);
     }
     el.hidden = false;
+}
+
+// ===== NETWORKING MATCH CLOCK =====
+// The scoreboard status line on /networking/: before the day it counts calendar days
+// (visitor's clock), on the day it shows the kick-off time, during the networking a
+// live "minute N'" with a progress bar, and full time afterwards. Strings come from
+// i18n via data attributes; without JS the line just shows the date.
+function initNetworkingClock() {
+    const el = document.querySelector('#networking .nw-clock');
+    if (!el) return;
+
+    const t = el.dataset;
+    const start = new Date(t.start);
+    const end = new Date(t.end);
+    const text = el.querySelector('.nw-clock__text');
+    if (isNaN(start) || isNaN(end) || !text) return;
+
+    const render = () => {
+        const now = new Date();
+        let state = 'pre';
+        let progress = 0;
+        let msg;
+
+        if (now >= end) {
+            state = 'over';
+            progress = 1;
+            msg = t.over;
+        } else if (now >= start) {
+            state = 'live';
+            progress = (now - start) / (end - start);
+            msg = t.live.replace('{m}', Math.floor((now - start) / 60000) + 1);
+        } else {
+            const days = Math.round(
+                (Date.UTC(start.getFullYear(), start.getMonth(), start.getDate()) -
+                 Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())) / 86400000
+            );
+            msg = days <= 0 ? t.today.replace('{t}', t.kickoff)
+                : days === 1 ? t.tomorrow
+                : t.days.replace('{n}', days);
+        }
+
+        el.dataset.state = state;
+        el.style.setProperty('--progress', progress);
+        text.textContent = msg;
+        return state;
+    };
+
+    if (render() !== 'over') {
+        const timer = setInterval(() => {
+            if (render() === 'over') clearInterval(timer);
+        }, 30000);
+    }
 }
 
 // ===== SPONSORSHIP MEDIA =====

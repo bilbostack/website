@@ -1,0 +1,1021 @@
+// NETWORKING PAGE ───────────────────────────────────────────────────────────
+// The afternoon after the talks, staged as the "second half" at San Mamés:
+// floodlit hero with an LED scoreboard (live match clock from main.js), a
+// perimeter LED board, the line-up as players on a pitch, and a match-ticket
+// card with the practical facts. Everything stays on the edition ramp, so it
+// re-themes with $current-color and inverts in dark mode like the rest of the site.
+
+#networking {
+    --nw-offset: 0.5rem;
+    // Pitch: the decorative accent, mowed into stripes. Lines are white chalk in
+    // both themes (the -400 accent is the same shade in light and dark).
+    --nw-grass: var(--current-color-400);
+    --nw-grass-alt: #{"color-mix(in srgb, var(--current-color-400) 86%, var(--color-dark))"};
+    --nw-chalk: #{"color-mix(in srgb, var(--color-light) 75%, transparent)"};
+    // LED board: always a dark panel with glowing light-ramp digits, whatever the theme.
+    --nw-led: var(--current-color-fixed-200);
+    --nw-led-glow: var(--current-color-fixed-400);
+    --nw-panel: var(--color-dark);
+    overflow-x: clip;
+}
+
+// Mono label with the filled-square marker (same voice as the sponsorship kicker).
+.nw-kicker {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 var(--space-3);
+
+    &::before {
+        content: "";
+        flex: none;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--accent);
+    }
+}
+
+.nw-lead {
+    font-size: var(--font-size-lead);
+    line-height: 1.5;
+    max-width: 38rem;
+    margin: 0 0 var(--space-6);
+}
+
+.nw-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-5);
+    // .btn's offset shadow sits on z-index:-1; give it a stacking context.
+    position: relative;
+    z-index: 0;
+}
+
+// HERO ──────────────────────────────────────────────────────────────────────
+// Full-bleed band (stadium + scoreboard), the perimeter board as separator, then the
+// headline and schedule back in the content column with room above and below.
+.nw-hero {
+    // Under the band: headline + lead on the left, the schedule on the right.
+    &__text {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: var(--space-7) var(--space-8);
+        align-items: start;
+
+        // Beat .content's padding-block (same specificity, imported later).
+        &.content {
+            padding-block: #{"clamp(3.5rem, 2rem + 4vw, 6rem)"};
+        }
+    }
+
+    h1 {
+        margin: 0 0 var(--space-5);
+        max-width: 16ch;
+    }
+
+    .nw-lead {
+        margin: 0;
+    }
+
+    // Load choreography: the stadium fades in, then intro and schedule rise in turn.
+    .nw-stage { animation: nw-fade 0.9s ease-out both; }
+    .nw-hero__text > * {
+        animation: nw-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+    .nw-hero__text > :nth-child(1) { animation-delay: 0.3s; }
+    .nw-hero__text > :nth-child(2) { animation-delay: 0.45s; }
+}
+
+// Afternoon schedule: a match-sheet card with a timeline from arrival to the whistle.
+.nw-schedule {
+    --nw-tl-time: 3.4rem;
+    --nw-tl-mark: 0.75rem;
+    padding: var(--space-6);
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--nw-offset) var(--nw-offset) 0 var(--font-color);
+
+    &__title {
+        margin: 0 0 var(--space-5);
+        font-family: var(--font-family-mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent-ink);
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    // time │ marker │ text; the dashed rail runs from each marker to the next.
+    &__item {
+        position: relative;
+        display: grid;
+        grid-template-columns: var(--nw-tl-time) var(--nw-tl-mark) minmax(0, 1fr);
+        gap: var(--space-4);
+        padding-bottom: var(--space-5);
+
+        &::before {
+            content: "";
+            grid-column: 2;
+            grid-row: 1;
+            width: var(--nw-tl-mark);
+            height: var(--nw-tl-mark);
+            margin-top: 0.4rem;
+            background-color: var(--accent);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(0.4rem + var(--nw-tl-mark) + var(--space-2));
+            bottom: var(--space-2);
+            left: calc(var(--nw-tl-time) + var(--space-4) + var(--nw-tl-mark) / 2 - 1px);
+            border-left: 2px dashed #{"color-mix(in srgb, var(--font-color) 30%, transparent)"};
+        }
+
+        > div { grid-column: 3; }
+
+        // Final whistle: hollow marker, no rail, mono label.
+        &--end {
+            padding-bottom: 0;
+
+            &::before {
+                background-color: transparent;
+                border: 2px solid var(--accent-ink);
+            }
+            &::after { content: none; }
+
+            .nw-schedule__name {
+                margin: 0.15rem 0 0;
+                font-family: var(--font-family-mono);
+                font-size: 0.8rem;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--accent-ink);
+            }
+        }
+    }
+
+    &__time {
+        grid-column: 1;
+        grid-row: 1;
+        font-family: var(--font-family-mono);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: 1.05rem;
+        line-height: 1.4;
+        color: var(--accent-ink);
+    }
+
+    &__name {
+        margin: 0 0 var(--space-1);
+        font-size: var(--font-size-h5);
+        line-height: 1.3;
+        color: var(--font-color);
+    }
+
+    &__text {
+        margin: 0;
+        line-height: 1.45;
+    }
+}
+
+// Stadium picture + scoreboard strip, edge to edge. The top rule only shows in dark
+// mode (in light mode it matches the panel), mirroring the perimeter board below.
+.nw-stage {
+    overflow: hidden;
+    background-color: var(--nw-panel);
+    border-top: 2px solid var(--font-color);
+}
+
+@keyframes nw-fade {
+    from { opacity: 0; }
+}
+
+@keyframes nw-rise {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+}
+
+// SCOREBOARD ────────────────────────────────────────────────────────────────
+// A strip along the base of the stadium picture: kick-off │ match clock │ whistle.
+.nw-board {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "start clock end";
+    align-items: center;
+    gap: var(--space-4) var(--space-7);
+    // Times line up with the content column (same gutter as .content).
+    padding: var(--space-5) #{"max(var(--main-gap), calc((100% - var(--content-max)) / 2))"};
+    background-color: var(--nw-panel);
+    color: var(--color-light);
+    border-top: 1px solid #{"color-mix(in srgb, var(--color-light) 22%, transparent)"};
+
+    // LED dot-matrix screen over the whole panel.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle, transparent 0.9px, #{"color-mix(in srgb, var(--color-dark) 55%, transparent)"} 1.3px) 0 0 / 4px 4px;
+    }
+
+    &__cell {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+
+        &--start { grid-area: start; align-items: flex-start; }
+        &--end { grid-area: end; align-items: flex-end; text-align: right; }
+    }
+
+    &__digits {
+        font-family: var(--font-family-mono);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: #{"clamp(2.2rem, 1.5rem + 2.2vw, 3.6rem)"};
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--nw-led);
+        text-shadow: 0 0 0.35em var(--nw-led-glow), 0 0 1.2em #{"color-mix(in srgb, var(--nw-led-glow) 45%, transparent)"};
+        animation: nw-power-on 1.4s steps(1, end) 0.5s both;
+    }
+
+    &__cell--end &__digits {
+        animation-delay: 0.7s;
+    }
+
+    &__label {
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #{"color-mix(in srgb, var(--color-light) 70%, transparent)"};
+    }
+}
+
+// Flicker on, like stadium LEDs warming up.
+@keyframes nw-power-on {
+    0% { opacity: 0; }
+    12% { opacity: 1; }
+    18% { opacity: 0.2; }
+    26% { opacity: 1; }
+    32% { opacity: 0.5; }
+    40%, 100% { opacity: 1; }
+}
+
+// Match clock between the two times: status (date without JS → countdown → live
+// minute → full time) over a bar that runs from kick-off to the final whistle.
+.nw-clock {
+    grid-area: clock;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--space-3);
+    justify-items: center;
+    font-family: var(--font-family-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--nw-led);
+    text-align: center;
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    &__dot {
+        flex: none;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: var(--nw-led-glow);
+        box-shadow: 0 0 0.6rem var(--nw-led-glow);
+    }
+
+    &__bar {
+        justify-self: stretch;
+        height: 0.4rem;
+        border-radius: var(--border-radius-pill);
+        background-color: #{"color-mix(in srgb, var(--color-light) 14%, transparent)"};
+        overflow: hidden;
+
+        i {
+            display: block;
+            height: 100%;
+            width: calc(var(--progress, 0) * 100%);
+            min-width: 0.4rem;
+            border-radius: inherit;
+            background-color: var(--nw-led-glow);
+            box-shadow: 0 0 0.6rem var(--nw-led-glow);
+            transition: width 0.6s ease;
+        }
+    }
+
+    &[data-state="live"] .nw-clock__dot {
+        animation: nw-blink 1.2s ease-in-out infinite;
+    }
+}
+
+@keyframes nw-blink {
+    50% { opacity: 0.25; }
+}
+
+// PERIMETER LED BOARD ───────────────────────────────────────────────────────
+.nw-perimeter {
+    background-color: var(--nw-panel);
+    border-block: 2px solid var(--font-color);
+    overflow: hidden;
+
+    &__track {
+        display: flex;
+        width: max-content;
+        animation: nw-marquee 40s linear infinite;
+    }
+
+    ul {
+        display: flex;
+        flex: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+        padding: var(--space-4) 0 var(--space-4) var(--space-6);
+        font-family: var(--font-family-display);
+        font-size: #{"clamp(1.25rem, 1rem + 1vw, 1.75rem)"};
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: var(--nw-led);
+        text-shadow: 0 0 0.5em #{"color-mix(in srgb, var(--nw-led-glow) 60%, transparent)"};
+
+        &::after {
+            content: "";
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: var(--accent);
+        }
+    }
+}
+
+@keyframes nw-marquee {
+    to { transform: translateX(-50%); }
+}
+
+// SECTION HEAD ──────────────────────────────────────────────────────────────
+.nw-section__head {
+    margin-bottom: var(--space-7);
+
+    h2 {
+        margin: 0 0 var(--space-3);
+    }
+}
+
+.nw-section__note {
+    font-family: var(--font-family-mono);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+// LINE-UP / PITCH ───────────────────────────────────────────────────────────
+.nw-field {
+    position: relative;
+    max-width: 72rem;
+    aspect-ratio: 105 / 68;
+    margin-inline: auto;
+    padding: var(--space-6) var(--space-7);
+    border-radius: var(--border-radius);
+    background: repeating-linear-gradient(90deg, var(--nw-grass) 0 10%, var(--nw-grass-alt) 10% 20%);
+    border: 2px solid var(--font-color);
+    box-shadow: var(--nw-offset) var(--nw-offset) 0 var(--font-color);
+    display: grid;
+
+    &__lines {
+        position: absolute;
+        inset: var(--space-4);
+        border: 2px solid var(--nw-chalk);
+        pointer-events: none;
+    }
+
+    &__players {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: var(--space-5) var(--space-7);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+// Chalk markings. Landscape by default; the mobile block turns them portrait.
+.nw-line {
+    position: absolute;
+    border: 2px solid var(--nw-chalk);
+
+    &--half {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-width: 0 0 0 2px;
+    }
+
+    &--circle {
+        top: 50%;
+        left: 50%;
+        width: 18%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--spot {
+        top: 50%;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0;
+        border-radius: 50%;
+        background-color: var(--nw-chalk);
+        transform: translate(-50%, -50%);
+    }
+
+    // Penalty and goal areas (FIFA proportions on a 105 × 68 pitch).
+    &--box,
+    &--goal {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &--box { width: 15.7%; height: 59.3%; }
+    &--goal { width: 5.2%; height: 26.9%; }
+
+    &--a { left: 0; border-left: 0; }
+    &--b { right: 0; border-right: 0; }
+}
+
+.nw-player {
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 19rem;
+    padding: var(--space-5) var(--space-5) var(--space-4) var(--space-5);
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--nw-offset) var(--nw-offset) 0 var(--color-dark);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translate(-0.2rem, -0.2rem);
+        box-shadow: calc(var(--nw-offset) + 0.2rem) calc(var(--nw-offset) + 0.2rem) 0 var(--color-dark);
+    }
+
+    &--left-top { grid-area: 1 / 1; align-self: start; }
+    &--left-bottom { grid-area: 2 / 1; align-self: end; }
+    &--right-top { grid-area: 1 / 3; align-self: start; }
+    &--right-bottom { grid-area: 2 / 3; align-self: end; }
+    &--center { grid-area: 1 / 2 / 3 / 3; }
+
+    // Shirt number: a round player token hanging off the top-left corner.
+    &__dorsal {
+        position: absolute;
+        top: -1.2rem;
+        left: -1.2rem;
+        display: grid;
+        place-items: center;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        font-family: var(--font-family-mono);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: 1.05rem;
+        background-color: var(--accent-ink);
+        color: var(--color-primary-light);
+        border: 2px solid var(--font-color);
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin: 0 0 var(--space-2);
+        font-size: var(--font-size-h5);
+        color: var(--font-color);
+    }
+
+    &__text {
+        margin: 0;
+        line-height: 1.45;
+    }
+
+    // Captain's armband next to the star of the afternoon.
+    &__armband {
+        margin-left: auto;
+        padding: 0.1rem 0.45rem;
+        font-family: var(--font-family-mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid var(--accent-ink);
+        border-radius: var(--border-radius-xs);
+        color: var(--accent-ink);
+        cursor: help;
+    }
+
+    &.is-captain {
+        max-width: 22rem;
+        padding: var(--space-6) var(--space-5) var(--space-5);
+        border-color: var(--accent-ink);
+        box-shadow: var(--nw-offset) var(--nw-offset) 0 var(--color-dark), 0 0 0 0.4rem #{"color-mix(in srgb, var(--color-light) 45%, transparent)"};
+
+        &:hover {
+            box-shadow: calc(var(--nw-offset) + 0.2rem) calc(var(--nw-offset) + 0.2rem) 0 var(--color-dark), 0 0 0 0.4rem #{"color-mix(in srgb, var(--color-light) 45%, transparent)"};
+        }
+
+        .nw-player__name {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-h4);
+        }
+
+        .nw-player__dorsal {
+            width: 3.2rem;
+            height: 3.2rem;
+            top: -1.5rem;
+            left: -1.5rem;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.nw-icon {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: var(--accent-ink);
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+// VENUE ─────────────────────────────────────────────────────────────────────
+.nw-venue {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: center;
+
+    h2 {
+        margin: 0 0 var(--space-5);
+    }
+}
+
+// Stadium picture: full-bleed night panorama. The illustration (fixed ramp colours, a
+// night scene in both themes) keeps its own 12:5 ratio at the band's height, centred;
+// past its sides the band repeats its sky → river bands (sky ends at y 396/500 =
+// 79.2%) plus a sparse star field, and the SVG's edges fade into that. When the band
+// is narrower than the picture, the sides are simply cropped.
+.nw-stadium {
+    position: relative;
+    margin: 0;
+    height: #{"clamp(17rem, 46vh, 32rem)"};
+    overflow: hidden;
+    background-image: linear-gradient(to bottom,
+        var(--color-dark) 0%,
+        var(--current-color-fixed-600) 79.2%,
+        var(--current-color-fixed-700) 79.6%,
+        var(--color-dark) 100%);
+
+    // Star field over the sky only.
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 30% 0;
+        opacity: 0.6;
+        background:
+            radial-gradient(circle, var(--color-light) 0.7px, transparent 1.4px) 13px 21px / 97px 83px,
+            radial-gradient(circle, var(--color-light) 0.6px, transparent 1.2px) 58px 47px / 151px 127px,
+            radial-gradient(circle, var(--color-light) 0.9px, transparent 1.6px) 101px 9px / 233px 197px;
+        mask-image: linear-gradient(to bottom, #000 40%, transparent);
+    }
+
+    &__art {
+        position: absolute;
+        inset: 0;
+    }
+
+    &__art svg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        height: 100%;
+        width: auto;
+        aspect-ratio: 1200 / 500;
+        transform: translateX(-50%);
+        mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // Facade LED wave: each fin dims in turn, left to right.
+    &__fin {
+        animation: nw-facade 5.2s ease-in-out infinite;
+        animation-delay: calc(var(--i, 0) * 0.07s);
+    }
+
+    &__beam {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        animation: nw-beam 9s ease-in-out infinite alternate;
+
+        &:nth-of-type(even) {
+            animation-delay: -4.5s;
+        }
+    }
+}
+
+@keyframes nw-facade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes nw-beam {
+    from { transform: rotate(-4deg); }
+    to { transform: rotate(4deg); }
+}
+
+// Match ticket: facts on top, a perforated tear line, the walk underneath.
+.nw-ticket {
+    position: relative;
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary-light);
+    box-shadow: var(--nw-offset) var(--nw-offset) 0 var(--font-color);
+
+    &__facts {
+        display: grid;
+        margin: 0;
+        padding: var(--space-5) var(--space-6);
+
+        > div {
+            display: grid;
+            grid-template-columns: 7.5rem minmax(0, 1fr);
+            gap: var(--space-4);
+            padding-block: var(--space-4);
+
+            & + div {
+                border-top: 1px dashed #{"color-mix(in srgb, var(--font-color) 30%, transparent)"};
+            }
+        }
+
+        dt {
+            font-family: var(--font-family-mono);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-ink);
+            padding-top: 0.2rem;
+        }
+
+        dd {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        strong {
+            font-family: var(--font-family-display);
+            font-size: var(--font-size-h5);
+        }
+    }
+}
+
+.nw-walk {
+    position: relative;
+    margin: 0;
+    padding: var(--space-5) var(--space-6) var(--space-6);
+    border-top: 2px dashed var(--font-color);
+
+    // Punched notches at both ends of the tear line.
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -0.85rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: var(--color-primary-light);
+        border: 2px solid var(--font-color);
+    }
+    &::before { left: -0.85rem; clip-path: inset(0 0 0 50%); }
+    &::after { right: -0.85rem; clip-path: inset(0 50% 0 0); }
+
+    &__label {
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-ink);
+        margin-bottom: var(--space-4);
+    }
+
+    &__route {
+        display: grid;
+        grid-template-columns: auto minmax(3rem, 1fr) auto;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    &__stop {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        font-weight: 700;
+
+        &::before {
+            content: "";
+            flex: none;
+            width: 0.75rem;
+            height: 0.75rem;
+            border: 2px solid var(--font-color);
+            border-radius: 50%;
+        }
+
+        &--end::before {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.25rem #{"color-mix(in srgb, var(--accent) 30%, transparent)"};
+        }
+    }
+
+    // Dotted footpath with the "short walk" note riding on it.
+    &__path {
+        position: relative;
+        display: grid;
+        place-items: center;
+        height: 2rem;
+        background: radial-gradient(circle, var(--font-color) 1.5px, transparent 2px) 0 50% / 0.6rem 0.6rem repeat-x;
+
+        span {
+            padding: 0 var(--space-2);
+            font-family: var(--font-family-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background-color: var(--color-primary-light);
+            white-space: nowrap;
+        }
+    }
+}
+
+// FINAL CTA ─────────────────────────────────────────────────────────────────
+.nw-final__inner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-9) var(--space-6);
+    text-align: center;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-ink);
+    color: var(--color-primary-light);
+
+    // Halfway line + centre circle behind the call to action.
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+    }
+    &::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-left: 2px solid #{"color-mix(in srgb, var(--color-primary-light) 25%, transparent)"};
+        // Fade the line out behind the copy so it never strikes through the text.
+        mask-image: linear-gradient(to bottom, #000 12%, transparent 30%, transparent 70%, #000 88%);
+    }
+    &::after {
+        top: 50%;
+        left: 50%;
+        width: #{"min(26rem, 70vw)"};
+        aspect-ratio: 1;
+        border: 2px solid #{"color-mix(in srgb, var(--color-primary-light) 25%, transparent)"};
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2 {
+        margin: 0;
+        color: inherit;
+        max-width: 18ch;
+    }
+
+    p {
+        margin: 0;
+        font-size: var(--font-size-lead);
+        max-width: 34rem;
+    }
+
+    // No z-index on the button: its offset shadow (::before, z-index -1) must stay
+    // inside this isolated box but behind the button's own fill.
+    .btn {
+        margin-top: var(--space-3);
+    }
+}
+
+// REDUCED MOTION ────────────────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+    .nw-hero .nw-hero__text > *,
+    .nw-hero .nw-stage,
+    .nw-board__digits,
+    .nw-clock[data-state="live"] .nw-clock__dot {
+        animation: none;
+    }
+
+    // The perimeter board stops; its items wrap so none are cut off.
+    .nw-perimeter__track {
+        animation: none;
+        width: auto;
+
+        ul:last-child { display: none; }
+        ul { flex-wrap: wrap; }
+    }
+
+    .nw-stadium__fin,
+    .nw-stadium__beam {
+        animation: none;
+    }
+
+    .nw-player {
+        transition: none;
+
+        &:hover { transform: none; }
+    }
+}
+
+// RESPONSIVE ────────────────────────────────────────────────────────────────
+@media screen and (max-width: $breakpoint-lg) {
+    .nw-venue {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+
+    .nw-hero__text {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+
+    .nw-hero h1 {
+        max-width: none;
+    }
+
+    .nw-stadium {
+        height: auto;
+        // Slightly narrower than the picture, so only empty sky and river are cropped.
+        aspect-ratio: 21 / 10;
+    }
+
+    .nw-board {
+        padding: var(--space-5) var(--main-gap);
+    }
+
+    // Portrait pitch: one player per row, captain on the halfway line.
+    .nw-field {
+        aspect-ratio: auto;
+        max-width: 34rem;
+        padding: var(--space-8) var(--space-6);
+        background: repeating-linear-gradient(180deg, var(--nw-grass) 0 4rem, var(--nw-grass-alt) 4rem 8rem);
+
+        &__players {
+            grid-template-columns: 1fr;
+            grid-template-rows: none;
+            gap: var(--space-8);
+        }
+    }
+
+    .nw-player[class*="nw-player--"] {
+        grid-area: auto;
+        align-self: auto;
+        max-width: none;
+    }
+
+    .nw-line {
+        &--half {
+            top: 50%;
+            bottom: auto;
+            left: 0;
+            right: 0;
+            border-width: 2px 0 0;
+        }
+
+        &--circle { width: 42%; }
+
+        &--box,
+        &--goal {
+            top: auto;
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+        }
+        &--box { width: 60%; height: 4.5rem; }
+        &--goal { width: 27%; height: 1.75rem; }
+
+        &--a { top: 0; border-left: 2px solid var(--nw-chalk); border-top: 0; }
+        &--b { bottom: 0; border-right: 2px solid var(--nw-chalk); border-bottom: 0; }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .nw-schedule {
+        --nw-tl-time: 3.1rem;
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .nw-schedule__item {
+        gap: var(--space-3);
+    }
+
+    // Times side by side, the clock on its own row underneath.
+    .nw-board {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "start end" "clock clock";
+        padding: var(--space-4) var(--main-gap);
+    }
+
+    .nw-field {
+        padding: var(--space-8) var(--space-5) var(--space-8) var(--space-6);
+    }
+
+    // Keep the shirt-number tokens inside the page gutter on narrow screens.
+    .nw-player__dorsal,
+    .nw-player.is-captain .nw-player__dorsal {
+        left: -0.9rem;
+    }
+
+    .nw-ticket__facts > div {
+        grid-template-columns: 1fr;
+        gap: var(--space-1);
+    }
+
+    .nw-walk__route {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .nw-walk__path {
+        width: 2rem;
+        height: 2.5rem;
+        margin-left: -0.6rem;
+        background: radial-gradient(circle, var(--font-color) 1.5px, transparent 2px) 50% 0 / 0.6rem 0.6rem repeat-y;
+
+        span {
+            position: absolute;
+            left: 2rem;
+            background: none;
+        }
+    }
+}

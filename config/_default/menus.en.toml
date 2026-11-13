@@ -15,6 +15,15 @@ weight = 20
 desc = "Schedule, speakers and La Espuela"
 
 [[main]]
+name = "Networking"
+identifier = "networking"
+url = "/networking/"
+weight = 25
+[main.params]
+desc = "Saturday afternoon at San Mamés: drinks, food, live music and prize draws"
+flag = "networkingVisible"   # entry hidden when this site param is false
+
+[[main]]
 name = "Attendee information"
 identifier = "info"
 url = "/info/"

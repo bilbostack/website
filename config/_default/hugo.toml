@@ -17,7 +17,14 @@ enableRobotsTXT = true
     agendaVisible = false
     speakersVisible = true
     ticketsOpen = true
+    # Networking page (/networking/, ×3 languages). false → removed from the menus, and the
+    # page itself redirects to the home with noindex. Needs a build + deploy to take effect.
+    networkingVisible = false
     ticketsLink = "https://entradium.com/es/events/bilbostack-2027"
+    # Afternoon networking (/networking/ landing): ISO datetimes drive the scoreboard and
+    # its live match clock (main.js); mapLink is the "how to get there" button. The venue
+    # name is translated (i18n `nw_venue_name`).
+    networking = { start = "2027-01-30T14:00:00+01:00", end = "2027-01-30T20:00:00+01:00", mapLink = "https://www.google.com/maps/search/?api=1&query=Estadio+San+Mam%C3%A9s%2C+Bilbao" }
     # Edition t-shirt showcase on the home (after the program). Images in assets/img/merch/.
     merchVisible = true
     merch = [

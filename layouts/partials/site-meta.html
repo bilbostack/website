@@ -23,6 +23,12 @@
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 <link rel="canonical" href="{{ $permalink }}">
+{{- /* Networking switched off (params.networkingVisible = false): keep the URL out of
+       search results and send visitors to the home of their language. */}}
+{{- if and (eq .Type "networking") (not site.Params.networkingVisible) }}
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ .Site.Home.RelPermalink }}">
+{{- end }}
 {{ range .AllTranslations }}
 <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}">
 {{ end }}

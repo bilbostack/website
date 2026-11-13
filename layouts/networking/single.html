@@ -1,0 +1,219 @@
+{{ define "main" }}
+{{- /* Networking landing: the afternoon after the talks, framed as the "second half"
+       of a match at San Mamés. Times come from site.Params.networking (ISO, shared by
+       the three languages); copy and the line-up from front matter; labels from
+       i18n/networking. */ -}}
+{{- $nw := site.Params.networking -}}
+{{- $start := time.AsTime $nw.start -}}
+{{- $end := time.AsTime $nw.end -}}
+{{- $kickoff := $start.Format "15:04" -}}
+{{- $whistle := $end.Format "15:04" -}}
+{{- $date := T "nw_date" (dict
+      "weekday" (time.Format "Monday" $start)
+      "day" $start.Day
+      "month" (time.Format "January" $start)) | strings.FirstUpper -}}
+{{- $current := index (where site.Params.editions "current" true) 0 -}}
+{{- $lineup := .Params.lineup -}}
+
+{{- if not site.Params.networkingVisible }}
+{{- /* Switched off: site-meta.html adds noindex + an instant redirect to the home; this
+       link is the fallback if the redirect is blocked. */}}
+<article id="networking" class="main-content">
+    <div class="content"><p><a href="{{ site.Home.RelPermalink }}">{{ T "home_back" }}</a></p></div>
+</article>
+{{- else }}
+<article id="networking" class="main-content">
+    {{ partial "breadcrumbs.html" (dict "page" .) }}
+
+    {{/* HERO ─ full-bleed band: the stadium at night with the scoreboard built into its
+         base, then the perimeter LED board as the separator, then (in the content column,
+         with room above and below) the headline + lead and the afternoon's schedule.
+         No buttons here: the header already carries the tickets CTA, and the route lives
+         in the venue section. */}}
+    <header class="nw-hero">
+        <div class="nw-stage">
+            {{/* Stadium picture: a real photo when front matter sets `venueImage` (path
+                 under assets/, with `venueImageAlt`); otherwise the inline night
+                 illustration (assets/img/networking/san-mames.svg), whose facade fins
+                 animate as an LED wave. */}}
+            {{- $photo := false -}}
+            {{- with .Params.venueImage }}{{ $photo = resources.Get . }}{{ end }}
+            <figure class="nw-stadium">
+                {{- with $photo }}
+                {{- with .Resize "1600x webp q75 lanczos" }}
+                <img class="nw-stadium__photo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.venueImageAlt }}" fetchpriority="high">
+                {{- end }}
+                {{- else }}
+                <div class="nw-stadium__art" role="img" aria-label="{{ T "nw_stadium_alt" }}">
+                    {{- with resources.Get "img/networking/san-mames.svg" }}{{ .Content | safeHTML }}{{ end -}}
+                </div>
+                {{- end }}
+            </figure>
+
+            {{/* Scoreboard strip along the picture's base: kick-off and final whistle at
+                 the ends, the match clock running between them. Without JS the status
+                 shows the date; initNetworkingClock() (main.js) turns it into a
+                 countdown / live minute and fills the bar from kick-off to whistle. */}}
+            <div class="nw-board" role="group" aria-label="{{ T "nw_board_label" }}">
+                <div class="nw-board__cell nw-board__cell--start">
+                    <time class="nw-board__digits" datetime="{{ $start.Format "2006-01-02T15:04" }}">{{ $kickoff }}</time>
+                    <span class="nw-board__label">{{ T "nw_kickoff" }}</span>
+                </div>
+                <div class="nw-clock" data-state="idle"
+                     data-start="{{ $nw.start }}" data-end="{{ $nw.end }}" data-kickoff="{{ $kickoff }}"
+                     data-days="{{ T "nw_clock_days" }}" data-tomorrow="{{ T "nw_clock_tomorrow" }}"
+                     data-today="{{ T "nw_clock_today" }}" data-live="{{ T "nw_clock_live" }}"
+                     data-over="{{ T "nw_clock_over" }}">
+                    <span class="nw-clock__status">
+                        <span class="nw-clock__dot" aria-hidden="true"></span>
+                        <span class="nw-clock__text">{{ $date }}</span>
+                    </span>
+                    <span class="nw-clock__bar" aria-hidden="true"><i></i></span>
+                </div>
+                <div class="nw-board__cell nw-board__cell--end">
+                    <time class="nw-board__digits" datetime="{{ $end.Format "2006-01-02T15:04" }}">{{ $whistle }}</time>
+                    <span class="nw-board__label">{{ T "nw_final" }}</span>
+                </div>
+            </div>
+        </div>
+
+        {{/* Perimeter LED board: the line-up scrolling like the advertising boards around a
+             pitch. Purely decorative (the same items are listed below), so aria-hidden.
+             Four copies so the -50% loop never shows a gap on wide screens. */}}
+        <div class="nw-perimeter" aria-hidden="true">
+            <div class="nw-perimeter__track">
+                {{- range seq 2 }}
+                <ul>
+                    {{- range seq 2 }}
+                    {{- range $lineup }}<li>{{ .title }}</li>{{ end }}
+                    <li>{{ site.Params.hashtag }}</li>
+                    {{- end }}
+                </ul>
+                {{- end }}
+            </div>
+        </div>
+
+        {{/* Under the picture: headline + lead on the left, the afternoon's schedule
+             (front matter `schedule`: time, title, text) on the right. */}}
+        <div class="nw-hero__text content">
+            <div class="nw-hero__intro">
+                <p class="nw-kicker">{{ $date }}</p>
+                <h1>{{ .Params.heading }}</h1>
+                <p class="nw-lead">{{ .Params.lead }}</p>
+            </div>
+
+            {{- with .Params.schedule }}
+            <section class="nw-schedule" aria-labelledby="nw-schedule-title">
+                <h2 id="nw-schedule-title" class="nw-schedule__title">{{ T "nw_schedule_title" }}</h2>
+                <ol class="nw-schedule__list">
+                    {{- range . }}
+                    <li class="nw-schedule__item">
+                        <time class="nw-schedule__time">{{ .time }}</time>
+                        <div>
+                            <h3 class="nw-schedule__name">{{ .title }}</h3>
+                            <p class="nw-schedule__text">{{ .text }}</p>
+                        </div>
+                    </li>
+                    {{- end }}
+                    <li class="nw-schedule__item nw-schedule__item--end">
+                        <time class="nw-schedule__time">{{ $whistle }}</time>
+                        <div>
+                            <h3 class="nw-schedule__name">{{ T "nw_final" }}</h3>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+            {{- end }}
+        </div>
+    </header>
+
+    {{/* LINE-UP ─ the five things happening all afternoon, as players on a pitch.
+         Desktop: a landscape pitch with the captain (networking) in the centre circle.
+         Mobile: a portrait pitch, one card per row; front-matter order puts the captain
+         third, i.e. on the halfway line. */}}
+    <section class="nw-lineup content" aria-labelledby="nw-lineup-title">
+        <div class="nw-section__head">
+            <p class="nw-kicker">{{ T "nw_lineup_kicker" }}</p>
+            <h2 id="nw-lineup-title">{{ T "nw_lineup_title" }}</h2>
+            <p class="nw-section__note">{{ T "nw_lineup_note" (dict "start" $kickoff "end" $whistle) }}</p>
+        </div>
+
+        <div class="nw-field">
+            <div class="nw-field__lines" aria-hidden="true">
+                <i class="nw-line nw-line--half"></i>
+                <i class="nw-line nw-line--circle"></i>
+                <i class="nw-line nw-line--spot"></i>
+                <i class="nw-line nw-line--box nw-line--a"></i>
+                <i class="nw-line nw-line--box nw-line--b"></i>
+                <i class="nw-line nw-line--goal nw-line--a"></i>
+                <i class="nw-line nw-line--goal nw-line--b"></i>
+            </div>
+            <ol class="nw-field__players">
+                {{- range $i, $p := $lineup }}
+                <li class="nw-player nw-player--{{ $p.position }}{{ if $p.captain }} is-captain{{ end }}" style="--i: {{ $i }}">
+                    <span class="nw-player__dorsal" aria-hidden="true">{{ $p.number }}</span>
+                    <h3 class="nw-player__name">
+                        {{ partial "networking-icon.html" $p.icon }}
+                        <span>{{ $p.title }}</span>
+                        {{- if $p.captain }}
+                        <abbr class="nw-player__armband" title="{{ T "nw_captain" }}">C</abbr>
+                        {{- end }}
+                    </h3>
+                    <p class="nw-player__text">{{ $p.text }}</p>
+                </li>
+                {{- end }}
+            </ol>
+        </div>
+    </section>
+
+    {{/* VENUE ─ why San Mamés, plus a match-ticket card with the practical facts and
+         the walk from the conference venue. */}}
+    <section class="nw-venue content" aria-labelledby="nw-venue-title">
+        <div class="nw-venue__text">
+            <p class="nw-kicker">{{ T "nw_venue_kicker" }}</p>
+            <h2 id="nw-venue-title">{{ T "nw_venue_title" }}</h2>
+            <p class="nw-lead">{{ .Params.venueText }}</p>
+            <div class="nw-actions">
+                <a href="{{ $nw.mapLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "nw_map" }}</a>
+            </div>
+        </div>
+
+        <div class="nw-ticket">
+            <dl class="nw-ticket__facts">
+                <div>
+                    <dt>{{ T "nw_fact_where" }}</dt>
+                    <dd><strong>{{ T "nw_venue_name" }}</strong> {{ site.Params.eventLocationCity }}</dd>
+                </div>
+                <div>
+                    <dt>{{ T "nw_fact_when" }}</dt>
+                    <dd><strong>{{ $date }}</strong> <span class="mono">{{ $kickoff }} – {{ $whistle }}</span></dd>
+                </div>
+                <div>
+                    <dt>{{ T "nw_fact_transport" }}</dt>
+                    <dd>{{ .Params.transport }}</dd>
+                </div>
+            </dl>
+            <figure class="nw-walk">
+                <figcaption class="nw-walk__label">{{ T "nw_walk_label" }}</figcaption>
+                <div class="nw-walk__route">
+                    <span class="nw-walk__stop">{{ site.Params.eventLocationName }}</span>
+                    <span class="nw-walk__path"><span>{{ T "nw_walk_note" }}</span></span>
+                    <span class="nw-walk__stop nw-walk__stop--end">{{ T "nw_venue_name" }}</span>
+                </div>
+            </figure>
+        </div>
+    </section>
+
+    {{- if site.Params.ticketsOpen }}
+    {{/* FINAL CTA ─ a halfway line and centre circle behind the call to action. */}}
+    <section class="nw-final content" aria-labelledby="nw-final-title">
+        <div class="nw-final__inner">
+            <h2 id="nw-final-title">{{ T "nw_final_title" }}</h2>
+            <p>{{ T "nw_final_text" (dict "year" $current.year) }}</p>
+            <a href="{{ site.Params.ticketsLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "cta_tickets" }}</a>
+        </div>
+    </section>
+    {{- end }}
+</article>
+{{- end }}
+{{ end }}

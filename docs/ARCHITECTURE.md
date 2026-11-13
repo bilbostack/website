@@ -29,6 +29,7 @@ system and tokens, and [`design-plan.md`](./design-plan.md) for the standing des
 │   ├── info.<lang>.md      # Attendee info
 │   ├── past-editions.<lang>.md
 │   ├── sponsorship.<lang>.md  # Sponsor packages page (data-driven front matter)
+│   ├── networking.<lang>.md   # Afternoon networking landing (San Mamés)
 │   └── speakers/           # One file per speaker per language: <slug>.<lang>.md
 ├── layouts/                # Hugo templates
 │   ├── _default/           # baseof, single, page, section, taxonomy, speaker-detail
@@ -38,6 +39,7 @@ system and tokens, and [`design-plan.md`](./design-plan.md) for the standing des
 │   ├── info/single.html
 │   ├── past-editions/single.html
 │   ├── sponsorship/single.html
+│   ├── networking/single.html
 │   └── index.html          # Home page template
 ├── i18n/                   # Translation strings (TOML), grouped by area
 │   ├── <lang>.toml         # Global strings
@@ -85,6 +87,8 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Ticket sales URL (Entradium event page) |
+| `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
+| `networking` | `{ start, end, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `mapLink` the "how to get there" buttons |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
@@ -145,6 +149,7 @@ Hugo picks the template by the front-matter `type`/`layout`:
 | Info | `type = 'info'` | `layouts/info/single.html` |
 | Past editions | `type = 'past-editions'` | `layouts/past-editions/single.html` |
 | Sponsorship | `type = 'sponsorship'` | `layouts/sponsorship/single.html` |
+| Networking | `type = 'networking'` | `layouts/networking/single.html` |
 
 ### Home (`layouts/index.html`)
 
@@ -158,6 +163,7 @@ Composes the landing page from partials in order: `home-header`, `home-cta-spons
 - **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-merch`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
 - **Speakers:** `speaker-grid-card`.
+- **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`).
 - **CTA:** `site-cta-la-espuela` (currently commented out).
 
 ### Shortcodes (`layouts/_shortcodes/`)
@@ -254,11 +260,40 @@ that has `videos` / `photos`. Videos keep native controls without JS; `initSpons
 `main.js` swaps them for one play/pause toggle and only plays them while on screen (starts
 paused with reduced motion).
 
+### Networking page (`content/networking.<lang>.md`)
+
+Attendee-facing landing at `/networking/` (×3 languages) for the afternoon networking inside
+San Mamés stadium, staged as the "second half" of a match. Times come from the `networking`
+param (shared by the three languages); translated copy lives in front matter: `heading`,
+`lead`, `venueText`, `transport`, `schedule[]` (`time`, `title`, `text`: the afternoon
+programme shown beside the headline, closed automatically by a final-whistle row at
+`networking.end`) and `lineup[]` (`number`, `position`, `icon`, `title`,
+`text`, optional `captain`). `position` places each item on the pitch on desktop
+(`left-top`, `left-bottom`, `center`, `right-top`, `right-bottom`); on mobile the cards stack
+in front-matter order, so keep the captain third (on the halfway line) and the same order in
+all languages. Labels are i18n keys in `i18n/networking/` (`nw_*`, incl. the translated venue
+name `nw_venue_name`). The hero opens with a full-bleed band (edge to edge): the stadium picture
+with the scoreboard strip at its base, then the perimeter LED board as a separator; below
+it, back in the content column, the headline and lead on the left and the schedule card on
+the right (kicker = the date, no buttons: the header carries the tickets CTA and the route
+lives in the venue section). The picture is by default
+the inline night illustration `assets/img/networking/san-mames.svg` (five-tier facade on the
+edition ramp, fins animate as an LED wave; alt text `nw_stadium_alt`); set `venueImage` (path under
+`assets/`) + `venueImageAlt` in front matter to show a real photo instead. The illustration keeps its ratio at the band's height, centred, and
+the band continues its sky/river gradient past the sides. The scoreboard
+is a strip built into the picture's base (kick-off │ match clock │ final whistle); its status
+line shows the date without JS, and `initNetworkingClock()` in `main.js` turns it into a day
+countdown, "today" kick-off, live "minute N'" with a progress bar running from kick-off to
+whistle, or full time. The final CTA only renders when `ticketsOpen`.
+Styles: `components/_networking.scss`.
+
 ### Navigation menus
 
 Defined per language in `config/_default/menus.<lang>.toml` as `[[main]]` entries
-(`name`, `identifier`, `url`, `weight`, plus `[main.params].desc`). Items: Home,
-Agenda, Info, Past editions. (The sponsorship page is intentionally not in the menu yet; it is reachable at `/sponsorship/`.)
+(`name`, `identifier`, `url`, `weight`, plus `[main.params].desc` and an optional
+`[main.params].flag`: the name of a boolean site param; the header and footer skip the entry
+while it is false, e.g. `flag = "networkingVisible"`). Items: Home,
+Agenda, Networking, Info, Past editions, Sponsorship.
 
 ## Styling (SCSS)
 
@@ -274,7 +309,7 @@ Extended. Entry point `assets/scss/style.scss` imports, in order:
   `_base` (visually-hidden utility, default focus ring, reduced-motion block),
   `_atmosphere` (dot-grid texture `.bs-texture-dots`),
   `_images`, `_responsive`
-- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`, `_sponsorship`
+- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`, `_sponsorship`, `_merch`, `_networking`
 - `layout/` — `_header`, `_footer`, `_layout`
 - `fix` — last-resort overrides (kept empty by default; fix the real partial instead)
 
@@ -334,7 +369,7 @@ raw favicons/manifest live in `static/img/`.
 | Add/edit a speaker | `content/speakers/<slug>.<lang>.md` (×3 languages) + image in `assets/img/speakers/` |
 | Edit the schedule | `content/agenda.<lang>.md` front matter (`schedule_viernes` / `schedule_sabado`) |
 | Add/update a sponsor | `[[params.sponsorBlocks]]` in `config/_default/hugo.toml` + image in `assets/img/sponsors/` |
-| Show/hide a section | Feature flags in `[params]` (`agendaVisible`, `sponsorsVisible`, `speakersVisible`, `ticketsOpen`) |
+| Show/hide a section | Feature flags in `[params]` (`agendaVisible`, `sponsorsVisible`, `speakersVisible`, `networkingVisible`, `ticketsOpen`) |
 | Change a UI string | `i18n/<lang>.toml` or `i18n/<area>/<lang>.toml` |
 | Edit navigation | `config/_default/menus.<lang>.toml` |
 | Add an edition | `editions` array in `hugo.toml` |

@@ -15,6 +15,15 @@ weight = 20
 desc = "Egitaraua, hizlariak eta La Espuela"
 
 [[main]]
+name = "Networking"
+identifier = "networking"
+url = "/networking/"
+weight = 25
+[main.params]
+desc = "Larunbat arratsaldea San Mamesen: edaria, janaria, musika eta zozketak"
+flag = "networkingVisible"   # entry hidden when this site param is false
+
+[[main]]
 name = "Parte-hartzaileentzako informazioa"
 identifier = "info"
 url = "/info/"
