@@ -88,7 +88,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Ticket sales URL (Entradium event page) |
 | `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
-| `networking` | `{ start, end, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `mapLink` the "how to get there" buttons |
+| `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = not defined yet, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
@@ -265,10 +265,16 @@ paused with reduced motion).
 Attendee-facing landing at `/networking/` (×3 languages) for the afternoon networking inside
 San Mamés stadium, staged as the "second half" of a match. Times come from the `networking`
 param (shared by the three languages); translated copy lives in front matter: `heading`,
-`lead`, `venueText`, `transport`, `schedule[]` (`time`, `title`, `text`: the afternoon
+`lead`, `venueText`, `transport`, `access` (`{ gate, space }`: entrance gate and the space inside
+the stadium; empty = a "not defined" tag on the page), `schedule[]` (`time`, `title`, `text`: the afternoon
 programme shown beside the headline, closed automatically by a final-whistle row at
-`networking.end`) and `lineup[]` (`number`, `position`, `icon`, `title`,
-`text`, optional `captain`). `position` places each item on the pitch on desktop
+`networking.end`) and `lineup[]` (`position`, `icon`, `title`,
+`text`, optional `captain`; `icon` is drawn in the round magnet token on the card's corner).
+The line-up is a magnetic tactics board: cards hang slightly askew from their magnet
+(straighten on hover), drop onto the board when it scrolls in (`main.js` toggles
+`.is-armed`/`.is-in`, skipped under reduced motion), and on desktop a chalk passing move
+(inline SVG, path data in the template) carries a looping ball into the goal with a
+`nw_goal` flash. The captain gets a `nw_captain` armband ribbon. `position` places each item on the pitch on desktop
 (`left-top`, `left-bottom`, `center`, `right-top`, `right-bottom`); on mobile the cards stack
 in front-matter order, so keep the captain third (on the halfway line) and the same order in
 all languages. Labels are i18n keys in `i18n/networking/` (`nw_*`, incl. the translated venue
@@ -284,7 +290,8 @@ the band continues its sky/river gradient past the sides. The scoreboard
 is a strip built into the picture's base (kick-off │ match clock │ final whistle); its status
 line shows the date without JS, and `initNetworkingClock()` in `main.js` turns it into a day
 countdown, "today" kick-off, live "minute N'" with a progress bar running from kick-off to
-whistle, or full time. The final CTA only renders when `ticketsOpen`.
+whistle, or full time. The venue section carries the page's tickets CTA (only when
+`ticketsOpen`) beside "how to get there"; there is no closing CTA section.
 Styles: `components/_networking.scss`.
 
 ### Navigation menus

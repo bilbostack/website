@@ -276,6 +276,20 @@ function initRevealAnimations() {
         });
     }
 
+    // Networking tactics board: the cards drop onto the pitch, one by one, when it
+    // scrolls in. CSS does the motion (.is-armed hides them, .is-in plays nw-drop), so
+    // without JS or GSAP the cards are simply there.
+    const field = document.querySelector('#networking .nw-field');
+    if (field) {
+        field.classList.add('is-armed');
+        ScrollTrigger.create({
+            trigger: field,
+            start: 'top 75%',
+            once: true,
+            onEnter: () => field.classList.add('is-in'),
+        });
+    }
+
     // Sponsorship tiers rise in sequence.
     const packages = gsap.utils.toArray('#sponsorship .sp-package');
     if (packages.length) {
