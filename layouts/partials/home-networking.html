@@ -1,0 +1,77 @@
+{{- /*
+  Home teaser for the /networking/ landing: a full-width "second half" card under the two
+  program cards (Friday → Saturday talks → Saturday afternoon). Same voice as the landing's
+  hero: copy + CTA on the left; on the right the San Mamés night illustration
+  (assets/img/networking/san-mames.svg, inlined so it takes the edition ramp, facade LED
+  wave included) with the LED scoreboard (kick-off │ final whistle) along its base; the
+  line-up scrolls on a perimeter board across the bottom. The whole card is the link
+  (stretched from the heading).
+  Data: times from site.Params.networking, copy from content/networking.<lang>.md front
+  matter, labels from i18n (nw_* + home_nw_cta). Hidden with networkingVisible = false.
+  Composed in index.html right after home-program. Styled by components/_home-networking
+  (the stadium reuses .nw-stadium from components/_networking).
+*/ -}}
+{{- if site.Params.networkingVisible }}
+{{- with site.GetPage "/networking" }}
+{{- $nw := site.Params.networking -}}
+{{- $start := time.AsTime $nw.start -}}
+{{- $end := time.AsTime $nw.end -}}
+{{- $date := T "nw_date" (dict
+      "weekday" (time.Format "Monday" $start)
+      "day" $start.Day
+      "month" (time.Format "January" $start)) | strings.FirstUpper -}}
+<div class="home-nw content">
+    <article class="home-nw__card">
+        <div class="home-nw__body">
+            <p class="home-nw__kicker">{{ $date }} · {{ T "nw_venue_name" }}</p>
+            <h3 class="home-nw__title"><a class="home-nw__link" href="{{ .RelPermalink }}">{{ .Params.heading }}</a></h3>
+            <p class="home-nw__lead">{{ .Params.lead }}</p>
+            <div class="home-nw__foot">
+                {{- /* Visual only: the heading link already names the destination. */}}
+                <span class="home-nw__cta" aria-hidden="true">
+                    <span>{{ T "home_nw_cta" }}</span>
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+                </span>
+                <p class="home-nw__included">{{ partial "networking-icon.html" "ticket" }}<span>{{ T "nw_included_title" }}</span></p>
+            </div>
+        </div>
+
+        <div class="home-nw__stage">
+            {{- /* Decorative here: the heading and kicker already name the venue. */}}
+            <figure class="nw-stadium home-nw__stadium" aria-hidden="true">
+                <div class="nw-stadium__art">
+                    {{- with resources.Get "img/networking/san-mames.svg" }}{{ .Content | safeHTML }}{{ end -}}
+                </div>
+            </figure>
+            <div class="home-nw__board" role="group" aria-label="{{ T "nw_board_label" }}">
+                <p class="home-nw__time">
+                    <time datetime="{{ $start.Format "2006-01-02T15:04" }}">{{ $start.Format "15:04" }}</time>
+                    <span>{{ T "nw_kickoff" }}</span>
+                </p>
+                <i class="home-nw__run" aria-hidden="true"></i>
+                <p class="home-nw__time home-nw__time--end">
+                    <time datetime="{{ $end.Format "2006-01-02T15:04" }}">{{ $end.Format "15:04" }}</time>
+                    <span>{{ T "nw_final" }}</span>
+                </p>
+            </div>
+        </div>
+
+        {{- /* Perimeter board: the landing's line-up, two copies for a seamless -50% loop. */}}
+        {{- with $lineup := .Params.lineup }}
+        <div class="home-nw__perimeter" aria-hidden="true">
+            <div class="home-nw__track">
+                {{- range seq 2 }}
+                <ul>
+                    {{- range seq 2 }}
+                    {{- range $lineup }}<li>{{ .title }}</li>{{ end }}
+                    <li>{{ site.Params.hashtag }}</li>
+                    {{- end }}
+                </ul>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+    </article>
+</div>
+{{- end }}
+{{- end }}

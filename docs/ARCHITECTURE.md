@@ -87,7 +87,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `eventLocationName`, `eventLocationCity`, `eventLocationRegion` | Venue — feed the JSON-LD `Place`/`PostalAddress` |
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Ticket sales URL (Entradium event page) |
-| `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
+| `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and the home teaser card (`home-networking`), and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
 | `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = pending, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
@@ -154,13 +154,19 @@ Hugo picks the template by the front-matter `type`/`layout`:
 ### Home (`layouts/index.html`)
 
 Composes the landing page from partials in order: `home-header`, `home-cta-sponsors`,
-`home-speakers`, `home-program`, `home-merch`, `site-sponsors` (collaborators commented out).
-`home-program` respects the `agendaVisible` flag.
+`home-speakers`, `home-program`, `home-networking`, `home-merch`, `site-sponsors` (collaborators commented out).
+`home-program` respects the `agendaVisible` flag. `home-networking` is the teaser card for
+`/networking/` right under the program cards (pulled up over `#programa`'s section margin so it
+reads as the program's third beat): copy + CTA on the left, the inlined San Mamés illustration
+(reusing `.nw-stadium`) with the kick-off/whistle scoreboard on the right, the line-up on a
+perimeter board below. It reads the landing's own `heading`, `lead` and `lineup` front matter and
+`site.Params.networking` times, so it needs no copy of its own beyond `home_nw_cta`; hidden with
+`networkingVisible = false`. Styles: `components/_home-networking.scss`.
 
 ### Partials
 
 - **Site chrome:** `site-header`, `site-footer`, `site-meta`, `site-schema`, `site-favicon`, `site-style`, `site-editions`, `site-sponsors`, `site-collaborators`, `site-wall-of-fame`.
-- **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-merch`, `home-cta-sponsors`.
+- **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-networking`, `home-merch`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
 - **Speakers:** `speaker-grid-card`.
 - **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`, plus `ticket` and `check` for the admission stub/note).
@@ -318,7 +324,7 @@ Extended. Entry point `assets/scss/style.scss` imports, in order:
   `_base` (visually-hidden utility, default focus ring, reduced-motion block),
   `_atmosphere` (dot-grid texture `.bs-texture-dots`),
   `_images`, `_responsive`
-- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`, `_sponsorship`, `_merch`, `_networking`
+- `components/` — `_buttons`, `_cards`, `_sponsors`, `_speakers`, `_editions`, `_agenda`, `_info`, `_breadcrumbs`, `_sponsorship`, `_merch`, `_networking`, `_home-networking`
 - `layout/` — `_header`, `_footer`, `_layout`
 - `fix` — last-resort overrides (kept empty by default; fix the real partial instead)
 

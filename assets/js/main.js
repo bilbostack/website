@@ -223,7 +223,7 @@ function initRevealAnimations() {
     }
 
     // Program cards. No grid offset here, so a plain transform rise is fine.
-    const cards = gsap.utils.toArray('#programa .card-programa');
+    const cards = gsap.utils.toArray('#programa .card-programa, #home .home-nw__card');
     if (cards.length) {
         gsap.set(cards, { y: 36, opacity: 0 });
         ScrollTrigger.batch(cards, {

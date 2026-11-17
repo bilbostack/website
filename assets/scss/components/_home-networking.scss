@@ -1,0 +1,370 @@
+// HOME · NETWORKING TEASER ──────────────────────────────────────────────────
+// Full-width "second half" card after the program cards (layouts/partials/
+// home-networking.html), in the /networking/ landing's voice: a night panel that stays
+// dark in both themes. Copy + CTA on the left; on the right San Mamés at night (the
+// landing's .nw-stadium illustration, facade LED wave included) with the LED scoreboard
+// along its base; the line-up scrolls on a perimeter board across the bottom. The whole
+// card is one link (stretched from the heading).
+
+.home-nw {
+    // Reads as the program's third beat, not a new section: pull it up over #programa's
+    // section margin (layout/_layout) so the gap equals the program cards' own gutter.
+    &.content {
+        margin-top: calc(-1 * var(--section-gap));
+        padding-top: 0;
+    }
+
+    // Same LED tokens as #networking (fixed light ramp: the panel never inverts).
+    --hnw-panel: var(--color-dark);
+    --hnw-led: var(--current-color-fixed-200);
+    --hnw-led-glow: var(--current-color-fixed-400);
+    --hnw-rule: #{"color-mix(in srgb, var(--color-light) 18%, transparent)"};
+    --hnw-muted: #{"color-mix(in srgb, var(--color-light) 72%, transparent)"};
+}
+
+.home-nw__card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "body stage"
+        "strip strip";
+    background-color: var(--hnw-panel);
+    color: var(--color-light);
+    // Light theme: the dark rule disappears into the panel; dark theme: a light outline
+    // separates the panel from the (also dark) page, like .nw-stage on the landing.
+    border: 2px solid var(--font-color);
+    border-radius: var(--border-radius);
+    // Offset accent block, the same gesture as the site's buttons.
+    box-shadow: 0.5rem 0.5rem 0 var(--accent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translate(-0.2rem, -0.2rem);
+        box-shadow: 0.7rem 0.7rem 0 var(--accent);
+    }
+
+    // Keyboard focus lands on the heading link; ring the whole card instead.
+    &:has(.home-nw__link:focus-visible) {
+        outline: 3px solid var(--font-color);
+        outline-offset: 4px;
+    }
+}
+
+// COPY ──
+.home-nw__body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-8) var(--space-7);
+}
+
+.home-nw__kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 var(--space-4);
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--hnw-led);
+
+    &::before {
+        content: "";
+        flex: none;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--accent);
+    }
+}
+
+.home-nw__title {
+    margin: 0 0 var(--space-4);
+    max-width: 18ch;
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-h2);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+// Stretched link: the heading's ::after covers the whole card.
+.home-nw__link {
+    color: var(--color-light);
+    text-decoration: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.home-nw__lead {
+    max-width: 40rem;
+    margin: 0 0 var(--space-6);
+    font-size: var(--font-size-lead);
+    line-height: 1.45;
+    color: var(--hnw-muted);
+}
+
+.home-nw__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4) var(--space-5);
+}
+
+// CTA ── LED pill; the arrow kicks forward and the pill glows on card hover.
+.home-nw__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--border-radius-pill);
+    background-color: var(--hnw-led);
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: box-shadow 0.25s ease;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.25s ease;
+    }
+
+    .home-nw__card:hover & {
+        box-shadow: 0 0 1.4rem #{"color-mix(in srgb, var(--hnw-led-glow) 70%, transparent)"};
+
+        svg { transform: translateX(0.3rem); }
+    }
+}
+
+.home-nw__included {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+    border: 1px dashed #{"color-mix(in srgb, var(--hnw-led) 55%, transparent)"};
+    border-radius: var(--border-radius-xs);
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--hnw-led);
+
+    .nw-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+// STADIUM + SCOREBOARD ── the picture fills the column; the board sits on its base.
+.home-nw__stage {
+    grid-area: stage;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-left: 1px solid var(--hnw-rule);
+}
+
+// .nw-stadium (components/_networking) brings the night gradient, star field and the
+// centred, side-faded SVG; here it just fills the column instead of a fixed band height.
+.nw-stadium.home-nw__stadium {
+    flex: 1;
+    height: auto;
+    min-height: 16rem;
+    aspect-ratio: auto;
+}
+
+.home-nw__board {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-4) var(--space-6);
+    border-top: 1px solid var(--hnw-rule);
+
+    // LED dot-matrix screen, as on the landing's scoreboard.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(circle, transparent 0.9px, #{"color-mix(in srgb, var(--color-dark) 55%, transparent)"} 1.3px) 0 0 / 4px 4px;
+    }
+}
+
+.home-nw__time {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin: 0;
+
+    &--end {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    time {
+        font-family: var(--font-family-mono);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: #{"clamp(1.8rem, 1.4rem + 1.2vw, 2.6rem)"};
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--hnw-led);
+        text-shadow: 0 0 0.35em var(--hnw-led-glow), 0 0 1.2em #{"color-mix(in srgb, var(--hnw-led-glow) 45%, transparent)"};
+    }
+
+    span {
+        font-family: var(--font-family-mono);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--hnw-muted);
+    }
+}
+
+// Match bar from kick-off to the whistle: a glowing run that fills on hover.
+.home-nw__run {
+    flex: 1;
+    display: block;
+    height: 0.4rem;
+    border-radius: var(--border-radius-pill);
+    background:
+        linear-gradient(var(--hnw-led-glow), var(--hnw-led-glow)) left / 35% 100% no-repeat,
+        #{"color-mix(in srgb, var(--color-light) 14%, transparent)"};
+    box-shadow: 0 0 0.6rem #{"color-mix(in srgb, var(--hnw-led-glow) 40%, transparent)"};
+    transition: background-size 0.8s ease;
+
+    .home-nw__card:hover & {
+        background-size: 100% 100%, auto;
+    }
+}
+
+// PERIMETER BOARD ── the landing's line-up, scrolling along the base.
+.home-nw__perimeter {
+    grid-area: strip;
+    overflow: hidden;
+    border-top: 1px solid var(--hnw-rule);
+    background-color: #{"color-mix(in srgb, var(--color-light) 4%, var(--hnw-panel))"};
+}
+
+.home-nw__track {
+    display: flex;
+    width: max-content;
+    animation: nw-marquee 40s linear infinite;
+
+    ul {
+        display: flex;
+        flex: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+        padding: var(--space-3) 0 var(--space-3) var(--space-5);
+        font-family: var(--font-family-display);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: var(--hnw-led);
+        text-shadow: 0 0 0.5em #{"color-mix(in srgb, var(--hnw-led-glow) 60%, transparent)"};
+
+        &::after {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            background-color: var(--accent);
+        }
+    }
+}
+
+// RESPONSIVE ── below lg the stadium heads the card, then the copy.
+@media screen and (max-width: $breakpoint-lg) {
+    .home-nw__card {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "stage"
+            "body"
+            "strip";
+    }
+
+    .home-nw__stage {
+        border-left: 0;
+        border-bottom: 1px solid var(--hnw-rule);
+    }
+
+    .nw-stadium.home-nw__stadium {
+        flex: none;
+        min-height: 0;
+        // Slightly narrower than the 12:5 picture, so only empty sky and river crop.
+        aspect-ratio: 21 / 10;
+    }
+
+    .home-nw__board {
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .home-nw__body {
+        padding: var(--space-6) var(--space-5);
+    }
+
+    .home-nw__title {
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .home-nw__card {
+        box-shadow: 0.35rem 0.35rem 0 var(--accent);
+    }
+
+    .home-nw__cta {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+}
+
+// REDUCED MOTION ── no lift, no marquee (items wrap so none are cut off). The stadium's
+// facade wave and beams are already stopped by components/_networking.
+@media (prefers-reduced-motion: reduce) {
+    .home-nw__card:hover {
+        transform: none;
+    }
+
+    .home-nw__track {
+        animation: none;
+        width: auto;
+
+        ul:last-child { display: none; }
+        ul { flex-wrap: wrap; }
+    }
+}
