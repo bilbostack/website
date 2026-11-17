@@ -1,15 +1,15 @@
 +++
 title = 'Networking'
-description = 'BilboStack 2027ko networkinga San Mames estadioan: edaria, janaria, zuzeneko musika eta zozketak, 14:00etatik 20:00etara.'
+description = 'BilboStack 2027ko networkinga San Mames estadioan: edaria, janaria, zuzeneko musika eta zozketak, 14:00etatik 20:00etara. Zure sarreran barne.'
 type = 'networking'
 seoTitle = "Networkinga San Mamesen · BilboStack 2027"
-seoDescription = "BilboStack 2027ko larunbat arratsaldea San Mamesen jokatzen da: networkinga, edaria, janaria, zuzeneko musika eta zozketak 14:00etatik 20:00etara."
+seoDescription = "BilboStack 2027ko larunbat arratsaldea San Mamesen jokatzen da: networkinga, edaria, janaria, zuzeneko musika eta zozketak 14:00etatik 20:00etara. Zure sarreran barne."
 image = 'img/bilbostack_publico.webp'   # social share (og:image)
 heading = "Bigarren zatia San Mamesen jokatzen da"
 lead = "Hitzaldiak amaitzean, Katedralera goaz: San Mames estadioaren barruko gune bat, solasaldiarekin jarraitzeko edari, janari, zuzeneko musika eta zozketekin."
 venueText = "San Mames estadio bat baino askoz gehiago da: Bilboko ikonoetako bat. Aurten BilboStack-en networkinga Katedralaren barruko gune batera doa, Euskalduna Jauregitik oinez gertu."
 transport = "San Mames metroa (L1 · L2) · San Mames tranbia-geltokia"
-# Estadioaren barruko networking gunerako sarbidea. Hutsik = "Zehaztu gabe" webean.
+# Estadioaren barruko networking gunerako sarbidea. Hutsik = "Zehazteke" webean.
 access = { gate = "", space = "" }
 
 # Arratsaldeko egitaraua (heroaren eskuineko zutabea). `time` = tarte bakoitzaren

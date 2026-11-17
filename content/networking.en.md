@@ -1,15 +1,15 @@
 +++
 title = 'Networking'
-description = 'BilboStack 2027 networking at San Mamés stadium: drinks, food, live music and prize draws, from 14:00 to 20:00.'
+description = 'BilboStack 2027 networking at San Mamés stadium: drinks, food, live music and prize draws, from 14:00 to 20:00. Included with your ticket.'
 type = 'networking'
 seoTitle = "Networking at San Mamés · BilboStack 2027"
-seoDescription = "BilboStack 2027's Saturday afternoon is played at San Mamés: networking, drinks, food, live music and prize draws from 14:00 to 20:00."
+seoDescription = "BilboStack 2027's Saturday afternoon is played at San Mamés: networking, drinks, food, live music and prize draws from 14:00 to 20:00. Included with your ticket."
 image = 'img/bilbostack_publico.webp'   # social share (og:image)
 heading = "The second half is played at San Mamés"
 lead = "Once the talks are over, we head to La Catedral: a space inside San Mamés stadium to keep the conversation going with drinks, food, live music and prize draws."
 venueText = "San Mamés is much more than a stadium: it's one of Bilbao's icons. This year BilboStack's networking moves to a space inside La Catedral, a short walk from the Palacio Euskalduna."
 transport = "San Mamés metro (L1 · L2) · San Mamés tram stop"
-# Access to the networking space inside the stadium. Empty = "Not defined yet" on the page.
+# Access to the networking space inside the stadium. Empty = "Pending" on the page.
 access = { gate = "", space = "" }
 
 # Afternoon schedule (right column of the hero). `time` = start of each slot; the last

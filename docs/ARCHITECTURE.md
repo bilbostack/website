@@ -88,7 +88,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `sponsorsVisible`, `agendaVisible`, `speakersVisible`, `ticketsOpen` | Feature flags toggling sections |
 | `ticketsLink` | Ticket sales URL (Entradium event page) |
 | `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
-| `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = not defined yet, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
+| `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = pending, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
 | `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
 | `youtubeEmbedURL` | Promo video embed |
@@ -163,7 +163,7 @@ Composes the landing page from partials in order: `home-header`, `home-cta-spons
 - **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-merch`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
 - **Speakers:** `speaker-grid-card`.
-- **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`).
+- **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`, plus `ticket` and `check` for the admission stub/note).
 - **CTA:** `site-cta-la-espuela` (currently commented out).
 
 ### Shortcodes (`layouts/_shortcodes/`)
@@ -266,7 +266,7 @@ Attendee-facing landing at `/networking/` (×3 languages) for the afternoon netw
 San Mamés stadium, staged as the "second half" of a match. Times come from the `networking`
 param (shared by the three languages); translated copy lives in front matter: `heading`,
 `lead`, `venueText`, `transport`, `access` (`{ gate, space }`: entrance gate and the space inside
-the stadium; empty = a "not defined" tag on the page), `schedule[]` (`time`, `title`, `text`: the afternoon
+the stadium; empty = a "pending" tag on the page), `schedule[]` (`time`, `title`, `text`: the afternoon
 programme shown beside the headline, closed automatically by a final-whistle row at
 `networking.end`) and `lineup[]` (`position`, `icon`, `title`,
 `text`, optional `captain`; `icon` is drawn in the round magnet token on the card's corner).
@@ -282,7 +282,9 @@ name `nw_venue_name`). The hero opens with a full-bleed band (edge to edge): the
 with the scoreboard strip at its base, then the perimeter LED board as a separator; below
 it, back in the content column, the headline and lead on the left and the schedule card on
 the right (kicker = the date, no buttons: the header carries the tickets CTA and the route
-lives in the venue section). The picture is by default
+lives in the venue section). Under the lead, an "included with your ticket" stub (`nw_included_title` /
+`nw_included_text`) makes clear the afternoon comes with the conference ticket; the same
+message repeats on the perimeter board and as a note under the venue CTAs (`nw_included_note`). The picture is by default
 the inline night illustration `assets/img/networking/san-mames.svg` (five-tier facade on the
 edition ramp, fins animate as an LED wave; alt text `nw_stadium_alt`); set `venueImage` (path under
 `assets/`) + `venueImageAlt` in front matter to show a real photo instead. The illustration keeps its ratio at the band's height, centred, and

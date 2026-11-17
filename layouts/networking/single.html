@@ -85,6 +85,7 @@
                 <ul>
                     {{- range seq 2 }}
                     {{- range $lineup }}<li>{{ .title }}</li>{{ end }}
+                    <li>{{ T "nw_included_title" }}</li>
                     <li>{{ site.Params.hashtag }}</li>
                     {{- end }}
                 </ul>
@@ -99,6 +100,16 @@
                 <p class="nw-kicker">{{ $date }}</p>
                 <h1>{{ .Params.heading }}</h1>
                 <p class="nw-lead">{{ .Params.lead }}</p>
+                {{- /* Admission: the afternoon comes with the conference ticket. A ticket
+                     stub (solid stub with a ticket-and-tick icon, perforated tear line)
+                     right under the lead, so nobody wonders whether it is sold apart. */}}
+                <p class="nw-included">
+                    <span class="nw-included__stub" aria-hidden="true">{{ partial "networking-icon.html" "ticket" }}</span>
+                    <span class="nw-included__body">
+                        <strong class="nw-included__title">{{ T "nw_included_title" }}</strong>
+                        <span class="nw-included__text">{{ T "nw_included_text" }}</span>
+                    </span>
+                </p>
             </div>
 
             {{- with .Params.schedule }}
@@ -203,7 +214,7 @@
     {{/* VENUE ─ why San Mamés, plus a "getting there" ticket: the walk from the talks
          (the main case) on top, then a tear line and the access facts. Missing data
          (walkMinutes/walkMeters = 0 in hugo.toml, empty access.* in front matter) shows
-         as a "not defined" tag until it is filled in. */}}
+         as a "pending" tag until it is filled in. */}}
     <section class="nw-venue content" aria-labelledby="nw-venue-title">
         <div class="nw-venue__text">
             <p class="nw-kicker">{{ T "nw_venue_kicker" }}</p>
@@ -216,6 +227,8 @@
                 {{- end }}
                 <a href="{{ $nw.mapLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "nw_map" }}</a>
             </div>
+            {{- /* Repeat the admission message next to the tickets CTA. */}}
+            <p class="nw-included-note">{{ partial "networking-icon.html" "check" }}<span>{{ T "nw_included_note" }}</span></p>
         </div>
 
         {{- $tbd := printf `<span class="nw-tbd">%s</span>` (T "nw_tbd") | safeHTML }}
