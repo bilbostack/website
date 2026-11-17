@@ -64,10 +64,13 @@
   </div>
   <ul class="sidenav-menu">
     {{ range .Site.Menus.main }}
+    {{- /* Entries with params.flag only show while that site param is true. */}}
+    {{- if or (not .Params.flag) (index site.Params (lower .Params.flag)) }}
     <li><a href="{{ .URL | relLangURL }}">
         <span class="nav-link-title">{{ .Name }}</span>
         <span class="nav-link-desc hide-on-mobile">{{ .Params.desc }}</span>
       </a></li>
+    {{- end }}
     {{ end }}
   </ul>
   <div class="sidenav-bottom">

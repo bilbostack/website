@@ -6,9 +6,12 @@
     <section id="footer-menu">
       <ul class="horizontal-menu">
         {{ range .Site.Menus.main }}
+        {{- /* Entries with params.flag only show while that site param is true. */}}
+        {{- if or (not .Params.flag) (index site.Params (lower .Params.flag)) }}
         <li><a href="{{ .URL }}">
             <span class="nav-link-title">{{ .Name }}</span>
           </a></li>
+        {{- end }}
         {{ end }}
       </ul>
     </section>
