@@ -1,13 +1,13 @@
 +++
-title = 'Networking'
-description = 'Networking de BilboStack 2027 en el estadio de San Mamés: bebida, comida, música en directo y sorteos, de 14:00 a 20:00. Incluido con tu entrada.'
+title = 'La Espuela'
+description = 'La Espuela de BilboStack 2027 en el estadio de San Mamés: bebida, comida, música en directo y sorteos, de 14:00 a 20:00. Incluido con tu entrada.'
 type = 'networking'
-seoTitle = "Networking en San Mamés · BilboStack 2027"
-seoDescription = "La tarde del sábado de BilboStack 2027 se juega en San Mamés: networking, bebida, comida, música en directo y sorteos de 14:00 a 20:00. Incluido con tu entrada."
+seoTitle = "La Espuela en San Mamés · BilboStack 2027"
+seoDescription = "La Espuela, la tarde del sábado de BilboStack 2027, se juega en San Mamés: networking, bebida, comida, música en directo y sorteos de 14:00 a 20:00. Incluido con tu entrada."
 image = 'img/bilbostack_publico.webp'   # social share (og:image)
-heading = "La segunda parte se juega en San Mamés"
+heading = "La Espuela se juega en San Mamés"
 lead = "Cuando terminen las charlas, nos vamos a La Catedral: un espacio dentro del estadio de San Mamés para seguir la conversación con algo de beber, algo de comer, música en directo y sorteos."
-venueText = "San Mamés es mucho más que un estadio: es uno de los iconos de Bilbao. Este año el networking de BilboStack se muda a un espacio dentro de La Catedral, a un paseo del Palacio Euskalduna."
+venueText = "San Mamés es mucho más que un estadio: es uno de los iconos de Bilbao. Este año La Espuela de BilboStack se muda a un espacio dentro de La Catedral, a un paseo del Palacio Euskalduna."
 transport = "Metro San Mamés (L1 · L2) · Tranvía San Mamés"
 # Acceso al espacio de networking dentro del estadio. Vacío = "Pendiente" en la web.
 access = { gate = "", space = "" }

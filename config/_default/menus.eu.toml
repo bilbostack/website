@@ -15,7 +15,7 @@ weight = 20
 desc = "Egitaraua, hizlariak eta La Espuela"
 
 [[main]]
-name = "Networking"
+name = "laEspuela"
 identifier = "networking"
 url = "/networking/"
 weight = 25
