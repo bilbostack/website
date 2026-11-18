@@ -302,6 +302,13 @@ whistle, or full time. The venue section carries the page's tickets CTA (only wh
 `ticketsOpen`) beside "how to get there"; there is no closing CTA section.
 Styles: `components/_networking.scss`.
 
+Social preview (`og:image` / X `summary_large_image`): front matter `image =
+'img/networking/og-la-espuela.jpg'` in the three languages — a 1200×630 still of the San Mamés
+illustration over an LED scoreboard ("La Espuela", 14:00 → 20:00, date, venue). Its text is
+language-neutral, so one image serves es/en/eu. It is a baked render (edition accent, date and
+times are in the pixels): regenerate it when the edition color, `networking.start`/`end` or the
+date change.
+
 ### Navigation menus
 
 Defined per language in `config/_default/menus.<lang>.toml` as `[[main]]` entries
