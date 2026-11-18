@@ -13,7 +13,7 @@ weight = 20
 [main.params]
 desc = "Agenda, ponentes y La Espuela"
 [[main]]
-name = "Networking"
+name = "La Espuela"
 identifier = "networking"
 url = "/networking/"
 weight = 25
