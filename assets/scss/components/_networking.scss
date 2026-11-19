@@ -192,6 +192,39 @@
     }
 }
 
+// "Drinks not included": the asterisk on every "included" claim (and on line-up items with
+// `notIncluded`) and its fine print right beside it. Accent ink, so it reads as a caveat
+// without shouting; the asterisk is aria-hidden, the fine print carries the meaning.
+.nw-asterisk {
+    margin-left: 0.08em;
+    color: var(--accent-ink);
+    font-weight: 700;
+}
+
+.nw-fineprint {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    color: var(--accent-ink);
+}
+
+// Inside the stub, under the text.
+.nw-included__body .nw-fineprint {
+    margin-top: var(--space-1);
+}
+
+// On the line-up card, under its text.
+.nw-player__fine {
+    margin: var(--space-2) 0 0;
+}
+
+// Under the venue note, aligned with its text (past the check icon).
+.nw-included-fine {
+    margin: var(--space-2) 0 0 calc(1.25rem + var(--space-2));
+}
+
 // Afternoon schedule: a match-sheet card with a timeline from arrival to the whistle.
 .nw-schedule {
     --nw-tl-time: 3.4rem;
