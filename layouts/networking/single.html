@@ -13,6 +13,11 @@
       "day" $start.Day
       "month" (time.Format "January" $start)) | strings.FirstUpper -}}
 {{- $lineup := .Params.lineup -}}
+{{- /* Drinks aren't part of the ticket: every "included" claim, and each line-up item with
+       `notIncluded = true`, carries an asterisk (decorative, aria-hidden) whose fine print
+       (nw_drinks_note) sits right beside it, so screen readers get the note in context. */ -}}
+{{- $asterisk := `<span class="nw-asterisk" aria-hidden="true">*</span>` | safeHTML -}}
+{{- $fine := printf `<span class="nw-fineprint"><span aria-hidden="true">*</span> %s</span>` (T "nw_drinks_note") | safeHTML -}}
 
 {{- if not site.Params.networkingVisible }}
 {{- /* Switched off: site-meta.html adds noindex + an instant redirect to the home; this
@@ -85,7 +90,7 @@
                 <ul>
                     {{- range seq 2 }}
                     {{- range $lineup }}<li>{{ .title }}</li>{{ end }}
-                    <li>{{ T "nw_included_title" }}</li>
+                    <li>{{ T "nw_included_title" }}*</li>
                     <li>{{ site.Params.hashtag }}</li>
                     {{- end }}
                 </ul>
@@ -106,8 +111,9 @@
                 <p class="nw-included">
                     <span class="nw-included__stub" aria-hidden="true">{{ partial "networking-icon.html" "ticket" }}</span>
                     <span class="nw-included__body">
-                        <strong class="nw-included__title">{{ T "nw_included_title" }}</strong>
+                        <strong class="nw-included__title">{{ T "nw_included_title" }}{{ $asterisk }}</strong>
                         <span class="nw-included__text">{{ T "nw_included_text" }}</span>
+                        {{ $fine }}
                     </span>
                 </p>
             </div>
@@ -199,12 +205,15 @@
                     {{- /* Player token on the corner: the item's icon (decorative). */}}
                     <span class="nw-player__token" aria-hidden="true">{{ partial "networking-icon.html" $p.icon }}</span>
                     <h3 class="nw-player__name">
-                        <span>{{ $p.title }}</span>
+                        <span>{{ $p.title }}{{ if $p.notIncluded }}{{ $asterisk }}{{ end }}</span>
                         {{- if $p.captain }}
                         <span class="nw-player__armband">{{ T "nw_captain" }}</span>
                         {{- end }}
                     </h3>
                     <p class="nw-player__text">{{ $p.text }}</p>
+                    {{- if $p.notIncluded }}
+                    <p class="nw-player__fine">{{ $fine }}</p>
+                    {{- end }}
                 </li>
                 {{- end }}
             </ol>
@@ -228,7 +237,8 @@
                 <a href="{{ $nw.mapLink }}" class="btn btn-outline" target="_blank" rel="noopener">{{ T "nw_map" }}</a>
             </div>
             {{- /* Repeat the admission message next to the tickets CTA. */}}
-            <p class="nw-included-note">{{ partial "networking-icon.html" "check" }}<span>{{ T "nw_included_note" }}</span></p>
+            <p class="nw-included-note">{{ partial "networking-icon.html" "check" }}<span>{{ T "nw_included_note" }}{{ $asterisk }}</span></p>
+            <p class="nw-included-fine">{{ $fine }}</p>
         </div>
 
         {{- $tbd := printf `<span class="nw-tbd">%s</span>` (T "nw_tbd") | safeHTML }}

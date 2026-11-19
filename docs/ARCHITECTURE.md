@@ -275,7 +275,10 @@ param (shared by the three languages); translated copy lives in front matter: `h
 the stadium; empty = a "pending" tag on the page), `schedule[]` (`time`, `title`, `text`: the afternoon
 programme shown beside the headline, closed automatically by a final-whistle row at
 `networking.end`) and `lineup[]` (`position`, `icon`, `title`,
-`text`, optional `captain`; `icon` is drawn in the round magnet token on the card's corner).
+`text`, optional `captain`, optional `notIncluded`; `icon` is drawn in the round magnet token on the card's corner).
+Drinks are not part of the ticket: every "included with your ticket" claim on the page (hero stub,
+venue note, perimeter board) and each line-up item with `notIncluded = true` carries an asterisk
+(`.nw-asterisk`, aria-hidden) with the `nw_drinks_note` fine print (`.nw-fineprint`) beside it.
 The line-up is a magnetic tactics board: cards hang slightly askew from their magnet
 (straighten on hover), drop onto the board when it scrolls in (`main.js` toggles
 `.is-armed`/`.is-in`, skipped under reduced motion), and on desktop a chalk passing move
