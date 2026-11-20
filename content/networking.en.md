@@ -23,8 +23,8 @@ schedule = [
 # Same order and positions as networking.es.md.
 lineup = [
   { position = "left-top", icon = "drinks", notIncluded = true, title = "Drinks with and without alcohol", text = "Something to toast the day's talks and everything that's still to come." },
-  { position = "left-bottom", icon = "food", title = "Food", text = "Refuel after a full day so no conversation gets left halfway." },
-  { position = "center", icon = "networking", captain = true, title = "Networking", text = "The heart of BilboStack: old friends, new faces and conversations that start with “so, what do you work on?” and end up as projects." },
+  { position = "left-bottom", icon = "food", note = "There'll be something", title = "Food", text = "Refuel after a full day so no conversation gets left halfway." },
+  { position = "center", icon = "networking", captain = true, title = "Networking", text = "The heart of BilboStack. Old friends, new faces and connections that start with “so, what do you do?”." },
   { position = "right-top", icon = "music", title = "Live music", text = "A live soundtrack for the whole afternoon." },
   { position = "right-bottom", icon = "raffle", title = "Prize draws", text = "There will be prize draws during the afternoon, so don't leave before the final whistle." },
 ]

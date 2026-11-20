@@ -15,7 +15,8 @@
 {{- $lineup := .Params.lineup -}}
 {{- /* Drinks aren't part of the ticket: every "included" claim, and each line-up item with
        `notIncluded = true`, carries an asterisk (decorative, aria-hidden) whose fine print
-       (nw_drinks_note) sits right beside it, so screen readers get the note in context. */ -}}
+       (nw_drinks_note) sits right beside it, so screen readers get the note in context.
+       A line-up item can carry its own caveat instead with `note` (same asterisk). */ -}}
 {{- $asterisk := `<span class="nw-asterisk" aria-hidden="true">*</span>` | safeHTML -}}
 {{- $fine := printf `<span class="nw-fineprint"><span aria-hidden="true">*</span> %s</span>` (T "nw_drinks_note") | safeHTML -}}
 
@@ -201,18 +202,17 @@
             </svg>
             <ol class="nw-field__players">
                 {{- range $i, $p := $lineup }}
+                {{- /* Caveat for this item: its own `note`, else the drinks note when `notIncluded`. */}}
+                {{- $note := $p.note | default (cond (eq $p.notIncluded true) (T "nw_drinks_note") "") }}
                 <li class="nw-player nw-player--{{ $p.position }}{{ if $p.captain }} is-captain{{ end }}" style="--i: {{ $i }}">
                     {{- /* Player token on the corner: the item's icon (decorative). */}}
                     <span class="nw-player__token" aria-hidden="true">{{ partial "networking-icon.html" $p.icon }}</span>
                     <h3 class="nw-player__name">
-                        <span>{{ $p.title }}{{ if $p.notIncluded }}{{ $asterisk }}{{ end }}</span>
-                        {{- if $p.captain }}
-                        <span class="nw-player__armband">{{ T "nw_captain" }}</span>
-                        {{- end }}
+                        <span>{{ $p.title }}{{ if $note }}{{ $asterisk }}{{ end }}</span>
                     </h3>
                     <p class="nw-player__text">{{ $p.text }}</p>
-                    {{- if $p.notIncluded }}
-                    <p class="nw-player__fine">{{ $fine }}</p>
+                    {{- with $note }}
+                    <p class="nw-player__fine"><span class="nw-fineprint"><span aria-hidden="true">*</span> {{ . }}</span></p>
                     {{- end }}
                 </li>
                 {{- end }}

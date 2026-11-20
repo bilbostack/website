@@ -693,24 +693,6 @@
         line-height: 1.45;
     }
 
-    // Captain's armband: a ribbon with the word, wrapped over the card's top edge.
-    &__armband {
-        position: absolute;
-        top: -0.85rem;
-        right: var(--space-5);
-        padding: 0.2rem 0.6rem;
-        font-family: var(--font-family-mono);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--color-dark);
-        background-color: var(--accent);
-        border: 2px solid var(--font-color);
-        border-radius: var(--border-radius-xs);
-        rotate: 3deg;
-    }
-
     &.is-captain {
         max-width: 22rem;
         padding: var(--space-6) var(--space-5) var(--space-5);

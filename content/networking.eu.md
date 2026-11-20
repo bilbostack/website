@@ -23,8 +23,8 @@ schedule = [
 # networking.es.md fitxategiko ordena eta posizio berberak.
 lineup = [
   { position = "left-top", icon = "drinks", notIncluded = true, title = "Edaria alkoholarekin zein alkoholik gabe", text = "Eguneko hitzaldiengatik eta etortzeko dagoen guztiagatik topa egiteko zerbait." },
-  { position = "left-bottom", icon = "food", title = "Janaria", text = "Jardunaldiaren ostean indarrak berritzeko, solasaldirik erdibidean gera ez dadin." },
-  { position = "center", icon = "networking", captain = true, title = "Networking", text = "BilboStack-en bihotza: berrelkartzeak, aurpegi berriak eta «eta zu, zertan ari zara?» galderarekin hasi eta proiektu bihurtzen diren solasaldiak." },
+  { position = "left-bottom", icon = "food", note = "Zerbait egongo da", title = "Janaria", text = "Jardunaldiaren ostean indarrak berritzeko, solasaldirik erdibidean gera ez dadin." },
+  { position = "center", icon = "networking", captain = true, title = "Networking", text = "BilboStack-en bihotza. Berrelkartzeak, aurpegi berriak eta «eta zu, zertan ari zara?» galderarekin hasten diren konexioak." },
   { position = "right-top", icon = "music", title = "Zuzeneko musika", text = "Arratsalde osorako soinu-banda, zuzenean." },
   { position = "right-bottom", icon = "raffle", title = "Zozketak", text = "Arratsaldean zehar zozketak egingo ditugu; ez joan amaierako txistua baino lehen." },
 ]

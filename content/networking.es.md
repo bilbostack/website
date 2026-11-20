@@ -24,11 +24,12 @@ schedule = [
 # centro, sobre el círculo central). `position` lo coloca sobre el campo en escritorio:
 # left-top, left-bottom, center, right-top, right-bottom. `icon`: drinks, food,
 # networking, music, raffle. `notIncluded = true` marca con asterisco lo que no entra en la
-# entrada (nota i18n `nw_drinks_note`). Mantener el mismo orden en los tres idiomas.
+# entrada (nota i18n `nw_drinks_note`); `note` pone asterisco con una nota propia.
+# Mantener el mismo orden en los tres idiomas.
 lineup = [
   { position = "left-top", icon = "drinks", notIncluded = true, title = "Bebida con y sin alcohol", text = "Algo para brindar por las charlas del día y por todo lo que está por venir." },
-  { position = "left-bottom", icon = "food", title = "Comida", text = "Para reponer fuerzas tras la jornada y que ninguna conversación se quede a medias." },
-  { position = "center", icon = "networking", captain = true, title = "Networking", text = "El corazón de BilboStack: reencuentros, caras nuevas y conversaciones que empiezan con un «¿y tú a qué te dedicas?» y acaban en proyecto." },
+  { position = "left-bottom", icon = "food", note = "Algo habrá", title = "Comida", text = "Para reponer fuerzas tras la jornada y que ninguna conversación se quede a medias." },
+  { position = "center", icon = "networking", captain = true, title = "Networking", text = "El corazón del BilboStack. Reencuentros, caras nuevas y conexiones que empiezan con un «¿y tú a qué te dedicas?»." },
   { position = "right-top", icon = "music", title = "Música en directo", text = "Banda sonora en vivo para toda la tarde." },
   { position = "right-bottom", icon = "raffle", title = "Sorteos", text = "Habrá sorteos durante la tarde, así que no te vayas antes del pitido final." },
 ]
