@@ -275,15 +275,16 @@ param (shared by the three languages); translated copy lives in front matter: `h
 the stadium; empty = a "pending" tag on the page), `schedule[]` (`time`, `title`, `text`: the afternoon
 programme shown beside the headline, closed automatically by a final-whistle row at
 `networking.end`) and `lineup[]` (`position`, `icon`, `title`,
-`text`, optional `captain`, optional `notIncluded`; `icon` is drawn in the round magnet token on the card's corner).
+`text`, optional `captain`, optional `notIncluded`, optional `note`; `icon` is drawn in the round magnet token on the card's corner).
 Drinks are not part of the ticket: every "included with your ticket" claim on the page (hero stub,
 venue note, perimeter board) and each line-up item with `notIncluded = true` carries an asterisk
-(`.nw-asterisk`, aria-hidden) with the `nw_drinks_note` fine print (`.nw-fineprint`) beside it.
+(`.nw-asterisk`, aria-hidden) with the `nw_drinks_note` fine print (`.nw-fineprint`) beside it;
+an item with `note` gets the same asterisk with its own fine print instead (e.g. food).
 The line-up is a magnetic tactics board: cards hang slightly askew from their magnet
 (straighten on hover), drop onto the board when it scrolls in (`main.js` toggles
 `.is-armed`/`.is-in`, skipped under reduced motion), and on desktop a chalk passing move
 (inline SVG, path data in the template) carries a looping ball into the goal with a
-`nw_goal` flash. The captain gets a `nw_captain` armband ribbon. `position` places each item on the pitch on desktop
+`nw_goal` flash. The captain (`captain = true`) gets the larger centre card. `position` places each item on the pitch on desktop
 (`left-top`, `left-bottom`, `center`, `right-top`, `right-bottom`); on mobile the cards stack
 in front-matter order, so keep the captain third (on the halfway line) and the same order in
 all languages. Labels are i18n keys in `i18n/networking/` (`nw_*`, incl. the translated venue
