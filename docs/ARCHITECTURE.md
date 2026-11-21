@@ -91,7 +91,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and the home teaser card (`home-networking`), and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
 | `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = pending, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
-| `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
+| `recapVideo` | `{ year, src, poster, start }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page. `poster` is an `assets/` frame shown while it loads (grab it at `start`); `start` is the second it plays and loops from (skips the reel's white fade-in, which otherwise blinks on every loop — looping is done by `initLoopStart` in `main.js`) |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
 | `sponsorsContactEmail`, `sponsorsPaymentDeadline` | Sponsorship page contact and payment deadline (ISO date) |

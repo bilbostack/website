@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initAnimations();
     initSponsorCountdown();
     initSponsorMedia();
+    initLoopStart();
     initNetworkingClock();
 });
 
@@ -764,6 +765,22 @@ function initSponsorMedia() {
     });
     toggle.hidden = false;
     sync();
+}
+
+// ===== LOOP FROM A START POINT =====
+// The recap reel opens on a fade from white; the native `loop` would replay it on
+// every pass (a white blink). Videos with data-loop-start loop back to that second
+// instead. Without JS they keep the native loop.
+function initLoopStart() {
+    document.querySelectorAll('video[data-loop-start]').forEach(v => {
+        const start = parseFloat(v.dataset.loopStart) || 0;
+        if (!start) return;
+        v.loop = false;
+        v.addEventListener('ended', () => {
+            v.currentTime = start;
+            v.play().catch(() => {});
+        });
+    });
 }
 
 // ===== THEME DARK / LIGHT MODES =====

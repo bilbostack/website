@@ -182,7 +182,7 @@
         </div>
         <div class="sp-media">
             <figure class="sp-media__item sp-media__item--reel">
-                <video class="sp-media__video" muted loop playsinline controls preload="metadata" aria-label="{{ T "sp_media_recap" (dict "year" $recap.year) }}">
+                <video class="sp-media__video" muted loop playsinline controls preload="metadata" data-loop-start="{{ $recap.start | default 0 }}" aria-label="{{ T "sp_media_recap" (dict "year" $recap.year) }}">
                     <source src="{{ printf "%s.webm#t=3" $recap.src | relURL }}" type="video/webm">
                     <source src="{{ printf "%s.mp4#t=3" $recap.src | relURL }}" type="video/mp4">
                 </video>
