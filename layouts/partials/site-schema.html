@@ -34,6 +34,37 @@
     "url" .Site.Params.ticketsLink
     "priceCurrency" "EUR"
     "availability" "https://schema.org/InStock")) }}{{ end }}
+{{- /* subEvent: one Event per agenda talk (or session with its own location) that has a
+       parseable time. agenda-days.html returns nothing while agendaVisible = false. */ -}}
+{{ $subEvents := slice }}
+{{ with site.GetPage "/agenda" }}
+  {{ range partial "agenda-days.html" . }}
+    {{ range .sessions }}
+      {{ if and .start (or .speaker (and .location .location.mapUrl)) }}
+        {{ $sub := dict
+            "@type" "Event"
+            "name" .title
+            "startDate" .start
+            "endDate" .end
+            "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+            "eventStatus" "https://schema.org/EventScheduled" }}
+        {{ with .location }}
+          {{ $place := dict "@type" "Place" "name" .name }}
+          {{ with .mapUrl }}{{ $place = merge $place (dict "hasMap" .) }}{{ end }}
+          {{ $sub = merge $sub (dict "location" $place) }}
+        {{ end }}
+        {{ with .speaker }}
+          {{ $person := dict "@type" "Person" "name" .name }}
+          {{ with .title }}{{ $person = merge $person (dict "jobTitle" .) }}{{ end }}
+          {{ with .url }}{{ $person = merge $person (dict "url" .) }}{{ $sub = merge $sub (dict "url" .) }}{{ end }}
+          {{ $sub = merge $sub (dict "performer" $person) }}
+        {{ end }}
+        {{ $subEvents = $subEvents | append $sub }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ with $subEvents }}{{ $event = merge $event (dict "subEvent" .) }}{{ end }}
 <script type="application/ld+json">{{ $event | jsonify | safeJS }}</script>
 {{- else if .IsPage -}}
 <script type="application/ld+json">{{ dict
