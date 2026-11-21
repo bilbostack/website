@@ -1,0 +1,62 @@
+{{- /* Normalized, machine-readable agenda shared by the JSON-LD subEvents (site-schema.html)
+       and the agenda JSON output (agenda/single.json).
+
+       Context: the agenda page (content/agenda.<lang>.md).
+       Returns: a slice of days, each a dict:
+         id        "viernes" | "sabado" (front matter suffix)
+         date      "YYYY-MM-DD" — sabado = eventStartDate's day, viernes = the day before
+         label     i18n previa_date / bilbostack_date
+         title     schedule_config_<id>.title
+         venue     schedule_config_<id>.where
+         sessions  slice of dicts:
+           time      raw "HH:MM-HH:MM" from front matter
+           start/end ISO 8601 with the eventStartDate offset (omitted if `time` isn't HH:MM-HH:MM)
+           title, kind ("talk" when it has a speaker, else "session"), track (parallel rows only)
+           speaker   { name, title, url } — url only when speaker_url resolves to a published page
+           location  { name, mapUrl } — session `location`/`address`, else the day venue
+       Empty when agendaVisible = false, so unpublished agenda data never leaks. */ -}}
+{{- $days := slice -}}
+{{- if site.Params.agendaVisible -}}
+  {{- $start := time.AsTime site.Params.eventStartDate -}}
+  {{- $tz := $start.Format "-07:00" -}}
+  {{- $defs := slice
+      (dict "id" "viernes" "date" ($start.AddDate 0 0 -1) "label" (T "previa_date"))
+      (dict "id" "sabado" "date" $start "label" (T "bilbostack_date")) -}}
+  {{- range $def := $defs -}}
+    {{- $date := $def.date.Format "2006-01-02" -}}
+    {{- $config := index $.Params (printf "schedule_config_%s" $def.id) | default dict -}}
+    {{- $venue := $config.where -}}
+    {{- $sessions := slice -}}
+    {{- range index $.Params (printf "schedule_%s" $def.id) -}}
+      {{- $row := . -}}
+      {{- $times := split (replace $row.time " " "") "-" -}}
+      {{- range $i, $s := $row.sessions -}}
+        {{- $out := dict "time" $row.time "title" $s.title "kind" "session" -}}
+        {{- if and (eq (len $times) 2) (findRE `^\d{2}:\d{2}$` (index $times 0)) (findRE `^\d{2}:\d{2}$` (index $times 1)) -}}
+          {{- $out = merge $out (dict
+              "start" (printf "%sT%s:00%s" $date (index $times 0) $tz)
+              "end" (printf "%sT%s:00%s" $date (index $times 1) $tz)) -}}
+        {{- end -}}
+        {{- if eq $row.type "parallel" -}}
+          {{- $out = merge $out (dict "track" (T (printf "track_%d" (add $i 1)))) -}}
+        {{- end -}}
+        {{- with $s.speaker -}}
+          {{- $sp := dict "name" . -}}
+          {{- with $s.speaker_title }}{{ $sp = merge $sp (dict "title" .) }}{{ end -}}
+          {{- with $s.speaker_url }}{{ with site.GetPage . }}{{ $sp = merge $sp (dict "url" .Permalink) }}{{ end }}{{ end -}}
+          {{- $out = merge $out (dict "kind" "talk" "speaker" $sp) -}}
+        {{- end -}}
+        {{- $loc := dict "name" ($s.location | default $venue) -}}
+        {{- with $s.address }}{{ $loc = merge $loc (dict "mapUrl" .) }}{{ end -}}
+        {{- if $loc.name }}{{ $out = merge $out (dict "location" $loc) }}{{ end -}}
+        {{- $sessions = $sessions | append $out -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $sessions -}}
+      {{- $days = $days | append (dict
+          "id" $def.id "date" $date "label" $def.label
+          "title" $config.title "venue" $venue "sessions" .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $days -}}

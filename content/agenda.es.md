@@ -2,6 +2,8 @@
 title = 'Agenda'
 type = 'agenda'
 draft = false
+# Also publish /agenda/index.json (machine-readable agenda, layouts/agenda/single.json)
+outputs = ['html', 'json']
 
 # Configuración de días
 [schedule_config_viernes]

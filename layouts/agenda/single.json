@@ -1,0 +1,26 @@
+{{- /* Machine-readable agenda, published at /agenda/index.json (and /en/, /eu/) via
+       `outputs = ['json']` in content/agenda.<lang>.md. Data comes from agenda-days.html;
+       `published` mirrors agendaVisible (false → `days` is empty). */ -}}
+{{- $year := 0 -}}
+{{- range site.Params.editions }}{{ if .current }}{{ $year = .year }}{{ end }}{{ end -}}
+{{- $event := dict
+    "name" (printf "Bilbostack %d" $year)
+    "url" site.Home.Permalink
+    "startDate" site.Params.eventStartDate
+    "endDate" site.Params.eventEndDate
+    "venue" (dict
+        "name" site.Params.eventLocationName
+        "city" site.Params.eventLocationCity
+        "region" site.Params.eventLocationRegion
+        "country" "ES") -}}
+{{- if site.Params.ticketsOpen }}{{ $event = merge $event (dict "ticketsUrl" site.Params.ticketsLink) }}{{ end -}}
+{{- $translations := dict -}}
+{{- range $t := .Translations }}{{ with $t.OutputFormats.Get "json" }}{{ $translations = merge $translations (dict $t.Language.Lang .Permalink) }}{{ end }}{{ end -}}
+{{- dict
+    "event" $event
+    "language" .Language.Lang
+    "agendaUrl" .Permalink
+    "published" site.Params.agendaVisible
+    "days" (partial "agenda-days.html" .)
+    "translations" $translations
+  | jsonify (dict "indent" "  ") -}}

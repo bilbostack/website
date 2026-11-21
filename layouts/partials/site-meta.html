@@ -36,6 +36,10 @@
 {{ $xDefault := hugo.Sites.Default.Home.Permalink }}
 {{ range .AllTranslations }}{{ if .Language.IsDefault }}{{ $xDefault = .Permalink }}{{ end }}{{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ $xDefault }}">
+{{- /* Machine-readable version of the page (currently only the agenda: /agenda/index.json). */}}
+{{- with .OutputFormats.Get "json" }}
+<link rel="alternate" type="application/json" href="{{ .Permalink }}">
+{{- end }}
 <meta property="og:site_name" content="Bilbostack">
 <meta property="og:locale" content="{{ $locale }}">
 <meta property="og:url" content="{{ $permalink }}">

@@ -36,6 +36,7 @@ system and tokens, and [`design-plan.md`](./design-plan.md) for the standing des
 │   ├── _shortcodes/        # speaker_bio, speaker_talk
 │   ├── partials/           # Reusable template fragments (site-*, home-*, agenda-*, session-*)
 │   ├── agenda/single.html  # Agenda page template
+│   ├── agenda/single.json  # Agenda JSON output (/agenda/index.json)
 │   ├── info/single.html
 │   ├── past-editions/single.html
 │   ├── sponsorship/single.html
@@ -90,7 +91,7 @@ Key `[params]` (accessed in templates via `.Site.Params.*`):
 | `networkingVisible` | Turns the `/networking/` page on/off: `false` hides its menu entries (via the menu `flag` param) and the home teaser card (`home-networking`), and makes the page an instant `noindex` redirect to the home. Build-time, needs a deploy |
 | `networking` | `{ start, end, walkMinutes, walkMeters, mapLink }` for the `/networking/` landing — ISO datetimes feed the scoreboard and its live match clock; `walkMinutes`/`walkMeters` the walk from the conference venue on the "getting there" ticket (`0` = pending, shown as a `nw_tbd` tag); `mapLink` the "how to get there" button |
 | `merchVisible`, `merch` | Edition t-shirt showcase on the home (`home-merch`): list of `{ image, fit, alt }` — `image` in `assets/img/merch/`, `fit`/`alt` are i18n keys |
-| `recapVideo` | `{ year, src }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page |
+| `recapVideo` | `{ year, src, poster, start }` highlights reel in `static/` (`<src>.webm` + `<src>.mp4`); home sponsors CTA and sponsorship page. `poster` is an `assets/` frame shown while it loads (grab it at `start`); `start` is the second it plays and loops from (skips the reel's white fade-in, which otherwise blinks on every loop — looping is done by `initLoopStart` in `main.js`) |
 | `youtubeEmbedURL` | Promo video embed |
 | `sponsorsDossierLink`, `contactEmail` | Misc links |
 | `sponsorsContactEmail`, `sponsorsPaymentDeadline` | Sponsorship page contact and payment deadline (ISO date) |
@@ -136,6 +137,12 @@ Page content is wrapped in `#smooth-wrapper > #smooth-content` for GSAP ScrollSm
   `eventEndDate` params and the `eventLocationName` / `eventLocationCity` /
   `eventLocationRegion` params, the `current` edition's `year`, and — when `ticketsOpen` —
   an `Offer` pointing at `ticketsLink`. Keep these params accurate at each rollover.
+  When `agendaVisible` is on, the home `Event` also gets a `subEvent` per agenda talk (and
+  per session with its own `location` + `address`, e.g. La Espuela), built from
+  `agenda-days.html`: `startDate`/`endDate`, `Place`, and a `performer` `Person` whose `url`
+  is the speaker page (only when `speaker_url` resolves to a published page).
+- `site-meta.html` adds `<link rel="alternate" type="application/json">` on pages that
+  have a `json` output (currently only the agenda).
 
 ### Layout selection
 
@@ -167,7 +174,7 @@ perimeter board below. It reads the landing's own `heading`, `lead` and `lineup`
 
 - **Site chrome:** `site-header`, `site-footer`, `site-meta`, `site-schema`, `site-favicon`, `site-style`, `site-editions`, `site-sponsors`, `site-collaborators`, `site-wall-of-fame`.
 - **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-networking`, `home-merch`, `home-cta-sponsors`.
-- **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model).
+- **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model); `agenda-days` returns the normalized agenda for JSON-LD and the JSON output.
 - **Speakers:** `speaker-grid-card`.
 - **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`, plus `ticket` and `check` for the admission stub/note).
 - **CTA:** `site-cta-la-espuela` (currently commented out).
@@ -235,6 +242,16 @@ type = "single"             # "single" = full-width session, "parallel" = two tr
 `schedule_config_*` into `agenda-table.html`. Each row renders `session-full.html`
 (type `single`) or one `session-track.html` per parallel session, with track names
 pulled from i18n keys `track_1`, `track_2`. The whole page respects `agendaVisible`.
+
+**Machine-readable agenda.** `outputs = ['html', 'json']` in the agenda front matter (×3)
+also publishes `/agenda/index.json` (and `/en/…`, `/eu/…`) from `layouts/agenda/single.json`:
+event metadata, `published` (= `agendaVisible`), `days[]` with their `sessions[]`, and the
+URLs of the other languages' JSON. Both this file and the JSON-LD `subEvent`s read the
+normalized data from the `agenda-days.html` partial (it `return`s the days; empty while
+`agendaVisible = false`, so draft agenda data never leaks). Dates come from
+`eventStartDate`: `sabado` is that day, `viernes` the day before; times must be
+`HH:MM-HH:MM` to get ISO `start`/`end` (others keep only the raw `time`). Advertised in
+`static/llms.txt`.
 
 ### Wall of fame & past editions
 

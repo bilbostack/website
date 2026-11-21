@@ -1,9 +1,17 @@
 <section id="cta-sponsors">
     <div class="content">
         <div class="cta-video">
-            <video autoplay muted loop playsinline>
-                <source src="{{ printf "%s.webm" site.Params.recapVideo.src | relURL }}" type="video/webm">
-                <source src="{{ printf "%s.mp4" site.Params.recapVideo.src | relURL }}" type="video/mp4">
+            {{- /* Poster = the reel's frame at `start`, so the box shows the same image
+                 the video opens on (no blank/blink while the 20+ MB file loads).
+                 width/height reserve the 16:9 box before metadata arrives. */}}
+            {{- $recap := site.Params.recapVideo }}
+            {{- $start := $recap.start | default 0 }}
+            {{- $poster := "" }}
+            {{- with $recap.poster }}{{ with resources.Get . }}{{ $poster = .Resize "1280x webp q75" }}{{ end }}{{ end }}
+            <video autoplay muted loop playsinline width="1920" height="1080"
+                {{- with $poster }} poster="{{ .RelPermalink }}"{{ end }} data-loop-start="{{ $start }}">
+                <source src="{{ printf "%s.webm#t=%v" $recap.src $start | relURL }}" type="video/webm">
+                <source src="{{ printf "%s.mp4#t=%v" $recap.src $start | relURL }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
