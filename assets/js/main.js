@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initSponsorCountdown();
     initSponsorMedia();
     initLoopStart();
+    initAutoplayFallback();
     initNetworkingClock();
 });
 
@@ -779,6 +780,19 @@ function initLoopStart() {
         v.addEventListener('ended', () => {
             v.currentTime = start;
             v.play().catch(() => {});
+        });
+    });
+}
+
+// ===== AUTOPLAY FALLBACK =====
+// Mobile browsers can refuse muted autoplay (iOS Low Power Mode, data saver). Then
+// the video would sit frozen on its poster; show the native controls so it can be
+// played with a tap.
+function initAutoplayFallback() {
+    document.querySelectorAll('video[autoplay]').forEach(v => {
+        const p = v.play();
+        if (p) p.catch(err => {
+            if (err.name === 'NotAllowedError') v.controls = true;
         });
     });
 }

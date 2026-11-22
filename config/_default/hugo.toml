@@ -32,7 +32,7 @@ enableRobotsTXT = true
         { image = "img/merch/tshirt-regular.jpeg", fit = "merch_fit_regular", alt = "merch_alt_regular" },
         { image = "img/merch/tshirt-fitted.jpeg", fit = "merch_fit_fitted", alt = "merch_alt_fitted" },
     ]
-    # Highlights reel served from static/ (<src>.webm + <src>.mp4): home CTA and sponsorship page.
+    # Highlights reel served from static/ (<src>.mp4, H.264 720p): home CTA and sponsorship page.
     # poster: assets/ frame shown while it loads (take it at `start`). start: second the reel
     # plays/loops from, skipping its opening fade from white (otherwise it blinks on every loop).
     recapVideo = { year = 2025, src = "video/resumen_bilbostack_2025", poster = "img/recap-2025.jpg", start = 0.4 }
