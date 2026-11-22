@@ -1,8 +1,8 @@
 // HOME · NETWORKING TEASER ──────────────────────────────────────────────────
 // Full-width "second half" card after the program cards (layouts/partials/
 // home-networking.html), in the /networking/ landing's voice: a night panel that stays
-// dark in both themes. Copy + CTA on the left; on the right San Mamés at night (the
-// landing's .nw-stadium illustration, facade LED wave included) with the LED scoreboard
+// dark in both themes. Copy + CTA on the left; on the right San Mamés (the landing's
+// .nw-stadium picture: the venue photo or the night illustration) with the LED scoreboard
 // along its base; the line-up scrolls on a perimeter board across the bottom. The whole
 // card is one link (stretched from the heading).
 
@@ -194,6 +194,34 @@
     height: auto;
     min-height: 16rem;
     aspect-ratio: auto;
+
+    // Photo variant (.nw-stadium--photo: no colour filter, base fading into the board):
+    // pinned to the column so its own ratio never sets the card's height; it eases in a
+    // touch when the card is hovered.
+    .nw-stadium__photo {
+        position: absolute;
+        inset: 0;
+        transition: transform 0.6s ease;
+    }
+
+    // Licence credit: tighter to the corner than on the landing's full-bleed band, and
+    // above the card's stretched link (z-index 2) so its own links stay clickable.
+    .nw-stadium__credit {
+        z-index: 3;
+        right: var(--space-4);
+        bottom: var(--space-2);
+        max-width: #{"calc(100% - 2 * var(--space-4))"};
+        font-size: 0.65rem;
+    }
+}
+
+.home-nw__card:hover .home-nw__stadium .nw-stadium__photo {
+    transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-nw__stadium .nw-stadium__photo { transition: none; }
+    .home-nw__card:hover .home-nw__stadium .nw-stadium__photo { transform: none; }
 }
 
 .home-nw__board {

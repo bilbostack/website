@@ -1,0 +1,48 @@
+{{- /*
+  San Mamés picture, shared by the /networking/ hero and the home teaser card.
+  A real photo when the networking page's front matter sets `venueImage` (path under
+  assets/, with `venueImageAlt`, optional `venueImageFocus` as a CSS object-position and
+  `venueImageCredit` = { title, author, url, license, licenseUrl } for the licence
+  attribution, which CC BY requires wherever the photo is shown); otherwise the inline
+  night illustration (assets/img/networking/san-mames.svg), whose facade fins animate as
+  an LED wave.
+
+  Params (dict):
+    page        the networking page (source of the venueImage* params)
+    class       optional extra class on the <figure>
+    decorative  true when surrounding text already names the venue: empty alt on the
+                photo, aria-hidden on the illustration (the credit stays readable)
+    priority    true above the fold (fetchpriority=high), else lazy-loaded
+    sizes       the <img> sizes attribute (default "100vw")
+*/ -}}
+{{- $p := .page -}}
+{{- $photo := false -}}
+{{- with $p.Params.venueImage }}{{ $photo = resources.Get . }}{{ end -}}
+{{- $class := printf "nw-stadium%s%s" (cond (not $photo) "" " nw-stadium--photo") (cond (isset . "class") (printf " %s" .class) "") -}}
+{{- with $photo }}
+<figure class="{{ $class }}">
+    {{- $sm := .Resize "960x webp q75 lanczos" }}
+    {{- $md := .Resize "1600x webp q75 lanczos" }}
+    <img class="nw-stadium__photo" src="{{ $md.RelPermalink }}"
+         srcset="{{ $sm.RelPermalink }} {{ $sm.Width }}w, {{ $md.RelPermalink }} {{ $md.Width }}w"
+         sizes="{{ $.sizes | default "100vw" }}" width="{{ $md.Width }}" height="{{ $md.Height }}"
+         alt="{{ if not $.decorative }}{{ $p.Params.venueImageAlt }}{{ end }}"
+         {{- if $.priority }} fetchpriority="high"{{ else }} loading="lazy" decoding="async"{{ end }}
+         {{- with $p.Params.venueImageFocus }} style="object-position: {{ . | safeCSS }}"{{ end }}>
+    {{- /* Attribution required by the photo's licence (e.g. CC BY): title linked to the
+         source page, author, licence linked to its deed, and the change made. */}}
+    {{- with $p.Params.venueImageCredit }}
+    <figcaption class="nw-stadium__credit">
+        {{- T "nw_photo_credit" }} <a href="{{ .url }}" target="_blank" rel="noopener">«{{ .title }}»</a>, {{ .author }}
+        · <a href="{{ .licenseUrl }}" target="_blank" rel="noopener license">{{ .license }}</a>
+        · {{ T "nw_photo_modified" -}}
+    </figcaption>
+    {{- end }}
+</figure>
+{{- else }}
+<figure class="{{ $class }}"{{ if .decorative }} aria-hidden="true"{{ end }}>
+    <div class="nw-stadium__art"{{ if not .decorative }} role="img" aria-label="{{ T "nw_stadium_alt" }}"{{ end }}>
+        {{- with resources.Get "img/networking/san-mames.svg" }}{{ .Content | safeHTML }}{{ end -}}
+    </div>
+</figure>
+{{- end }}

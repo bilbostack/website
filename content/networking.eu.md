@@ -9,6 +9,12 @@ heading = "laEspuela San Mamesen jokatzen da"
 lead = "Hitzaldiak amaitzean, Katedralera goaz: San Mames estadioaren barruko gune bat, solasaldiarekin jarraitzeko edari, janari, zuzeneko musika eta zozketekin."
 venueText = "San Mames estadio bat baino askoz gehiago da: Bilboko ikonoetako bat. Aurten BilboStack-en laEspuela Katedralaren barruko gune batera doa, Euskalduna Jauregitik oinez gertu."
 transport = "San Mames metroa (L1 · L2) · San Mames tranbia-geltokia"
+# Estadioaren argazkia hero-an (ilustrazioaren ordez). CC BY 3.0 lizentzia: kreditua
+# (`venueImageCredit`) derrigorrezkoa da eta argazkiaren gainean agertzen da. `venueImageFocus` = object-position.
+venueImage = 'img/networking/san-mames-photo.jpg'
+venueImageAlt = "San Mames estadioaren aireko ikuspegia Bilboko itsasadarraren ondoan, hiria eta mendiak atzean dituela."
+venueImageFocus = '50% 62%'
+venueImageCredit = { title = "San Mames Barria eta Bilboko ikuspegia", author = "Mikel Arrazola (Irekia)", url = "https://commons.wikimedia.org/wiki/File:San_Mames_Barria_eta_Bilboko_ikuspegia.jpg", license = "CC BY 3.0", licenseUrl = "https://creativecommons.org/licenses/by/3.0/deed.eu" }
 # Estadioaren barruko networking gunerako sarbidea. Hutsik = "Zehazteke" webean.
 access = { gate = "", space = "" }
 

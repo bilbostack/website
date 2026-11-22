@@ -9,6 +9,12 @@ heading = "La Espuela is played at San Mamés"
 lead = "Once the talks are over, we head to La Catedral: a space inside San Mamés stadium to keep the conversation going with drinks, food, live music and prize draws."
 venueText = "San Mamés is much more than a stadium: it's one of Bilbao's icons. This year BilboStack's La Espuela moves to a space inside La Catedral, a short walk from the Palacio Euskalduna."
 transport = "San Mamés metro (L1 · L2) · San Mamés tram stop"
+# Stadium photo in the hero (instead of the illustration). CC BY 3.0 licence: the credit
+# (`venueImageCredit`) is mandatory and is shown over the photo. `venueImageFocus` = object-position.
+venueImage = 'img/networking/san-mames-photo.jpg'
+venueImageAlt = "Aerial view of San Mamés stadium beside the Bilbao estuary, with the city and the hills behind it."
+venueImageFocus = '50% 62%'
+venueImageCredit = { title = "San Mames Barria eta Bilboko ikuspegia", author = "Mikel Arrazola (Irekia)", url = "https://commons.wikimedia.org/wiki/File:San_Mames_Barria_eta_Bilboko_ikuspegia.jpg", license = "CC BY 3.0", licenseUrl = "https://creativecommons.org/licenses/by/3.0/deed.en" }
 # Access to the networking space inside the stadium. Empty = "Pending" on the page.
 access = { gate = "", space = "" }
 

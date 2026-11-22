@@ -37,23 +37,8 @@
          in the venue section. */}}
     <header class="nw-hero">
         <div class="nw-stage">
-            {{/* Stadium picture: a real photo when front matter sets `venueImage` (path
-                 under assets/, with `venueImageAlt`); otherwise the inline night
-                 illustration (assets/img/networking/san-mames.svg), whose facade fins
-                 animate as an LED wave. */}}
-            {{- $photo := false -}}
-            {{- with .Params.venueImage }}{{ $photo = resources.Get . }}{{ end }}
-            <figure class="nw-stadium">
-                {{- with $photo }}
-                {{- with .Resize "1600x webp q75 lanczos" }}
-                <img class="nw-stadium__photo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.venueImageAlt }}" fetchpriority="high">
-                {{- end }}
-                {{- else }}
-                <div class="nw-stadium__art" role="img" aria-label="{{ T "nw_stadium_alt" }}">
-                    {{- with resources.Get "img/networking/san-mames.svg" }}{{ .Content | safeHTML }}{{ end -}}
-                </div>
-                {{- end }}
-            </figure>
+            {{/* Stadium picture (photo or night illustration): see the partial. */}}
+            {{ partial "networking-stadium.html" (dict "page" . "priority" true) }}
 
             {{/* Scoreboard strip along the picture's base: kick-off and final whistle at
                  the ends, the match clock running between them. Without JS the status

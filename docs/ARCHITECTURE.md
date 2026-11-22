@@ -176,7 +176,7 @@ perimeter board below. It reads the landing's own `heading`, `lead` and `lineup`
 - **Home sections:** `home-header`, `home-speakers`, `home-program`, `home-networking`, `home-merch`, `home-cta-sponsors`.
 - **Agenda:** `agenda-table`, `agenda-header`, `session-full`, `session-track` (see Agenda data model); `agenda-days` returns the normalized agenda for JSON-LD and the JSON output.
 - **Speakers:** `speaker-grid-card`.
-- **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`, plus `ticket` and `check` for the admission stub/note).
+- **Networking:** `networking-icon` (inline stroke icon by name: `drinks`, `food`, `networking`, `music`, `raffle`, plus `ticket` and `check` for the admission stub/note); `networking-stadium` (the San Mamés picture — `venueImage` photo with its licence credit, or the night illustration — shared by the landing hero and the home teaser).
 - **CTA:** `site-cta-la-espuela` (currently commented out).
 
 ### Shortcodes (`layouts/_shortcodes/`)
@@ -314,7 +314,16 @@ lives in the venue section). Under the lead, an "included with your ticket" stub
 message repeats on the perimeter board and as a note under the venue CTAs (`nw_included_note`). The picture is by default
 the inline night illustration `assets/img/networking/san-mames.svg` (five-tier facade on the
 edition ramp, fins animate as an LED wave; alt text `nw_stadium_alt`); set `venueImage` (path under
-`assets/`) + `venueImageAlt` in front matter to show a real photo instead. The illustration keeps its ratio at the band's height, centred, and
+`assets/`) + `venueImageAlt` in front matter to show a real photo instead (currently on: an
+aerial photo from Wikimedia Commons, `assets/img/networking/san-mames-photo.jpg`), with optional
+`venueImageFocus` (CSS `object-position`) and `venueImageCredit` (`{ title, author, url, license,
+licenseUrl }`, rendered over the photo with `nw_photo_credit` / `nw_photo_modified`). The photo
+gets no colour filter (DESIGN.md › Imagery): its base fades into the scoreboard panel and it
+is dimmed slightly in the dark theme (`.nw-stadium--photo`). The picture is
+rendered by the `networking-stadium.html` partial, shared with the home teaser card
+(`home-networking`), so the photo and its credit appear in both places. A third-party photo
+under CC BY **must** keep that credit wherever it is shown; remove `venueImage*` to go back to the
+illustration. The illustration keeps its ratio at the band's height, centred, and
 the band continues its sky/river gradient past the sides. The scoreboard
 is a strip built into the picture's base (kick-off │ match clock │ final whistle); its status
 line shows the date without JS, and `initNetworkingClock()` in `main.js` turns it into a day
