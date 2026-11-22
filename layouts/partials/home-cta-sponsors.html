@@ -3,14 +3,15 @@
         <div class="cta-video">
             {{- /* Poster = the reel's frame at `start`, so the box shows the same image
                  the video opens on (no blank/blink while the 20+ MB file loads).
-                 width/height reserve the 16:9 box before metadata arrives. */}}
+                 width/height reserve the 16:9 box before metadata arrives.
+                 MP4 (H.264) only: plays everywhere with hardware decoding. A WebM/VP9
+                 source was dropped — iOS Safari picked it and couldn't play it. */}}
             {{- $recap := site.Params.recapVideo }}
             {{- $start := $recap.start | default 0 }}
             {{- $poster := "" }}
             {{- with $recap.poster }}{{ with resources.Get . }}{{ $poster = .Resize "1280x webp q75" }}{{ end }}{{ end }}
-            <video autoplay muted loop playsinline width="1920" height="1080"
+            <video autoplay muted loop playsinline width="1280" height="720"
                 {{- with $poster }} poster="{{ .RelPermalink }}"{{ end }} data-loop-start="{{ $start }}">
-                <source src="{{ printf "%s.webm#t=%v" $recap.src $start | relURL }}" type="video/webm">
                 <source src="{{ printf "%s.mp4#t=%v" $recap.src $start | relURL }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>

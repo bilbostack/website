@@ -876,6 +876,54 @@
         object-fit: cover;
     }
 
+    // Licence attribution (CC BY), bottom right, over the dark fade (see --photo below)
+    // and lined up with the scoreboard's right edge (same gutter as .nw-board).
+    &__credit {
+        position: absolute;
+        z-index: 1;
+        right: #{"max(var(--main-gap), calc((100% - var(--content-max)) / 2))"};
+        bottom: var(--space-2);
+        max-width: #{"calc(100% - 2 * var(--main-gap))"};
+        margin: 0;
+        font-size: 0.7rem;
+        line-height: 1.4;
+        text-align: right;
+        color: #{"color-mix(in srgb, var(--color-light) 80%, transparent)"};
+
+        a {
+            color: var(--color-light);
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+        }
+    }
+}
+
+// Real photo instead of the illustration. Per DESIGN.md (Imagery) it stays natural, no
+// colour filter: it is tied into the page by its frame instead. No night sky or stars
+// behind it; its base fades into the scoreboard's dark panel, so the board reads as
+// built into the picture (as it is in the illustration) and the credit sits on dark.
+.nw-stadium--photo {
+    background-image: none;
+    background-color: var(--nw-panel);
+
+    &::before { content: none; }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(to bottom,
+            transparent 58%,
+            #{"color-mix(in srgb, var(--nw-panel) 55%, transparent)"} 82%,
+            var(--nw-panel) 100%);
+    }
+}
+
+// Dark theme: a bright daytime photo would glare on the dark page; dim it a touch.
+html.dark-theme .nw-stadium__photo {
+    filter: brightness(0.82);
+
     // Facade LED wave: each fin dims in turn, left to right.
     &__fin {
         animation: nw-facade 5.2s ease-in-out infinite;

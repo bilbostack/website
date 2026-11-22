@@ -183,7 +183,6 @@
         <div class="sp-media">
             <figure class="sp-media__item sp-media__item--reel">
                 <video class="sp-media__video" muted loop playsinline controls preload="metadata" data-loop-start="{{ $recap.start | default 0 }}" aria-label="{{ T "sp_media_recap" (dict "year" $recap.year) }}">
-                    <source src="{{ printf "%s.webm#t=3" $recap.src | relURL }}" type="video/webm">
                     <source src="{{ printf "%s.mp4#t=3" $recap.src | relURL }}" type="video/mp4">
                 </video>
                 <figcaption class="sp-media__cap"><span class="sp-media__rec" aria-hidden="true">REC</span>{{ T "sp_media_recap" (dict "year" $recap.year) }}</figcaption>
@@ -200,7 +199,6 @@
             </figure>
             <figure class="sp-media__item sp-media__item--venue">
                 <video class="sp-media__video" muted loop playsinline controls preload="metadata" aria-label="{{ site.Params.eventLocationName }}">
-                    <source src="{{ "video/euskalduna.webm#t=1" | relURL }}" type="video/webm">
                     <source src="{{ "video/euskalduna.mp4#t=1" | relURL }}" type="video/mp4">
                 </video>
                 <figcaption class="sp-media__cap">{{ site.Params.eventLocationName }} · {{ site.Params.eventLocationCity }}</figcaption>
